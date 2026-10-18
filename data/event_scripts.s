@@ -1861,6 +1861,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/gilded_ow_mons.inc"
 	.include "data/scripts/gilded_town_npcs.inc"
 	.include "data/scripts/gilded_sidequests.inc"
+	.include "data/scripts/gilded_dialogue1.inc"
 	
 
 .if IS_HNS

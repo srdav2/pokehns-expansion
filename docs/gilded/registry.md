@@ -378,3 +378,6 @@ No new constants. Trainer placements: `TRAINER_COLONEL_BUCKSHOT_RADIO_TOWER_HNS`
 - Specials: GildedYardSignHide/Remove/Count, GildedQuestBitTest/Set
 - Trainers: DEBATE_BRO_1..3_HNS 687–689 (TRAINERS_COUNT_HNS 690)
 - Scripts: data/scripts/gilded_sidequests.inc
+
+## P2-10/11
+- Scripts: Gilded_D1_0..43 (data/scripts/gilded_dialogue1.inc); no new flags/vars.

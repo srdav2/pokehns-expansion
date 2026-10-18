@@ -570,3 +570,10 @@ Status: BUILT_PARTIAL — NEEDS PLAYTEST
 - Tariff Trouble: Olivine Mart clerk text + dealer in Olivine Port (separate pokemart, no price code changed).
 Deferred: Fact-Check the Unown (chamber map, Grass Knot TM) — not built.
 Playtest: debug-warp to Route 29, talk to signs, then Lawn Ranger; fight Debate Bros in order in Goldenrod tunnel; talk to dealer in Olivine Port.
+
+## P2-10/P2-11: Pass-1 deferred dialogue (talk NPCs)
+Status: BUILT_PARTIAL — NEEDS PLAYTEST
+- 44 talk NPCs/signs appended (scripts `Gilded_D1_<n>` in `data/scripts/gilded_dialogue1.inc`): prepper bunker, lab-fence banner, Falkner/N.R.A., Sprout Elder non-endorsement, Ruins scholar + Chairman Klaus cameo, SLOWPOKE-T billboard, Route 33 yard sign, Bugsy picket, Ilex Silver, six Goldenrod rally NPCs, Dept. Store floor signs, station MEGA grunt, Whitney, Bill, Commissar Blair, Open Season + Buckshot (National Park), Café tariff menu, Cianwood pharmacy/cold plunge, Jasmine/Amphy, Mahogany Rage Radio/shop, Lake of Rage, Pryce, Vermilion N.R.A. booth, S.S. Aqua washroom gag, Erika notice, Casino, Safari entrance sign, Janine, Sabrina, Brock.
+- Positions auto-placed (see mission 6 audit below).
+Deferred: Heritage Officer battles (Routes 37/38) and shared Heritage Order gate; Pell poster; Alpha Dojo; Lighthouse Wellness reclass; Slowpoke Well reclass (items 4/later commits); full Rage Radio rebrand of hideout text.
+Playtest: warp to each map listed and talk to the new NPC; confirm text fits the box and the NPC does not block a path.

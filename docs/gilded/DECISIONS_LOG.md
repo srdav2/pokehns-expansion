@@ -31,3 +31,4 @@
 | 2026 | P2-09 | Epilogue inline on Axis map, text only | TV room/Route29 walk is optional scene |
 | 2026 | P2-12/13 | Generated per-species OW scripts and auto-placed NPCs | volume; no free flags needed |
 2025 | P2-14 | Skipped Unown chamber; Debate reaction via YES/NO | out of time budget; free flags scarce
+2026-10-18 | P2-10/11 | Delivered deferred dialogue as appended talk NPCs, not scene rewrites | no free flags; keeps HnS scripts untouched
