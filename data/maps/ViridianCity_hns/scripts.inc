@@ -142,8 +142,8 @@ ViridianCity_Text_Youngster:
 	.string "on the ground in VIRIDIAN FOREST.$"
 
 ViridianCity_Text_Sign:
-	.string "VIRIDIAN CITY\p"
-	.string "The Eternally Green Paradise$"
+	.string "THE COMEBACK RALLY\n"
+	.string "BIGGER THAN EVER$"
 
 ViridianCity_Text_GymSign:
 	.string "VIRIDIAN CITY POKéMON GYM\n"

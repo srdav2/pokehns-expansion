@@ -306,3 +306,11 @@ Pressure Prompt 11 uses `VAR_PRESSURE_POINTS = 0x40E5`. No new vars or specials 
 - Modified HnS maps: `SaffronCity_Gym_hns` and `CeladonCity_hns`.
 - No new flags, vars, trainers, maps, or specials were allocated. Sabrina's and Erika's HnS teams and levels are unchanged.
 - The D.O.G.E. headquarters, Pressure Prompt 12, auditor battles, and Fuchsia/Cinnabar/Pewter content remain deferred.
+
+## GF15 — Kanto Act 14: Comeback Rally
+
+### Maps and specials
+
+- Modified HnS map: `ViridianCity_hns`.
+- No new flags, vars, trainers, maps, or specials were allocated. All HnS Gym teams and levels remain unchanged.
+- The Gaudy rally cutscene/battle and its post-battle state remain deferred.

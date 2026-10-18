@@ -361,3 +361,23 @@ Updated Sabrina's Gym introduction with the D.O.G.E. auditor exchange and “I r
 - [ ] Re-enter Celadon City after Erika's fountain event; confirm she remains at the Dojo and the existing Erika battle/state flow is unchanged.
 
 The Act 12–13 additions still need playtesting.
+
+## GF15 — Kanto Act 14: Comeback Rally
+
+**Status: BUILT_PARTIAL — NEEDS PLAYTEST**
+
+Replaced Viridian City's secondary sign text with the “THE COMEBACK RALLY — BIGGER THAN EVER” banner. No Gym battle, trainer party, or progression state was changed.
+
+**Deferred:**
+
+- Add Silver's confrontation cutscene, President Gaudy's Comeback Rally Team 2 battle and Mega Tyranitar, and his retirement/Team MEGA ending.
+- Integrate the rally around the Viridian Giovanni slot without changing HnS Gym team/badge progression; preserve Blue's existing Viridian Gym battle.
+- `make check BUILD=hns -j8` remains blocked before tests by the existing `include/fake_rtc.h` / `struct SaveBlock3` compile error noted under GF1.
+
+**Playtest checklist:**
+
+- [ ] Open **R + Start → Utilities… → Warp to map warp…** and visit Viridian City. Read the city's secondary sign; confirm it displays “THE COMEBACK RALLY — BIGGER THAN EVER.”
+- [ ] Visit Viridian City Gym through the existing route and confirm the HnS Gym trainer teams, Blue/Giovanni state, and badge progression are unchanged.
+- [ ] Save and reload in Viridian City; confirm the banner text remains available and the existing map state is unchanged.
+
+The Act 14 rally cutscene and battle remain deferred; the banner still needs playtesting.
