@@ -322,3 +322,11 @@ Pressure Prompt 11 uses `VAR_PRESSURE_POINTS = 0x40E5`. No new vars or specials 
 - Modified HnS map: `MtSilver_SummitDay_hns`.
 - No new flags, vars, trainers, maps, or specials were allocated. The existing `FLAG_DEFEATED_RED` gates the added one-time dialogue; Red's HnS team and levels are unchanged.
 - The Axis map, Giratina Origin battle, and epilogue content remain deferred.
+
+## GF17 — Side quests
+
+### Maps and specials
+
+- Modified HnS map: `Route39_FarmHouse_hns`.
+- No new flags, vars, trainers, maps, or specials were allocated. The existing `VAR_ROUTE39_BARN` berry-feeding progression is unchanged.
+- Yard Sign Cleanup, Fact-Check the Unown, Debate Club, and Tariff Trouble remain deferred.

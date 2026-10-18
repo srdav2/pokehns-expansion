@@ -404,3 +404,26 @@ Added Giratina's “You've seen it spun left” exchange and Arceus's “The wor
 - [ ] Confirm Red's HnS team and levels remain unchanged.
 
 The Act 15 additions still need playtesting; most of the finale remains deferred.
+
+## GF17 — Side quests
+
+**Status: BUILT_PARTIAL — NEEDS PLAYTEST**
+
+Added the Raw Moomoo overlay to the existing Route 39 sick-Miltank dialogue: an influencer claims raw milk cures everything, but the farmer explains that Oran Berries are what Miltank needs. The original berry-feeding progression, recovery, and rewards remain unchanged.
+
+**Deferred:**
+
+- Implement Yard Sign Cleanup and its 5/10/15 rewards.
+- Add the Ruins of Alph Fact-Check the Unown chamber and Grass Knot reward.
+- Add the Goldenrod Underground Debate Club and Choice Specs reward.
+- Implement Tariff Trouble and the normal-price Olivine port shop.
+- `make check BUILD=hns -j8` remains blocked before tests by the existing `include/fake_rtc.h` / `struct SaveBlock3` compile error noted under GF1.
+
+**Playtest checklist:**
+
+- [ ] Open **R + Start → Utilities… → Warp to map warp…** and visit Route 39 Farmhouse before healing Miltank. Speak with the farmer; confirm the raw-milk claim and Oran Berry reply render correctly.
+- [ ] Visit Route 39 Barn and complete the existing five-Oran-Berry Miltank healing flow. Confirm each berry is consumed once, the health stages advance, and the existing post-quest reward remains available.
+- [ ] Return to the farmhouse after `VAR_ROUTE39_BARN` reaches `5`; confirm the recovery dialogue and existing TM reward work.
+- [ ] Confirm the farmer's milk shop still checks money and bag space and charges the existing price.
+
+The Raw Moomoo side-quest overlay still needs playtesting; four of the five side quests remain deferred.

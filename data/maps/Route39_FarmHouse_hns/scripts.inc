@@ -122,6 +122,10 @@ Route39_Text_FarmerMMilking:
 Route39_Text_FarmerFInTrouble:
 	.string "Our milk even goes out to\n"
 	.string "KANTO.\p"
+	.string "An influencer says raw milk\n"
+	.string "cures everything, even MILTANK.\p"
+	.string "It won't fix her. ORAN BERRIES\n"
+	.string "are what she'll need.\p"
 	.string "So if our own MILTANK won't\n"
 	.string "give us any milk, we're in trouble.$"
 
