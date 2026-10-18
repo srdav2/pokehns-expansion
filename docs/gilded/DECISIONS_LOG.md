@@ -28,3 +28,4 @@
 | 2026-10-19 | P2-06 | Mine is optional (no story var); Brad 2 hooked into the Misty date script. | Keeps Machine Part flow identical. |
 | 2026 | P2-07 | Buckshot 3 optional via goto_if_defeated | no free flags |
 | 2026 | P2-08 | Rally gate = FLAG_HIDE_CINNABAR_BLUE + trainer-defeated; FLAG_TEMP_5 for visibility | no free flags; temp flags free |
+| 2026 | P2-09 | Epilogue inline on Axis map, text only | TV room/Route29 walk is optional scene |

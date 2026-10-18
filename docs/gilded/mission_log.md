@@ -547,3 +547,11 @@ Status: BUILT — NEEDS PLAYTEST
 - Blue's team and badge flow untouched. After a win, the trainer-defeated check blocks repeats; after a loss, the rally retriggers.
 Deferred: Silver is a talk NPC (no movement/entrance choreography); no MEGA disband changes elsewhere.
 Playtest: set FLAG_HIDE_CINNABAR_BLUE via debug menu, warp to Viridian, step on (43,15); win and confirm gym is enterable and the rally doesn't return; lose and confirm retry.
+
+## P2-09: Finale
+Status: BUILT_PARTIAL — NEEDS PLAYTEST
+- Mt. Silver Outside: MEGA and Committee recruiters near the cave entrance (16,9), (19,9).
+- Red script: first Red win now warps to new map `GiratinaAxis_hns` (fog). Re-talking to Red after a loss/run skips straight to the Axis (retriable: DEFEATED_RED is set only at the end).
+- Axis: Giratina/Arceus dialogue, `setwildbattle SPECIES_GIRATINA_ORIGIN, 90, ITEM_GRISEOUS_CORE` (catchable), run → back to the summit; Arceus white flash; CROSSFIRE + Route 29 text; three-tier epilogue on VAR_PRESSURE_POINTS (0 / 1–5 / 6+); post-credits Giratina line before `GameClear`.
+Deferred: epilogue is text-only (no Goldenrod TV room or Route 29 walk-out); no Giratina sprite on the Axis; the line is shown before credits.
+Playtest: debug-warp to MtSilver summit, beat Red; check Axis scene, lose/run and re-talk to Red; set VAR_PRESSURE_POINTS to 0/3/8 and compare epilogues; confirm Hall of Fame/credits afterwards.

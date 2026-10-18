@@ -2248,6 +2248,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/CeruleanCave_B1F_hns/scripts.inc"
 	.include "data/maps/CeruleanCave_B2F_hns/scripts.inc"
 	.include "data/maps/CeruleanCity_CryptoMine_hns/scripts.inc"
+	.include "data/maps/GiratinaAxis_hns/scripts.inc"
 	.include "data/maps/DiglettsCave_EntranceNorth_hns/scripts.inc"
 	.include "data/maps/DiglettsCave_EntranceSouth_hns/scripts.inc"
 	.include "data/maps/DiglettsCave_Tunnel_hns/scripts.inc"

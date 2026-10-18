@@ -31,6 +31,10 @@ MtSilver_SummitDay_EventScript_Red::
 	faceplayer
 	msgbox MtSilver_SummitDay_Text_Red, MSGBOX_DEFAULT
 	closemessage
+	goto_if_set FLAG_DEFEATED_RED, MtSilver_SummitDay_EventScript_RedNotRetry
+	goto_if_defeated TRAINER_RED_HNS, MtSilver_SummitDay_EventScript_GoAxis
+	goto_if_defeated TRAINER_RED_POSTOBC_HNS, MtSilver_SummitDay_EventScript_GoAxis
+MtSilver_SummitDay_EventScript_RedNotRetry::
 	goto_if_unset FLAG_IS_KANTO_CHAMPION, MtSilver_SummitDay_EventScript_RedStandard
 	goto_if_ge VAR_SINJOH_STORYLINE, 13, MtSilver_SummitDay_EventScript_RedPostOBC
 
@@ -48,6 +52,7 @@ MtSilver_SummitDay_EventScript_RedOnDefeat::
 	msgbox MtSilver_SummitDay_Text_Red, MSGBOX_DEFAULT
 	special GivePartyMonLandRibbon
 	closemessage
+	goto_if_unset FLAG_DEFEATED_RED, MtSilver_SummitDay_EventScript_GoAxis
 	fadescreenswapbuffers FADE_TO_BLACK
 	setflag FLAG_HIDE_MTSILVER_RED
 	removeobject LOCALID_MTSILVER_RED
@@ -64,6 +69,13 @@ MtSilver_SummitDay_EventScript_RedSkipFinaleDialogue::
 	special GameClear
 	waitstate
 	releaseall
+	end
+
+MtSilver_SummitDay_EventScript_GoAxis::
+	playse SE_M_BLIZZARD
+	fadescreenspeed FADE_TO_BLACK, 8
+	warp MAP_GIRATINA_AXIS_HNS, 10, 18
+	waitstate
 	end
 
 MtSilver_SummitDay_Text_Red:
