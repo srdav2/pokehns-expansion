@@ -601,3 +601,7 @@ Status: BUILT — NEEDS PLAYTEST
 - P2-15: MAPSEC_ROCKET_HIDEOUT_HNS now "MEGA HIDEOUT" (region_map.c, sections json); player-facing ROCKET grep clean in _hns content (remaining hits are FRLG-only). Arceus Returns 1–3 wired (Route 30, Route 32, Azalea).
 Deferred: Chuck team rework.
 Playtest: debug warp to Union Cave 1F, walk south corridor; check Fuchsia sign; open region map.
+
+## Pass 2 placement audit
+Status: BUILT — NEEDS PLAYTEST
+- Moved Debate Bros (were out of bounds) and both Warden Pell objects in Ecruteak (were on wall tiles). Audit checks collision, event tiles, warp adjacency, reachability. Ledge behaviour not checked.

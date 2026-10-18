@@ -35,3 +35,4 @@
 2026-10-18 | P2-14 | Gate = FLAG_COMPLETED_KABUTO_PUZZLE | spec says any HnS ruins puzzle flag
 2026-10-18 | P2-09 | Finale sequenced with VAR_GILDED_FINALE across maps | free flags exhausted; var 0x40E0 was unused
 | 2025 | P2 follow-up | Union Cave toll grunts are battle-only | no payment system needed |
+| 2026 | P2 audit | Pell Tin moved to (38,23) | original spot unreachable inside building |

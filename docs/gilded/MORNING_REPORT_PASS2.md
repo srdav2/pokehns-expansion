@@ -15,8 +15,20 @@ ROM: 31,740,644 B (94.59%). All status is BUILT — NEEDS PLAYTEST; nothing has 
 5. Crypto mine warps 6. Viridian Comeback Rally / Blue gating 7. Silph terminals/auditors
 8. Debate Bros order + Choice Specs 9. Yard signs + Lawn Ranger 10. Olivine port dealer
 
+## Follow-up round (all six items done)
+Final ROM: 31,748,276 B (94.62% of 32 MB). Build passes.
+1. P2-10/11: 44 talk NPCs/signs (data/scripts/gilded_dialogue1.inc) covering bunker, Falkner/N.R.A., Sprout/Ruins/Klaus, Bugsy picket, Silver, rally NPCs, Dept. Store signs, Whitney, Bill, Blair, Open Season/Buckshot, Cafe tariff menu, Cianwood, Jasmine, Rage Radio, Pryce, Vermilion, Erika, Casino, Janine/Sabrina/Brock.
+2. P2-14: Fact-Check the Unown chamber (RuinsOfAlph_FactCheck_hns, Grass Knot once). Scientist at Ruins Outside (26,24), needs FLAG_COMPLETED_KABUTO_PUZZLE.
+3. P2-09: GoldenrodCity_TVRoom_hns epilogue, Route 29 walk-out (VAR_GILDED_FINALE), Radio Tower Pidgeot fly-off.
+4. Union Cave toll grunts (trainers 690-691), Chuck gym Sigma Bro reclass (teams unchanged), Safari "Big Game Ranch" re-text, Janine/Sabrina/Brock lines.
+5. P2-15: MEGA HIDEOUT region-map label; player-facing ROCKET grep clean in _hns content (remaining hits are FRLG-only); Arceus Returns 1-3 wired (Routes 30, 32, Azalea).
+6. Placement audit (collision + events + reachability, script /tmp only): found and fixed Debate Bros placed out of map bounds (Underground Tunnel, now (1,4), (2,6), (3,10)) and both Warden Pell objects in Ecruteak standing on wall tiles behind doors (now (20,15) and (38,23)). Every other auto-placed Gilded NPC/sign passes. Pre-existing HnS Gilded_Ow overworld mons were not moved.
+
+## Playtest steps (new)
+Union Cave 1F south corridor; Chuck gym trainer class names; Fuchsia sign/Safari entrance; region map label; Underground Tunnel Debate Bros; Ecruteak Pell trigger near Burned Tower; finish game via Red -> Axis -> TV room -> Route 29.
+
 ## Unverified assumptions
-Auto-placed NPCs/signs may block paths; Bleak (3,14); Tin Tower Pell; Border Wall geometry; Silph sight lines; Buckshot position; Axis warp coords.
+Ledge/water metatile behaviour was not checked by the audit (collision only). Ecruteak Tin Tower warps (36-37,16) sit inside a solid building (pre-existing HnS geometry); Pell Tin moved to the road (38,23) and may not match the intended gate. Border Wall geometry; Silph sight lines; Axis/TV room/Route 29 warp coords; Pidgeot fly-off may bump a wall.
 
 ## Deferred
-Union Cave grunts, Chuck gym reclass, sprite swaps, Border Wall is 2 tiles, Grindwell reward, Pidgeot fly-off, Safari re-text, Janine/Sabrina/Brock lines, epilogue TV room, Olivine 2 NPC lines, palette audit, Unown chamber, Open Season, prepper bunker, Falkner/Klaus/picket lines, MEGA HIDEOUT map label.
+Chuck gym team rework; sprite swaps; Border Wall is 2 tiles; Grindwell double reward; no Giratina sprite on Axis; party text-only on Route 29; Crypto Bros are new trainers; overworld palette audit; Silver act-end reaction; full Rage Radio rebrand; Heritage shared gate/Pell poster.
