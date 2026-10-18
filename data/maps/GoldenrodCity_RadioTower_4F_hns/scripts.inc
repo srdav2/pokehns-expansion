@@ -16,6 +16,19 @@ GoldenrodCity_RadioTower_4F4_EventScript_Sign2::
 	end
 
 GoldenrodRaidoTower4_EventScript_Grunt28::
+	goto_if_set FLAG_GILDED_PRESSURE_PROMPT_TOWER_STAIRS, GoldenrodRaidoTower4_EventScript_Grunt28Battle
+	msgbox GoldenrodCity_RadioTower_4F4_Text_PresidentLoyalty, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, GoldenrodRaidoTower4_EventScript_Grunt28LoyaltyYes
+	setflag FLAG_GILDED_PRESSURE_PROMPT_TOWER_STAIRS
+	msgbox GoldenrodCity_RadioTower_4F4_Text_PresidentLoyaltyNo, MSGBOX_DEFAULT
+	goto GoldenrodRaidoTower4_EventScript_Grunt28Battle
+
+GoldenrodRaidoTower4_EventScript_Grunt28LoyaltyYes::
+	addvar VAR_PRESSURE_POINTS, 1
+	setflag FLAG_GILDED_PRESSURE_PROMPT_TOWER_STAIRS
+	msgbox GoldenrodCity_RadioTower_4F4_Text_PresidentLoyaltyYes, MSGBOX_DEFAULT
+
+GoldenrodRaidoTower4_EventScript_Grunt28Battle::
 	trainerbattle_single TRAINER_GRUNT_28_HNS, GoldenrodCity_RadioTower_4F4_Text_GruntF4Seen, GoldenrodCity_RadioTower_4F4_Text_GruntF4Beaten
 	msgbox GoldenrodCity_RadioTower_4F4_Text_GruntF4After, MSGBOX_AUTOCLOSE
 	end
@@ -167,6 +180,18 @@ GoldenrodCity_RadioTower_4F4_Text_GruntF4Beaten:
 GoldenrodCity_RadioTower_4F4_Text_GruntF4After:
 	.string "I love my beautiful self!\p"
 	.string "Who cares about POKéMON?$"
+
+GoldenrodCity_RadioTower_4F4_Text_PresidentLoyalty:
+	.string "Swear loyalty to PRESIDENT\n"
+	.string "GAUDY?$"
+
+GoldenrodCity_RadioTower_4F4_Text_PresidentLoyaltyYes:
+	.string "Great! Now fight me anyway.\n"
+	.string "It's a loyalty test!$"
+
+GoldenrodCity_RadioTower_4F4_Text_PresidentLoyaltyNo:
+	.string "Fine. You can still move on.\n"
+	.string "The test is the same either way.$"
 
 GoldenrodCity_RadioTower_4F4_Text_ScientistRichSeen:
 	.string "Most excellent.\p"

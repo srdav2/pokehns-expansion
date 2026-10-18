@@ -30,7 +30,7 @@ GoldenrodCity_RadioTower_5F_EventScript_Petrel::
 	applymovement LOCALID_PETREL_OFFICE, GoldenrodCity_RadioTower_5F_Movement_Spin2
 	waitmovement 0
 	msgbox GoldenrodCity_RadioTower_5F_Text_FakeDirector2, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_PETREL_2_HNS, GoldenrodCity_RadioTower_5F_Text_FakeDirectorWin
+	trainerbattle_no_intro TRAINER_BARRY_BLASTER_MAHOGANY_HNS, GoldenrodCity_RadioTower_5F_Text_FakeDirectorWin
 	msgbox GoldenrodCity_RadioTower_5F_Text_FakeDirectorAfter, MSGBOX_DEFAULT
 	giveitem ITEM_BASEMENT_KEY
 	setvar VAR_GOLDENROD_CITY_STATE, 7
@@ -100,36 +100,28 @@ GoldenrodCity_RadioTower_5F_Text_FakeDirector1:
 	.string "Y-you! You came to rescue me?$"
 
 GoldenrodCity_RadioTower_5F_Text_FakeDirector2:
-	.string "Is that what you were expecting?\p"
-	.string "Wrong! I'm an imposter!\p"
-	.string "I pretended to be the real thing to\n"
-	.string "prepare for our takeover.\p"
-	.string "Do you want to know where we hid\n"
-	.string "the real DIRECTOR?\p"
-	.string "Sure, I'll tell you. But only if you\n"
-	.string "can beat me!$"
+	.string "Everything you've heard is fake\n"
+	.string "news. Except me. Trust me!\p"
+	.string "I'm BARRY BLASTER, the voice of\n"
+	.string "RAGE RADIO!\p"
+	.string "Want to know where the real\n"
+	.string "DIRECTOR is? Beat me first!$"
 
 GoldenrodCity_RadioTower_5F_Text_FakeDirectorWin:
-	.string "OK, OK. I'll tell you where he is.$"
+	.string "All right! The real DIRECTOR is\n"
+	.string "in the UNDERGROUND WAREHOUSE!$"
 
 GoldenrodCity_RadioTower_5F_Text_FakeDirectorAfter:
-	.string "The boss stashed the DIRECTOR in\n"
-	.string "the UNDERGROUND WAREHOUSE.\p"
-	.string "It's at the far end of the UNDER-\n"
-	.string "GROUND.\p"
-	.string "I am a nice guy, I will give you\n"
-	.string "the BASEMENT KEY to get to the\l"
-	.string "UNDERGROUND WAREHOUSE.\p"
-	.string "But I doubt you'll get that far.$"
+	.string "The President stashed the DIRECTOR\n"
+	.string "at the far end of the UNDERGROUND.\p"
+	.string "Here, take the BASEMENT KEY.\n"
+	.string "You might make good radio yet!$"
 
 GoldenrodCity_RadioTower_5F_Text_FakeDirectorAfter2:
-	.string "The boss stashed the DIRECTOR in\n"
-	.string "the UNDERGROUND WAREHOUSE.\p"
-	.string "It's at the far end of the UNDER-\n"
-	.string "GROUND.\p"
-	.string "You can use the BASEMENT KEY to\n"
-	.string "get to the UNDERGROUND WAREHOUSE.\p"
-	.string "But I doubt you'll get that far.$"
+	.string "The real DIRECTOR is at the far\n"
+	.string "end of the UNDERGROUND.\p"
+	.string "Use the BASEMENT KEY to get into\n"
+	.string "the UNDERGROUND WAREHOUSE.$"
 
 @=======[STUDIO]==============================================================================================================================
 
@@ -150,7 +142,7 @@ GoldenrodCity_RadioTower_5F_EventScript_Archer::
 	lock
 	faceplayer
 	msgbox GoldenrodCity_RadioTower_5F_Text_RocketBossSeen, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_ARCHER_HNS, GoldenrodCity_RadioTower_5F_Text_RocketBossBeaten
+	trainerbattle_no_intro TRAINER_PRESIDENT_REX_GAUDY_RADIO_TOWER_HNS, GoldenrodCity_RadioTower_5F_Text_RocketBossBeaten
 	msgbox GoldenrodCity_RadioTower_5F_Text_RocketBossAfter, MSGBOX_DEFAULT
 	delay 55
 	closemessage
@@ -341,27 +333,20 @@ GoldenrodCity_RadioTower_5F_Text_ExecutiveF1After:
 	.string "your power.$"
 
 GoldenrodCity_RadioTower_5F_Text_RocketBossSeen:
-	.string "Oh? You managed to get this far?\p"
-	.string "You must be quite the trainer.\p"
-	.string "We intend to take over this RADIO\n"
-	.string "STATION and announce our comeback.\p"
-	.string "That should bring our boss GIOVANNI\n"
-	.string "back from his solitary training.\p"
-	.string "We are going to regain our former\n"
-	.string "glory...\p"
-	.string "I won't allow you to interfere with\n"
-	.string "our meticulous plans!$"
+	.string "PRESIDENT GAUDY: You're too late!\p"
+	.string "I alone can evolve your Magikarp!\p"
+	.string "This is the greatest tower in\n"
+	.string "history. My name is on it!$"
 
 GoldenrodCity_RadioTower_5F_Text_RocketBossBeaten:
-	.string "No! Forgive me, GIOVANNI!$"
+	.string "I won. I won by a lot.\p"
+	.string "That was a total win for me.$"
 
 GoldenrodCity_RadioTower_5F_Text_RocketBossAfter:
-	.string "How could this be?\p"
-	.string "Our dreams have come to naught.\p"
-	.string "I wasn't up to the task after all.\p"
-	.string "Like GIOVANNI did before me, I will\n"
-	.string "disband TEAM MEGA here today.\p"
-	.string "Farewell.$"
+	.string "I'm disbanding TEAM MEGA to start\n"
+	.string "a new, better party!\p"
+	.string "This is the greatest exit in\n"
+	.string "Radio Tower history!$"
 
 GoldenrodCity_RadioTower_5F_Text_DirectorThanks:
 	.string "DIRECTOR: {PLAYER}, thank you!\p"

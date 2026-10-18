@@ -229,3 +229,26 @@ The prompt uses `VAR_PRESSURE_POINTS = 0x40E5`; no new vars or specials were all
 
 - Modified HnS maps: `MahoganyTown_Shop_hns` and `RocketHideout_B3F_hns`.
 - No new maps or specials were allocated.
+
+## GF10 — Johto Act 7
+
+### Flags
+
+| Flag | Value | Purpose |
+| --- | ---: | --- |
+| `FLAG_GILDED_PRESSURE_PROMPT_TOWER_STAIRS` | `0x3C7` | Record the Radio Tower stair-side loyalty prompt choice and prevent repeat pressure points. |
+
+The prompt uses `VAR_PRESSURE_POINTS = 0x40E5`; no new vars or specials were allocated.
+
+### Trainers
+
+| Trainer ID | Value | Class / party |
+| --- | ---: | --- |
+| `TRAINER_PRESIDENT_REX_GAUDY_RADIO_TOWER_HNS` | 663 | MEGA Admin; Persian Lv. 44, Gholdengo Lv. 44, Copperajah Lv. 45, Kingambit Lv. 45, Donphan Lv. 46 |
+
+`TRAINERS_COUNT_HNS` is now 664. The party uses the `A_CLAIR` 44–46 Radio Tower band. Barry's fake-Director battle reuses `TRAINER_BARRY_BLASTER_MAHOGANY_HNS` (662).
+
+### Maps and specials
+
+- Modified HnS maps: `GoldenrodCity_RadioTower_4F_hns` and `GoldenrodCity_RadioTower_5F_hns`.
+- No new maps or specials were allocated.

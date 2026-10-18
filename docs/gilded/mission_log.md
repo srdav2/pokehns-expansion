@@ -244,3 +244,27 @@ Added Pressure Prompt 9 at the Mahogany shop counter: Gaudy Gold Kicks cost 9999
 - [ ] Leave and re-enter the shop and hideout after the choices/battle; confirm the prompt and boss do not repeat, the regular shop remains reachable, and the existing HnS route progression is intact.
 
 The Act 6 additions still need playtesting.
+
+## GF10 — Johto Act 7
+
+**Status: BUILT_PARTIAL — NEEDS PLAYTEST**
+
+Added Pressure Prompt 10 to the 4F stair-side grunt encounter: yes adds one pressure point, no does not, and either choice continues into the existing battle. Re-skinned the 5F fake Director as Barry Blaster using the GF9 Barry trainer and retained the Basement Key/warehouse progression. Replaced the final Archer-slot battle with President Rex Gaudy's Radio Tower Team 1 at levels 44–46, updated the takeover/defeat dialogue, and retained the existing Radio Tower state transitions and real-Director rescue. The HnS ROM build passed with the required Arm GNU toolchain and is **33,554,432 bytes (32 MiB)**.
+
+**Deferred:**
+
+- Add the Chad and Colonel Buckshot Team 2 battles and the Warden Pell Team 2 battle; reclass and re-text the other Radio Tower floor trainers.
+- Rework the full tower takeover broadcast/cutscene and add the gold exterior sign treatment.
+- Add Gaudy's gold Pidgeot departure, Silver's reaction, and the act-end Giratina scene.
+- `make check BUILD=hns -j8` remains blocked before tests by the existing `include/fake_rtc.h` / `struct SaveBlock3` compile error noted under GF1.
+- GF11–GF17 have not started. GF-IMP remains skipped as directed by the plan.
+
+**Playtest checklist:**
+
+- [ ] Play through the Radio Tower takeover or open **R + Start → Utilities… → Warp to map warp…** to reach 4F after the takeover; clear `FLAG_GILDED_PRESSURE_PROMPT_TOWER_STAIRS` and set `VAR_PRESSURE_POINTS` to `0` with **Flags & Vars…**. Speak with the stair-side grunt and choose yes; confirm one pressure point is added and the existing battle still starts.
+- [ ] For a separate test, clear the prompt flag again, reset `VAR_PRESSURE_POINTS` to `0`, and choose no. Confirm no point is added and the same battle/progression remains available.
+- [ ] Use **R + Start → Trainers… → Choose trainer from map → Try Battle** on the 5F President; confirm the MEGA ADMIN battle contains Persian Lv. 44, Gholdengo Lv. 44, Copperajah Lv. 45, Kingambit Lv. 45, and Donphan Lv. 46.
+- [ ] Play the 5F office sequence; confirm Barry's disguise reveal, battle, Basement Key reward, and Underground Warehouse clue remain reachable. Continue to the final battle and confirm Gaudy's lines, the Radio Tower state transition, and the real Director scene.
+- [ ] Leave and re-enter the tower after the boss event; confirm the takeover battles and fake Director do not restart and the real Director remains available.
+
+The Act 7 additions still need playtesting.
