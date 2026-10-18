@@ -83,7 +83,7 @@ The HnS ROM build passed with the required Arm GNU toolchain and remains 33,554,
 - Add palette-swapped trainer portraits for the 11 non-grunt classes; no new art was added.
 - Add pressure-prompt choices and the Goldenrod RED CAP gift in their relevant act missions.
 - Re-skin the named Giovanni scenes as President Rex Gaudy during their act missions.
-- GF4–GF17 are not started. GF-IMP remains skipped as directed by the plan.
+- GF5–GF17 have not started. GF-IMP remains skipped as directed by the plan.
 
 **Playtest checklist:**
 
@@ -93,4 +93,30 @@ The HnS ROM build passed with the required Arm GNU toolchain and remains 33,554,
 - [ ] Open **R + Start → Flags & Vars… → Set Var XYZ…**, select `VAR_PRESSURE_POINTS`, set it to `0`, and confirm the value remains available after saving and reloading.
 - [ ] In the HnS build, visit Viridian City Gym and read the Giovanni-slot dialogue for the Team MEGA text; in an FRLG build, confirm the original Team Rocket wording remains.
 
-The Team MEGA foundation still needs the deferred boss teams, class-specific portraits, pressure prompts, and playtesting.
+The Team MEGA foundation still needs the deferred boss teams, class-specific portraits, and playtesting.
+
+## GF4 — Johto Act 1
+
+**Status: BUILT_PARTIAL — NEEDS PLAYTEST**
+
+Added the New Bark research-pressure prompt, Cherrygrove petition, Route 29 rally battles, Route 30 MEGA grunt, and the first two Arceus return events. The return events give anchors 1 and 2 through `ReturnAnchoredMon` and gate the second return behind the first. Sprout Tower now has a Seed Faith donation prompt and two Pastor of Growth battles. Updated New Bark's town-sign text, the Freedom Guide introduction, Elm's government-pressure lines, and Oak's "Patriot Edition" dialogue while leaving HnS's starter, rival, Mystery Egg, and Pokédex event flow in place. The HnS ROM build passed with the required Arm GNU toolchain and is **33,554,432 bytes (32 MiB)**.
+
+**Deferred:**
+
+- Replace the HnS opening with the Act 1 arrival scene and add the Heritage Officer encounter.
+- Add the "GAUDY 4 PRESIDENT (AGAIN)" lab-fence banner, the Route 29 Lawn Ranger, and the two yard signs.
+- Add the Route 29 freedom toll/rally progression details and the full prepper-bunker re-skin at Mr. Pokémon's house.
+- Re-skin the Falkner scene/dialogue and add the N.R.A. open-season line.
+- Add the Sprout Tower Elder's non-endorsement line; the existing Elder/HM flow remains unchanged.
+- `make check BUILD=hns -j8` remains blocked before tests by the existing `include/fake_rtc.h` / `struct SaveBlock3` compile error noted under GF1.
+- GF5–GF17 have not started. GF-IMP remains skipped as directed by the plan.
+
+**Playtest checklist:**
+
+- [ ] Start a fresh game; open **R + Start → Utilities… → Warp to map warp…** and visit New Bark Town Lab. Talk to the clerk as each player gender, choose yes/no, and confirm only yes increments `VAR_PRESSURE_POINTS`; the clerk should disappear after either choice.
+- [ ] Visit Cherrygrove City and Sprout Tower 1F. Choose yes/no on the petition and Seed Faith prompts; confirm no never charges money, yes increments `VAR_PRESSURE_POINTS`, and each prompt disappears after the choice. Test Seed Faith with less than 1000 money and confirm the prompt remains available.
+- [ ] Complete the Mr. Pokémon errand, return to Route 30, and talk to Arceus. Confirm anchor 1 returns at level 5, then leave and re-enter; the Arceus event should remain hidden and the anchor should not duplicate.
+- [ ] After Return 1, walk south from Violet onto Route 32 and talk to Arceus. Confirm anchor 2 returns at level 10, then re-enter and confirm it cannot duplicate. Use **R + Start → Flags & Vars… → Set Var XYZ…** to set `VAR_CHERRYGROVE_CITY_STATE` to `3` and **Set Flag XYZ…** to set `FLAG_GILDED_RETURN_1_SEEN` only when testing this event in isolation.
+- [ ] Use **R + Start → Trainers… → Choose trainer from map → Try Battle** on a Route 29 Rally Goer, the Route 30 grunt, and both new Sprout Tower Pastors; confirm the trainer classes, dialogue, teams, and levels (5–7).
+
+The Act 1 additions still need playtesting.

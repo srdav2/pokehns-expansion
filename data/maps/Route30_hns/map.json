@@ -337,6 +337,34 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_NIGHT_POKEMON"
+    },
+    {
+      "local_id": "LOCALID_GILDED_MEGA_GRUNT",
+      "graphics_id": "OBJ_EVENT_GFX_ROCKET_M_HNS",
+      "x": 37,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 4,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route30_EventScript_GildedMegaGrunt",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_GILDED_ARCEUS_RETURN_1",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_ARCEUS",
+      "x": 32,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route30_EventScript_GildedReturn1",
+      "flag": "FLAG_GILDED_RETURN_1_SEEN"
     }
   ],
   "warp_events": [

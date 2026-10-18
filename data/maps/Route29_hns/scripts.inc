@@ -131,6 +131,31 @@ Route29_EventScript_Girl::
 	release
 	end
 
+Route29_EventScript_GildedRallyGoer1::
+	trainerbattle_single TRAINER_RALLY_GOER_1_GILDED_HNS, Route29_Text_RallyGoer1Seen, Route29_Text_RallyGoerBeaten
+	msgbox Route29_Text_RallyGoerAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route29_EventScript_GildedRallyGoer2::
+	trainerbattle_single TRAINER_RALLY_GOER_2_GILDED_HNS, Route29_Text_RallyGoer2Seen, Route29_Text_RallyGoerBeaten
+	msgbox Route29_Text_RallyGoerAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route29_Text_RallyGoer1Seen:
+	.string "Join the greatest rally on\n"
+	.string "Route 29! Battle me!$"
+
+Route29_Text_RallyGoer2Seen:
+	.string "The freedom tour is free!\n"
+	.string "A battle costs nothing!$"
+
+Route29_Text_RallyGoerBeaten:
+	.string "My campaign is in shambles!$"
+
+Route29_Text_RallyGoerAfter:
+	.string "The rally moved on.\n"
+	.string "The yard signs stayed.$"
+
 Route29_EventScript_Boy::
 	lock
 	faceplayer
@@ -243,4 +268,3 @@ Route29_Text_TuscanyTuesday:
 Route29_Text_Sign1:
 	.string "ROUTE 29\p"
 	.string "CHERRYGROVE CITY - NEW BARK TOWN$"
-

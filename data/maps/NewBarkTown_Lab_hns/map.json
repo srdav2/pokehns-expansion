@@ -108,6 +108,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0",
       "flag": "FLAG_HIDE_LAB_POLICEMAN"
+    },
+    {
+      "local_id": "LOCALID_GILDED_VALUES_CLERK",
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_M_HNS",
+      "x": 1,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NewBarkTown_Lab_EventScript_TraditionalValuesClerk",
+      "flag": "FLAG_GILDED_PRESSURE_PROMPT_LAB"
     }
   ],
   "warp_events": [

@@ -273,7 +273,8 @@ NewBarkTown_Text_Silver2:
 NewBarkTown_Text_Sign:
 	.string "NEW BARK TOWN\p"
 	.string "The Town Where the Winds of\n"
-	.string "a New Beginning Blow$"
+	.string "a New Beginning Blow\p"
+	.string "…AGAIN$"
 
 NewBarkTown_EventScript_PlayersHouseMailbox::
 	msgbox NewBarkTown_Text_PlayersHouse, MSGBOX_SIGN
@@ -288,4 +289,3 @@ NewBarkTown_Text_PlayersHouse:
 
 NewBarkTown_Text_ElmsHouse:
 	.string "PROF.ELM'S HOUSE$"
-

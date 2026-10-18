@@ -16002,3 +16002,77 @@ Tera Type: Fighting
 - Bulk Up  
 - Throat Chop
 
+=== TRAINER_RALLY_GOER_1_GILDED_HNS ===
+Name: SLOGAN
+Class: Rally Goer Hns
+Pic: Youngster Hns
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+
+Sentret
+Level: 5
+
+Hoothoot
+Level: 6
+
+=== TRAINER_RALLY_GOER_2_GILDED_HNS ===
+Name: CANVASSER
+Class: Rally Goer Hns
+Pic: Lass
+Gender: Female
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+
+Pidgey
+Level: 5
+
+Rattata
+Level: 6
+
+=== TRAINER_MEGA_GRUNT_ROUTE30_HNS ===
+Name: MEGA
+Class: Team Rocket Hns
+Pic: Rocket Grunt M Hns
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+
+Rattata
+Level: 6
+
+Zubat
+Level: 7
+
+=== TRAINER_PASTOR_GROWTH_1_HNS ===
+Name: GROWTH
+Class: Pastor Hns
+Pic: Sage Hns
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+
+Bellsprout
+Level: 5
+
+Bellsprout
+Level: 6
+
+=== TRAINER_PASTOR_GROWTH_2_HNS ===
+Name: GROWTH
+Class: Pastor Hns
+Pic: Sage Hns
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+
+Bellsprout
+Level: 6
+
+Bellsprout
+Level: 7

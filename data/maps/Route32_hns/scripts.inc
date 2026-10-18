@@ -77,6 +77,50 @@ Route32_EventScript_BirdkeeperPeter::
 	msgbox Route32_Text_BirdKeeperPeter_After, MSGBOX_AUTOCLOSE
 	end
 
+Route32_EventScript_GildedReturn2::
+	lock
+	faceplayer
+	goto_if_lt VAR_CHERRYGROVE_CITY_STATE, 3, Route32_EventScript_GildedReturn2Early
+	goto_if_unset FLAG_GILDED_RETURN_1_SEEN, Route32_EventScript_GildedReturn2Early
+	msgbox Route32_Text_GildedReturn2, MSGBOX_DEFAULT
+	playmoncry SPECIES_ARCEUS, CRY_MODE_NORMAL
+	setvar VAR_0x8004, 1
+	special ReturnAnchoredMon
+	goto_if_eq VAR_RESULT, MON_CANT_GIVE, Route32_EventScript_GildedReturn2Failed
+	setflag FLAG_GILDED_RETURN_2_SEEN
+	msgbox Route32_Text_GildedReturn2After, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Route32_EventScript_GildedReturn2Early::
+	msgbox Route32_Text_GildedReturn2Early, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Route32_EventScript_GildedReturn2Failed::
+	msgbox Route32_Text_GildedReturnFailed, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Route32_Text_GildedReturn2:
+	.string "This one tried to subscribe\n"
+	.string "to a course. I intervened.$"
+
+Route32_Text_GildedReturn2After:
+	.string "Another companion returned\n"
+	.string "from the rift.$"
+
+Route32_Text_GildedReturn2Early:
+	.string "A light shimmers beyond\n"
+	.string "the path. Not yet.$"
+
+Route32_Text_GildedReturnFailed:
+	.string "The light fades. Nothing\n"
+	.string "could cross the rift.$"
+
 Route32_EventScript_Roar::
 	lock
 	faceplayer

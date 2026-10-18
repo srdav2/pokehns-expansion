@@ -20,6 +20,33 @@ NewBarkTown_Lab_EventScript_ElmAtComputer::
 	setobjectmovementtype LOCALID_ELM, MOVEMENT_TYPE_FACE_UP
 	end
 
+NewBarkTown_Lab_EventScript_TraditionalValuesClerk::
+	lock
+	faceplayer
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, NewBarkTown_Lab_EventScript_ClerkMale
+	msgbox NewBarkTown_Lab_Text_ClerkFemale, MSGBOX_YESNO
+	goto NewBarkTown_Lab_EventScript_ClerkResponse
+
+NewBarkTown_Lab_EventScript_ClerkMale::
+	msgbox NewBarkTown_Lab_Text_ClerkMale, MSGBOX_YESNO
+
+NewBarkTown_Lab_EventScript_ClerkResponse::
+	goto_if_eq VAR_RESULT, YES, NewBarkTown_Lab_EventScript_ClerkYes
+	setflag FLAG_GILDED_PRESSURE_PROMPT_LAB
+	msgbox NewBarkTown_Lab_Text_ClerkNo, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+NewBarkTown_Lab_EventScript_ClerkYes::
+	addvar VAR_PRESSURE_POINTS, 1
+	setflag FLAG_GILDED_PRESSURE_PROMPT_LAB
+	msgbox NewBarkTown_Lab_Text_ClerkYes, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
 NewBarkTown_Lab_EventScript_TriggerStartLabLeft::	
 	lock
 	applymovement OBJ_EVENT_ID_PLAYER, NewBarkTown_Lab_Movement_WalkRight
@@ -661,7 +688,9 @@ NewBarkTown_Lab_Text_ShouldntTouch:
 NewBarkTown_Lab_Text_ElmIntro:
 	.string "ELM: {PLAYER}! There you are!\p"
 	.string "I needed to ask you a favor.\p"
-	.string "I'm conducting new POKéMON\n"
+	.string "The government wants to\n"
+	.string "streamline my research.\p"
+	.string "I'm conducting POKéMON\n"
 	.string "research right now. I was\l"
 	.string "wondering if you could help\l"
 	.string "me with it, {PLAYER}.\p"
@@ -683,11 +712,24 @@ NewBarkTown_Lab_Text_ElmRefused:
 	.string "help!$"
 
 NewBarkTown_Lab_Text_ElmResearchAmbitions:
-	.string "When I announce my findings,\n"
-	.string "I'm sure we'll delve deeper\p"
-	.string "into the many mysteries of\n"
-	.string "POKéMON.\p"
-	.string "You can count on it!$"
+	.string "This is a research lab,\n"
+	.string "not a permit office!$"
+
+NewBarkTown_Lab_Text_ClerkMale:
+	.string "Alpha Assessment!\n"
+	.string "Firm handshake, please.$"
+
+NewBarkTown_Lab_Text_ClerkFemale:
+	.string "Trainer licences need a\n"
+	.string "husband's co-signature.$"
+
+NewBarkTown_Lab_Text_ClerkYes:
+	.string "Your grip registered as\n"
+	.string "MAGIKARP. Course is free!$"
+
+NewBarkTown_Lab_Text_ClerkNo:
+	.string "Elm tears up the form.\n"
+	.string "Back to work!$"
 
 NewBarkTown_Lab_Text_ElmGotAnEmail:
 	.string "Oh, hey! I got an e-mail!\p"

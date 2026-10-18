@@ -73,3 +73,36 @@ Special: `ReturnAnchoredMon`, reading the zero-based anchor index from `VAR_8004
 - The existing male and female HnS Rocket Grunt trainer palettes are tinted red for Team MEGA. No new trainer pictures or trainer IDs were added.
 - Dialogue in HnS-only map scripts and radio strings uses Team MEGA. Shared FRLG Kanto map scripts choose the Team MEGA variant under `IS_HNS` and retain their original strings in FRLG.
 - No new flags, maps, or specials were allocated. Boss trainer IDs and anchor-band teams are deferred to the act missions.
+
+## GF4 — Johto Act 1
+
+### Flags
+
+`HNS_EXTENDED_CONTENT_START = 0x36A`; each flag below has an otherwise-unused HnS extended slot.
+
+| Flag | Value | Purpose |
+| --- | ---: | --- |
+| `FLAG_GILDED_PRESSURE_PROMPT_LAB` | `0x3B9` | Hide the New Bark Lab clerk after the player chooses yes or no. |
+| `FLAG_GILDED_PRESSURE_PROMPT_CHERRYGROVE` | `0x3BA` | Hide the Cherrygrove petition NPC after the player chooses yes or no. |
+| `FLAG_GILDED_PRESSURE_PROMPT_SPROUT_TOWER` | `0x3BB` | Record the Sprout Tower Seed Faith choice. |
+| `FLAG_GILDED_RETURN_1_SEEN` | `0x3BC` | Hide Route 30's Arceus after anchor 1 is returned. |
+| `FLAG_GILDED_RETURN_2_SEEN` | `0x3BD` | Hide Route 32's Arceus after anchor 2 is returned. |
+
+No new vars were allocated. The three prompts use the GF3 `VAR_PRESSURE_POINTS = 0x40E5`.
+
+### Trainers
+
+| Trainer ID | Value | Class / party |
+| --- | ---: | --- |
+| `TRAINER_RALLY_GOER_1_GILDED_HNS` | 653 | Rally Goer; Sentret Lv. 5, Hoothoot Lv. 6 |
+| `TRAINER_RALLY_GOER_2_GILDED_HNS` | 654 | Rally Goer; Pidgey Lv. 5, Rattata Lv. 6 |
+| `TRAINER_MEGA_GRUNT_ROUTE30_HNS` | 655 | MEGA Grunt; Rattata Lv. 6, Zubat Lv. 7 |
+| `TRAINER_PASTOR_GROWTH_1_HNS` | 656 | Pastor; Bellsprout Lv. 5 and 6 |
+| `TRAINER_PASTOR_GROWTH_2_HNS` | 657 | Pastor; Bellsprout Lv. 6 and 7 |
+
+`TRAINERS_COUNT_HNS` is now 658. The new `TRAINER_CLASS_PASTOR_HNS` class displays as `PASTOR`.
+
+### Maps and specials
+
+- Modified HnS maps: `NewBarkTown_hns`, `NewBarkTown_Lab_hns`, `CherrygroveCity_hns`, `Route29_hns`, `Route30_hns`, `Route32_hns`, and `SproutTower_1F_hns`.
+- No new maps or specials were allocated. Route 30 Return 1 and Route 32 Return 2 call the existing `ReturnAnchoredMon` special with zero-based indices 0 and 1, respectively.

@@ -7,6 +7,25 @@ CherryGroveCity_OnTransition::
 	callnative SetTimeBasedEncounters
 	end
 
+CherrygroveCity_EventScript_Petition::
+	lock
+	faceplayer
+	msgbox CherrygroveCity_Text_Petition, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, CherrygroveCity_EventScript_PetitionYes
+	setflag FLAG_GILDED_PRESSURE_PROMPT_CHERRYGROVE
+	msgbox CherrygroveCity_Text_PetitionNo, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+CherrygroveCity_EventScript_PetitionYes::
+	addvar VAR_PRESSURE_POINTS, 1
+	setflag FLAG_GILDED_PRESSURE_PROMPT_CHERRYGROVE
+	msgbox CherrygroveCity_Text_PetitionYes, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
 CherryGroveCity_EventScript_TriggerGent_Top::
 	lock
 	setflag FLAG_VISITED_CHERRYGROVE_CITY
@@ -278,12 +297,22 @@ CherryGroveCity_Silver_AfterBattle::
 	end
 
 CherrygroveCity_Text_GuideGentIntro:
-	.string "You're a rookie trainer,\n"
-	.string "aren't you? I can tell!\p"
-	.string "That's OK! Everyone is a\n"
-	.string "rookie at some point!\p"
-	.string "If you'd like, I can teach\n"
-	.string "you a few things.$"
+	.string "I'm the Freedom Guide!\n"
+	.string "This tour is free.\p"
+	.string "Free as in freedom!\n"
+	.string "Want to see the town?$"
+
+CherrygroveCity_Text_Petition:
+	.string "Make Cherrygrove Great Again!\n"
+	.string "Sign the petition?$"
+
+CherrygroveCity_Text_PetitionYes:
+	.string "Thanks! What was wrong\n"
+	.string "with it before?$"
+
+CherrygroveCity_Text_PetitionNo:
+	.string "No signature? The town\n"
+	.string "is still doing fine.$"
 
 CherrygroveCity_Text_GuideGentTourStart:
 	.string "OK, then!\n"

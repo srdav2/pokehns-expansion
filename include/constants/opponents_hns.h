@@ -675,7 +675,13 @@
 #define TRAINER_MISTY_POSTOBC_HNS             651
 #define TRAINER_ERIKA_POSTOBC_HNS             652
 
-#define TRAINERS_COUNT_HNS                       653
+#define TRAINER_RALLY_GOER_1_GILDED_HNS       653
+#define TRAINER_RALLY_GOER_2_GILDED_HNS       654
+#define TRAINER_MEGA_GRUNT_ROUTE30_HNS         655
+#define TRAINER_PASTOR_GROWTH_1_HNS            656
+#define TRAINER_PASTOR_GROWTH_2_HNS            657
+
+#define TRAINERS_COUNT_HNS                       658
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H

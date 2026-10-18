@@ -83,6 +83,66 @@ Route30_EventScript_Bugcatcher_Don::
 	msgbox Route30_Text_BugCatcherDonAfter, MSGBOX_AUTOCLOSE
 	end
 
+Route30_EventScript_GildedMegaGrunt::
+	trainerbattle_single TRAINER_MEGA_GRUNT_ROUTE30_HNS, Route30_Text_GildedMegaGruntSeen, Route30_Text_GildedMegaGruntBeaten
+	msgbox Route30_Text_GildedMegaGruntAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route30_EventScript_GildedReturn1::
+	lock
+	faceplayer
+	goto_if_lt VAR_CHERRYGROVE_CITY_STATE, 3, Route30_EventScript_GildedReturn1Early
+	msgbox Route30_Text_GildedReturn1, MSGBOX_DEFAULT
+	playmoncry SPECIES_ARCEUS, CRY_MODE_NORMAL
+	setvar VAR_0x8004, 0
+	special ReturnAnchoredMon
+	goto_if_eq VAR_RESULT, MON_CANT_GIVE, Route30_EventScript_GildedReturn1Failed
+	setflag FLAG_GILDED_RETURN_1_SEEN
+	msgbox Route30_Text_GildedReturn1After, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Route30_EventScript_GildedReturn1Early::
+	msgbox Route30_Text_GildedReturn1Early, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Route30_EventScript_GildedReturn1Failed::
+	msgbox Route30_Text_GildedReturnFailed, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Route30_Text_GildedMegaGruntSeen:
+	.string "Team MEGA owns this route.\n"
+	.string "Got a permit to pass?$"
+
+Route30_Text_GildedMegaGruntBeaten:
+	.string "The permit office lost\n"
+	.string "my form, too!$"
+
+Route30_Text_GildedMegaGruntAfter:
+	.string "I'm sure the permit is\n"
+	.string "around here somewhere.$"
+
+Route30_Text_GildedReturn1:
+	.string "Arceus returned from the rift.\n"
+	.string "It brought your POKéMON.$"
+
+Route30_Text_GildedReturn1After:
+	.string "One companion has returned\n"
+	.string "to your side.$"
+
+Route30_Text_GildedReturn1Early:
+	.string "A light shimmers on the path.\n"
+	.string "It is not ready yet.$"
+
+Route30_Text_GildedReturnFailed:
+	.string "The light fades. Nothing\n"
+	.string "could cross the rift.$"
+
 Route30_EventScript_ElmCall_Trigger::
 	lock
 	setspeaker Route30_Text_ElmName
