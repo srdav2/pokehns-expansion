@@ -190,7 +190,8 @@ VermilionPort_Text_WhereSail:
     .string "Where would you like to sail?$"
 
 VermilionPort_Text_AskBoard:
-    .string "Welcome to FAST SHIP S.S.AQUA.\p"
+    .string "Welcome aboard the\n"
+    .string "MAR-A-MAGIKARP.\p"
     .string "Will you be boarding today?$"
 
 VermilionPort_Text_AskTicket:

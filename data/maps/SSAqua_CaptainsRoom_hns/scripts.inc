@@ -56,7 +56,7 @@ SSAqua_CaptainsRoom_Text_CaptainExhausting:
 	.string "was exhausting.$"
 
 SSAqua_CaptainsRoom_Text_CaptainHowDoYouLike:
-	.string "How do you like S.S.AQUA's ride?\p"
+	.string "How do you like the\n"
+	.string "MAR-A-MAGIKARP's ride?\p"
 	.string "She practically skates across\n"
 	.string "the waves.$"
-

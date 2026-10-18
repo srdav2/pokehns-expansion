@@ -314,3 +314,26 @@ Added Pressure Prompt 11 at the Indigo Plateau Pokémon Center entrance, with tw
 - [ ] After becoming Champion and receiving Bill's Eevee, visit **Goldenrod City → Bill's House** and speak with Bill. Confirm the storage message appears once, then confirm the scene flag prevents the one-time message from replaying; PC storage behavior remains deferred until GF-IMP.
 
 The Act 9 changes still need playtesting.
+
+## GF13 — Kanto Acts 10–11
+
+**Status: BUILT_PARTIAL — NEEDS PLAYTEST**
+
+Rebranded the S.S. Aqua boarding desk, onboard route/arrival announcements, and captain's ride line as the Mar-a-Magikarp while preserving ticket checks and travel state. Replaced Lt. Surge's opening dialogue with the National Rattata Association recruiter rejection; his battle and badge flow are unchanged. The HnS ROM build passed with the required Arm GNU toolchain and is **33,554,432 bytes (32 MiB)**.
+
+**Deferred:**
+
+- Add the first-class washroom “TOP SECRET POKéDEX ENTRIES” gag and reclass the S.S. Aqua sailors as Rally Goers/Crypto Bros.
+- Add the full Vermilion N.R.A. recruitment booth scene; Surge currently delivers the refusal in his gym introduction.
+- Implement the Act 11 Grindwell Power Plant/Machine Part sequence, $GAUDY mining interior, Chief Thorne cameo, Chad + Brad double battle, Machine Part return, and Misty's date.
+- `make check BUILD=hns -j8` remains blocked before tests by the existing `include/fake_rtc.h` / `struct SaveBlock3` compile error noted under GF1.
+
+**Playtest checklist:**
+
+- [ ] Open **R + Start → Utilities… → Warp to map warp…** and visit the Vermilion City Port. Speak with the sailor; confirm the Mar-a-Magikarp name and existing ticket/boarding choices.
+- [ ] Board using the existing S.S. Ticket; speak with the onboard sailor on both the Vermilion and Olivine routes. Confirm the Mar-a-Magikarp en-route and arrival messages appear and the existing return-to-port flow still works.
+- [ ] Visit the captain's room; confirm the updated Mar-a-Magikarp ride line fits its boxes and the grandchild rescue scene is unchanged.
+- [ ] Visit Vermilion Gym and speak with Lt. Surge. Confirm the National Rattata Association refusal appears before his unchanged HnS battle; win and confirm the Thunder Badge and existing rewards/state still occur.
+- [ ] Confirm Lt. Surge's team and levels remain unchanged; continue to Diglett's Cave and confirm Snorlax is unaffected.
+
+The Kanto Acts 10–11 changes still need playtesting.

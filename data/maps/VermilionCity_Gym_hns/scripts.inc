@@ -289,16 +289,12 @@ VermilionCity_Gym_EventScript_Surge_Defeated::
 	end
 
 VermilionGym_Text_LtSurgeIntro:
-	.string "SURGE: Hey, you little tyke!\p"
-	.string "I have to hand it to you.\n"
-	.string "It may not be very smart to\l"
-	.string "challenge me, but it takes guts!\p"
-	.string "When it comes to electric\n"
-	.string "POKéMON, I'm number one!\p"
-	.string "I've never lost on the\n"
-	.string "battlefield.\p"
-	.string "I'll zap you just like I did my\n"
-	.string "enemies in war!$"
+	.string "A recruiter wants me in the\n"
+	.string "National Rattata Association.\p"
+	.string "Kid, I was in a real war.\p"
+	.string "These guys bought their belts\n"
+	.string "at the mall.\p"
+	.string "Now, show me what you've got!$"
 
 VermilionGym_Text_LtSurgeWinLoss:
 	.string "SURGE: Arrrgh! You are strong!\p"
@@ -433,4 +429,3 @@ VermilionCity_Gym_Text_OnlyTrashLocksWereReset::
     .string "There's only trash here.\p"
     .string "Hey!\n"
     .string "The electric locks were reset!$"
-

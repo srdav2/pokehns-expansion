@@ -290,3 +290,11 @@ Pressure Prompt 11 uses `VAR_PRESSURE_POINTS = 0x40E5`. No new vars or specials 
 - Modified HnS maps: `IndigoPlateau_PokemonCenter_hns`, `PokemonLeague_WillsRoom_hns`, `PokemonLeague_KogasRoom_hns`, `PokemonLeague_BrunosRoom_hns`, `PokemonLeague_KarensRoom_hns`, `PokemonLeague_ChampionsRoom_hns`, `PokemonLeague_HallOfFame_hns`, and `GoldenrodCity_BillsHouse_hns`.
 - The first Hall of Fame cutscene displays an existing Giratina overworld species sprite; no maps or specials were added.
 - Route 27 / Tohjo Falls border content and `UnsealHoennStorage()` remain deferred.
+
+## GF13 — Kanto Acts 10–11
+
+### Maps and specials
+
+- Modified HnS maps: `VermilionCity_PortInside_hns`, `SSAqua_1F_hns`, `SSAqua_CaptainsRoom_hns`, and `VermilionCity_Gym_hns`.
+- No new flags, vars, trainers, maps, or specials were allocated. Lt. Surge's HnS team and level are unchanged.
+- The Act 11 Power Plant, Cerulean mine, and Misty date events remain deferred.
