@@ -222,6 +222,24 @@ Debug_EventScript_Script_3::
 	release
 	end
 
+Debug_EventScript_Gilded_ReturnAnchor1::
+	setvar VAR_0x8004, 0
+	special ReturnAnchoredMon
+	releaseall
+	end
+
+Debug_EventScript_Gilded_ReturnAnchor2::
+	setvar VAR_0x8004, 1
+	special ReturnAnchoredMon
+	releaseall
+	end
+
+Debug_EventScript_Gilded_ReturnAnchor3::
+	setvar VAR_0x8004, 2
+	special ReturnAnchoredMon
+	releaseall
+	end
+
 Debug_EventScript_Script_4::
 	msgbox SinjohRuins_Lab_Text_StevenCall3Plates, MSGBOX_DEFAULT
 	pokenavcall SinjohRuins_Lab_Text_StevenCall6Plates

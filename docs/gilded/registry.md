@@ -45,3 +45,15 @@ HnS event scripts and map objects are organized in these paths. Preserve their e
 | Giovanni story appearance slot | President Rex Gaudy | `data/maps/GoldenrodCity_RadioTower_5F_hns/scripts.inc`, `data/maps/TohjoFalls_GiovanniRoom_hns/scripts.inc`, `data/maps/ViridianCity_Gym_Frlg/scripts.inc` |
 
 These paths are the source-event map for the subsequent Team MEGA re-skin missions. No HnS flags, vars, trainer IDs, or event behavior are changed in GF0.
+
+## GF1 — Rift foundation
+
+Named save fields appended to `struct PokemonStorage`:
+
+| Field | Meaning |
+| --- | --- |
+| `gildedRiftAnchoredMons[3]` | Three saved anchored Pokémon as `struct BoxPokemon` |
+| `gildedRiftAnchorLevels[3]` | Target levels, in anchor order: 5, 10, and 15 |
+| `gildedRiftReturnedBits` | Bit `n` records that zero-based anchor `n` was returned |
+
+Special: `ReturnAnchoredMon`, reading the zero-based anchor index from `VAR_8004`. It returns the anchor to the party or PC and prevents duplicate returns. The GF1 debug menu exposes each index under **Utilities… → Lost Rift anchors…**. No new flags or vars were allocated.

@@ -3221,6 +3221,108 @@ void CreateMon(struct Pokemon *mon, u16 species, u8 level, u32 personality, stru
     SetMonData(mon, MON_DATA_MAIL, &mail);
 }
 
+void DevolvePokemonToBaseAtLevel(struct Pokemon *mon, u8 level)
+{
+    struct Pokemon replacement;
+    u8 nickname[POKEMON_NAME_LENGTH + 1];
+    u8 otName[PLAYER_NAME_LENGTH + 1];
+    u8 language = GetMonData(mon, MON_DATA_LANGUAGE);
+    u8 otGender = GetMonData(mon, MON_DATA_OT_GENDER);
+    u8 hiddenNature = GetMonData(mon, MON_DATA_HIDDEN_NATURE);
+    u32 personality = GetMonData(mon, MON_DATA_PERSONALITY);
+    u32 otId = GetMonData(mon, MON_DATA_OT_ID);
+    u32 ivs = GetMonData(mon, MON_DATA_IVS);
+    bool32 isShiny = GetMonData(mon, MON_DATA_IS_SHINY);
+    u16 species = GetMonData(mon, MON_DATA_SPECIES);
+    u16 preEvolution;
+
+    if (species == SPECIES_NONE || GetMonData(mon, MON_DATA_IS_EGG) || level == 0)
+        return;
+
+    GetMonData(mon, MON_DATA_NICKNAME, nickname);
+    GetMonData(mon, MON_DATA_OT_NAME, otName);
+    while ((preEvolution = GetSpeciesPreEvolution(species)) != SPECIES_NONE)
+        species = preEvolution;
+
+    CreateMon(&replacement, species, level, personality, OTID_STRUCT_PRESET(otId));
+    SetMonData(&replacement, MON_DATA_NICKNAME, nickname);
+    SetMonData(&replacement, MON_DATA_OT_NAME, otName);
+    SetMonData(&replacement, MON_DATA_OT_GENDER, &otGender);
+    SetMonData(&replacement, MON_DATA_LANGUAGE, &language);
+    SetMonData(&replacement, MON_DATA_HIDDEN_NATURE, &hiddenNature);
+    SetMonData(&replacement, MON_DATA_IVS, &ivs);
+    SetMonData(&replacement, MON_DATA_IS_SHINY, &isShiny);
+    GiveMonInitialMoveset(&replacement);
+    MonRestorePP(&replacement);
+    CalculateMonStats(&replacement);
+    *mon = replacement;
+}
+
+#if IS_HNS
+static bool32 IsGildedRiftBaseSpecies(u16 species)
+{
+    const struct SpeciesInfo *speciesInfo;
+
+    if (species == SPECIES_NONE || species == SPECIES_EGG || !IsSpeciesEnabled(species))
+        return FALSE;
+
+    speciesInfo = &gSpeciesInfo[species];
+    return speciesInfo->baseHP != 0
+        && speciesInfo->randomizerMode == MON_RANDOMIZER_NORMAL
+        && !speciesInfo->isRestrictedLegendary
+        && !speciesInfo->isSubLegendary
+        && !speciesInfo->isMythical
+        && !speciesInfo->isUltraBeast
+        && GetSpeciesPreEvolution(species) == SPECIES_NONE;
+}
+
+static u16 GetRandomGildedRiftBaseSpecies(const u16 *chosenSpecies, u8 chosenCount)
+{
+    u16 start = Random() % (NUM_SPECIES - 1);
+    u16 i;
+
+    for (i = 0; i < NUM_SPECIES - 1; i++)
+    {
+        u16 species = 1 + ((start + i) % (NUM_SPECIES - 1));
+        u8 j;
+
+        if (!IsGildedRiftBaseSpecies(species))
+            continue;
+
+        for (j = 0; j < chosenCount; j++)
+        {
+            if (chosenSpecies[j] == species)
+                break;
+        }
+        if (j == chosenCount)
+            return species;
+    }
+
+    return SPECIES_NONE;
+}
+
+void InitGildedAnchoredMons(void)
+{
+    static const u8 levels[] = {5, 10, 15};
+    u16 chosenSpecies[ARRAY_COUNT(levels)];
+    u8 i;
+
+    gPokemonStoragePtr->gildedRiftReturnedBits = 0;
+    for (i = 0; i < ARRAY_COUNT(levels); i++)
+    {
+        struct Pokemon mon;
+
+        chosenSpecies[i] = GetRandomGildedRiftBaseSpecies(chosenSpecies, i);
+        assertf(chosenSpecies[i] != SPECIES_NONE, "No valid Gilded Lost Rift species");
+        CreateMon(&mon, chosenSpecies[i], levels[i], Random32(), OTID_STRUCT_PLAYER_ID);
+        GiveMonInitialMoveset(&mon);
+        DevolvePokemonToBaseAtLevel(&mon, levels[i]);
+        gPokemonStoragePtr->gildedRiftAnchoredMons[i] = mon.box;
+        gPokemonStoragePtr->gildedRiftAnchorLevels[i] = levels[i];
+    }
+}
+#endif
+
 void CreateMonWithIVs(struct Pokemon *mon, u16 species, u8 level, u32 personality, struct OriginalTrainerId trainerId, u8 fixedIV)
 {
     CreateMon(mon, species, level, personality, trainerId);

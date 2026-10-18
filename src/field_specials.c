@@ -1502,6 +1502,29 @@ bool8 LeadMonHasEffortRibbon(void)
     return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_EFFORT_RIBBON);
 }
 
+void ReturnAnchoredMon(void)
+{
+#if IS_HNS
+    u8 index = gSpecialVar_0x8004;
+    struct Pokemon mon;
+
+    if (index >= ARRAY_COUNT(gPokemonStoragePtr->gildedRiftAnchoredMons)
+        || (gPokemonStoragePtr->gildedRiftReturnedBits & (1 << index)))
+    {
+        gSpecialVar_Result = MON_CANT_GIVE;
+        return;
+    }
+
+    BoxMonToMon(&gPokemonStoragePtr->gildedRiftAnchoredMons[index], &mon);
+    DevolvePokemonToBaseAtLevel(&mon, gPokemonStoragePtr->gildedRiftAnchorLevels[index]);
+    gSpecialVar_Result = GiveScriptedMonToPlayer(&mon, PARTY_SIZE);
+    if (gSpecialVar_Result != MON_CANT_GIVE)
+        gPokemonStoragePtr->gildedRiftReturnedBits |= 1 << index;
+#else
+    gSpecialVar_Result = MON_CANT_GIVE;
+#endif
+}
+
 void GiveLeadMonEffortRibbon(void)
 {
     bool8 ribbonSet;

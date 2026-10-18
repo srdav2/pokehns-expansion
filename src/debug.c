@@ -383,6 +383,9 @@ extern const u8 Debug_EventScript_Script_5[];
 extern const u8 Debug_EventScript_Script_6[];
 extern const u8 Debug_EventScript_Script_7[];
 extern const u8 Debug_EventScript_Script_8[];
+extern const u8 Debug_EventScript_Gilded_ReturnAnchor1[];
+extern const u8 Debug_EventScript_Gilded_ReturnAnchor2[];
+extern const u8 Debug_EventScript_Gilded_ReturnAnchor3[];
 extern const u8 DebugScript_DaycareMonsNotCompatible[];
 extern const u8 DebugScript_OneDaycareMons[];
 extern const u8 DebugScript_ZeroDaycareMons[];
@@ -564,6 +567,14 @@ static const struct DebugMenuOption sDebugMenu_Actions_FollowerNPCMenu[] =
     { NULL }
 };
 
+static const struct DebugMenuOption sDebugMenu_Actions_GildedAnchors[] =
+{
+    { COMPOUND_STRING("Return anchor 1"), DebugAction_ExecuteScript, Debug_EventScript_Gilded_ReturnAnchor1 },
+    { COMPOUND_STRING("Return anchor 2"), DebugAction_ExecuteScript, Debug_EventScript_Gilded_ReturnAnchor2 },
+    { COMPOUND_STRING("Return anchor 3"), DebugAction_ExecuteScript, Debug_EventScript_Gilded_ReturnAnchor3 },
+    { NULL }
+};
+
 static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
 {
     { COMPOUND_STRING("Fly to map…"),       DebugAction_Util_Fly },
@@ -576,7 +587,10 @@ static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
     { COMPOUND_STRING("Berry Functions…"),  DebugAction_OpenSubMenu, sDebugMenu_Actions_BerryFunctions },
     { COMPOUND_STRING("EWRAM Counters…"),   DebugAction_ExecuteScript, Debug_EventScript_EWRAMCounters },
     { COMPOUND_STRING("Follower NPC…"),     DebugAction_OpenSubMenu, sDebugMenu_Actions_FollowerNPCMenu },
-    { COMPOUND_STRING("Wally Tutorial"),    DebugAction_ExecuteScript, Debug_EventScript_WallyTutorial },
+#if IS_HNS
+    { COMPOUND_STRING("Lost Rift anchors…"), DebugAction_OpenSubMenu, sDebugMenu_Actions_GildedAnchors },
+#endif
+    { COMPOUND_STRING("Wally Tutorial"),     DebugAction_ExecuteScript, Debug_EventScript_WallyTutorial },
     { COMPOUND_STRING("Steven Multi"),      DebugAction_ExecuteScript, Debug_EventScript_Steven_Multi },
     { COMPOUND_STRING("Lance Multi"),       DebugAction_ExecuteScript, Debug_EventScript_Lance_Multi },
     { COMPOUND_STRING("Silver Multi"),      DebugAction_ExecuteScript, Debug_EventScript_Silver_Multi },

@@ -307,6 +307,7 @@ void NewGameInitData(void)
 #if IS_HNS
     StringCopy(gSaveBlock2Ptr->rivalName, gText_ExpandedPlaceholder_Silver);
     InitMomSavings();
+    InitGildedAnchoredMons();
 #endif
 }
 
