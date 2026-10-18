@@ -77,15 +77,7 @@ PokemonLeague_KarensRoom_Text_RematchBefore:
     .string "with your POKéMON.$"
 
 PokemonLeague_KarensRoom_Text_Before:
-    .string "I am KAREN of the ELITE FOUR.\p"
-    .string "You're {PLAYER}? How amusing.\p"
-    .string "I love DARK-type POKéMON.\p"
-    .string "I find their wild, tough image\n"
-    .string "to be so appealing. And they're\l"
-    .string "so strong.\p"
-    .string "Think you can take them?\n"
-    .string "Just try to entertain me.\p"
-    .string "Let's go.$"
+    .string "I AM the manager.$"
 
 PokemonLeague_KarensRoom_Text_Beaten:
     .string "Well, aren't you good. I like that\n"
@@ -101,4 +93,3 @@ PokemonLeague_KarensRoom_Text_Defeat:
     .string "I like your style. You understand\n"
     .string "what's important.\p"
     .string "Go on--the CHAMPION is waiting.$"
-

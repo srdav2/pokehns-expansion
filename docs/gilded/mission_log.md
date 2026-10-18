@@ -289,3 +289,28 @@ Added Clair's recount line and yes/no reply choice after the existing battle. Ei
 - [ ] Complete the canonical flow, leave and re-enter the Shrine, and confirm the existing Elder/Dratini behavior is unchanged; confirm Clair's HnS party and levels remain unchanged.
 
 The Act 8 changes still need playtesting.
+
+## GF12 — Johto Act 9
+
+**Status: BUILT_PARTIAL — NEEDS PLAYTEST**
+
+Added Pressure Prompt 11 at the Indigo Plateau Pokémon Center entrance, with two Rally Goer battles and teams in the Elite Four level band. Updated Will, Koga, Bruno, and Karen's first-challenge dialogue without changing their teams or the League sequence. Added Giratina's appearance and “Halfway. Keep spinning.” line to the first Hall of Fame cutscene. Bill now gives the post-League Hoenn-storage line once and records the scene flag; the storage unlock itself remains a stub. The HnS ROM build passed with the required Arm GNU toolchain and is **33,554,432 bytes (32 MiB)**.
+
+**Deferred:**
+
+- Build the three-tile Route 27 / Tohjo Falls wall, two Border Agent battles, and Warden Pell's Team 3 gate battle.
+- Add physical “STOP THE STEEL!” rally signs and the revolving-door scene.
+- Re-skin the Victory Road Silver encounter.
+- Implement and call `UnsealHoennStorage()` when GF-IMP provides the importer-backed storage behavior; this mission only adds Bill's scene and one-time flag.
+- `make check BUILD=hns -j8` remains blocked before tests by the existing `include/fake_rtc.h` / `struct SaveBlock3` compile error noted under GF1.
+
+**Playtest checklist:**
+
+- [ ] Open **R + Start → Flags & Vars… → Set Var XYZ…**, set `VAR_PRESSURE_POINTS` to `0`, clear `FLAG_GILDED_PRESSURE_PROMPT_INDIGO`, and warp through **Utilities… → Warp to map warp…** to Indigo Plateau's Pokémon Center. Choose **Yes** at the entrance prompt and confirm the counter increases to `1` and the prompt disappears.
+- [ ] Clear `FLAG_GILDED_PRESSURE_PROMPT_INDIGO` again, reset `VAR_PRESSURE_POINTS` to `0`, and choose **No**. Confirm the counter stays at `0`, the prompt disappears, and the two rally battles remain reachable.
+- [ ] Use **R + Start → Trainers… → Choose trainer from map → Try Battle** on both new Indigo Rally Goers; confirm their teams are Machoke Lv. 54 / Primeape Lv. 55 and Torkoal Lv. 55 / Houndoom Lv. 56.
+- [ ] Play the first Elite Four challenge; confirm Will, Koga, Bruno, and Karen's new introductory lines appear while their HnS teams, room progression, and rematches remain unchanged.
+- [ ] Complete the Johto League through the normal route; confirm Giratina appears during the first Hall of Fame scene, speaks “Halfway. Keep spinning.”, and the Hall of Fame recording/game-clear sequence still completes.
+- [ ] After becoming Champion and receiving Bill's Eevee, visit **Goldenrod City → Bill's House** and speak with Bill. Confirm the storage message appears once, then confirm the scene flag prevents the one-time message from replaying; PC storage behavior remains deferred until GF-IMP.
+
+The Act 9 changes still need playtesting.

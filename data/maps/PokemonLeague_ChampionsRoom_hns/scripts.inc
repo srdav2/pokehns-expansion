@@ -46,6 +46,7 @@ PokemonLeague_WillsRoom_EventScript_Lance::
 	faceplayer
 	goto_if_set FLAG_IS_CHAMPION, PokemonLeague_WillsRoom_EventScript_LanceRematch
 	msgbox PokemonLeague_ChampionsRoom_Text_BattleIntro, MSGBOX_DEFAULT
+	setflag FLAG_HIDE_GILDED_HOF_GIRATINA
 	setflag FLAG_TEMP_3
 	setflag FLAG_TEMP_5
 	trainerbattle_no_intro TRAINER_LANCE_1_HNS, PokemonLeague_ChampionsRoom_Text_BattleWin
@@ -428,4 +429,3 @@ PokemonLeague_ChampionsRoom_Text_MaryNoInterview:
 PokemonLeague_ChampionsRoom_Text_RematchMaryNoInterview:
     .string "MARY: Come on! You can't blow off\n"
     .string "the interview AGAIN!$"
-

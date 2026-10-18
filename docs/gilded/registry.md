@@ -263,3 +263,30 @@ The prompt uses `VAR_PRESSURE_POINTS = 0x40E5`; no new vars or specials were all
 
 - Modified HnS maps: `BlackthornCity_Gym_hns` and `DragonsDen_Shrine_hns`.
 - No new flags, vars, trainers, maps, or specials were allocated. Clair continues to use the existing `TRAINER_CLAIR_1_HNS` team and level.
+
+## GF12 — Johto Act 9
+
+### Flags
+
+| Flag | Value | Purpose |
+| --- | ---: | --- |
+| `FLAG_GILDED_PRESSURE_PROMPT_INDIGO` | `0x3C8` | Hide Pressure Prompt 11 after the player's choice. |
+| `FLAG_HIDE_GILDED_HOF_GIRATINA` | `0x3C9` | Hide Giratina outside the first Hall of Fame cutscene. |
+| `FLAG_GILDED_HOENN_PC_SCENE` | `0x3CA` | Record that Bill's post-League storage scene has run. |
+
+Pressure Prompt 11 uses `VAR_PRESSURE_POINTS = 0x40E5`. No new vars or specials were allocated.
+
+### Trainers
+
+| Trainer ID | Value | Class / party |
+| --- | ---: | --- |
+| `TRAINER_GILDED_RALLY_GOER_INDIGO_1_HNS` | 664 | Rally Goer; Machoke Lv. 54, Primeape Lv. 55 |
+| `TRAINER_GILDED_RALLY_GOER_INDIGO_2_HNS` | 665 | Rally Goer; Torkoal Lv. 55, Houndoom Lv. 56 |
+
+`TRAINERS_COUNT_HNS` is now 666. Both use the existing `TRAINER_CLASS_RALLY_GOER_HNS` class. The Elite Four and Lance trainer parties are unchanged.
+
+### Maps and specials
+
+- Modified HnS maps: `IndigoPlateau_PokemonCenter_hns`, `PokemonLeague_WillsRoom_hns`, `PokemonLeague_KogasRoom_hns`, `PokemonLeague_BrunosRoom_hns`, `PokemonLeague_KarensRoom_hns`, `PokemonLeague_ChampionsRoom_hns`, `PokemonLeague_HallOfFame_hns`, and `GoldenrodCity_BillsHouse_hns`.
+- The first Hall of Fame cutscene displays an existing Giratina overworld species sprite; no maps or specials were added.
+- Route 27 / Tohjo Falls border content and `UnsealHoennStorage()` remain deferred.

@@ -73,17 +73,8 @@ PokemonLeague_KogasRoom_Text_RematchBefore:
     .string "Show me how you've grown!$"
 
 PokemonLeague_KogasRoom_Text_Before:
-    .string "Fwahahahaha!\p"
-    .string "I am KOGA of the ELITE FOUR.\p"
-    .string "I live in shadows, a ninja!\p"
-    .string "My intricate style will confound\n"
-    .string "and destroy you!\p"
-    .string "Confusion, sleep, poison…\p"
-    .string "Prepare to be the victim of my\n"
-    .string "sinister technique!\p"
-    .string "Fwahahahaha!\p"
-    .string "POKéMON is not merely about brute\n"
-    .string "force--you shall see soon enough!$"
+    .string "A ninja carries one blade. He does\n"
+    .string "not post about it.$"
 
 PokemonLeague_KogasRoom_Text_Beaten:
     .string "Ah!\n"

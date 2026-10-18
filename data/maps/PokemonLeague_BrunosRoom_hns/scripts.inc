@@ -76,16 +76,8 @@ PokemonLeague_BrunosRoom_Text_RematchBefore:
     .string "Hoo hah!$"
 
 PokemonLeague_BrunosRoom_Text_Before:
-    .string "I am BRUNO of the ELITE FOUR.\p"
-    .string "I always train to the extreme be-\n"
-    .string "cause I believe in our potential.\p"
-    .string "That is how we became strong.\p"
-    .string "Can you withstand our power?\p"
-    .string "Hm? I see no fear in you. You look\n"
-    .string "determined. Perfect for battle!\p"
-    .string "Ready, {PLAYER}? You will bow down\n"
-    .string "to our overwhelming power!\p"
-    .string "Hoo hah!$"
+    .string "Rest days matter. And sleep.\n"
+    .string "Go to bed.$"
 
 PokemonLeague_BrunosRoom_Text_Beaten:
     .string "Why? How could we lose?$"

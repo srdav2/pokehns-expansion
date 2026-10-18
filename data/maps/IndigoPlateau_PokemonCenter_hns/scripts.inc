@@ -26,6 +26,33 @@ IndigoPlateau_EventScript_Cooltrainer::
 	msgbox IndigoPlateau_Text_CooltrainerM, MSGBOX_NPC
 	end
 
+IndigoPlateau_EventScript_PressurePrompt::
+	lock
+	faceplayer
+	msgbox IndigoPlateau_Text_PressurePrompt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, IndigoPlateau_EventScript_PressurePromptYes
+	setflag FLAG_GILDED_PRESSURE_PROMPT_INDIGO
+	msgbox IndigoPlateau_Text_PressurePromptNo, MSGBOX_DEFAULT
+	release
+	end
+
+IndigoPlateau_EventScript_PressurePromptYes::
+	addvar VAR_PRESSURE_POINTS, 1
+	setflag FLAG_GILDED_PRESSURE_PROMPT_INDIGO
+	msgbox IndigoPlateau_Text_PressurePromptYes, MSGBOX_DEFAULT
+	release
+	end
+
+IndigoPlateau_EventScript_RallyGoer1::
+	trainerbattle_single TRAINER_GILDED_RALLY_GOER_INDIGO_1_HNS, IndigoPlateau_Text_RallyGoer1Intro, IndigoPlateau_Text_RallyGoerDefeat
+	msgbox IndigoPlateau_Text_RallyGoer1After, MSGBOX_AUTOCLOSE
+	end
+
+IndigoPlateau_EventScript_RallyGoer2::
+	trainerbattle_single TRAINER_GILDED_RALLY_GOER_INDIGO_2_HNS, IndigoPlateau_Text_RallyGoer2Intro, IndigoPlateau_Text_RallyGoerDefeat
+	msgbox IndigoPlateau_Text_RallyGoer2After, MSGBOX_AUTOCLOSE
+	end
+
 IndigoPlateau_EventScript_BlackBelt::
 	msgbox IndigoPlateau_Text_Blackbelt, MSGBOX_NPC
 	end
@@ -53,6 +80,34 @@ IndigoPlateau_Text_CooltrainerM:
     .string "tested by the ELITE FOUR.\p"
     .string "You have to beat them all. If you\n"
     .string "lose, you have to start all over!$"
+
+IndigoPlateau_Text_PressurePrompt:
+	.string "STOP THE STEEL!\n"
+	.string "Support the rally?$"
+
+IndigoPlateau_Text_PressurePromptYes:
+	.string "Your support is counted.\n"
+	.string "Now, stop that STEELIX!$"
+
+IndigoPlateau_Text_PressurePromptNo:
+	.string "The rally waves you on.$"
+
+IndigoPlateau_Text_RallyGoer1Intro:
+	.string "Steel can't be trusted!\n"
+	.string "STOP THE STEEL!$"
+
+IndigoPlateau_Text_RallyGoer2Intro:
+	.string "The LEAGUE is rigged!\n"
+	.string "We demand a recount!$"
+
+IndigoPlateau_Text_RallyGoerDefeat:
+	.string "I need to rethink this.$"
+
+IndigoPlateau_Text_RallyGoer1After:
+	.string "That didn't stop the STEEL.$"
+
+IndigoPlateau_Text_RallyGoer2After:
+	.string "I still have my sign.$"
 
 IndigoPlateau_EventScript_Silver::
 	lock

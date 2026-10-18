@@ -15,6 +15,14 @@ PokemonLeague_HallOfFame_EventScript_Cutscene::
 	waitmovement LOCALID_HALLOFFAME_LANCE
 	msgbox PokemonLeague_HallOfFame_LanceText, MSGBOX_DEFAULT
 	closemessage
+	clearflag FLAG_HIDE_GILDED_HOF_GIRATINA
+	addobject LOCALID_GILDED_GIRATINA
+	playmoncry SPECIES_GIRATINA, CRY_MODE_ENCOUNTER
+	waitmoncry
+	msgbox PokemonLeague_HallOfFame_GiratinaText, MSGBOX_DEFAULT
+	closemessage
+	removeobject LOCALID_GILDED_GIRATINA
+	setflag FLAG_HIDE_GILDED_HOF_GIRATINA
 	special GivePartyMonChampionRibbon
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
@@ -196,6 +204,9 @@ PokemonLeague_HallOfFame_LanceText:
     .string "{PLAYER}, allow me to register you\n"
     .string "and your partners as CHAMPIONS!$"
 
+PokemonLeague_HallOfFame_GiratinaText:
+	.string "Halfway. Keep spinning.$"
+
 PokemonLeague_HallOfFame_Rematch_LanceText:
     .string "LANCE: I remember, it wasn't long ago\n"
     .string "I stood here, welcoming you as\p"
@@ -220,4 +231,3 @@ PokemonLeague_HallOfFame_Rematch_LanceText:
     .string "{PLAYER}, it is my honor to register\n"
     .string "you, and your trusted partners,\l"
     .string "as champions once again.$"
-

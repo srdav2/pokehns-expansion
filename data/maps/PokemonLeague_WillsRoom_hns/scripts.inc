@@ -105,17 +105,8 @@ PokemonLeague_WillsRoom_EventScript_WillDefeated::
 	end
 
 PokemonLeague_WillsRoom_Text_Before:
-    .string "Welcome to POKéMON LEAGUE,\n"
-    .string "{PLAYER}.\p"
-    .string "Allow me to introduce myself.\n"
-    .string "I am WILL.\p"
-    .string "I have trained all around the\n"
-    .string "world, making my psychic\l"
-    .string "POKéMON powerful.\p"
-    .string "And, at last, I've been accepted\n"
-    .string "into the ELITE FOUR.\p"
-    .string "I can only keep getting better!\p"
-    .string "Losing is not an option!$"
+    .string "I'm a Psychic-type trainer.\n"
+    .string "I'm not doing anything. I'm bored.$"
 
 PokemonLeague_WillsRoom_Text_Beaten:
     .string "I… I can't… believe it…$"

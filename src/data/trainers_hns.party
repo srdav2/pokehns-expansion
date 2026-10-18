@@ -16199,3 +16199,33 @@ Level: 45
 
 Donphan
 Level: 46
+
+=== TRAINER_GILDED_RALLY_GOER_INDIGO_1_HNS ===
+Name: STOPSTEEL
+Class: Rally Goer Hns
+Pic: Youngster Hns
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+
+Machoke
+Level: 54
+
+Primeape
+Level: 55
+
+=== TRAINER_GILDED_RALLY_GOER_INDIGO_2_HNS ===
+Name: CANVASSER
+Class: Rally Goer Hns
+Pic: Lass
+Gender: Female
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+
+Torkoal
+Level: 55
+
+Houndoom
+Level: 56

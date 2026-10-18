@@ -28,6 +28,21 @@ GoldenrodCity_BillsHouse_EventScript_Bill::
 	lock
 	faceplayer
 	goto_if_unset FLAG_GOT_EEVEE, GoldenrodCity_BillsHouse_EventScript_Bill_Eevee
+	goto_if_set FLAG_GILDED_HOENN_PC_SCENE, GoldenrodCity_BillsHouse_EventScript_Bill_AfterStorage
+	goto_if_set FLAG_IS_CHAMPION, GoldenrodCity_BillsHouse_EventScript_Bill_HoennStorage
+	msgbox BillHouse_Text_PopWontWork, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_BillsHouse_EventScript_Bill_HoennStorage::
+	setflag FLAG_GILDED_HOENN_PC_SCENE
+	msgbox BillHouse_Text_HoennStorageRestored, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_BillsHouse_EventScript_Bill_AfterStorage::
 	msgbox BillHouse_Text_PopWontWork, MSGBOX_DEFAULT
 	closemessage
 	release
@@ -93,6 +108,11 @@ BillHouse_Text_PopWontWork:
     .string "BILL: My pop, he won't work. All he\n"
     .string "does is goof off all day long.\p"
     .string "He's getting to be a real headache…$"
+
+BillHouse_Text_HoennStorageRestored:
+	.string "Your old boxes are back.\p"
+	.string "Timelines are just really big\n"
+	.string "boxes.$"
 
 BillHouse_Text_MomBeforeEcruteak:
     .string "Oh, you collect POKéMON? My son\n"
