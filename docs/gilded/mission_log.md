@@ -219,3 +219,28 @@ Added Sage Purely at the top of Olivine Lighthouse with the Rapidash Paste press
 - [ ] Continue through Jasmine's existing medicine request; confirm `VAR_OLIVINE_CITY_STATE` advances to `3` and the Cianwood pharmacy quest remains reachable.
 
 The Act 5 additions still need playtesting.
+
+## GF9 — Johto Act 6
+
+**Status: BUILT_PARTIAL — NEEDS PLAYTEST**
+
+Added Pressure Prompt 9 at the Mahogany shop counter: Gaudy Gold Kicks cost 9999, and accepting gives one Iron Ball and one pressure point. Declining has no penalty and continues to the regular mart; insufficient money or bag space does not charge the player or consume the prompt. Replaced the B3F Petrel-slot battle with Barry Blaster using the `A_PRYCE` 32–34 team, and retained the HnS password and hideout progression while changing the reveal and transmitter-shutdown dialogue. The HnS ROM build passed with the required Arm GNU toolchain and is **33,554,432 bytes (32 MiB)**.
+
+**Deferred:**
+
+- Re-skin the Lake of Rage Red Gyarados/Lance sequence and the remaining Mahogany town, hideout-floor, and grunt dialogue.
+- Rebrand the remaining Rocket Hideout password/interim-boss text and map presentation as Rage Radio.
+- Re-skin Barry's fake-Director role in the Radio Tower during GF10, along with the full Team MEGA hideout trainer reclassification.
+- Update Pryce's dialogue and Glacier Badge scene.
+- `make check BUILD=hns -j8` remains blocked before tests by the existing `include/fake_rtc.h` / `struct SaveBlock3` compile error noted under GF1.
+- GF10–GF17 have not started. GF-IMP remains skipped as directed by the plan.
+
+**Playtest checklist:**
+
+- [ ] Open **R + Start → Flags & Vars… → Set Var XYZ…** and set `VAR_MAHOGANY_TOWN_STATE` to `14`; set `VAR_PRESSURE_POINTS` to `0`. Then use **Utilities… → Warp to map warp…** to visit the Mahogany shop and talk to the clerk. Choose **No**; confirm no money or pressure points are lost and the regular mart opens.
+- [ ] For a fresh prompt state, clear `FLAG_GILDED_PRESSURE_PROMPT_MAHOGANY` through **R + Start → Flags & Vars… → Set Flag XYZ…** and set money with **R + Start → Give X… → Max Money**. Return to the shop, choose **Yes**, and confirm the 9999 cost, one Iron Ball, one pressure point, and that the regular mart is available on the next interaction.
+- [ ] Clear the prompt flag, set `VAR_PRESSURE_POINTS` to `0`, and choose yes with a full Items pocket; confirm no money is removed, no pressure point is added, and the offer remains available. Repeat with less than 9999 money and confirm the same no-charge behavior.
+- [ ] Play through the existing Mahogany/Lake of Rage route until the Rocket Hideout B3F boss event; confirm Barry's battle uses Exploud Lv. 32, Primeape Lv. 33, Noibat Lv. 33, and Gyarados Lv. 34, and that the Murkrow/password/stair progression completes after the battle.
+- [ ] Leave and re-enter the shop and hideout after the choices/battle; confirm the prompt and boss do not repeat, the regular shop remains reachable, and the existing HnS route progression is intact.
+
+The Act 6 additions still need playtesting.

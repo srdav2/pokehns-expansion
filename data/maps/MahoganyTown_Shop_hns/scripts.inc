@@ -194,6 +194,41 @@ MahoganyTown_Shop_EventScript_GrannyDuring::
 
 
 MahoganyTown_Shop_EventScript_GrannyShop::
+	goto_if_set FLAG_GILDED_PRESSURE_PROMPT_MAHOGANY, MahoganyTown_Shop_EventScript_Pokemart
+	msgbox MahoganyTown_Shop_Text_GaudyGoldKicks, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MahoganyTown_Shop_EventScript_DeclineGaudyGoldKicks
+	checkmoney 9999
+	goto_if_eq VAR_RESULT, FALSE, MahoganyTown_Shop_EventScript_NoMoneyForGaudyGoldKicks
+	checkitemspace ITEM_IRON_BALL
+	goto_if_eq VAR_RESULT, FALSE, MahoganyTown_Shop_EventScript_BagFullForGaudyGoldKicks
+	removemoney 9999
+	giveitem ITEM_IRON_BALL
+	addvar VAR_PRESSURE_POINTS, 1
+	setflag FLAG_GILDED_PRESSURE_PROMPT_MAHOGANY
+	msgbox MahoganyTown_Shop_Text_GaudyGoldKicksPurchased, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+MahoganyTown_Shop_EventScript_DeclineGaudyGoldKicks::
+	setflag FLAG_GILDED_PRESSURE_PROMPT_MAHOGANY
+	msgbox MahoganyTown_Shop_Text_GaudyGoldKicksDeclined, MSGBOX_DEFAULT
+	closemessage
+	goto MahoganyTown_Shop_EventScript_Pokemart
+
+MahoganyTown_Shop_EventScript_NoMoneyForGaudyGoldKicks::
+	msgbox MahoganyTown_Shop_Text_GaudyGoldKicksNoMoney, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+MahoganyTown_Shop_EventScript_BagFullForGaudyGoldKicks::
+	msgbox MahoganyTown_Shop_Text_GaudyGoldKicksBagFull, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+MahoganyTown_Shop_EventScript_Pokemart::
 	message gText_HowMayIServeYou
 	waitmessage
 	pokemart MahoganyTown_Pokemart
@@ -232,6 +267,26 @@ MahoganyTown_Shop_Text_Granny:
 	.string "The store is... closed\l"
 	.string "right now.$"
 
+MahoganyTown_Shop_Text_GaudyGoldKicks:
+	.string "MEGA MERCH: GAUDY GOLD KICKS!\n"
+	.string "9999. Want a pair?$"
+
+MahoganyTown_Shop_Text_GaudyGoldKicksPurchased:
+	.string "They're heavy because they're\n"
+	.string "premium. Enjoy the IRON BALL!$"
+
+MahoganyTown_Shop_Text_GaudyGoldKicksDeclined:
+	.string "No? You're walking away from\n"
+	.string "an investment opportunity!$"
+
+MahoganyTown_Shop_Text_GaudyGoldKicksNoMoney:
+	.string "You need 9999 to own this\n"
+	.string "premium merchandise.$"
+
+MahoganyTown_Shop_Text_GaudyGoldKicksBagFull:
+	.string "No room for the IRON BALL.\n"
+	.string "Your purchase is still available.$"
+
 MahoganyMart1F_Text_Pharmacist_Lance:
     .string "MEGA grunts took my basement!$"
 
@@ -250,8 +305,8 @@ MahoganyMart1F_Text_Lance_HyperBeam:
 
 MahoganyMart1F_Text_Lance_Radio:
     .string "What took you, {PLAYER}?\p"
-    .string "Just as we thought, that strange\n"
-    .string "radio signal is coming from here.$"
+    .string "Turns out you can make a lot of\n"
+    .string "creatures angry with a radio.$"
 
 MahoganyMart1F_Text_Lance_Stairs:
     .string "Excellent work finding the stairs,\n"

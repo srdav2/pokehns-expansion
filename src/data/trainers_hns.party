@@ -16154,3 +16154,24 @@ Level: 35
 
 Comfey
 Level: 36
+
+=== TRAINER_BARRY_BLASTER_MAHOGANY_HNS ===
+Name: BARRY
+Class: Talk Radio Host Hns
+Pic: Petrel Hns
+Gender: Male
+Music: Rocket
+Double Battle: No
+AI: Basic Trainer
+
+Exploud
+Level: 32
+
+Primeape
+Level: 33
+
+Noibat
+Level: 33
+
+Gyarados
+Level: 34

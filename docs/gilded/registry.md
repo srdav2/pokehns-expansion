@@ -206,3 +206,26 @@ No vars were allocated. The prompt uses `VAR_PRESSURE_POINTS = 0x40E5`.
 
 - Modified HnS map: `OlivineCity_Lighthouse_hns`.
 - No new maps or specials were allocated.
+
+## GF9 — Johto Act 6
+
+### Flags
+
+| Flag | Value | Purpose |
+| --- | ---: | --- |
+| `FLAG_GILDED_PRESSURE_PROMPT_MAHOGANY` | `0x3C6` | Record the Mahogany Gaudy Gold Kicks choice and prevent repeat prompts. |
+
+The prompt uses `VAR_PRESSURE_POINTS = 0x40E5`; no new vars or specials were allocated.
+
+### Trainers
+
+| Trainer ID | Value | Class / party |
+| --- | ---: | --- |
+| `TRAINER_BARRY_BLASTER_MAHOGANY_HNS` | 662 | Talk Radio Host; Exploud Lv. 32, Primeape Lv. 33, Noibat Lv. 33, Gyarados Lv. 34 |
+
+`TRAINERS_COUNT_HNS` is now 663. The team uses the `A_PRYCE` 32–34 anchor band.
+
+### Maps and specials
+
+- Modified HnS maps: `MahoganyTown_Shop_hns` and `RocketHideout_B3F_hns`.
+- No new maps or specials were allocated.

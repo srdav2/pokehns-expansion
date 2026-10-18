@@ -298,7 +298,7 @@ RocketHideout_B3F_Text_Rival:
     .string "Could it be that love made his\n"
     .string "team so powerful?$"
 
-@=======[PETREL]==============================================================================================================================
+@=======[BARRY BLASTER]=======================================================================================================================
 
 RocketHideout_B3F_EventScript_Giovanni::
 	lock
@@ -321,7 +321,7 @@ RocketHideout_B3F_EventScript_Giovanni::
 	call_if_eq VAR_FACING, DIR_EAST, RocketHideout_B3F_EventScript_FacingEast
 	call_if_eq VAR_FACING, DIR_WEST, RocketHideout_B3F_EventScript_FacingWest
 	msgbox RocketHideout_B3F_Text_PetrelReveal, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_PETREL_1_HNS, RocketHideout_B3F_Text_PetrelBeaten
+	trainerbattle_no_intro TRAINER_BARRY_BLASTER_MAHOGANY_HNS, RocketHideout_B3F_Text_PetrelBeaten
 	msgbox RocketHideout_B3F_Text_PetrelAfterBattle, MSGBOX_DEFAULT
 	closemessage
 	call_if_eq VAR_FACING, DIR_EAST, RocketHideout_B3F_EventScript_LeaveEast
@@ -577,10 +577,10 @@ RocketHideout_B3F_Text_PetrelDisbelief:
     .string "to mimic him!$"
 
 RocketHideout_B3F_Text_PetrelReveal:
-    .string "PETREL: I am a Team MEGA\n"
-    .string "Executive!\p"
+    .string "BARRY: You're live with RAGE\n"
+    .string "RADIO! Stay angry, stay listening!\p"
     .string "You must be trying to sneak into\n"
-    .string "the radio-transmitter room.\p"
+    .string "the transmitter room.\p"
     .string "Well, that's not going to happen.\n"
     .string "That room is protected with a\l"
     .string "special password.\p"
@@ -593,20 +593,12 @@ RocketHideout_B3F_Text_PetrelReveal:
     .string "my voice.$"
 
 RocketHideout_B3F_Text_PetrelBeaten:
-    .string "I… I couldn't do a thing…\p"
-    .string "GIOVANNI, please forgive me…$"
+    .string "This just in: I lost.\n"
+    .string "Fake news!$"
 
 RocketHideout_B3F_Text_PetrelAfterBattle:
-    .string "PETREL: Since disbanding Team\n"
-    .string "MEGA three years ago, our\l"
-    .string "GIOVANNI has been missing.\p"
-    .string "But we're certain he's been\n"
-    .string "waiting for the right time for\l"
-    .string "our revival... Wahahaha!\p"
-    .string "Losing to you won't change the\n"
-    .string "fact that you are unable to get\l"
-    .string "in the radio-transmitter room!\p"
-    .string "You need my voice to unlock it!$"
+    .string "BARRY: That's it, folks! Rage\n"
+    .string "Radio is shutting down.$"
 
 RocketHideout_B3F_EventScript_Murkrow::
 	lock
