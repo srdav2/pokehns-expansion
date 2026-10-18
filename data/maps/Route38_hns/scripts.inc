@@ -99,16 +99,16 @@ Route38_EventScript_Item_LaxIncense::
 	end
 
 Route38_Text_BirdKeeperTobySeen:
-	.string "Fly high into the sky,\n"
-	.string "my beloved bird POKéMON!$"
+	.string "OFFICER TOBY. Heritage audit.\n"
+	.string "Your bird looks suspiciously\l"
+	.string "well-travelled.$"
 
 Route38_Text_BirdKeeperTobyBeaten:
-	.string "I feel like just flying\n"
-	.string "away now.$"
+	.string "Audit failed. By me.$"
 
 Route38_Text_BirdKeeperTobyAfter:
-	.string "I plan to train in CIANWOOD CITY\n"
-	.string "to teach my POKéMON how to FLY.$"
+	.string "Every route needs a checkpoint.\n"
+	.string "Nobody says who staffs them.$"
 
 Route38_Text_SchoolboyChad1Seen:
 	.string "Let me try something\n"
@@ -176,17 +176,15 @@ Route38_Text_BeautyValerieAfter:
 	.string "seems to soothe my nerves.$"
 
 Route38_Text_SailorHarrySeen:
-	.string "I've been overseas, so I\n"
-	.string "know about all sorts of\l"
-	.string "POKéMON!$"
+	.string "Heritage Officer HARRY! I used\n"
+	.string "to be a sailor. Now I check IDs.$"
 
 Route38_Text_SailorHarryBeaten:
-	.string "Your skill is world class!$"
+	.string "Smooth sailing, I guess.$"
 
 Route38_Text_SailorHarryAfter:
-	.string "All kinds of people around\n"
-	.string "the world live happily with\l"
-	.string "POKéMON.$"
+	.string "They said the job came with a\n"
+	.string "cap. It did not come with a boat.$"
 
 Route38_Text_BeautyOliviaSeen:
 	.string "Don't you think my POKéMON\n"

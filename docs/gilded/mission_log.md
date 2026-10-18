@@ -450,3 +450,25 @@ Boss check (script equivalent of the §8 grep): every mon in the entries above h
 
 **Playtest checklist:**
 - [ ] Debug menu → Battle → trainer battle (or warp and talk) vs. each placed boss; confirm 4 moves and items show.
+
+## P2-02 — Barry bug and early placements
+
+**Status: BUILT_PARTIAL — NEEDS PLAYTEST**
+
+- **Barry bug fixed:** `GoldenrodCity_RadioTower_5F_hns` now uses `TRAINER_BARRY_BLASTER_RADIO_TOWER_HNS`; the Mahogany ID is only used in `RocketHideout_B3F_hns` (grep: `grep -rn TRAINER_BARRY_BLASTER data/maps`).
+- **Brad 1:** `CianwoodGym_EventScript_BradFirst` runs from Chuck's script before his intro (only until Brad is defeated); Chuck's team and badge flow are unchanged.
+- **Bleak:** new NPC in `GoldenrodCity_UndergroundTunnel_hns` at (3,14), optional battle, re-talk gives the after line.
+- **Ecruteak:** a second Warden Pell guard object at the Tin Tower door (37,15), sharing the Burned Tower Pell's script and `FLAG_GILDED_WARDEN_PELL_DEFEATED`, so one check gates both towers.
+- **Reclass:** Heritage Officers = Greg (Route 37), Toby and Harry (Route 38) with new text and class/pic (overworld sprites unchanged). Wellness Gurus = Connie and Alfred (Olivine Lighthouse), class only.
+
+**Deferred:**
+- Union Cave Freedom Toll grunts: needs two new trainer objects whose tiles are unverifiable without Porymap, and no flags are free to hide them after defeat (only `FLAG_UNUSED_EXTENDED_97–99` remain); a blocking NPC could soft-lock a corridor.
+- Chuck's gym Sigma Bro reclass: cosmetic; skipped to avoid restoring classes later.
+- Heritage/Wellness overworld sprite swaps (cosmetic).
+
+**Playtest checklist:**
+- [ ] Warp to Radio Tower 5F, reach the fake Director; confirm Barry 2 (Exploud/Noivern/Primeape/Gyarados Lv 43–45) and that Barry 1 at Mahogany hideout B3F is still Lv 32–34.
+- [ ] Warp to Cianwood Gym, talk to Chuck; confirm Brad battles first (Lv 30–32), then Chuck's intro continues.
+- [ ] Warp to Goldenrod Underground tunnel; find the girl at (3,14), battle Bleak. Check she is reachable and not blocking the corridor.
+- [ ] Ecruteak City: approach both the Burned Tower and Tin Tower doors; Pell fights from either; both guards vanish after.
+- [ ] Routes 37/38: three Heritage Officer fights and text.

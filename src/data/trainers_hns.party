@@ -518,8 +518,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TOBY_HNS ===
 Name: TOBY
-Class: Bird Keeper Hns
-Pic: Bird Keeper
+Class: Heritage Officer Hns
+Pic: Officer Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -785,7 +785,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_CONNIE_HNS ===
 Name: CONNIE
-Class: Lass Hns
+Class: Wellness Guru Hns
 Pic: Lass
 Gender: Male
 Music: Hg Girl 2
@@ -2880,7 +2880,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ALFRED_HNS ===
 Name: ALFRED
-Class: Gentleman Hns
+Class: Wellness Guru Hns
 Pic: Gentleman
 Gender: Male
 Music: Hg Suspicious 2
@@ -4298,8 +4298,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_HARRY_HNS ===
 Name: HARRY
-Class: Sailor Hns
-Pic: Sailor
+Class: Heritage Officer Hns
+Pic: Officer Hns
 Gender: Male
 Music: Hg Suspicious 2
 Double Battle: No
@@ -5547,8 +5547,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GREG_HNS ===
 Name: GREG
-Class: Psychic M Hns
-Pic: Psychic M Hns
+Class: Heritage Officer Hns
+Pic: Officer Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No

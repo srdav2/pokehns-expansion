@@ -30,6 +30,7 @@ CianwoodGym_EventScript_Chuck::
 	goto_if_unset FLAG_HIDE_DOJO_CHUCK, CianwoodGym_EventScript_ChuckAtDojo
 	goto_if_set FLAG_VISITED_VERMILION_CITY, CianwoodGym_EventScript_ChuckGotoDojo
 	goto_if_set FLAG_DEFEATED_CIANWOOD_GYM, CianwoodGym_EventScript_Chuck_Defeated
+	call CianwoodGym_EventScript_BradFirst
 	msgbox CianwoodGym_Text_ChuckIntro1, MSGBOX_DEFAULT
 	applymovement LOCALID_CIANWOOD_CHUCK, CianwoodGym_Movement_ChuckLeft
 	waitmovement 0
@@ -248,3 +249,25 @@ CianwoodGym_Text_BlackbeltLungAfter:
 	.string "My POKéMON lost…\n"
 	.string "My… my pride is shattered…$"
 
+
+CianwoodGym_EventScript_BradFirst::
+	goto_if_defeated TRAINER_BRAD_GRINDWELL_ALPHA_DOJO_HNS, Common_EventScript_NopReturn
+	msgbox CianwoodGym_Text_BradSeen, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_BRAD_GRINDWELL_ALPHA_DOJO_HNS, CianwoodGym_Text_BradBeaten
+	msgbox CianwoodGym_Text_BradAfter, MSGBOX_DEFAULT
+	return
+
+CianwoodGym_Text_BradSeen:
+	.string "BRAD: Hold up. This is the ALPHA\n"
+	.string "DOJO now. My podcast is recording.\p"
+	.string "CHUCK is a great sparring partner,\n"
+	.string "but you go through ME first.$"
+
+CianwoodGym_Text_BradBeaten:
+	.string "BRAD: Counter was supposed to\n"
+	.string "work! Edit that out!$"
+
+CianwoodGym_Text_BradAfter:
+	.string "BRAD: Fine. Take it up with the\n"
+	.string "gym guy. My brother CHAD would\l"
+	.string "have lost too. Probably.$"

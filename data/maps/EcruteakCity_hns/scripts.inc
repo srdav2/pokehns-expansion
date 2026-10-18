@@ -252,6 +252,7 @@ EcruteakCity_EventScript_WardenPell::
 EcruteakCity_EventScript_WardenPellAfter::
 	setflag FLAG_GILDED_WARDEN_PELL_DEFEATED
 	removeobject LOCALID_GILDED_WARDEN_PELL
+	removeobject LOCALID_GILDED_WARDEN_PELL_TIN
 	release
 	end
 

@@ -105,16 +105,18 @@ Route37_Text_TwinsAnnAndAnne2_After:
 	.string "our POKéMON.$"
 
 Route37_Text_PsychicGreg_Seen:
-	.string "POKéMON can't do a thing if they are\n"
-	.string "asleep.\p"
-	.string "I'll show you how scary that is!$"
+	.string "HERITAGE CHECK! Show me your\n"
+	.string "pedigree papers, citizen!\p"
+	.string "Moving a POKéMON across a road\n"
+	.string "needs a permit now.$"
 
 Route37_Text_PsychicGreg_Beaten:
-	.string "I lost. That's pretty sad…$"
+	.string "Fine. My paperwork was\n"
+	.string "in the car anyway.$"
 
 Route37_Text_PsychicGreg_After:
-	.string "Putting POKéMON to sleep or paralyz-\n"
-	.string "ing them are good battle techniques.$"
+	.string "The heritage office closes at\n"
+	.string "noon. On days ending in Y.$"
 
 Route37_Text_Sunny_Meet:
 	.string "SUNNY: Hi!\p"

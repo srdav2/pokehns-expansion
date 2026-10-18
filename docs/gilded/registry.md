@@ -345,3 +345,8 @@ Pressure Prompt 11 uses `VAR_PRESSURE_POINTS = 0x40E5`. No new vars or specials 
 | `TRAINER_BRAD_GRINDWELL_ALPHA_DOJO_HNS` | 672 | T2, Lv 30–32 |
 
 `TRAINERS_COUNT_HNS` is now 673.
+
+## P2-02 — placements
+
+No new flags, vars or trainers (uses the P2-01 IDs). New object events: `LOCALID_GILDED_WARDEN_PELL_TIN` on `EcruteakCity_hns` (hidden by `FLAG_GILDED_WARDEN_PELL_DEFEATED`), Bleak on `GoldenrodCity_UndergroundTunnel_hns` (hidden by `FLAG_HIDE_GOLDENROD_NPCS`). Reclassed: `TRAINER_GREG_HNS`, `TRAINER_TOBY_HNS`, `TRAINER_HARRY_HNS` → Heritage Officer; `TRAINER_CONNIE_HNS`, `TRAINER_ALFRED_HNS` → Wellness Guru.
+**Flag pool warning:** only `FLAG_UNUSED_EXTENDED_97–99` remain free; use trainer-defeated checks and var bitfields instead of new flags.

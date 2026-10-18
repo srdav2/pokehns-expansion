@@ -445,3 +445,28 @@ GoldenrodUnderground_Text_KeyOpenedDoor:
 
 GoldenrodUnderground_Text_NoEntry:
     .string "NO ENTRY BEYOND THIS POINT$"
+
+GoldenrodUnderground_EventScript_Bleak::
+	lock
+	faceplayer
+	goto_if_defeated TRAINER_COMMISSAR_BLEAK_GOLDENROD_HNS, GoldenrodUnderground_EventScript_BleakAfter
+	msgbox GoldenrodUnderground_Text_BleakIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_COMMISSAR_BLEAK_GOLDENROD_HNS, GoldenrodUnderground_Text_BleakBeaten
+GoldenrodUnderground_EventScript_BleakAfter::
+	msgbox GoldenrodUnderground_Text_BleakAfter, MSGBOX_DEFAULT
+	release
+	end
+
+GoldenrodUnderground_Text_BleakIntro:
+	.string "COMMISSAR BLEAK here. Host of\n"
+	.string "'Recovering Leftist.'\p"
+	.string "Turns out you can grift in both\n"
+	.string "directions. Who knew? Battle?$"
+
+GoldenrodUnderground_Text_BleakBeaten:
+	.string "Cut! Keep the loss in. It's\n"
+	.string "very authentic.$"
+
+GoldenrodUnderground_Text_BleakAfter:
+	.string "SLOWPOKE-T sponsors this episode.\n"
+	.string "I hate that I'm saying that.$"
