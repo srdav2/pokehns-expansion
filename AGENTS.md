@@ -2,6 +2,9 @@
 
 This repo is a fork of Pokémon Heart & Soul (pokeemerald-expansion based). It's being turned into **Pokémon Gilded Version**, the sequel to *Pokémon Sovereign Version*. The owner has the Heart & Soul developers' permission to use and modify their files. Keep all existing HnS credits.
 
+## Pass 2 (current)
+Pass 1 (GF0–GF17) is finished. **The current work is pass 2:** read `docs/GILDED_PASS_2.md` and follow it. It overrides the scope-cut rule in `docs/GILDED_FORK_PLAN.md` §0.6 for boss teams and battles. Work on branch `gilded-pass-2`, created from `srdav2-gilded-overnight-missions`.
+
 ## Read first
 1. `docs/GILDED_FORK_PLAN.md`: rules, the mission queue (GF0–GF17) and the self-review checklist.
 2. `docs/GILDED_STORY_BIBLE.md`: all story, characters, teams, jokes, and the **content guardrails in §0.2** (non-negotiable).
