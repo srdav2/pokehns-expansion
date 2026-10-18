@@ -16799,6 +16799,42 @@ EVs: 252 Atk / 252 HP / 4 Def
 - Fire Punch
 - Rest
 
+=== TRAINER_BORDER_AGENT_1_HNS ===
+Name: AGENT
+Class: Heritage Officer Hns
+Pic: Officer Hns
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+
+Growlithe
+Level: 50
+
+Houndour
+Level: 50
+
+Stantler
+Level: 51
+
+=== TRAINER_BORDER_AGENT_2_HNS ===
+Name: AGENT
+Class: Heritage Officer Hns
+Pic: Officer Hns
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+
+Houndour
+Level: 51
+
+Growlithe
+Level: 51
+
+Stantler
+Level: 52
+
 === TRAINER_GILDED_RALLY_GOER_INDIGO_1_HNS ===
 Name: STOPSTEEL
 Class: Rally Goer Hns

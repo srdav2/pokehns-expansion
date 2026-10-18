@@ -23,3 +23,4 @@
 | 2026-10-19 | P2-01 | Sage Purely uses Super Potion / Full Heal; Chad 2 and Pell 2 are ordered with the ace last; EV spreads for T3 are derived from nature (Jolly Atk/Spe, Adamant Atk/HP, Timid SpA/Spe, Modest SpA/HP, bulky natures HP/Def or SpD). | Spec fallback for missing items; ace-last matches the in-game ordering convention; the spec gave "252/252/4" without stats. |
 | 2026-10-19 | P2-02 | Brad is fought from Chuck's script (before his intro) rather than a new NPC; Union Cave toll deferred. | Avoids placing objects on unverified tiles and spending the last free flags. |
 | 2026-10-19 | P2-03 | Reuse existing trainer objects on 2F/3F/4F for the three bosses. | Same tiles and flags, so no new object placement risk or flags. |
+| 2026-10-19 | P2-04 | Used FLAG_UNUSED_EXTENDED_97 for the wall; 2-tile wall of boulder objects. | Corridor is 2 tiles wide; flags nearly exhausted. |

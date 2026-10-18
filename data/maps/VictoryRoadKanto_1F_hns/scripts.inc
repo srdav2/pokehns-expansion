@@ -154,4 +154,6 @@ VictoryRoad_Text_RivalAfter:
     .string "When I do, I will challenge you.\p"
     .string "And I'll beat you down with all my\n"
     .string "power.\p"
-    .string "…Humph! You keep at it until then.$"
+    .string "…Humph! You keep at it until then.\p"
+    .string "I unsubscribed from the GRINDWELLS.\n"
+    .string "I just… train now.$"

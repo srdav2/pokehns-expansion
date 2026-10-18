@@ -353,3 +353,8 @@ No new flags, vars or trainers (uses the P2-01 IDs). New object events: `LOCALID
 
 ## P2-03 — Radio Tower
 No new constants. Trainer placements: `TRAINER_COLONEL_BUCKSHOT_RADIO_TOWER_HNS` (2F), `TRAINER_CHAD_GRINDWELL_RADIO_TOWER_HNS` (3F), `TRAINER_WARDEN_PELL_RADIO_TOWER_HNS` (4F), `TRAINER_BARRY_BLASTER_RADIO_TOWER_HNS` (5F). Displaced HnS trainers: `TRAINER_GRUNT_5_HNS`, `TRAINER_GRUNT_6_HNS`, `TRAINER_RICH_HNS` no longer battled in the tower (their scripts now call the bosses).
+
+## P2-04
+- `FLAG_UNUSED_EXTENDED_97`: Border Wall down (used by `Route27_hns`). Only 98 and 99 remain.
+- Trainers 673 `TRAINER_BORDER_AGENT_1_HNS`, 674 `TRAINER_BORDER_AGENT_2_HNS` (count now 675).
+- Route27 local IDs: `LOCALID_GILDED_BORDER_AGENT_1/2`, `_BORDER_PELL`, `_BORDER_WALL_1/2`.

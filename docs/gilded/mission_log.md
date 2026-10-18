@@ -491,3 +491,16 @@ Placed the Radio Tower bosses by converting one existing grunt/scientist trainer
 **Playtest checklist:**
 - [ ] Warp to Goldenrod Radio Tower 2F/3F/4F (after the takeover state, `VAR_GOLDENROD_CITY_STATE` ≥ the Rocket takeover value; set `FLAG_HIDE_GOLDENROD_ROCKETS` clear). Fight Buckshot 2, Chad 2, Pell 2 once each; they don't reappear after.
 - [ ] 5F: Barry 2 then Gaudy 1; Kingambit is Gaudy's last Pokémon. Confirm the Pidgeot text and Director scene.
+
+## P2-04 — Border Wall + Victory Road
+
+**Status: BUILT_PARTIAL — NEEDS PLAYTEST**
+
+- `Route27_hns`: two Border Agents (new trainers 673/674, Lv 50–52), Pell 3 (`TRAINER_WARDEN_PELL_BORDER_WALL_HNS`) at (71,19) facing west, and a two-boulder wall at (72,18)/(72,19) in the two-tile-wide corridor east of Tohjo Falls. Wall objects are hidden by `FLAG_UNUSED_EXTENDED_97`, set only after Pell is beaten, so a whiteout leaves the wall up and Pell rematchable.
+- Victory Road 1F Silver: added "I unsubscribed from the GRINDWELLS. I just… train now."
+- Indigo lobby rally goers and revolving-door gag: already in pass 1 (unchanged).
+
+**Deferred:** wall is 2 tiles, not 3 (corridor is 2 wide; the third tile is solid rock). Wall sign is an NPC boulder, not a metatile. "Walk around" is impossible by design.
+
+**Playtest:** warp to Route 27 (x≈66–72, y 18–19). Walk east: Agent 1, Agent 2, Pell 3 each trigger once; after Pell, boulders vanish and flag 97 is set. Lose to Pell: wall stays, Pell fights again. 
+Boss grep: Border Agents are regular trainers (no moves required); Pell 3 was done in P2-01.

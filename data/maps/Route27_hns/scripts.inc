@@ -311,3 +311,67 @@ Route27_Text_FisherScottBeaten:
 Route27_Text_FisherScottAfter:
     .string "Just like in fishing, it's all over\n"
     .string "in POKéMON if you give up.$"
+
+Route27_EventScript_BorderAgent1::
+    trainerbattle_single TRAINER_BORDER_AGENT_1_HNS, Route27_Text_AgentSeen1, Route27_Text_AgentBeaten1
+    msgbox Route27_Text_AgentAfter1, MSGBOX_AUTOCLOSE
+    end
+
+Route27_EventScript_BorderAgent2::
+    trainerbattle_single TRAINER_BORDER_AGENT_2_HNS, Route27_Text_AgentSeen2, Route27_Text_AgentBeaten2
+    msgbox Route27_Text_AgentAfter2, MSGBOX_AUTOCLOSE
+    end
+
+Route27_EventScript_BorderPell::
+    trainerbattle_single TRAINER_WARDEN_PELL_BORDER_WALL_HNS, Route27_Text_PellSeen, Route27_Text_PellBeaten, Route27_EventScript_PellWallDown
+    msgbox Route27_Text_PellAfter, MSGBOX_AUTOCLOSE
+    end
+
+Route27_EventScript_PellWallDown::
+    msgbox Route27_Text_PellAfter, MSGBOX_DEFAULT
+    closemessage
+    setflag FLAG_UNUSED_EXTENDED_97
+    removeobject LOCALID_GILDED_BORDER_WALL_1
+    removeobject LOCALID_GILDED_BORDER_WALL_2
+    release
+    end
+
+Route27_EventScript_WallSign::
+    msgbox Route27_Text_WallSign, MSGBOX_NPC
+    end
+
+Route27_Text_AgentSeen1:
+    .string "Purpose of visit? Wrong answer.\n"
+    .string "Battle.$"
+
+Route27_Text_AgentBeaten1:
+    .string "Visa denied. Also my team.$"
+
+Route27_Text_AgentAfter1:
+    .string "The WALL is three tiles long.\n"
+    .string "You can see it from here.$"
+
+Route27_Text_AgentSeen2:
+    .string "Papers! Or POKéMON. Either.$"
+
+Route27_Text_AgentBeaten2:
+    .string "Your papers are in order.$"
+
+Route27_Text_AgentAfter2:
+    .string "KANTO is paying for the WALL.\n"
+    .string "KANTO has not been informed.$"
+
+Route27_Text_PellSeen:
+    .string "PELL: This WALL keeps KANTO out.\n"
+    .string "And KANTO is going to pay for it.$"
+
+Route27_Text_PellBeaten:
+    .string "PELL: Desperate times...$"
+
+Route27_Text_PellAfter:
+    .string "PELL: Fine. Walk through.\n"
+    .string "The WALL is... under review.$"
+
+Route27_Text_WallSign:
+    .string "THE WALL. Three tiles of it.\n"
+    .string "Built to stop the steel!$"
