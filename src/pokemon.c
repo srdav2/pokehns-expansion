@@ -37,6 +37,7 @@
 #include "pokedex.h"
 #include "pokeblock.h"
 #include "pokemon.h"
+#include "perfect_player_mons.h"
 #include "pokemon_animation.h"
 #include "pokemon_icon.h"
 #include "pokemon_summary_screen.h"
@@ -5485,6 +5486,7 @@ u8 GiveCapturedMonToPlayer(struct Pokemon *mon)
 {
     s32 i;
 
+    MaxPlayerMonStats(mon);
     SetMonData(mon, MON_DATA_OT_NAME, gSaveBlock2Ptr->playerName);
     SetMonData(mon, MON_DATA_OT_GENDER, &gSaveBlock2Ptr->playerGender);
     SetMonData(mon, MON_DATA_OT_ID, gSaveBlock2Ptr->playerTrainerId);
@@ -9825,6 +9827,7 @@ u32 GiveScriptedMonToPlayer(struct Pokemon *mon, u8 slot)
 {
     u32 sentToPc;
     u32 i = 0;
+    MaxPlayerMonStats(mon);
     if (slot < PARTY_SIZE)
     {
         CopyMon(&gPlayerParty[slot], mon, sizeof(struct Pokemon));

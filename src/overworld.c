@@ -85,6 +85,7 @@
 #include "constants/vars_hns.h"
 #include "nuzlocke.h"
 #include "pokemon_storage_system.h"
+#include "perfect_player_mons.h"
 
 STATIC_ASSERT((B_FLAG_FOLLOWERS_DISABLED == 0 || OW_FOLLOWERS_ENABLED), FollowersFlagAssignedWithoutEnablingThem);
 
@@ -2183,6 +2184,7 @@ void CB2_ContinueSavedGame(void)
 {
     u8 trainerHillMapId;
 
+    MaxAllPlayerMonStats();
     FieldClearVBlankHBlankCallbacks();
     StopMapMusic();
     ResetSafariZoneFlag_();

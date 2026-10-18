@@ -30,6 +30,7 @@
 #include "pokemon_icon.h"
 #include "pokemon_summary_screen.h"
 #include "pokemon_storage_system.h"
+#include "perfect_player_mons.h"
 #include "random.h"
 #include "save.h"
 #include "script.h"
@@ -3097,6 +3098,7 @@ static void TradeMons(u8 playerPartyIdx, u8 partnerPartyIdx)
         ClearMail(&gSaveBlock1Ptr->mail[playerMail]);
 
     SWAP(*playerMon, *partnerMon, sTradeAnim->tempMon);
+    MaxPlayerMonStats(playerMon);
 
     // By default, a Pokémon received from a trade will have 70 Friendship.
     // Eggs use Friendship to track egg cycles, so don't set this on Eggs.

@@ -32,6 +32,7 @@
 #include "international_string_util.h"
 #include "naming_screen.h"
 #include "pokemon_storage_system.h"
+#include "perfect_player_mons.h"
 #include "field_screen_effect.h"
 #include "trade.h"
 #include "data.h"
@@ -394,7 +395,7 @@ static void AddHatchedMonToParty(u8 id)
     SetMonData(mon, MON_DATA_MET_LOCATION, &metLocation);
 
     MonRestorePP(mon);
-    CalculateMonStats(mon);
+    MaxPlayerMonStats(mon);
 }
 
 void ScriptHatchMon(void)

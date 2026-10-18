@@ -1,5 +1,23 @@
 # Gilded mission log
 
+## Perfect IVs/EVs for player Pokémon
+
+**Status: BUILT — NEEDS PLAYTEST**
+
+Added configurable perfect IVs (31) and EVs (252 per stat) for owned Pokémon. The sweep covers the party, every PC box, and both Day Care slots; acquisition hooks cover catches, scripted gifts, hatches, and trades. Existing Pokémon are upgraded after loading and before each normal save. Summary-screen IV/EV values were already enabled. The save layout is unchanged.
+
+**Deferred:**
+
+- None.
+
+**Playtest checklist:**
+
+- [ ] Load an existing save. Open the summary of a party Pokémon and a PC Pokémon; confirm all IVs are 31 and all EVs are 252.
+- [ ] Start a new game and check the Elm starter's summary for 31 IVs and 252 EVs in every stat.
+- [ ] Catch a wild Pokémon and confirm its battle stats are unaffected; after capture, check its summary. Repeat with a full party so it goes to the PC.
+- [ ] Battle a trainer and confirm the trainer's Pokémon retain their normal IVs/EVs.
+- [ ] Hatch an egg and complete an in-game trade, if reachable; confirm each received Pokémon has the configured values.
+
 ## GF0 — Setup and audit
 
 **Status: BUILT — NEEDS PLAYTEST**

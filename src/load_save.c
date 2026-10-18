@@ -8,6 +8,7 @@
 #include "main.h"
 #include "overworld.h"
 #include "pokemon.h"
+#include "perfect_player_mons.h"
 #include "pokemon_storage_system.h"
 #include "random.h"
 #include "save_location.h"
@@ -241,6 +242,7 @@ void LoadObjectEvents(void)
 
 void CopyPartyAndObjectsToSave(void)
 {
+    MaxAllPlayerMonStats();
     SavePlayerParty();
     SaveObjectEvents();
 }
