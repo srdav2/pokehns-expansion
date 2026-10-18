@@ -680,8 +680,9 @@
 #define TRAINER_MEGA_GRUNT_ROUTE30_HNS         655
 #define TRAINER_PASTOR_GROWTH_1_HNS            656
 #define TRAINER_PASTOR_GROWTH_2_HNS            657
+#define TRAINER_CHAD_GRINDWELL_SLOWPOKE_WELL_HNS 658
 
-#define TRAINERS_COUNT_HNS                       658
+#define TRAINERS_COUNT_HNS                       659
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H

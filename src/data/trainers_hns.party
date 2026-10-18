@@ -16076,3 +16076,21 @@ Level: 6
 
 Bellsprout
 Level: 7
+
+=== TRAINER_CHAD_GRINDWELL_SLOWPOKE_WELL_HNS ===
+Name: CHAD
+Class: Sigma Bro Hns
+Pic: Proton Hns
+Gender: Male
+Music: Rocket
+Double Battle: No
+AI: Check Bad Move
+
+Machop
+Level: 14
+
+Mankey
+Level: 15
+
+Tauros
+Level: 16

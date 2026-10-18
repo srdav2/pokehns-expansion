@@ -106,3 +106,27 @@ No new vars were allocated. The three prompts use the GF3 `VAR_PRESSURE_POINTS =
 
 - Modified HnS maps: `NewBarkTown_hns`, `NewBarkTown_Lab_hns`, `CherrygroveCity_hns`, `Route29_hns`, `Route30_hns`, `Route32_hns`, and `SproutTower_1F_hns`.
 - No new maps or specials were allocated. Route 30 Return 1 and Route 32 Return 2 call the existing `ReturnAnchoredMon` special with zero-based indices 0 and 1, respectively.
+
+## GF5 — Johto Act 2
+
+### Flags
+
+| Flag | Value | Purpose |
+| --- | ---: | --- |
+| `FLAG_GILDED_RETURN_3_SEEN` | `0x3BE` | Hide Azalea's Arceus after anchor 3 is returned. |
+| `FLAG_GILDED_PRESSURE_PROMPT_AZALEA` | `0x3BF` | Hide the Azalea SLOWPOKE-T promoter after the choice. |
+
+No vars were allocated. The SLOWPOKE-T prompt uses `VAR_PRESSURE_POINTS = 0x40E5`.
+
+### Trainers
+
+| Trainer ID | Value | Class / party |
+| --- | ---: | --- |
+| `TRAINER_CHAD_GRINDWELL_SLOWPOKE_WELL_HNS` | 658 | Sigma Bro; Machop Lv. 14, Mankey Lv. 15, Tauros Lv. 16 |
+
+`TRAINERS_COUNT_HNS` is now 659. The party uses the existing `TRAINER_CLASS_SIGMA_BRO_HNS` class.
+
+### Maps and specials
+
+- Modified HnS maps: `AzaleaTown_hns` and `SlowpokeWell_B1F_hns`.
+- No new maps or specials were allocated. Azalea Return 3 calls the existing `ReturnAnchoredMon` special with zero-based index 2.

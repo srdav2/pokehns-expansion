@@ -96,6 +96,52 @@ AzaleaTown_EventScript_Youngster::
 	release
 	end
 
+AzaleaTown_EventScript_GildedPressurePrompt::
+	lock
+	faceplayer
+	msgbox AzaleaTown_Text_GildedPressurePrompt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, AzaleaTown_EventScript_GildedPressurePromptYes
+	setflag FLAG_GILDED_PRESSURE_PROMPT_AZALEA
+	msgbox AzaleaTown_Text_GildedPressurePromptNo, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+AzaleaTown_EventScript_GildedPressurePromptYes::
+	addvar VAR_PRESSURE_POINTS, 1
+	setflag FLAG_GILDED_PRESSURE_PROMPT_AZALEA
+	msgbox AzaleaTown_Text_GildedPressurePromptYes, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+AzaleaTown_EventScript_GildedReturn3::
+	lock
+	faceplayer
+	goto_if_lt VAR_AZALEA_TOWN_STATE, 4, AzaleaTown_EventScript_GildedReturn3Early
+	msgbox AzaleaTown_Text_GildedReturn3, MSGBOX_DEFAULT
+	playmoncry SPECIES_ARCEUS, CRY_MODE_NORMAL
+	setvar VAR_0x8004, 2
+	special ReturnAnchoredMon
+	goto_if_eq VAR_RESULT, MON_CANT_GIVE, AzaleaTown_EventScript_GildedReturn3Failed
+	setflag FLAG_GILDED_RETURN_3_SEEN
+	msgbox AzaleaTown_Text_GildedReturn3After, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+AzaleaTown_EventScript_GildedReturn3Early::
+	msgbox AzaleaTown_Text_GildedReturn3Early, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+AzaleaTown_EventScript_GildedReturn3Failed::
+	msgbox AzaleaTown_Text_GildedReturn3Failed, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
 AzaleaTown_EventScript_Slowpoke::
 	lock
 	faceplayer
@@ -404,6 +450,34 @@ AzaleaTown_Text_Youngster:
 	.string "impossible to get through.\p"
 	.string "The CHARCOAL MAN's POKéMON\n"
 	.string "can CUT down trees.$"
+
+AzaleaTown_Text_GildedPressurePrompt:
+	.string "Try a SLOWPOKE-T sample?\n"
+	.string "It's 400% more alpha!$"
+
+AzaleaTown_Text_GildedPressurePromptYes:
+	.string "Side effects may include\n"
+	.string "yawning. No refunds.$"
+
+AzaleaTown_Text_GildedPressurePromptNo:
+	.string "No sample? Your choice.\n"
+	.string "The SLOWPOKE are relieved.$"
+
+AzaleaTown_Text_GildedReturn3:
+	.string "The last of them. Rest.\n"
+	.string "The road ahead is loud.$"
+
+AzaleaTown_Text_GildedReturn3After:
+	.string "Your final companion has\n"
+	.string "returned from the rift.$"
+
+AzaleaTown_Text_GildedReturn3Early:
+	.string "The light waits near the Gym.\n"
+	.string "Not yet.$"
+
+AzaleaTown_Text_GildedReturn3Failed:
+	.string "The light fades. Nothing\n"
+	.string "could cross the rift.$"
 
 AzaleaTown_Text_Slowpoke1:
 	.string "SLOWPOKE:..........\p"

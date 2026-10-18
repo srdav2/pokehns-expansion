@@ -83,7 +83,7 @@ The HnS ROM build passed with the required Arm GNU toolchain and remains 33,554,
 - Add palette-swapped trainer portraits for the 11 non-grunt classes; no new art was added.
 - Add pressure-prompt choices and the Goldenrod RED CAP gift in their relevant act missions.
 - Re-skin the named Giovanni scenes as President Rex Gaudy during their act missions.
-- GF5–GF17 have not started. GF-IMP remains skipped as directed by the plan.
+- GF6–GF17 have not started. GF-IMP remains skipped as directed by the plan.
 
 **Playtest checklist:**
 
@@ -109,7 +109,7 @@ Added the New Bark research-pressure prompt, Cherrygrove petition, Route 29 rall
 - Re-skin the Falkner scene/dialogue and add the N.R.A. open-season line.
 - Add the Sprout Tower Elder's non-endorsement line; the existing Elder/HM flow remains unchanged.
 - `make check BUILD=hns -j8` remains blocked before tests by the existing `include/fake_rtc.h` / `struct SaveBlock3` compile error noted under GF1.
-- GF5–GF17 have not started. GF-IMP remains skipped as directed by the plan.
+- GF6–GF17 have not started. GF-IMP remains skipped as directed by the plan.
 
 **Playtest checklist:**
 
@@ -120,3 +120,28 @@ Added the New Bark research-pressure prompt, Cherrygrove petition, Route 29 rall
 - [ ] Use **R + Start → Trainers… → Choose trainer from map → Try Battle** on a Route 29 Rally Goer, the Route 30 grunt, and both new Sprout Tower Pastors; confirm the trainer classes, dialogue, teams, and levels (5–7).
 
 The Act 1 additions still need playtesting.
+
+## GF5 — Johto Act 2
+
+**Status: BUILT_PARTIAL — NEEDS PLAYTEST**
+
+Added the Azalea SLOWPOKE-T prompt, re-skinned the Slowpoke Well boss battle as Chad Grindwell using a new Sigma Bro trainer with a level 14–16 team, and added Arceus Return 3 outside the Azalea Gym. Return 3 is gated until Kurt's post-Well scene and gives the third anchored Pokémon at level 15. Kept the existing Slowpoke Well/Kurt event progression and the HnS Gym/forest flow in place. The HnS ROM build passed with the required Arm GNU toolchain and is **33,554,432 bytes (32 MiB)**.
+
+**Deferred:**
+
+- Add the Union Cave Freedom Toll checkpoint and its two MEGA grunts.
+- Add the Ruins of Alph Heritage scholar, Chairman Klaus cameo, SLOWPOKE-T billboard, Bugsy gym picket, and Route 33 yard signs.
+- Reclass the Slowpoke Well grunts as Sigma Bros/MEGA grunts and add the remaining act-specific dialogue.
+- Re-skin Bugsy's dialogue and add the Ilex Forest Silver dialogue and act-end Giratina scene.
+- `make check BUILD=hns -j8` remains blocked before tests by the existing `include/fake_rtc.h` / `struct SaveBlock3` compile error noted under GF1.
+- GF6–GF17 have not started. GF-IMP remains skipped as directed by the plan.
+
+**Playtest checklist:**
+
+- [ ] Start a fresh game; open **R + Start → Utilities… → Warp to map warp…** and visit Azalea Town. Talk to the SLOWPOKE-T promoter by the Mart, choose yes/no, and confirm only yes increments `VAR_PRESSURE_POINTS` and the promoter disappears after either choice.
+- [ ] Play the Slowpoke Well sequence through the Proton-slot character. Confirm the battle starts with Chad's dialogue/class and the new team is Machop Lv. 14, Mankey Lv. 15, and Tauros Lv. 16; confirm Kurt's existing return scene still runs afterward.
+- [ ] After Kurt's house scene sets `VAR_AZALEA_TOWN_STATE` to 4, talk to Arceus outside the Gym. Confirm anchor 3 returns at level 15; re-enter Azalea Town and confirm the event is hidden and the anchor cannot be duplicated.
+- [ ] For an isolated Return 3 test, use **R + Start → Flags & Vars… → Set Var XYZ…** to set `VAR_AZALEA_TOWN_STATE` to `4`, then clear `FLAG_GILDED_RETURN_3_SEEN`; use **R + Start → Utilities… → Warp to map warp…** to return to Azalea and trigger Arceus.
+- [ ] Use **R + Start → Flags & Vars… → Set Var XYZ…** to set `VAR_PRESSURE_POINTS` to `0`, test both promoter responses, then inspect the var again to confirm the yes/no behavior.
+
+The Act 2 additions still need playtesting.

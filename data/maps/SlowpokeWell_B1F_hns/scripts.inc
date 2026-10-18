@@ -41,10 +41,10 @@ SlowpokeWell_B1F_EventScript_Eto::
 SlowpokeWell_B1F_EventScript_Proton::
 	lock
 	faceplayer
-	msgbox SlowpokeWell_B1F_Text_ProtonSeen, MSGBOX_DEFAULT
+	msgbox SlowpokeWell_B1F_Text_ChadSeen, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_PROTON_1_HNS, SlowpokeWell_B1F_Text_ProtonBeaten
-	msgbox SlowpokeWell_B1F_Text_ProtonAfter, MSGBOX_AUTOCLOSE
+	trainerbattle_no_intro TRAINER_CHAD_GRINDWELL_SLOWPOKE_WELL_HNS, SlowpokeWell_B1F_Text_ChadBeaten
+	msgbox SlowpokeWell_B1F_Text_ChadAfter, MSGBOX_AUTOCLOSE
 	closemessage
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_HIDE_AZALEA_TOWN_ROCKETS
@@ -81,7 +81,9 @@ SlowpokeWell_B1F_Movement_Kurt:
 	step_end
 
 SlowpokeWell_B1F_Text_KurtIntro:
-	.string "KURT: Hey there, {PLAYER}!\p"
+	.string "KURT: Muscle-bound clowns are\n"
+	.string "selling the TAILS as supplements!\p"
+	.string "Hey there, {PLAYER}!\p"
 	.string "The guard up top took off when\n"
 	.string "I shouted at him.\p"
 	.string "But then I took a tumble down\n"
@@ -120,25 +122,17 @@ SlowpokeWell_B1F_Text_GruntM29After:
 	.string "That's right! We're TEAM MEGA,\n"
 	.string "and we'll do anything for money!$"
 
-SlowpokeWell_B1F_Text_ProtonSeen:
-	.string "What do you want?\p"
-	.string "If you interrupt our work,\n"
-	.string "don't expect any mercy!$"
+SlowpokeWell_B1F_Text_ChadSeen:
+	.string "3 a.m. Cold plunge. Black\n"
+	.string "coffee. Battle. GRINDSET!$"
 
-SlowpokeWell_B1F_Text_ProtonBeaten:
-	.string "You did OK today,\n"
-	.string "but wait till next time!$"
+SlowpokeWell_B1F_Text_ChadBeaten:
+	.string "This is a learning experience.\n"
+	.string "I'll monetize it!$"
 
-SlowpokeWell_B1F_Text_ProtonAfter:
-	.string "Yeah, TEAM MEGA was broken up\n"
-	.string "three years ago.\p"
-	.string "The boss went into hiding.\p"
-	.string "But we continued our activities\n"
-	.string "underground!\p"
-	.string "A small obstacle like you won't be\n"
-	.string "much of a problem for our mission.\p"
-	.string "I advise you to be very afraid of\n"
-	.string "what is to come!$"
+SlowpokeWell_B1F_Text_ChadAfter:
+	.string "SLOWPOKE-T! Pure tail power!\p"
+	.string "Side effects include yawning.$"
 
 SlowpokeWell_B1F_Text_GruntM2Seen:
 	.string "Hyuck-hyuck-hyuck!\n"
