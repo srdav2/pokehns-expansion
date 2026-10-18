@@ -452,7 +452,8 @@ EventScript_ResetAllMapFlagsHnS::
 	setvar VAR_ROUTE22_GIOVANNI_STATE, 0
 	setvar VAR_ROUTE27_BAOBA_CALL, 0
 
-	additem ITEM_EXP_SHARE
+	setflag FLAG_RECEIVED_RUNNING_SHOES
+	setflag FLAG_SYS_B_DASH
 	additem ITEM_GB_PLAYER
 	setrespawn HEAL_LOCATION_NEW_BARK_TOWN_HNS
 	

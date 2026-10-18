@@ -246,6 +246,9 @@ NewBarkTown_Lab_EventScript_ChoseStarter::
 	bufferspeciesname STR_VAR_1, PLAYER_STARTER_SPECIES
 	message NewBarkTown_Lab_Text_ReceivedStarter
 	waitfanfare
+	giveitem ITEM_EXP_SHARE
+	setflag FLAG_EXP_SHARE_ENABLED
+	msgbox NewBarkTown_Lab_Text_ElmExpShare, MSGBOX_DEFAULT
 	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
 	goto_if_eq VAR_RESULT, TRUE, NewBarkTown_Lab_EventScript_ChoseStarter_NicknameStarter_Nuzlocke
 	msgbox NewBarkTown_Lab_Text_Nickname, MSGBOX_YESNO
@@ -427,7 +430,6 @@ NewBarkTown_Lab_EventScript_PoliceYes::
 	clearflag FLAG_HIDE_MOMS_FRIEND2
 	setflag FLAG_ADVENTURE_STARTED
 	setflag FLAG_START_NUZLOCKE
-	setflag FLAG_EXP_SHARE_ENABLED
 	removeitem ITEM_MYSTERY_EGG
 	release
 	end
@@ -742,6 +744,10 @@ NewBarkTown_Lab_Text_ChoseStarter:
 
 NewBarkTown_Lab_Text_ReceivedStarter:
 	.string "{PLAYER} received {STR_VAR_1}!$"
+
+NewBarkTown_Lab_Text_ElmExpShare:
+	.string "Here, take this Exp. Share.\n"
+	.string "It helps the whole team grow.$"
 
 NewBarkTown_Lab_Text_Nickname:
 	.string "Would you like to give your\n"

@@ -47,3 +47,24 @@ Added the New Game Lost Rift trio at levels 5, 10, and 15. Each is a distinct, r
 - [ ] Once an evolved anchor test fixture is available, open **R + Start → Utilities… → Lost Rift anchors…**, return that anchor, and confirm it de-evolves to base at its saved level while preserving nickname, IVs, nature, shininess, and OT; check EVs reset and level-up moves/experience match.
 
 The Rift foundation and debug actions still need playtesting.
+
+## GF2 — Quality of life
+
+**Status: BUILT — NEEDS PLAYTEST**
+
+Moved the party-wide Gen 6 Exp. Share from New Game initialization to Elm's starter-receipt sequence and enabled it when awarded. New games now begin with the existing Running Shoes flags set; Mom's intro skips the already-completed shoe handoff.
+
+**Deferred:**
+
+- `make check BUILD=hns -j8` remains blocked before tests by the existing `include/fake_rtc.h` / `struct SaveBlock3` compile error noted under GF1.
+- GF3–GF17 are not started.
+
+**Playtest checklist:**
+
+- [ ] Start a new game, take a few steps before speaking to Mom downstairs, and confirm B-dash works immediately.
+- [ ] Finish Elm's starter choice; open the Bag's Key Items pocket and confirm the Exp. Share was received once and is enabled. Confirm the scene continues through the nickname prompt and starter flow.
+- [ ] Battle with multiple Pokémon in the party while the Exp. Share is enabled; confirm non-participants gain experience.
+- [ ] Use the Exp. Share in Key Items to turn it off, battle again and confirm the party-wide effect stops; turn it back on and confirm it resumes.
+- [ ] Open the overworld debug menu with **R + Start → Flags & Vars… → Toggle Running Shoes**; confirm the debug toggle still switches the run flag both ways.
+
+GF2's startup flow and experience behavior still need playtesting.

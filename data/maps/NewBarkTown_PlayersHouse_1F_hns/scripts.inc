@@ -222,7 +222,7 @@ NewBarkTown_PlayersHouse_1F_EventScript_MomsIntro::
 	waitmovement 0
 	msgbox NewBarkTown_PlayersHouse_1F_Text_ElmsLookingForYou, MSGBOX_DEFAULT
 	call NewBarkTown_PlayersHouse_1F_EventScript_GivePokeGear
-	call NewBarkTown_PlayersHouse_1F_EventScript_GiveRunningShoes
+	call_if_unset FLAG_RECEIVED_RUNNING_SHOES, NewBarkTown_PlayersHouse_1F_EventScript_GiveRunningShoes
 	applymovement LOCALID_MOM, NewBarkTown_PlayersHouse_1F_MomMovement_2
 	waitmovement 0
 	setvar VAR_NEWBARK_TOWN_STATE, 2

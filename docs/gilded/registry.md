@@ -57,3 +57,9 @@ Named save fields appended to `struct PokemonStorage`:
 | `gildedRiftReturnedBits` | Bit `n` records that zero-based anchor `n` was returned |
 
 Special: `ReturnAnchoredMon`, reading the zero-based anchor index from `VAR_8004`. It returns the anchor to the party or PC and prevents duplicate returns. The GF1 debug menu exposes each index under **Utilities… → Lost Rift anchors…**. No new flags or vars were allocated.
+
+## GF2 — Quality of life
+
+- `ITEM_EXP_SHARE` is awarded in `NewBarkTown_Lab_hns` after the starter and uses the existing `FLAG_EXP_SHARE_ENABLED` toggle with `I_EXP_SHARE_ITEM == GEN_6`.
+- New Game sets existing `FLAG_RECEIVED_RUNNING_SHOES` and `FLAG_SYS_B_DASH`; Mom's existing shoe handoff is skipped when the received flag is already set.
+- No new flags, vars, trainers, maps, or specials were allocated.
