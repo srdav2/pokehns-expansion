@@ -252,3 +252,14 @@ The prompt uses `VAR_PRESSURE_POINTS = 0x40E5`; no new vars or specials were all
 
 - Modified HnS maps: `GoldenrodCity_RadioTower_4F_hns` and `GoldenrodCity_RadioTower_5F_hns`.
 - No new maps or specials were allocated.
+
+## GF11 — Johto Act 8
+
+### Script menus
+
+- `MULTI_ELDERQUIIZ6 = 178`: sixth Dragon's Den Elder quiz question, with “Demand a recount” and “Train harder” choices.
+
+### Maps and specials
+
+- Modified HnS maps: `BlackthornCity_Gym_hns` and `DragonsDen_Shrine_hns`.
+- No new flags, vars, trainers, maps, or specials were allocated. Clair continues to use the existing `TRAINER_CLAIR_1_HNS` team and level.

@@ -268,3 +268,24 @@ Added Pressure Prompt 10 to the 4F stair-side grunt encounter: yes adds one pres
 - [ ] Leave and re-enter the tower after the boss event; confirm the takeover battles and fake Director do not restart and the real Director remains available.
 
 The Act 7 additions still need playtesting.
+
+## GF11 — Johto Act 8
+
+**Status: BUILT — NEEDS PLAYTEST**
+
+Added Clair's recount line and yes/no reply choice after the existing battle. Either reply continues through the original Dragon's Den challenge setup without changing Clair's team, badge flow, or event state. Added the Elder's sixth quiz question; choosing “Demand a recount” displays the required response and repeats the question, while “Train harder” continues through the existing badge/Dratini flow. The HnS ROM build passed with the required Arm GNU toolchain and is **33,554,432 bytes (32 MiB)**.
+
+**Deferred:**
+
+- None for the Act 8 story beats in scope.
+- `make check BUILD=hns -j8` remains blocked before tests by the existing `include/fake_rtc.h` / `struct SaveBlock3` compile error noted under GF1.
+
+**Playtest checklist:**
+
+- [ ] Open **R + Start → Utilities… → Warp to map warp…** and visit Blackthorn City Gym. Defeat Clair; confirm her recount line and reply prompt appear. Choose **Yes**, confirm “That's what THEY say.” appears, then confirm the existing Dragon's Den directions and challenge state continue.
+- [ ] For a separate reply test, use **R + Start → Utilities… → Warp to map warp…** to return to Blackthorn Gym after resetting the test save or gym state; choose **No** and confirm “…Fine.” appears before the same Dragon's Den progression.
+- [ ] To test the Elder directly, open **R + Start → Flags & Vars… → Set Var XYZ…**, set `VAR_BLACKTHORN_CITY_STATE` to `2`, and set `VAR_DRAGONS_DEN_QUIZ` to `0`; use **Utilities… → Warp to map warp…** to enter Dragon's Den Shrine and complete the first five questions correctly.
+- [ ] At question six, choose **Demand a recount**. Confirm “…Go away and come back.” appears, the Elder quiz remains active, and no badge/Dratini progression occurs. Then choose **Train harder** and confirm the original quiz completion and Clair event flow continue.
+- [ ] Complete the canonical flow, leave and re-enter the Shrine, and confirm the existing Elder/Dratini behavior is unchanged; confirm Clair's HnS party and levels remain unchanged.
+
+The Act 8 changes still need playtesting.

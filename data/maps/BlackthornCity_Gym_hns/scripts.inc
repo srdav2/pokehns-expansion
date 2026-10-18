@@ -205,6 +205,15 @@ BlackthornGym_EventScript_Clair::
 	goto_if_eq VAR_BLACKTHORN_CITY_STATE, 2, BlackthornGym_EventScript_ClairDuringChallenge
 	msgbox BlackthornGym_Text_ClairIntroText, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_CLAIR_1_HNS, BlackthornGym_Text_ClairWinText
+	msgbox BlackthornGym_Text_ClairRecountQuestion, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, BlackthornGym_EventScript_ClairRecountYes
+	msgbox BlackthornGym_Text_ClairRecountNo, MSGBOX_DEFAULT
+	goto BlackthornGym_EventScript_ClairAfterRecount
+
+BlackthornGym_EventScript_ClairRecountYes::
+	msgbox BlackthornGym_Text_ClairRecountYes, MSGBOX_DEFAULT
+
+BlackthornGym_EventScript_ClairAfterRecount::
 	msgbox BlackthornGym_Text_ClairText_GoToDragonsDen, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_BLACKTHORN_GYM
 	setvar VAR_0x8008, 8
@@ -243,9 +252,16 @@ BlackthornGym_Text_ClairIntroText:
     .string "power against any opponent!$"
 
 BlackthornGym_Text_ClairWinText:
-    .string "I lost?\p"
-    .string "I don't believe it. There must be\n"
-    .string "some mistake…$"
+    .string "I… I demand a recount.$"
+
+BlackthornGym_Text_ClairRecountQuestion:
+    .string "Would you like to demand one?$"
+
+BlackthornGym_Text_ClairRecountYes:
+    .string "That's what THEY say.$"
+
+BlackthornGym_Text_ClairRecountNo:
+    .string "…Fine.$"
 
 BlackthornGym_Text_ClairText_GoToDragonsDen:
     .string "I won't admit this.\p"

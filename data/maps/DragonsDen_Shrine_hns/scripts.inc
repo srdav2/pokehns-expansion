@@ -157,10 +157,24 @@ DragonsDen_Shrine_EventScript_ElderQuiz5::
 	message DragonsDen_Shrine_Text_Question5
 	multichoice 20, 6, MULTI_ELDERQUIIZ5, FALSE 
 	switch VAR_RESULT
-	case 2, DragonsDen_Shrine_EventScript_ElderQuizFinish
+	case 2, DragonsDen_Shrine_EventScript_ElderQuiz6
 	case MULTI_B_PRESSED, DragonsDen_Shrine_EventScript_ElderQuiz5
 	call DragonsDen_Shrine_EventScript_ElderWrong
 	goto DragonsDen_Shrine_EventScript_ElderQuiz5
+
+DragonsDen_Shrine_EventScript_ElderQuiz6::
+	message DragonsDen_Shrine_Text_Question6
+	multichoice 20, 6, MULTI_ELDERQUIIZ6, FALSE
+	switch VAR_RESULT
+	case 0, DragonsDen_Shrine_EventScript_ElderQuiz6Recount
+	case 1, DragonsDen_Shrine_EventScript_ElderQuizFinish
+	case MULTI_B_PRESSED, DragonsDen_Shrine_EventScript_ElderQuiz6
+	call DragonsDen_Shrine_EventScript_ElderWrong
+	goto DragonsDen_Shrine_EventScript_ElderQuiz6
+
+DragonsDen_Shrine_EventScript_ElderQuiz6Recount::
+	msgbox DragonsDen_Shrine_Text_ElderRecount, MSGBOX_DEFAULT
+	goto DragonsDen_Shrine_EventScript_ElderQuiz6
 
 DragonsDen_Shrine_EventScript_ElderWrong::
 	msgbox DragonsDen_Shrine_Text_WrongAnswer1, MSGBOX_DEFAULT
@@ -202,6 +216,13 @@ DragonsDen_Shrine_Text_Question4:
 DragonsDen_Shrine_Text_Question5:
     .string "Strong POKéMON. Weak POKéMON.\n"
     .string "Which is more important?$"
+
+DragonsDen_Shrine_Text_Question6:
+    .string "What do you do when you lose a\n"
+    .string "battle?$"
+
+DragonsDen_Shrine_Text_ElderRecount:
+    .string "…Go away and come back.$"
 
 DragonsDen_Shrine_Text_WrongAnswer1:
     .string "Hah? I didn't quite catch that…$"

@@ -186,6 +186,7 @@
 #define MULTI_BATTLE_MODE_HNS              175
 #define MULTI_FOSSIL_HNS                   176
 #define MULTI_GAME_CORNER_DOLLS2           177
+#define MULTI_ELDERQUIIZ6                  178
 
 #define MULTI_NONE 255
 
