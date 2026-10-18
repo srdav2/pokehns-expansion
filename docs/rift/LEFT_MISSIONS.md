@@ -85,6 +85,8 @@ Implement contract §2 everywhere Left touches the PC:
 - **Wallpapers:** clamp any index ≥ `WALLPAPER_COUNT` to 0, inside `pokemon_storage_system.c`. Data from the other game may use a different range.
 - **Sealed-box note** on the PC menu: `Boxes 1-7 are sealed by\nthe Rift.`
 
+- **Perfect-stats sweep:** if `src/perfect_player_mons.c` exists (P0), make `ShouldSweepBox()` return `Rift_IsBoxDepositable(boxId)`.
+
 List every loop over `boxes[`, `GetBoxedMonPtr` or `TOTAL_BOXES_COUNT` in the mission log, marked read or write.
 
 **Playtest steps:** debug-give 211 Pokémon. The 211th must say the PC is full, and boxes 1–7 must not be selectable.
