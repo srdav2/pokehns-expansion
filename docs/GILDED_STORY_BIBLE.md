@@ -209,7 +209,7 @@ Grunt classes are renamed. Event logic is kept.
 | Bill | Patches the PC to unseal your Hoenn storage after the Johto League. *"Timelines are just really big boxes."* |
 
 ### 3.5 Sovereign cameos (both-sides jokes)
-- **Commissar Blair** (Goldenrod Underground): now hosts a *"Recovering Leftist"* podcast, sponsored by SLOWPOKE-T. *"Turns out you can grift in both directions. Who knew?"* Optional battle (`A_WHIT` +2), with their Sovereign species evolved.
+- **Commissar Bleak** (Goldenrod Underground): now hosts a *"Recovering Leftist"* podcast, sponsored by SLOWPOKE-T. *"Turns out you can grift in both directions. Who knew?"* Optional battle (`A_WHIT` +2), with their Sovereign species evolved.
 - **Chairman Klaus** (Azalea, park bench): *"Ze bugs… zey were never ze problem."*
 - **Chief Thorne** (Cerulean crypto mine, Kanto): *"We burned COAL to mine Equi-Coin. These idiots hooked a meme-coin rig to an entire POWER PLANT. Amateurs."*
 
@@ -335,7 +335,7 @@ Each act lists: **Beats**, **Battles**, **Overworld additions**, **HnS notes**. 
 2. **Dept Store rooftop "Ball Show"** (N.R.A.): Pressure Prompt 6, and the optional **Colonel Buckshot (Team 1)** battle.
 3. **Whitney:** a grunt is outside the gym. *"Lady gym leaders get too emotional."* Whitney wins, cries, and Rollouts him (scripted text after the player beats her). Plain Badge.
 4. **Bill** (HnS gives Eevee). Bill: *"Your PC's acting weird, huh? Timeline stuff. Win the League and I'll patch it."* This sets up the Hoenn PC reunion.
-5. **Goldenrod Underground:** the Debate Club (side quest 4) and the **Commissar Blair cameo**.
+5. **Goldenrod Underground:** the Debate Club (side quest 4) and the **Commissar Bleak cameo**.
 6. **National Park:** the HnS Bug-Catching Contest is re-texted as the N.R.A.'s **"Open Season"**. *"It's catch-and-release, Colonel." "…Fine. Catch and RE-LEASE. Freedom."*
 
 **Battles:** 1–2 MEGA grunts in the station, the optional Buckshot, and the 3 Debate Bros.
@@ -446,7 +446,7 @@ Kanto gym order is free, as in HGSS/HnS. Each scene stands alone and gates on it
 3. **Battle: Giratina (Origin)** at `A_RED` −5 to `A_RED`, catchable. `DECISION:` the default allows catching.
 4. **Arceus centres the world:** a white flash, then the spin reverses. Arceus:
    > "Left was loud. Right was loud. The middle is quiet, and quiet is where people actually live."
-5. **Epilogue (Goldenrod, TV):** a panel show, **"CROSSFIRE"**, has **Commissar Blair and Warden Pell** shouting over each other. The player turns off the TV. The final scene is Route 29, where your party runs into the grass. A final text box depends on `VAR_PRESSURE_POINTS`:
+5. **Epilogue (Goldenrod, TV):** a panel show, **"CROSSFIRE"**, has **Commissar Bleak and Warden Pell** shouting over each other. The player turns off the TV. The final scene is Route 29, where your party runs into the grass. A final text box depends on `VAR_PRESSURE_POINTS`:
    - 0: *"You said no to everything. Exhausting. Correct."*
    - 1–5: *"Go outside. Touch grass. Route 29 has excellent grass."*
    - 6+: Arceus, *"You agreed to a great many things. Read the fine print next time."*

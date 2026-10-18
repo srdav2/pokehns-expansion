@@ -330,3 +330,18 @@ Pressure Prompt 11 uses `VAR_PRESSURE_POINTS = 0x40E5`. No new vars or specials 
 - Modified HnS map: `Route39_FarmHouse_hns`.
 - No new flags, vars, trainers, maps, or specials were allocated. The existing `VAR_ROUTE39_BARN` berry-feeding progression is unchanged.
 - Yard Sign Cleanup, Fact-Check the Unown, Debate Club, and Tariff Trouble remain deferred.
+
+## P2-01 — Johto boss data
+
+### Trainers
+| Constant | ID | Notes |
+| --- | --- | --- |
+| `TRAINER_COMMISSAR_BLEAK_GOLDENROD_HNS` | 666 | T1, Lv 22–23, optional |
+| `TRAINER_BARRY_BLASTER_RADIO_TOWER_HNS` | 667 | T3, Lv 43–45 (Radio Tower 5F) |
+| `TRAINER_CHAD_GRINDWELL_RADIO_TOWER_HNS` | 668 | T3, Lv 43–45 |
+| `TRAINER_COLONEL_BUCKSHOT_RADIO_TOWER_HNS` | 669 | T3, Lv 43–45 |
+| `TRAINER_WARDEN_PELL_RADIO_TOWER_HNS` | 670 | T3, Lv 44–46 |
+| `TRAINER_WARDEN_PELL_BORDER_WALL_HNS` | 671 | T3, Lv 52–54 |
+| `TRAINER_BRAD_GRINDWELL_ALPHA_DOJO_HNS` | 672 | T2, Lv 30–32 |
+
+`TRAINERS_COUNT_HNS` is now 673.

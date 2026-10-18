@@ -16084,16 +16084,38 @@ Pic: Proton Hns
 Gender: Male
 Music: Rocket
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
+Items: Super Potion
 
-Machop
+Machop @ Oran Berry
+Ability: Guts
 Level: 14
+Adamant Nature
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Karate Chop
+- Bulk Up
+- Rock Smash
+- Leer
 
-Mankey
+Mankey @ Oran Berry
+Ability: Vital Spirit
 Level: 15
+Jolly Nature
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Low Kick
+- Fury Swipes
+- Pursuit
+- Covet
 
-Tauros
+Tauros @ Sitrus Berry
+Ability: Intimidate
 Level: 16
+Adamant Nature
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Horn Attack
+- Pursuit
+- Rage
+- Scary Face
 
 === TRAINER_COLONEL_BUCKSHOT_BALL_SHOW_HNS ===
 Name: BEAUMONT
@@ -16103,18 +16125,47 @@ Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
 AI: Basic Trainer
+Items: Super Potion
 
-Remoraid
-Level: 20
-
-Krabby
-Level: 20
-
-Magnemite
+Remoraid @ Scope Lens
+Ability: Sniper
 Level: 21
+Modest Nature
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Bubble Beam
+- Psybeam
+- Aurora Beam
+- Supersonic
 
-Clauncher
+Krabby @ Oran Berry
+Ability: Hyper Cutter
+Level: 21
+Adamant Nature
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Bubble Beam
+- Metal Claw
+- Stomp
+- Harden
+
+Magnemite @ Oran Berry
+Ability: Sturdy
 Level: 22
+Modest Nature
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Spark
+- Sonic Boom
+- Thunder Wave
+- Supersonic
+
+Clauncher @ Mystic Water
+Ability: Mega Launcher
+Level: 23
+Modest Nature
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Water Pulse
+- Aqua Jet
+- Smack Down
+- Swords Dance
 
 === TRAINER_WARDEN_PELL_ECRUTEAK_GATE_HNS ===
 Name: PELL
@@ -16124,15 +16175,77 @@ Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
 AI: Basic Trainer
+Items: Super Potion
 
-Dunsparce
+Dunsparce @ King's Rock
+Ability: Serene Grace
 Level: 24
+Careful Nature
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Headbutt
+- Glare
+- Rollout
+- Defense Curl
 
-Stantler
+Stantler @ Persim Berry
+Ability: Intimidate
 Level: 25
+Adamant Nature
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Stomp
+- Hypnosis
+- Confuse Ray
+- Take Down
 
-Sudowoodo
+Sudowoodo @ Sitrus Berry
+Ability: Rock Head
 Level: 26
+Adamant Nature
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Rock Slide
+- Double-Edge
+- Low Kick
+- Wood Hammer
+
+=== TRAINER_COMMISSAR_BLEAK_GOLDENROD_HNS ===
+Name: BLEAK
+Class: Talk Radio Host Hns
+Pic: Aroma Lady
+Gender: Female
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+Items: Super Potion
+
+Hattrem @ Leftovers
+Ability: Magic Bounce
+Level: 23
+Bold Nature
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Psybeam
+- Draining Kiss
+- Calm Mind
+- Brutal Swing
+
+Primeape @ Sitrus Berry
+Ability: Defiant
+Level: 23
+Jolly Nature
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Karate Chop
+- Rage Fist
+- Pursuit
+- Leer
+
+Slowpoke @ Oran Berry
+Ability: Own Tempo
+Level: 22
+Relaxed Nature
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Water Pulse
+- Confusion
+- Yawn
+- Slack Off
 
 === TRAINER_SAGE_PURELY_OLIVINE_LIGHTHOUSE_HNS ===
 Name: PURELY
@@ -16142,18 +16255,105 @@ Gender: Female
 Music: Hg Suspicious 1
 Double Battle: No
 AI: Basic Trainer
+Items: Super Potion / Full Heal
 
-Gloom
-Level: 34
+Gloom @ Big Root
+Ability: Stench
+Level: 29
+Bold Nature
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+EVs: 128 HP / 128 Def
+- Giga Drain
+- Stun Spore
+- Acid
+- Moonlight
 
-Weepinbell
-Level: 35
+Weepinbell @ Miracle Seed
+Ability: Chlorophyll
+Level: 29
+Modest Nature
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+EVs: 128 SpA / 128 Spe
+- Sleep Powder
+- Razor Leaf
+- Poison Jab
+- Growth
 
-Foongus
-Level: 35
+Foongus @ Black Sludge
+Ability: Regenerator
+Level: 30
+Calm Nature
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+EVs: 128 HP / 128 SpD
+- Stun Spore
+- Giga Drain
+- Clear Smog
+- Protect
 
-Comfey
-Level: 36
+Comfey @ Leftovers
+Ability: Triage
+Level: 31
+Calm Nature
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+EVs: 128 HP / 128 SpD
+- Draining Kiss
+- Floral Healing
+- Calm Mind
+- Grass Knot
+
+=== TRAINER_BRAD_GRINDWELL_ALPHA_DOJO_HNS ===
+Name: BRAD
+Class: Sigma Bro Hns
+Pic: Archer Hns
+Gender: Male
+Music: Rocket
+Double Battle: No
+AI: Basic Trainer
+Items: Super Potion / Super Potion
+
+Rapidash @ Charcoal
+Ability: Flash Fire
+Level: 30
+Jolly Nature
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+EVs: 128 Atk / 128 Spe
+- Flame Charge
+- Stomp
+- Agility
+- Low Kick
+
+Electabuzz @ Magnet
+Ability: Static
+Level: 31
+Hasty Nature
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+EVs: 128 SpA / 128 Spe
+- Thunder Punch
+- Quick Attack
+- Low Kick
+- Light Screen
+
+Varoom @ Black Sludge
+Ability: Overcoat
+Level: 31
+Adamant Nature
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+EVs: 128 Atk / 128 HP
+- Poison Jab
+- Iron Head
+- Taunt
+- Screech
+
+Lycanroc-Midnight @ Life Orb
+Ability: No Guard
+Level: 32
+Adamant Nature
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+EVs: 128 Atk / 128 Spe
+- Rock Slide
+- Counter
+- Crunch
+- Sucker Punch
 
 === TRAINER_BARRY_BLASTER_MAHOGANY_HNS ===
 Name: BARRY
@@ -16163,18 +16363,300 @@ Gender: Male
 Music: Rocket
 Double Battle: No
 AI: Basic Trainer
+Items: Super Potion / Super Potion
 
-Exploud
+Exploud @ Throat Spray
+Ability: Scrappy
 Level: 32
+Modest Nature
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+EVs: 128 SpA / 128 HP
+- Hyper Voice
+- Bite
+- Stomp
+- Roar
 
-Primeape
+Primeape @ Scope Lens
+Ability: Anger Point
 Level: 33
+Jolly Nature
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+EVs: 128 Atk / 128 Spe
+- Cross Chop
+- Rage Fist
+- Seismic Toss
+- Focus Energy
 
-Noibat
+Noibat @ Sitrus Berry
+Ability: Infiltrator
 Level: 33
+Timid Nature
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+EVs: 128 SpA / 128 Spe
+- Air Cutter
+- Super Fang
+- Bite
+- Supersonic
 
-Gyarados
+Gyarados @ Lum Berry
+Ability: Moxie
 Level: 34
+Adamant Nature
+IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
+EVs: 128 Atk / 128 Spe
+- Waterfall
+- Thrash
+- Ice Fang
+- Dragon Dance
+
+=== TRAINER_BARRY_BLASTER_RADIO_TOWER_HNS ===
+Name: BARRY
+Class: Talk Radio Host Hns
+Pic: Petrel Hns
+Gender: Male
+Music: Rocket
+Double Battle: No
+AI: Smart Trainer
+Items: Hyper Potion / Hyper Potion
+
+Exploud @ Throat Spray
+Ability: Scrappy
+Level: 43
+Modest Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+- Boomburst
+- Flamethrower
+- Ice Beam
+- Surf
+
+Noivern @ Sitrus Berry
+Ability: Infiltrator
+Level: 44
+Timid Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 SpA / 252 Spe / 4 HP
+- Boomburst
+- Dragon Pulse
+- Air Slash
+- Super Fang
+
+Primeape @ Choice Scarf
+Ability: Defiant
+Level: 44
+Jolly Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 Atk / 252 Spe / 4 HP
+- Close Combat
+- Rage Fist
+- U-turn
+- Stone Edge
+
+Gyarados @ Lum Berry
+Ability: Moxie
+Level: 45
+Jolly Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 Atk / 252 Spe / 4 HP
+- Waterfall
+- Bounce
+- Ice Fang
+- Dragon Dance
+
+=== TRAINER_CHAD_GRINDWELL_RADIO_TOWER_HNS ===
+Name: CHAD
+Class: Sigma Bro Hns
+Pic: Proton Hns
+Gender: Male
+Music: Rocket
+Double Battle: No
+AI: Smart Trainer
+Items: Hyper Potion / Hyper Potion
+
+Hitmontop @ Leftovers
+Ability: Intimidate
+Level: 43
+Impish Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 HP / 252 Def / 4 Def
+- Fake Out
+- Close Combat
+- Sucker Punch
+- Rapid Spin
+
+Primeape @ Sitrus Berry
+Ability: Defiant
+Level: 43
+Jolly Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 Atk / 252 Spe / 4 HP
+- Close Combat
+- U-turn
+- Rage Fist
+- Bulk Up
+
+Tauros @ Choice Band
+Ability: Intimidate
+Level: 44
+Jolly Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 Atk / 252 Spe / 4 HP
+- Double-Edge
+- Earthquake
+- Zen Headbutt
+- Close Combat
+
+Pangoro @ Assault Vest
+Ability: Iron Fist
+Level: 44
+Adamant Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Drain Punch
+- Hammer Arm
+- Crunch
+- Bullet Punch
+
+Machamp @ Black Belt
+Ability: No Guard
+Level: 45
+Adamant Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Dynamic Punch
+- Knock Off
+- Bullet Punch
+- Stone Edge
+
+=== TRAINER_COLONEL_BUCKSHOT_RADIO_TOWER_HNS ===
+Name: BEAUMONT
+Class: Ball Carrier Hns
+Pic: Fisherman
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Smart Trainer
+Items: Hyper Potion / Hyper Potion
+
+Octillery @ Scope Lens
+Ability: Sniper
+Level: 43
+Modest Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+- Octazooka
+- Fire Blast
+- Ice Beam
+- Focus Energy
+
+Cramorant @ Sharp Beak
+Ability: Gulp Missile
+Level: 43
+Modest Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+- Surf
+- Drill Peck
+- Roost
+- Ice Beam
+
+Kingler @ Life Orb
+Ability: Sheer Force
+Level: 44
+Adamant Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Liquidation
+- Rock Slide
+- X-Scissor
+- Swords Dance
+
+Magneton @ Sitrus Berry
+Ability: Analytic
+Level: 44
+Modest Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+- Thunderbolt
+- Flash Cannon
+- Thunder Wave
+- Tri Attack
+
+Clawitzer @ Wise Glasses
+Ability: Mega Launcher
+Level: 45
+Modest Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+- Water Pulse
+- Dark Pulse
+- Aura Sphere
+- Dragon Pulse
+
+=== TRAINER_WARDEN_PELL_RADIO_TOWER_HNS ===
+Name: PELL
+Class: Heritage Officer Hns
+Pic: Officer Hns
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Smart Trainer
+Items: Hyper Potion / Hyper Potion
+
+Granbull @ Leftovers
+Ability: Intimidate
+Level: 44
+Impish Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 HP / 252 Def / 4 Def
+- Play Rough
+- Thunder Wave
+- Earthquake
+- Crunch
+
+Sudowoodo @ Rocky Helmet
+Ability: Rock Head
+Level: 44
+Impish Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 HP / 252 Def / 4 Def
+- Head Smash
+- Wood Hammer
+- Sucker Punch
+- Stealth Rock
+
+Stantler @ Persim Berry
+Ability: Intimidate
+Level: 44
+Jolly Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 Atk / 252 Spe / 4 HP
+- Double-Edge
+- Hypnosis
+- Megahorn
+- Jump Kick
+
+Donphan @ Sitrus Berry
+Ability: Sturdy
+Level: 45
+Adamant Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Earthquake
+- Ice Shard
+- Knock Off
+- Rapid Spin
+
+Ursaring @ Flame Orb
+Ability: Guts
+Level: 46
+Adamant Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Facade
+- Crunch
+- Hammer Arm
+- Swords Dance
 
 === TRAINER_PRESIDENT_REX_GAUDY_RADIO_TOWER_HNS ===
 Name: GAUDY
@@ -16183,22 +16665,139 @@ Pic: Giovanni Hns
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
+Items: Full Restore / Full Restore
 
-Persian
+Persian @ King's Rock
+Ability: Technician
 Level: 44
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 HP
+- Fake Out
+- Pay Day
+- Power Gem
+- Taunt
 
-Gholdengo
+Donphan @ Leftovers
+Ability: Sturdy
 Level: 44
+Impish Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 Def
+- Earthquake
+- Ice Shard
+- Knock Off
+- Stealth Rock
 
-Copperajah
+Gholdengo @ Leftovers
+Ability: Good as Gold
 Level: 45
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+- Make It Rain
+- Shadow Ball
+- Thunder Wave
+- Recover
 
-Kingambit
+Copperajah @ Sitrus Berry
+Ability: Sheer Force
 Level: 45
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Iron Head
+- Play Rough
+- High Horsepower
+- Rock Slide
 
-Donphan
+Kingambit @ Black Glasses
+Ability: Supreme Overlord
 Level: 46
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Kowtow Cleave
+- Iron Head
+- Sucker Punch
+- Swords Dance
+
+=== TRAINER_WARDEN_PELL_BORDER_WALL_HNS ===
+Name: PELL
+Class: Heritage Officer Hns
+Pic: Officer Hns
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Smart Trainer
+Items: Full Restore / Full Restore
+
+Ursaring @ Flame Orb
+Ability: Guts
+Level: 52
+Adamant Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Facade
+- Crunch
+- Close Combat
+- Swords Dance
+
+Granbull @ Leftovers
+Ability: Intimidate
+Level: 52
+Impish Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 HP / 252 Def / 4 Def
+- Play Rough
+- Earthquake
+- Thunder Wave
+- Roar
+
+Miltank @ Leftovers
+Ability: Thick Fat
+Level: 52
+Careful Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 HP / 252 SpD / 4 Def
+- Body Slam
+- Milk Drink
+- Curse
+- Earthquake
+
+Donphan @ Sitrus Berry
+Ability: Sturdy
+Level: 53
+Adamant Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Earthquake
+- Ice Shard
+- Knock Off
+- Stealth Rock
+
+Dudunsparce @ King's Rock
+Ability: Serene Grace
+Level: 53
+Bold Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 HP / 252 Def / 4 Def
+- Glare
+- Hyper Drill
+- Coil
+- Roost
+
+Ursaluna @ Flame Orb
+Ability: Guts
+Level: 54
+Adamant Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Headlong Rush
+- Facade
+- Fire Punch
+- Rest
 
 === TRAINER_GILDED_RALLY_GOER_INDIGO_1_HNS ===
 Name: STOPSTEEL

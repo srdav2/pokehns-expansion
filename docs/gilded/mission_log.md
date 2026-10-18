@@ -427,3 +427,26 @@ Added the Raw Moomoo overlay to the existing Route 39 sick-Miltank dialogue: an 
 - [ ] Confirm the farmer's milk shop still checks money and bag space and charges the existing price.
 
 The Raw Moomoo side-quest overlay still needs playtesting; four of the five side quests remain deferred.
+
+# Pass 2 (docs/GILDED_PASS_2.md)
+
+## P2-00 — Setup
+
+**Status: BUILT — NEEDS PLAYTEST**
+
+Branch `gilded-pass-2` created from `srdav2-gilded-overnight-missions`. Baseline `make hns` passed (ROM 31,710,340 B, 94.50% of 32 MB). Created `docs/gilded/BOSS_DESIGN.md`. Fixed "Blair" → "Bleak" in the bible.
+
+**Deferred:** none.
+
+## P2-01 — Johto boss data
+
+**Status: BUILT — NEEDS PLAYTEST**
+
+Full sets (moves, items, abilities, natures, IVs, EVs per tier, AI, trainer bags) for Chad 1, Buckshot 1, Pell 1, Sage Purely, Barry 1, Gaudy 1 (edited in place) and new IDs 666–672: Bleak, Barry 2 (Radio Tower), Chad 2, Buckshot 2, Pell 2, Pell 3 (Border Wall), Brad 1. New IDs are not placed yet (P2-02/03/04). Design notes are in `BOSS_DESIGN.md`.
+
+Boss check (script equivalent of the §8 grep): every mon in the entries above has 4 `- ` moves, `Ability:`, a nature line and `IVs:`; the only hits are the pre-existing HnS `TRAINER_BARRY_HNS` Tentacruel/Nidoking.
+
+**Deferred:** none for data.
+
+**Playtest checklist:**
+- [ ] Debug menu → Battle → trainer battle (or warp and talk) vs. each placed boss; confirm 4 moves and items show.
