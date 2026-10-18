@@ -90,3 +90,21 @@ Hard-cap check: winnable at Lv 50–52.
 
 ## Kanto bosses
 Entries for Brad 2, the Grindwell Bros double, Buckshot 3 and Gaudy 2 are added by P2-05.
+
+---
+# Kanto bosses (P2-05)
+
+## Brad Grindwell 2 — Cerulean Cape (TRAINER_BRAD_GRINDWELL_CERULEAN_CAPE_HNS)
+T4, Lv 62–64. Rapidash, Revavroom, Lycanroc-Midnight (the team's one Focus Sash), Arcanine, Electivire. Counterplay: Water/Ground/Rock; Intimidate-immune Fire mons are weak to Water. One Stealth Rock user, no setup sweeper.
+
+## Grindwell Bros — Crypto Mine (TRAINER_GRINDWELL_BROS_CRYPTO_MINE_HNS)
+T4 double, Lv 63–65, six mons in one entry named GRINDWELLS (trainer names max 10 chars). Electivire + Gallade lead (Follow Me + Swords Dance). Machamp dropped for the six-slot limit. Counterplay: spread moves, Psychic/Fairy/Flying, Intimidate. Swords Dance (Gallade) and Bulk Up (Annihilape) are in different brothers' halves; exception logged.
+
+## Colonel Buckshot 3 — Big Game Ranch (TRAINER_COLONEL_BUCKSHOT_BIG_GAME_RANCH_HNS)
+T4, Lv 65–67. Blastoise (Shell Smash), Clawitzer, Magnezone, Armarouge (Calm Mind), Revavroom, Octillery. No Mega. Counterplay: Grass/Electric for the Waters, Ground/Water for Armarouge and Magnezone.
+
+## President Rex Gaudy 2 — Comeback Rally (TRAINER_PRESIDENT_REX_GAUDY_COMEBACK_RALLY_HNS)
+G2, Lv 71–73, AI Smart Trainer / Prediction, Full Restore ×3. Tyranitar @ Tyranitarite last (the only Mega). Counterplay: Fighting (4× vs Tyranitar/Kingambit), Water, Ground. Sand chip punishes non-Rock/Ground/Steel teams. Dragon Dance on Tyranitar is the sole setup move besides none elsewhere.
+
+## Regular trainers
+D.O.G.E. Auditors 1–3 (Lv 60–63, IVs 24), Crypto Bros 1–2 (new trainers instead of S.S. Aqua reclass, Lv 40–42), Viridian Rally Goers 1–3 (Lv 64–66). Basic Trainer AI, 4 moves each, no EVs.

@@ -16835,6 +16835,619 @@ Level: 51
 Stantler
 Level: 52
 
+=== TRAINER_BRAD_GRINDWELL_CERULEAN_CAPE_HNS ===
+Name: BRAD
+Class: Sigma Bro Hns
+Pic: Archer Hns
+Gender: Male
+Music: Rocket
+Double Battle: No
+AI: Smart Trainer
+Items: Full Restore / Full Restore
+
+Rapidash @ Charcoal
+Ability: Flash Fire
+Level: 62
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 HP
+- Flare Blitz
+- Wild Charge
+- High Horsepower
+- Morning Sun
+
+Revavroom @ Leftovers
+Ability: Filter
+Level: 63
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Shift Gear
+- Spin Out
+- Gunk Shot
+- High Horsepower
+
+Lycanroc-Midnight @ Focus Sash
+Ability: No Guard
+Level: 62
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 HP
+- Stone Edge
+- Counter
+- Crunch
+- Stealth Rock
+
+Arcanine @ Sitrus Berry
+Ability: Intimidate
+Level: 63
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Extreme Speed
+- Flare Blitz
+- Wild Charge
+- Morning Sun
+
+Electivire @ Life Orb
+Ability: Motor Drive
+Level: 64
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Wild Charge
+- Ice Punch
+- Cross Chop
+- Earthquake
+
+=== TRAINER_GRINDWELL_BROS_CRYPTO_MINE_HNS ===
+Name: GRINDWELLS
+Class: Sigma Bro Hns
+Pic: Proton Hns
+Gender: Male
+Music: Rocket
+Double Battle: Yes
+AI: Smart Trainer
+Items: Full Restore / Full Restore
+
+Electivire @ Expert Belt
+Ability: Motor Drive
+Level: 63
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Follow Me
+- Wild Charge
+- Ice Punch
+- Cross Chop
+
+Gallade @ Life Orb
+Ability: Sharpness
+Level: 64
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 HP
+- Sacred Sword
+- Psycho Cut
+- Leaf Blade
+- Swords Dance
+
+Arcanine @ Sitrus Berry
+Ability: Intimidate
+Level: 63
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Extreme Speed
+- Flare Blitz
+- Snarl
+- Protect
+
+Annihilape @ Leftovers
+Ability: Defiant
+Level: 65
+Careful Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpD / 4 Def
+- Rage Fist
+- Drain Punch
+- Bulk Up
+- Protect
+
+Tauros-Paldea-Combat @ Choice Band
+Ability: Intimidate
+Level: 64
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 HP
+- Close Combat
+- Raging Bull
+- Earthquake
+- Zen Headbutt
+
+Revavroom @ Air Balloon
+Ability: Filter
+Level: 64
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Shift Gear
+- Gunk Shot
+- Spin Out
+- Protect
+
+=== TRAINER_COLONEL_BUCKSHOT_BIG_GAME_RANCH_HNS ===
+Name: BEAUMONT
+Class: Ball Carrier Hns
+Pic: Fisherman
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Smart Trainer
+Items: Full Restore / Full Restore
+
+Blastoise @ White Herb
+Ability: Torrent
+Level: 67
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+- Shell Smash
+- Hydro Pump
+- Ice Beam
+- Aura Sphere
+
+Clawitzer @ Choice Specs
+Ability: Mega Launcher
+Level: 66
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+- Water Pulse
+- Dark Pulse
+- Aura Sphere
+- Dragon Pulse
+
+Magnezone @ Assault Vest
+Ability: Analytic
+Level: 66
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Body Press
+
+Armarouge @ Leftovers
+Ability: Flash Fire
+Level: 65
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+- Armor Cannon
+- Psychic
+- Aura Sphere
+- Calm Mind
+
+Revavroom @ Sitrus Berry
+Ability: Filter
+Level: 65
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Spin Out
+- Gunk Shot
+- High Horsepower
+- Taunt
+
+Octillery @ Scope Lens
+Ability: Sniper
+Level: 65
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+- Octazooka
+- Fire Blast
+- Ice Beam
+- Focus Energy
+
+=== TRAINER_PRESIDENT_REX_GAUDY_COMEBACK_RALLY_HNS ===
+Name: GAUDY
+Class: Rocket Admin Hns
+Pic: Giovanni Hns
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Smart Trainer / Prediction
+Items: Full Restore / Full Restore / Full Restore
+
+Persian @ Choice Scarf
+Ability: Technician
+Level: 71
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 HP
+- Fake Out
+- U-turn
+- Knock Off
+- Pay Day
+
+Gholdengo @ Choice Specs
+Ability: Good as Gold
+Level: 72
+Modest Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 HP / 4 Def
+- Make It Rain
+- Shadow Ball
+- Trick
+- Focus Blast
+
+Copperajah @ Leftovers
+Ability: Heavy Metal
+Level: 71
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Heavy Slam
+- Play Rough
+- High Horsepower
+- Stealth Rock
+
+Donphan @ Sitrus Berry
+Ability: Sturdy
+Level: 71
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Earthquake
+- Ice Shard
+- Knock Off
+- Rapid Spin
+
+Kingambit @ Assault Vest
+Ability: Supreme Overlord
+Level: 72
+Adamant Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Kowtow Cleave
+- Iron Head
+- Sucker Punch
+- Low Kick
+
+Tyranitar @ Tyranitarite
+Ability: Sand Stream
+Level: 73
+Jolly Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 HP
+- Stone Edge
+- Crunch
+- Earthquake
+- Dragon Dance
+
+=== TRAINER_DOGE_AUDITOR_1_HNS ===
+Name: AUDITOR
+Class: Talk Radio Host Hns
+Pic: Scientist Frlg
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+Items: Hyper Potion
+
+Porygon2 @ Eviolite
+Ability: Download
+Level: 60
+Modest Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Tri Attack
+- Ice Beam
+- Thunderbolt
+- Recover
+
+Magnezone @ Shell Bell
+Ability: Analytic
+Level: 61
+Modest Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Thunder Wave
+
+Klinklang @ Leftovers
+Ability: Clear Body
+Level: 62
+Adamant Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Gear Grind
+- Wild Charge
+- Shift Gear
+- Substitute
+
+=== TRAINER_DOGE_AUDITOR_2_HNS ===
+Name: AUDITOR
+Class: Talk Radio Host Hns
+Pic: Scientist Frlg
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+Items: Hyper Potion
+
+Klinklang @ Leftovers
+Ability: Clear Body
+Level: 61
+Adamant Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Gear Grind
+- Wild Charge
+- Shift Gear
+- Substitute
+
+Porygon2 @ Eviolite
+Ability: Trace
+Level: 62
+Bold Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Tri Attack
+- Ice Beam
+- Toxic
+- Recover
+
+Magnezone @ Shell Bell
+Ability: Magnet Pull
+Level: 63
+Modest Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Thunder Wave
+
+=== TRAINER_DOGE_AUDITOR_3_HNS ===
+Name: AUDITOR
+Class: Talk Radio Host Hns
+Pic: Scientist Frlg
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+Items: Hyper Potion
+
+Magnezone @ Shell Bell
+Ability: Analytic
+Level: 60
+Modest Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Thunder Wave
+
+Klinklang @ Leftovers
+Ability: Clear Body
+Level: 62
+Adamant Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Gear Grind
+- Wild Charge
+- Shift Gear
+- Substitute
+
+Porygon2 @ Eviolite
+Ability: Download
+Level: 63
+Modest Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Tri Attack
+- Ice Beam
+- Thunderbolt
+- Recover
+
+=== TRAINER_CRYPTO_BRO_1_HNS ===
+Name: MOONBOY
+Class: Rally Goer Hns
+Pic: Sailor
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+Items: Hyper Potion
+
+Tentacruel
+Ability: Clear Body
+Level: 40
+Modest Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Surf
+- Sludge Bomb
+- Toxic Spikes
+- Acid Armor
+
+Machoke
+Ability: Guts
+Level: 40
+Adamant Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Cross Chop
+- Rock Slide
+- Bulk Up
+- Payback
+
+Seadra
+Ability: Poison Point
+Level: 41
+Modest Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Surf
+- Dragon Pulse
+- Ice Beam
+- Focus Energy
+
+=== TRAINER_CRYPTO_BRO_2_HNS ===
+Name: HODLER
+Class: Rally Goer Hns
+Pic: Sailor
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+Items: Hyper Potion
+
+Poliwrath
+Ability: Water Absorb
+Level: 40
+Adamant Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Waterfall
+- Close Combat
+- Ice Punch
+- Bulk Up
+
+Kingler
+Ability: Hyper Cutter
+Level: 41
+Adamant Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Crabhammer
+- X-Scissor
+- Rock Slide
+- Swords Dance
+
+Gyarados
+Ability: Intimidate
+Level: 42
+Adamant Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Waterfall
+- Crunch
+- Dragon Dance
+- Ice Fang
+
+=== TRAINER_RALLY_GOER_VIRIDIAN_1_HNS ===
+Name: STOPSTEEL
+Class: Rally Goer Hns
+Pic: Youngster Hns
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+Items: Hyper Potion
+
+Machamp
+Ability: No Guard
+Level: 64
+Adamant Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Dynamic Punch
+- Knock Off
+- Bullet Punch
+- Ice Punch
+
+Primeape
+Ability: Defiant
+Level: 65
+Jolly Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Close Combat
+- Gunk Shot
+- U-turn
+- Ice Punch
+
+Poliwrath
+Ability: Water Absorb
+Level: 66
+Adamant Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Waterfall
+- Close Combat
+- Ice Punch
+- Bulk Up
+
+=== TRAINER_RALLY_GOER_VIRIDIAN_2_HNS ===
+Name: SLOGAN
+Class: Rally Goer Hns
+Pic: Youngster Hns
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+Items: Hyper Potion
+
+Tauros
+Ability: Intimidate
+Level: 64
+Jolly Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Double-Edge
+- Earthquake
+- Zen Headbutt
+- Iron Head
+
+Rhydon
+Ability: Lightning Rod
+Level: 65
+Adamant Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Earthquake
+- Stone Edge
+- Megahorn
+- Rock Blast
+
+Donphan
+Ability: Sturdy
+Level: 66
+Adamant Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Earthquake
+- Ice Shard
+- Knock Off
+- Rapid Spin
+
+=== TRAINER_RALLY_GOER_VIRIDIAN_3_HNS ===
+Name: STEELSTOP
+Class: Rally Goer Hns
+Pic: Youngster Hns
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+Items: Hyper Potion
+
+Machoke
+Ability: Guts
+Level: 64
+Adamant Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Close Combat
+- Knock Off
+- Bulk Up
+- Payback
+
+Hitmonlee
+Ability: Unburden
+Level: 65
+Jolly Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- High Jump Kick
+- Knock Off
+- Mach Punch
+- Stone Edge
+
+Hitmonchan
+Ability: Iron Fist
+Level: 66
+Adamant Nature
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Mach Punch
+- Ice Punch
+- Thunder Punch
+- Fire Punch
+
 === TRAINER_GILDED_RALLY_GOER_INDIGO_1_HNS ===
 Name: STOPSTEEL
 Class: Rally Goer Hns

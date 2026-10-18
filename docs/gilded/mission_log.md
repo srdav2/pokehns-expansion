@@ -504,3 +504,13 @@ Placed the Radio Tower bosses by converting one existing grunt/scientist trainer
 
 **Playtest:** warp to Route 27 (x≈66–72, y 18–19). Walk east: Agent 1, Agent 2, Pell 3 each trigger once; after Pell, boulders vanish and flag 97 is set. Lose to Pell: wall stays, Pell fights again. 
 Boss grep: Border Agents are regular trainers (no moves required); Pell 3 was done in P2-01.
+
+## P2-05 — Kanto boss data
+
+**Status: BUILT — NEEDS PLAYTEST** (data only; no placement yet, that is P2-06 to P2-08)
+
+Added trainers 675–686 (see registry). Boss grep: `python3 /tmp/check.py` flagged only the pre-existing `TRAINER_BARRY_HNS` Tentacruel/Nidoking; every new boss mon has 4 moves, ability, nature, IVs and (T4/G2) EVs.
+
+**Deferred:** Crypto Bros are new trainers rather than a reclass of S.S. Aqua sailors.
+
+**Playtest:** trainers can be battled once placed. Until then use the debug menu's trainer battle if available.

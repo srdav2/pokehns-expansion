@@ -24,3 +24,4 @@
 | 2026-10-19 | P2-02 | Brad is fought from Chuck's script (before his intro) rather than a new NPC; Union Cave toll deferred. | Avoids placing objects on unverified tiles and spending the last free flags. |
 | 2026-10-19 | P2-03 | Reuse existing trainer objects on 2F/3F/4F for the three bosses. | Same tiles and flags, so no new object placement risk or flags. |
 | 2026-10-19 | P2-04 | Used FLAG_UNUSED_EXTENDED_97 for the wall; 2-tile wall of boulder objects. | Corridor is 2 tiles wide; flags nearly exhausted. |
+| 2026-10-19 | P2-05 | Trainer name GRINDWELLS (10 chars); Crypto Bros as new trainers. | Names over 10 chars break the array; avoids touching Aqua sailors. |
