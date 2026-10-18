@@ -2,6 +2,7 @@
 
 | Date | Mission | Decision | Why |
 | --- | --- | --- | --- |
+| 2026-10-18 | GF6 | Make the RED CAP and Ball Show prompts opt-in, and keep Colonel Buckshot as a separate optional battle on the Dept. Store roof. | The Act 3 satire should not punish refusal, while the optional trainer battle can preserve the HnS route and gym progression. |
 | 2026-10-18 | GF5 | Preserve the HnS Slowpoke Well progression and replace only the Proton-slot battle with a new Chad Grindwell trainer; gate Return 3 on Kurt's post-Well state. | This keeps the canonical Kurt recovery and map transitions intact while ensuring the third anchor cannot be collected before the Well story beat. |
 | 2026-10-18 | GF4 | Keep HnS's opening and main quest event flow intact; add Act 1 pressure, battle, and Arceus-return content as map-local events, and defer the arrival cutscene and optional Route 29 dressing. | A partial Act 1 keeps the new return rewards and required battles reachable without risking broad changes to HnS's stable intro flow. |
 | 2026-10-17 | GF0 | Keep the documented working title “Pokémon Gilded Version”. | This is the default in `docs/GILDED_STORY_BIBLE.md` §9. |

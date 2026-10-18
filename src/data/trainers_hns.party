@@ -16094,3 +16094,24 @@ Level: 15
 
 Tauros
 Level: 16
+
+=== TRAINER_COLONEL_BUCKSHOT_BALL_SHOW_HNS ===
+Name: BEAUMONT
+Class: Ball Carrier Hns
+Pic: Fisherman
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+
+Remoraid
+Level: 20
+
+Krabby
+Level: 20
+
+Magnemite
+Level: 21
+
+Clauncher
+Level: 22

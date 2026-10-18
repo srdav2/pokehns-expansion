@@ -145,3 +145,28 @@ Added the Azalea SLOWPOKE-T prompt, re-skinned the Slowpoke Well boss battle as 
 - [ ] Use **R + Start → Flags & Vars… → Set Var XYZ…** to set `VAR_PRESSURE_POINTS` to `0`, test both promoter responses, then inspect the var again to confirm the yes/no behavior.
 
 The Act 2 additions still need playtesting.
+
+## GF6 — Johto Act 3
+
+**Status: BUILT_PARTIAL — NEEDS PLAYTEST**
+
+Added the GAUDY TOWER sign text, a Radio Tower RED CAP offer that gives `ITEM_RED_CAP` and increments pressure only when accepted, and the Dept. Store Ball Show prompt. Added an optional Colonel Buckshot battle with a four-Pokémon team at levels 20–22. Both prompts can be declined without a penalty. The HnS ROM build passed with the required Arm GNU toolchain and is **33,554,432 bytes (32 MiB)**.
+
+**Deferred:**
+
+- Add the six Goldenrod rally NPCs, gold-lettered tower treatment, and Dept. Store floor signs.
+- Add the station MEGA grunt(s), Whitney's post-gym scripted scene and dialogue, and Bill's PC-reunion setup.
+- Add the Goldenrod Underground Debate Club and Commissar Blair cameo.
+- Re-text the National Park contest as Open Season and add Colonel Buckshot's catch-and-release exchange.
+- `make check BUILD=hns -j8` remains blocked before tests by the existing `include/fake_rtc.h` / `struct SaveBlock3` compile error noted under GF1.
+- GF7–GF17 have not started. GF-IMP remains skipped as directed by the plan.
+
+**Playtest checklist:**
+
+- [ ] Start a fresh game; use **R + Start → Utilities… → Warp to map warp…** to visit Goldenrod Radio Tower 1F. Choose yes on the RED CAP offer and confirm the item is received once, the prompt disappears, and `VAR_PRESSURE_POINTS` increases by one.
+- [ ] Start another test save or reset the prompt flag; choose no on the RED CAP offer and confirm neither the item nor a pressure point is awarded, and the prompt disappears. Fill Key Items before choosing yes and confirm the offer remains available after the bag-full message.
+- [ ] Use **R + Start → Utilities… → Warp to map warp…** to visit Goldenrod Dept. Store 7F. Choose yes/no on the Ball Show prompt and confirm only yes increments `VAR_PRESSURE_POINTS`.
+- [ ] Challenge Colonel Buckshot on the 7F roof; confirm the optional battle uses Remoraid Lv. 20, Krabby Lv. 20, Magnemite Lv. 21, and Clauncher Lv. 22, and cannot be repeated after defeat.
+- [ ] Read the Radio Tower sign in Goldenrod City and confirm it displays GAUDY TOWER while the underlying HnS map/warp flow remains unchanged.
+
+The Act 3 additions still need playtesting.

@@ -71,6 +71,30 @@ GoldenrodDeptStore7_EventScript_Bugcatcher::
 	release
 	end
 
+GoldenrodDeptStore7_EventScript_GildedBallShow::
+	lock
+	faceplayer
+	msgbox GoldenrodDeptStore_Text_GildedBallShow, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, GoldenrodDeptStore7_EventScript_GildedBallShowYes
+	setflag FLAG_GILDED_PRESSURE_PROMPT_BALL_SHOW
+	msgbox GoldenrodDeptStore_Text_GildedBallShowNo, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodDeptStore7_EventScript_GildedBallShowYes::
+	addvar VAR_PRESSURE_POINTS, 1
+	setflag FLAG_GILDED_PRESSURE_PROMPT_BALL_SHOW
+	msgbox GoldenrodDeptStore_Text_GildedBallShowYes, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodDeptStore7_EventScript_GildedBuckshot::
+	trainerbattle_single TRAINER_COLONEL_BUCKSHOT_BALL_SHOW_HNS, GoldenrodDeptStore_Text_BuckshotSeen, GoldenrodDeptStore_Text_BuckshotBeaten
+	msgbox GoldenrodDeptStore_Text_BuckshotAfter, MSGBOX_AUTOCLOSE
+	end
+
 GoldenrodDeptStore_Text_RoofPokefanF:
     .string "Whew, I'm tired.\p"
     .string "I sometimes come up to the rooftop\n"
@@ -107,3 +131,27 @@ GoldenrodDeptStore_Text_RoofBugCatcher:
     .string "poisoned when the chips are down…\p"
     .string "So I came to buy some FULL HEAL.\p"
     .string "I wonder if there's any left?$"
+
+GoldenrodDeptStore_Text_GildedBallShow:
+	.string "The N.R.A. Ball Show!\n"
+	.string "Want to see our free display?$"
+
+GoldenrodDeptStore_Text_GildedBallShowYes:
+	.string "Catch-and-release, Colonel!\n"
+	.string "No, just release.$"
+
+GoldenrodDeptStore_Text_GildedBallShowNo:
+	.string "No display? Your choice.\n"
+	.string "No waiting period.$"
+
+GoldenrodDeptStore_Text_BuckshotSeen:
+	.string "A well-regulated PARTY is\n"
+	.string "necessary for freedom!$"
+
+GoldenrodDeptStore_Text_BuckshotBeaten:
+	.string "This is why we need MORE\n"
+	.string "POKé BALLS!$"
+
+GoldenrodDeptStore_Text_BuckshotAfter:
+	.string "The Ball Show continues!\n"
+	.string "Catch-and-release!$"

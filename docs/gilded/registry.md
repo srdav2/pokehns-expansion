@@ -130,3 +130,27 @@ No vars were allocated. The SLOWPOKE-T prompt uses `VAR_PRESSURE_POINTS = 0x40E5
 
 - Modified HnS maps: `AzaleaTown_hns` and `SlowpokeWell_B1F_hns`.
 - No new maps or specials were allocated. Azalea Return 3 calls the existing `ReturnAnchoredMon` special with zero-based index 2.
+
+## GF6 — Johto Act 3
+
+### Flags
+
+| Flag | Value | Purpose |
+| --- | ---: | --- |
+| `FLAG_GILDED_PRESSURE_PROMPT_RADIO_TOWER` | `0x3C0` | Hide the Radio Tower RED CAP offer after the choice/gift. |
+| `FLAG_GILDED_PRESSURE_PROMPT_BALL_SHOW` | `0x3C1` | Record the Dept. Store Ball Show prompt choice. |
+
+No vars were allocated. Both prompts use `VAR_PRESSURE_POINTS = 0x40E5`.
+
+### Trainers
+
+| Trainer ID | Value | Class / party |
+| --- | ---: | --- |
+| `TRAINER_COLONEL_BUCKSHOT_BALL_SHOW_HNS` | 659 | Ball Carrier; Remoraid Lv. 20, Krabby Lv. 20, Magnemite Lv. 21, Clauncher Lv. 22 |
+
+`TRAINERS_COUNT_HNS` is now 660. The trainer uses the existing `TRAINER_CLASS_BALL_CARRIER_HNS` class.
+
+### Maps and specials
+
+- Modified HnS maps: `GoldenrodCity_hns`, `GoldenrodCity_RadioTower_1F_hns`, and `GoldenrodCity_DepartmentStore_7F_hns`.
+- No new maps or specials were allocated.

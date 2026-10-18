@@ -402,6 +402,7 @@ GoldenrodCity_Text_StationSign:
 	.string "GOLDENROD CITY STATION$"
 
 GoldenrodCity_Text_RadioTowerSign:
+	.string "GAUDY TOWER\p"
 	.string "GOLDENROD CITY RADIO TOWER$"
 
 GoldenrodCity_Text_DeptStoreSign:

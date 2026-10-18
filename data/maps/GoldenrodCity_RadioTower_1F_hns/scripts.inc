@@ -36,6 +36,33 @@ RadioTower1F_EventScript_Youngster::
 	release
 	end
 
+RadioTower1F_EventScript_GildedRedCap::
+	lock
+	faceplayer
+	msgbox RadioTower1F_Text_GildedRedCapOffer, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, RadioTower1F_EventScript_GildedRedCapYes
+	setflag FLAG_GILDED_PRESSURE_PROMPT_RADIO_TOWER
+	msgbox RadioTower1F_Text_GildedRedCapNo, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+RadioTower1F_EventScript_GildedRedCapYes::
+	giveitem ITEM_RED_CAP
+	goto_if_eq VAR_RESULT, FALSE, RadioTower1F_EventScript_GildedRedCapBagFull
+	addvar VAR_PRESSURE_POINTS, 1
+	setflag FLAG_GILDED_PRESSURE_PROMPT_RADIO_TOWER
+	msgbox RadioTower1F_Text_GildedRedCapYes, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+RadioTower1F_EventScript_GildedRedCapBagFull::
+	msgbox RadioTower1F_Text_GildedRedCapBagFull, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
 RadioTower1F_EventScript_Whitney::
 	lock
 	faceplayer
@@ -237,6 +264,22 @@ RadioTower1F_Text_Youngster:
     .string "I love MARY, from POKéMON TALK.\p"
     .string "I only know what she sounds like,\n"
     .string "though.$"
+
+RadioTower1F_Text_GildedRedCapOffer:
+    .string "A complimentary RED CAP!\n"
+    .string "Wear it with pride?$"
+
+RadioTower1F_Text_GildedRedCapYes:
+    .string "The cap is yours!\n"
+    .string "A truly historic accessory.$"
+
+RadioTower1F_Text_GildedRedCapNo:
+    .string "No cap? That's your choice.\n"
+    .string "Enjoy the station.$"
+
+RadioTower1F_Text_GildedRedCapBagFull:
+    .string "Make room in your Bag first.\n"
+    .string "The cap is still yours.$"
 
 RadioTower1F_Text_GruntM3Seen:
     .string "We've finally taken over the\n"
@@ -442,5 +485,4 @@ GoldenrodCity_RadioTower_1F_Text_PrizeWeveBeenHolding:
 
 GoldenrodCity_RadioTower_1F_Text_PleaseVisitAgain2:
 	.string "Please do visit again.$"
-
 
