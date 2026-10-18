@@ -53,6 +53,10 @@ MtSilver_SummitDay_EventScript_RedOnDefeat::
 	removeobject LOCALID_MTSILVER_RED
 	fadescreenswapbuffers FADE_FROM_BLACK
 	delay 180
+	goto_if_set FLAG_DEFEATED_RED, MtSilver_SummitDay_EventScript_RedSkipFinaleDialogue
+	msgbox MtSilver_SummitDay_Text_Giratina, MSGBOX_DEFAULT
+	msgbox MtSilver_SummitDay_Text_Arceus, MSGBOX_DEFAULT
+MtSilver_SummitDay_EventScript_RedSkipFinaleDialogue::
 	fadescreenspeed FADE_TO_BLACK, 24
 	setflag FLAG_DEFEATED_RED
 	setflag FLAG_END_NUZLOCKE
@@ -69,4 +73,11 @@ MtSilver_SummitDay_Text_Red:
 MtSilver_SummitDay_Text_RedBeaten:
 	.string "...!$"
 
+MtSilver_SummitDay_Text_Giratina:
+	.string "GIRATINA: You've seen it spun\n"
+	.string "left. You've seen it spun right.\p"
+	.string "Aren't they fun?$"
 
+MtSilver_SummitDay_Text_Arceus:
+	.string "ARCEUS: Enough. The world is\n"
+	.string "not a top.$"

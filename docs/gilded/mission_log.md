@@ -381,3 +381,26 @@ Replaced Viridian City's secondary sign text with the “THE COMEBACK RALLY — 
 - [ ] Save and reload in Viridian City; confirm the banner text remains available and the existing map state is unchanged.
 
 The Act 14 rally cutscene and battle remain deferred; the banner still needs playtesting.
+
+## GF16 — Finale and epilogue
+
+**Status: BUILT_PARTIAL — NEEDS PLAYTEST**
+
+Added Giratina's “You've seen it spun left” exchange and Arceus's “The world is not a top” response after the first Red victory, before HnS's existing GameClear sequence. The dialogue is skipped on subsequent Red wins using the existing `FLAG_DEFEATED_RED`; Red's team, levels, battle, and original GameClear flow remain unchanged.
+
+**Deferred:**
+
+- Add the two recruitment NPCs at Mt. Silver's cave entrance.
+- Add the Giratina Origin appearance/Axis map and catchable battle at the specified level band.
+- Add Arceus's centering animation and scene.
+- Add the Goldenrod CROSSFIRE scene, Route 29 party run, all pressure-point epilogue variants, credits integration, and post-credits Giratina line.
+- `make check BUILD=hns -j8` remains blocked before tests by the existing `include/fake_rtc.h` / `struct SaveBlock3` compile error noted under GF1.
+
+**Playtest checklist:**
+
+- [ ] Open **R + Start → Utilities… → Warp to map warp…** and reach Mt. Silver Summit after meeting the existing Red battle requirements. Defeat Red; confirm the Giratina/Arceus exchange appears before the existing GameClear transition.
+- [ ] Confirm the dialogue fits its boxes and the original Red battle, Land Ribbon, respawn, GameClear, and credits flow still run.
+- [ ] Return to the Summit for a Red rematch; confirm `FLAG_DEFEATED_RED` prevents replaying the new dialogue.
+- [ ] Confirm Red's HnS team and levels remain unchanged.
+
+The Act 15 additions still need playtesting; most of the finale remains deferred.

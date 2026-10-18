@@ -314,3 +314,11 @@ Pressure Prompt 11 uses `VAR_PRESSURE_POINTS = 0x40E5`. No new vars or specials 
 - Modified HnS map: `ViridianCity_hns`.
 - No new flags, vars, trainers, maps, or specials were allocated. All HnS Gym teams and levels remain unchanged.
 - The Gaudy rally cutscene/battle and its post-battle state remain deferred.
+
+## GF16 — Finale and epilogue
+
+### Maps and specials
+
+- Modified HnS map: `MtSilver_SummitDay_hns`.
+- No new flags, vars, trainers, maps, or specials were allocated. The existing `FLAG_DEFEATED_RED` gates the added one-time dialogue; Red's HnS team and levels are unchanged.
+- The Axis map, Giratina Origin battle, and epilogue content remain deferred.
