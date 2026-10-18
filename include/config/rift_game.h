@@ -1,0 +1,9 @@
+#ifndef GUARD_CONFIG_RIFT_GAME_H
+#define GUARD_CONFIG_RIFT_GAME_H
+
+#include "rift_contract.h"
+
+#define RIFT_THIS_GAME  RIFT_GAME_LEFT
+#define RIFT_OTHER_GAME RIFT_GAME_RIGHT
+
+#endif // GUARD_CONFIG_RIFT_GAME_H

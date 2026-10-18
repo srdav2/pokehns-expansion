@@ -3,6 +3,7 @@
 #include "malloc.h"
 #include "battle.h"
 #include "battle_special.h"
+#include "challenge_menu.h"
 #include "cable_club.h"
 #include "data.h"
 #include "daycare.h"
@@ -18,6 +19,7 @@
 #include "field_player_avatar.h"
 #include "field_screen_effect.h"
 #include "field_specials.h"
+#include "rift_shared.h"
 #include "field_weather.h"
 #include "graphics.h"
 #include "international_string_util.h"
@@ -1506,22 +1508,58 @@ void ReturnAnchoredMon(void)
 {
 #if IS_HNS
     u8 index = gSpecialVar_0x8004;
+    u8 box, pos, partySlot;
     struct Pokemon mon;
+    struct BoxPokemon boxMon;
 
-    if (index >= ARRAY_COUNT(gPokemonStoragePtr->gildedRiftAnchoredMons)
-        || (gPokemonStoragePtr->gildedRiftReturnedBits & (1 << index)))
+    if (!Rift_TakeAnchor(index, &boxMon))
     {
-        gSpecialVar_Result = MON_CANT_GIVE;
+        gSpecialVar_Result = FALSE;
         return;
     }
 
-    BoxMonToMon(&gPokemonStoragePtr->gildedRiftAnchoredMons[index], &mon);
-    DevolvePokemonToBaseAtLevel(&mon, gPokemonStoragePtr->gildedRiftAnchorLevels[index]);
-    gSpecialVar_Result = GiveScriptedMonToPlayer(&mon, PARTY_SIZE);
-    if (gSpecialVar_Result != MON_CANT_GIVE)
-        gPokemonStoragePtr->gildedRiftReturnedBits |= 1 << index;
+    BoxMonToMon(&boxMon, &mon);
+    DevolvePokemonToBaseAtLevel(&mon, Rift_GetAnchorLevel(index));
+
+    for (partySlot = 0; partySlot < GetMaxPartySize(); partySlot++)
+    {
+        if (GetMonData(&gPlayerParty[partySlot], MON_DATA_SPECIES) == SPECIES_NONE)
+            break;
+    }
+    if (partySlot < GetMaxPartySize()
+     && DoesSpeciesPassOneTypeChallenge(GetMonData(&mon, MON_DATA_SPECIES)))
+    {
+        CopyMon(&gPlayerParty[partySlot], &mon, sizeof(mon));
+        gPlayerPartyCount = partySlot + 1;
+        HandleSetPokedexFlagFromMon(&mon, FLAG_SET_SEEN);
+        HandleSetPokedexFlagFromMon(&mon, FLAG_SET_CAUGHT);
+        gSpecialVar_Result = TRUE;
+        return;
+    }
+
+    for (box = 0; box < TOTAL_BOXES_COUNT; box++)
+    {
+        if (!Rift_IsBoxDepositable(box))
+            continue;
+        for (pos = 0; pos < IN_BOX_COUNT; pos++)
+        {
+            struct BoxPokemon *dest = &gPokemonStoragePtr->boxes[box][pos];
+            if (GetBoxMonData(dest, MON_DATA_SANITY_HAS_SPECIES))
+                continue;
+            MonRestorePP(&mon);
+            *dest = mon.box;
+            HandleSetPokedexFlagFromMon(&mon, FLAG_SET_SEEN);
+            HandleSetPokedexFlagFromMon(&mon, FLAG_SET_CAUGHT);
+            gSpecialVar_Result = TRUE;
+            return;
+        }
+    }
+
+    Rift_GetRecord()->anchoredReturned &= ~(1 << index);
+    Rift_GetRecord()->checksum = Rift_ComputeChecksum(Rift_GetRecord());
+    gSpecialVar_Result = FALSE;
 #else
-    gSpecialVar_Result = MON_CANT_GIVE;
+    gSpecialVar_Result = FALSE;
 #endif
 }
 

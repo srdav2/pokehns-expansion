@@ -123,7 +123,7 @@ AzaleaTown_EventScript_GildedReturn3::
 	playmoncry SPECIES_ARCEUS, CRY_MODE_NORMAL
 	setvar VAR_0x8004, 2
 	special ReturnAnchoredMon
-	goto_if_eq VAR_RESULT, MON_CANT_GIVE, AzaleaTown_EventScript_GildedReturn3Failed
+	goto_if_eq VAR_RESULT, FALSE, AzaleaTown_EventScript_GildedReturn3Failed
 	setflag FLAG_GILDED_RETURN_3_SEEN
 	msgbox AzaleaTown_Text_GildedReturn3After, MSGBOX_DEFAULT
 	closemessage

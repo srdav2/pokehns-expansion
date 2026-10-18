@@ -26,6 +26,7 @@
 #include "pokeball.h"
 #include "pokedex.h"
 #include "pokemon.h"
+#include "rift_shared.h"
 #include "random.h"
 #include "rtc.h"
 #include "save.h"
@@ -173,6 +174,7 @@
 
 static EWRAM_DATA bool8 sStartedPokeBallTask = 0;
 static EWRAM_DATA u16 sCurrItemAndOptionMenuCheck = 0;
+static enum RiftSaveKind sRiftSaveKind = RIFT_SAVE_OWN;
 
 static u8 sBirchSpeechMainTaskId;
 
@@ -191,6 +193,7 @@ static void HighlightSelectedMainMenuItem(u8, u8, s16);
 static void Task_HandleMainMenuInput(u8);
 static void Task_HandleMainMenuAPressed(u8);
 static void Task_HandleMainMenuBPressed(u8);
+static void Task_RiftConfirmNewGame(u8);
 static void Task_NewGameBirchSpeech_Init(u8);
 static void Task_DisplayMainMenuInvalidActionError(u8);
 static void AddBirchSpeechObjects(u8);
@@ -260,9 +263,16 @@ static const u8 gText_SaveFileCorrupted[] = _("The save file is corrupted. The\n
 static const u8 gText_SaveFileErased[] = _("The save file has been erased\ndue to corruption or damage.");
 static const u8 gJPText_No1MSubCircuit[] = _("1Mサブきばんが ささっていません！");
 static const u8 gText_BatteryRunDry[] = _("The internal battery has run dry.\nThe game can be played.\pHowever, clock-based events will\nno longer occur.");
+static const u8 gText_RiftSaveReady[] = _("A traveller's save from the\nother world was found.\pThe Rift is open. You may\narrive with your Pokémon.");
+static const u8 gText_RiftSaveUnfinished[] = _("This save belongs to the other\nworld, and that journey isn't\pfinished. Starting a new game\nhere will ERASE it.");
+static const u8 gText_RiftSaveDone[] = _("Both worlds are complete in\nthis save.\pStarting a new game here will\nERASE it.");
+static const u8 gText_RiftSaveUnreadable[] = _("This save can't be read by\nthis version of the game.\pStarting a new game here will\nERASE it.");
+static const u8 gText_RiftSaveReadyOverwrite[] = _("This save will be erased.\pStart a new game?");
+static const u8 gText_RiftArriveComingSoon[] = _("Rift arrival is coming soon.");
 
 static const u8 gText_MainMenuNewGame[] = _("NEW GAME");
 static const u8 gText_MainMenuContinue[] = _("CONTINUE");
+static const u8 gText_MainMenuRiftArrive[] = _("ARRIVE THROUGH THE RIFT");
 static const u8 gText_MainMenuOption[] = _("OPTION");
 static const u8 gText_MainMenuMysteryGift[] = _("MYSTERY GIFT");
 static const u8 gText_MainMenuMysteryGift2[] = _("MYSTERY GIFT");
@@ -533,6 +543,7 @@ enum
     HAS_SAVED_GAME,     //CONTINUE, NEW GAME, OPTION
     HAS_MYSTERY_GIFT,   //CONTINUE, NEW GAME, MYSTERY GIFT, OPTION
     HAS_MYSTERY_EVENTS, //CONTINUE, NEW GAME, MYSTERY GIFT, MYSTERY EVENTS, OPTION
+    HAS_RIFT_READY,
 };
 
 enum
@@ -543,8 +554,26 @@ enum
     ACTION_MYSTERY_GIFT,
     ACTION_MYSTERY_EVENTS,
     ACTION_EREADER,
+    ACTION_RIFT_ARRIVE,
     ACTION_INVALID
 };
+
+static const u8 *GetRiftOverwriteWarning(void)
+{
+    switch (sRiftSaveKind)
+    {
+    case RIFT_SAVE_FOREIGN_UNFINISHED:
+        return gText_RiftSaveUnfinished;
+    case RIFT_SAVE_FOREIGN_DONE:
+        return gText_RiftSaveDone;
+    case RIFT_SAVE_UNREADABLE:
+        return gText_RiftSaveUnreadable;
+    case RIFT_SAVE_FOREIGN_READY:
+        return gText_RiftSaveReadyOverwrite;
+    default:
+        return gText_RiftSaveUnreadable;
+    }
+}
 
 #define MAIN_MENU_BORDER_TILE   0x1D5
 #define BIRCH_DLG_BASE_TILE_NUM 0xFC
@@ -658,13 +687,37 @@ static void Task_MainMenuCheckSaveFile(u8 taskId)
 
         if (IsWirelessAdapterConnected())
             tWirelessAdapterConnected = TRUE;
+        sRiftSaveKind = RIFT_SAVE_OWN;
         switch (gSaveFileStatus)
         {
         case SAVE_STATUS_OK:
-            tMenuType = HAS_SAVED_GAME;
-            if (IsMysteryGiftEnabled())
-                tMenuType++;
+            sRiftSaveKind = Rift_ClassifyLoadedSave();
+            if (sRiftSaveKind == RIFT_SAVE_OWN_LEGACY)
+                Rift_MigrateLegacyStorage();
+            if (sRiftSaveKind == RIFT_SAVE_OWN || sRiftSaveKind == RIFT_SAVE_OWN_LEGACY)
+            {
+                tMenuType = HAS_SAVED_GAME;
+                if (IsMysteryGiftEnabled())
+                    tMenuType++;
+            }
+            else if (sRiftSaveKind == RIFT_SAVE_FOREIGN_READY)
+            {
+                tMenuType = HAS_RIFT_READY;
+                CreateMainMenuErrorWindow(gText_RiftSaveReady);
+                gTasks[taskId].func = Task_WaitForSaveFileErrorWindow;
+            }
+            else
+            {
+                tMenuType = HAS_NO_SAVED_GAME;
+                CreateMainMenuErrorWindow(GetRiftOverwriteWarning());
+                gTasks[taskId].func = Task_WaitForSaveFileErrorWindow;
+            }
             gTasks[taskId].func = Task_MainMenuCheckBattery;
+            if (sRiftSaveKind == RIFT_SAVE_FOREIGN_READY
+             || sRiftSaveKind == RIFT_SAVE_FOREIGN_UNFINISHED
+             || sRiftSaveKind == RIFT_SAVE_FOREIGN_DONE
+             || sRiftSaveKind == RIFT_SAVE_UNREADABLE)
+                gTasks[taskId].func = Task_WaitForSaveFileErrorWindow;
             break;
         case SAVE_STATUS_CORRUPT:
             CreateMainMenuErrorWindow(gText_SaveFileErased);
@@ -703,11 +756,14 @@ static void Task_MainMenuCheckSaveFile(u8 taskId)
             case HAS_MYSTERY_EVENTS:
                 sCurrItemAndOptionMenuCheck = 4;
                 break;
+            case HAS_RIFT_READY:
+                sCurrItemAndOptionMenuCheck = 2;
+                break;
             }
         }
         sCurrItemAndOptionMenuCheck &= ~OPTION_MENU_FLAG;  // turn off the "returning from options menu" flag
         tCurrItem = sCurrItemAndOptionMenuCheck;
-        tItemCount = tMenuType + 2;
+        tItemCount = (tMenuType == HAS_RIFT_READY) ? 3 : tMenuType + 2;
     }
 }
 
@@ -784,16 +840,16 @@ static void Task_DisplayMainMenu(u8 taskId)
         palette = RGB(26, 26, 25);
         LoadPalette(&palette, BG_PLTT_ID(15) + 12, PLTT_SIZEOF(1));
 
-        // Note: If there is no save file, the save block is zeroed out,
-        // so the default gender is MALE.
-        if (gSaveBlock2Ptr->playerGender == MALE)
+        // Foreign saves must not be used to populate this game's menu.
+        if ((sRiftSaveKind == RIFT_SAVE_OWN || sRiftSaveKind == RIFT_SAVE_OWN_LEGACY)
+         && gSaveBlock2Ptr->playerGender != MALE)
         {
-            palette = RGB(4, 16, 31);
+            palette = RGB(31, 3, 21);
             LoadPalette(&palette, BG_PLTT_ID(15) + 1, PLTT_SIZEOF(1));
         }
         else
         {
-            palette = RGB(31, 3, 21);
+            palette = RGB(4, 16, 31);
             LoadPalette(&palette, BG_PLTT_ID(15) + 1, PLTT_SIZEOF(1));
         }
 
@@ -820,6 +876,23 @@ static void Task_DisplayMainMenu(u8 taskId)
             AddTextPrinterParameterized3(3, FONT_NORMAL, 0, 1, sTextColor_Headers, TEXT_SKIP_DRAW, gText_MainMenuNewGame);
             AddTextPrinterParameterized3(4, FONT_NORMAL, 0, 1, sTextColor_Headers, TEXT_SKIP_DRAW, gText_MainMenuOption);
             MainMenu_FormatSavegameText();
+            PutWindowTilemap(2);
+            PutWindowTilemap(3);
+            PutWindowTilemap(4);
+            CopyWindowToVram(2, COPYWIN_GFX);
+            CopyWindowToVram(3, COPYWIN_GFX);
+            CopyWindowToVram(4, COPYWIN_GFX);
+            DrawMainMenuWindowBorder(&sWindowTemplates_MainMenu[2], MAIN_MENU_BORDER_TILE);
+            DrawMainMenuWindowBorder(&sWindowTemplates_MainMenu[3], MAIN_MENU_BORDER_TILE);
+            DrawMainMenuWindowBorder(&sWindowTemplates_MainMenu[4], MAIN_MENU_BORDER_TILE);
+            break;
+        case HAS_RIFT_READY:
+            FillWindowPixelBuffer(2, PIXEL_FILL(0xA));
+            FillWindowPixelBuffer(3, PIXEL_FILL(0xA));
+            FillWindowPixelBuffer(4, PIXEL_FILL(0xA));
+            AddTextPrinterParameterized3(2, FONT_NORMAL, 0, 1, sTextColor_Headers, TEXT_SKIP_DRAW, gText_MainMenuRiftArrive);
+            AddTextPrinterParameterized3(3, FONT_NORMAL, 0, 1, sTextColor_Headers, TEXT_SKIP_DRAW, gText_MainMenuNewGame);
+            AddTextPrinterParameterized3(4, FONT_NORMAL, 0, 1, sTextColor_Headers, TEXT_SKIP_DRAW, gText_MainMenuOption);
             PutWindowTilemap(2);
             PutWindowTilemap(3);
             PutWindowTilemap(4);
@@ -1001,6 +1074,21 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
                 break;
             }
             break;
+        case HAS_RIFT_READY:
+            switch (gTasks[taskId].tCurrItem)
+            {
+            case 0:
+            default:
+                action = ACTION_RIFT_ARRIVE;
+                break;
+            case 1:
+                action = ACTION_NEW_GAME;
+                break;
+            case 2:
+                action = ACTION_OPTION;
+                break;
+            }
+            break;
         case HAS_MYSTERY_GIFT:
             switch (gTasks[taskId].tCurrItem)
             {
@@ -1077,6 +1165,16 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
         {
         case ACTION_NEW_GAME:
         default:
+            if (sRiftSaveKind == RIFT_SAVE_FOREIGN_UNFINISHED
+             || sRiftSaveKind == RIFT_SAVE_FOREIGN_DONE
+             || sRiftSaveKind == RIFT_SAVE_FOREIGN_READY
+             || sRiftSaveKind == RIFT_SAVE_UNREADABLE)
+            {
+                CreateMainMenuErrorWindow(GetRiftOverwriteWarning());
+                gTasks[taskId].data[11] = 0;
+                gTasks[taskId].func = Task_RiftConfirmNewGame;
+                return;
+            }
             if (IS_FRLG)
             {
                 DestroyTask(taskId);
@@ -1127,6 +1225,10 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
             SetMainCallback2(CB2_InitEReader);
             DestroyTask(taskId);
             break;
+        case ACTION_RIFT_ARRIVE:
+            CreateMainMenuErrorWindow(gText_RiftArriveComingSoon);
+            gTasks[taskId].func = Task_WaitForSaveFileErrorWindow;
+            return;
         case ACTION_INVALID:
             gTasks[taskId].tCurrItem = 0;
             gTasks[taskId].func = Task_DisplayMainMenuInvalidActionError;
@@ -1141,11 +1243,48 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
             BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
             return;
         }
+
         FreeAllWindowBuffers();
         if (action != ACTION_OPTION)
             sCurrItemAndOptionMenuCheck = 0;
         else
             sCurrItemAndOptionMenuCheck |= OPTION_MENU_FLAG;  // entering the options menu
+    }
+}
+
+static void Task_RiftConfirmNewGame(u8 taskId)
+{
+    if (gTasks[taskId].data[11] == 0)
+    {
+        RunTextPrinters();
+        if (!IsTextPrinterActiveOnWindow(7) && JOY_NEW(A_BUTTON))
+        {
+            ClearWindowTilemap(7);
+            ClearMainMenuWindowTilemap(&sWindowTemplates_MainMenu[7]);
+            CreateYesNoMenuParameterized(2, 1, 0xF3, 0xDF, 2, 15);
+            gTasks[taskId].data[11] = 1;
+        }
+        return;
+    }
+
+    switch (Menu_ProcessInputNoWrapClearOnChoose())
+    {
+    case 0:
+        PlaySE(SE_SELECT);
+        if (IS_HNS)
+        {
+            DestroyTask(taskId);
+            FreeAllWindowBuffers();
+            sCurrItemAndOptionMenuCheck = 0;
+            StartNewGameSceneHns();
+        }
+        break;
+    case 1:
+    case MENU_B_PRESSED:
+        PlaySE(SE_SELECT);
+        SetMainCallback2(CB2_ReinitMainMenu);
+        DestroyTask(taskId);
+        break;
     }
 }
 
@@ -1230,6 +1369,21 @@ static void HighlightSelectedMainMenuItem(u8 menuType, u8 selectedMenuItem, s16 
         }
         break;
     case HAS_SAVED_GAME:
+        switch (selectedMenuItem)
+        {
+        case 0:
+        default:
+            SetGpuReg(REG_OFFSET_WIN0V, MENU_WIN_VCOORDS(2));
+            break;
+        case 1:
+            SetGpuReg(REG_OFFSET_WIN0V, MENU_WIN_VCOORDS(3));
+            break;
+        case 2:
+            SetGpuReg(REG_OFFSET_WIN0V, MENU_WIN_VCOORDS(4));
+            break;
+        }
+        break;
+    case HAS_RIFT_READY:
         switch (selectedMenuItem)
         {
         case 0:

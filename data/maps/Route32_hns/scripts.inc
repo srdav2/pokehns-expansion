@@ -87,7 +87,7 @@ Route32_EventScript_GildedReturn2::
 	playmoncry SPECIES_ARCEUS, CRY_MODE_NORMAL
 	setvar VAR_0x8004, 1
 	special ReturnAnchoredMon
-	goto_if_eq VAR_RESULT, MON_CANT_GIVE, Route32_EventScript_GildedReturn2Failed
+	goto_if_eq VAR_RESULT, FALSE, Route32_EventScript_GildedReturn2Failed
 	setflag FLAG_GILDED_RETURN_2_SEEN
 	msgbox Route32_Text_GildedReturn2After, MSGBOX_DEFAULT
 	closemessage

@@ -39,6 +39,7 @@
 #include "contest.h"
 #include "item_menu.h"
 #include "pokemon_storage_system.h"
+#include "rift_shared.h"
 #include "pokemon_jump.h"
 #include "decoration_inventory.h"
 #include "secret_base.h"
@@ -307,7 +308,7 @@ void NewGameInitData(void)
 #if IS_HNS
     StringCopy(gSaveBlock2Ptr->rivalName, gText_ExpandedPlaceholder_Silver);
     InitMomSavings();
-    InitGildedAnchoredMons();
+    Rift_InitForNewGame();
 #endif
 }
 

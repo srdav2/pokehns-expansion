@@ -745,7 +745,6 @@ void ZeroEnemyPartyMons(void);
 u32 GetMonPersonality(u16 species, u8 gender, u8 nature, u8 unownLetter);
 void CreateMon(struct Pokemon *mon, u16 species, u8 level, u32 personality, struct OriginalTrainerId);
 void DevolvePokemonToBaseAtLevel(struct Pokemon *mon, u8 level);
-void InitGildedAnchoredMons(void);
 void CreateRandomMon(struct Pokemon *mon, u16 species, u8 level);
 void CreateRandomMonWithIVs(struct Pokemon *mon, u16 species, u8 level, u8 fixedIv);
 void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u32 personality, struct OriginalTrainerId);

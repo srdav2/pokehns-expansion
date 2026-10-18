@@ -32,6 +32,27 @@ Added configurable perfect IVs (31) and EVs (252 per stat) for owned Pokémon. T
 
 - [ ] No in-game debug-menu steps apply to this tooling-only mission; rerun `python3 tools/rift/rift_savetool.py --selftest` and confirm it prints `selftest OK`.
 
+## LX1 — Integrate the contract
+
+**Status: BUILT — NEEDS PLAYTEST**
+
+Copied the shared Rift contract/header/source without edits and added the Left-specific game configuration. `PokemonStorage` now ends in the shared `RiftRecord`; fresh games initialize it and `CopyPartyAndObjectsToSave()` stamps it before every full-save copy. This covers normal, Hall of Fame, overwrite, link/e-Reader, and link-full-save preparation paths; link/e-Reader saves write only SaveBlocks and do not persist PC storage. Legacy Left saves migrate Pokémon from boxes 1–7 into boxes 8–14 and discard the obsolete pass-1 anchors. Anchor returns use the shared record and can fall back to a depositable box. The title screen classifies foreign records, shows T1–T4, hides Continue for foreign saves, and asks for a second confirmation before erasing; arrival is currently a placeholder. Added the debug fixture **Rift: fake a Right first-finish save**. `make hns -j8` completed with zero errors, and fingerprint comparison printed `Rift compatibility: OK`.
+
+**Deferred:**
+
+- ARRIVE THROUGH THE RIFT still says "coming soon"; implement the arrival sequence in LX4.
+- PC box ownership enforcement and migration overflow UX are LX2.
+- Finale crossing is LX3; second-finale behavior is LX5.
+- No on-device save/reload or title-screen playtest has been performed.
+
+**Playtest checklist:**
+
+- [ ] Start a fresh Left game; open **R + Start → Utilities… → Lost Rift anchors… → Rift: fake a Right first-finish save**. Save in-game, reset, and confirm T1 appears, Continue is absent, and **ARRIVE THROUGH THE RIFT** is the first menu option.
+- [ ] Select **NEW GAME** on that foreign save; confirm the erase warning requires a second YES/NO and that NO returns without erasing.
+- [ ] Select **ARRIVE THROUGH THE RIFT**; confirm the LX1 placeholder appears without modifying the foreign save.
+- [ ] Load a pre-contract Left save with Pokémon in boxes 1–7; confirm migration packs them into boxes 8–14 and the next save stamps Left.
+- [ ] In a Right first-finish fixture, call each **Return anchor 1/2/3** debug action; confirm the returned Pokémon has levels 5/10/15 and cannot be returned twice. Fill party and depositable boxes to check the no-room path leaves the anchor returnable.
+
 ## GF0 — Setup and audit
 
 **Status: BUILT — NEEDS PLAYTEST**

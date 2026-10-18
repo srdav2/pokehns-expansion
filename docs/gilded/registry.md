@@ -46,17 +46,22 @@ HnS event scripts and map objects are organized in these paths. Preserve their e
 
 These paths are the source-event map for the subsequent Team MEGA re-skin missions. No HnS flags, vars, trainer IDs, or event behavior are changed in GF0.
 
-## GF1 — Rift foundation
+## GF1 — Rift foundation (superseded by LX1)
 
-Named save fields appended to `struct PokemonStorage`:
+The pass-1 New Game anchors below were removed in LX1 and replaced by the shared
+`struct RiftRecord rift` as the final member of `PokemonStorage`. Legacy saves
+discard these fields during the contract migration.
 
-| Field | Meaning |
-| --- | --- |
-| `gildedRiftAnchoredMons[3]` | Three saved anchored Pokémon as `struct BoxPokemon` |
-| `gildedRiftAnchorLevels[3]` | Target levels, in anchor order: 5, 10, and 15 |
-| `gildedRiftReturnedBits` | Bit `n` records that zero-based anchor `n` was returned |
+`ReturnAnchoredMon` remains the return special, reading its zero-based anchor
+index from `VAR_8004`; it now reads and updates the shared record. No new flags,
+vars, trainers, maps, or specials were allocated by GF1.
 
-Special: `ReturnAnchoredMon`, reading the zero-based anchor index from `VAR_8004`. It returns the anchor to the party or PC and prevents duplicate returns. The GF1 debug menu exposes each index under **Utilities… → Lost Rift anchors…**. No new flags or vars were allocated.
+## LX1 — Contract integration
+
+- Copied `rift_contract.h`, `rift_shared.h`, and `rift_shared.c` byte-for-byte from `docs/rift/`.
+- `include/config/rift_game.h` selects Left and Right as the other game.
+- The only new global debug state is `gRiftDebugFakeRightSavePending`; it makes the next save identify the debug fixture as Right-written, then clears itself.
+- No flags, script vars, trainers, maps, or specials were allocated.
 
 ## GF2 — Quality of life
 

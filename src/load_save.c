@@ -16,9 +16,11 @@
 #include "trainer_hill.h"
 #include "gba/flash_internal.h"
 #include "decoration_inventory.h"
+#include "debug.h"
 #include "agb_flash.h"
 #include "event_data.h"
 #include "constants/event_objects.h"
+#include "rift_shared.h"
 
 static void ApplyNewEncryptionKeyToAllEncryptedData(u32 encryptionKey);
 
@@ -243,6 +245,16 @@ void LoadObjectEvents(void)
 void CopyPartyAndObjectsToSave(void)
 {
     MaxAllPlayerMonStats();
+    Rift_StampForSave();
+#if IS_HNS
+    if (gRiftDebugFakeRightSavePending)
+    {
+        struct RiftRecord *rec = Rift_GetRecord();
+        rec->lastWrittenBy = RIFT_GAME_RIGHT;
+        rec->checksum = Rift_ComputeChecksum(rec);
+        gRiftDebugFakeRightSavePending = FALSE;
+    }
+#endif
     SavePlayerParty();
     SaveObjectEvents();
 }

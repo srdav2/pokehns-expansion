@@ -39,6 +39,7 @@
 #include "pokedex.h"
 #include "pokemon.h"
 #include "pokemon_icon.h"
+#include "rift_shared.h"
 #include "pokemon_storage_system.h"
 #include "random.h"
 #include "region_map.h"
@@ -74,6 +75,70 @@
 #include "vs_seeker.h"
 #include "load_save.h"
 #include "battle_partner.h"
+
+#if IS_HNS
+static void DebugAction_DestroyExtraWindow(u8 taskId);
+
+bool32 gRiftDebugFakeRightSavePending;
+
+static void DebugAction_RiftFakeRightFinish(u8 taskId)
+{
+    static const u8 anchorLevels[RIFT_ANCHOR_COUNT] = {
+        RIFT_ANCHOR_LEVEL_1, RIFT_ANCHOR_LEVEL_2, RIFT_ANCHOR_LEVEL_3
+    };
+    static const u16 fallbackSpecies[RIFT_ANCHOR_COUNT] = {
+        SPECIES_BULBASAUR, SPECIES_CHARMANDER, SPECIES_SQUIRTLE
+    };
+    struct RiftRecord *rec = Rift_GetRecord();
+    u8 i, box, pos, count = 0;
+
+    for (i = 0; i < RIFT_ANCHOR_COUNT; i++)
+    {
+        struct Pokemon fallbackMon;
+        struct BoxPokemon *anchor;
+
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SANITY_HAS_SPECIES))
+            anchor = &gPlayerParty[i].box;
+        else
+        {
+            CreateMon(&fallbackMon, fallbackSpecies[i], anchorLevels[i], Random32(), OTID_STRUCT_PLAYER_ID);
+            GiveMonInitialMoveset(&fallbackMon);
+            anchor = &fallbackMon.box;
+        }
+        Rift_StoreAnchor(i, anchor);
+    }
+
+    for (box = 0; box < RIFT_LEFT_FIRST_BOX; box++)
+    {
+        for (pos = 0; pos < IN_BOX_COUNT; pos++)
+            ZeroBoxMonData(&gPokemonStoragePtr->boxes[box][pos]);
+    }
+    for (box = 0; box < RIFT_LEFT_FIRST_BOX && count < 10; box++)
+    {
+        for (pos = 0; pos < IN_BOX_COUNT && count < 10; pos++, count++)
+        {
+            struct Pokemon testMon;
+            CreateMon(&testMon, fallbackSpecies[count % RIFT_ANCHOR_COUNT], 5 + count, Random32(), OTID_STRUCT_PLAYER_ID);
+            GiveMonInitialMoveset(&testMon);
+            gPokemonStoragePtr->boxes[box][pos] = testMon.box;
+        }
+    }
+
+    rec->firstGame = RIFT_GAME_RIGHT;
+    rec->progressRight = RIFT_PROGRESS_FIRST_FINISH;
+    rec->progressLeft = RIFT_PROGRESS_NONE;
+    rec->boxesUnsealed = FALSE;
+    rec->overflowBoxes = 0;
+    rec->anchoredReturned = 0;
+    rec->lastWrittenBy = RIFT_GAME_RIGHT;
+    memcpy(rec->playerName, gSaveBlock2Ptr->playerName, sizeof(rec->playerName));
+    rec->playerGender = gSaveBlock2Ptr->playerGender;
+    memcpy(rec->trainerId, gSaveBlock2Ptr->playerTrainerId, sizeof(rec->trainerId));
+    rec->checksum = Rift_ComputeChecksum(rec);
+    gRiftDebugFakeRightSavePending = TRUE;
+    DebugAction_DestroyExtraWindow(taskId);
+}
+#endif
 
 enum FollowerNPCCreateDebugMenu
 {
@@ -572,6 +637,9 @@ static const struct DebugMenuOption sDebugMenu_Actions_GildedAnchors[] =
     { COMPOUND_STRING("Return anchor 1"), DebugAction_ExecuteScript, Debug_EventScript_Gilded_ReturnAnchor1 },
     { COMPOUND_STRING("Return anchor 2"), DebugAction_ExecuteScript, Debug_EventScript_Gilded_ReturnAnchor2 },
     { COMPOUND_STRING("Return anchor 3"), DebugAction_ExecuteScript, Debug_EventScript_Gilded_ReturnAnchor3 },
+#if IS_HNS
+    { COMPOUND_STRING("Rift: fake a Right first-finish save"), DebugAction_RiftFakeRightFinish },
+#endif
     { NULL }
 };
 
