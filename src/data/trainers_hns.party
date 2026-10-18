@@ -5385,7 +5385,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_YOSHI_HNS ===
 Name: YOSHI
-Class: Black Belt Hns
+Class: Sigma Bro Hns
 Pic: Black Belt
 Gender: Male
 Music: Hg Suspicious 2
@@ -5398,7 +5398,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LAO_HNS ===
 Name: LAO
-Class: Black Belt Hns
+Class: Sigma Bro Hns
 Pic: Black Belt
 Gender: Male
 Music: Hg Suspicious 2
@@ -5411,7 +5411,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_NOB_HNS ===
 Name: NOB
-Class: Black Belt Hns
+Class: Sigma Bro Hns
 Pic: Black Belt
 Gender: Male
 Music: Hg Suspicious 2
@@ -5445,7 +5445,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LUNG_HNS ===
 Name: LUNG
-Class: Black Belt Hns
+Class: Sigma Bro Hns
 Pic: Black Belt
 Gender: Male
 Music: Hg Suspicious 2
@@ -17567,3 +17567,51 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Dragon Pulse
 - Light Screen
 - Thunder Wave
+
+=== TRAINER_UNION_TOLL_GRUNT_1_HNS ===
+Name: GRUNT
+Class: Team Rocket Hns
+Pic: Rocket Grunt M Hns
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+Items: Potion
+
+Zubat @ Oran Berry
+Level: 13
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Leech Life
+- Supersonic
+- Wing Attack
+
+Geodude @ Oran Berry
+Level: 14
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Rock Throw
+- Defense Curl
+- Tackle
+
+=== TRAINER_UNION_TOLL_GRUNT_2_HNS ===
+Name: GRUNT
+Class: Team Rocket Hns
+Pic: Rocket Grunt M Hns
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+Items: Potion
+
+Koffing @ Oran Berry
+Level: 13
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Smog
+- Tackle
+- Sludge
+
+Rattata @ Oran Berry
+Level: 14
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Hyper Fang
+- Quick Attack
+- Focus Energy

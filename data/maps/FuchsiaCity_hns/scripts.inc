@@ -106,8 +106,8 @@ FuchsiaCity_Text_PokefanM:
 	.string "ELITE FOUR.$"
 
 FuchsiaCity_Text_Teacher:
-	.string "The SAFARI ZONE is under new\n"
-	.string "management.\p"
+	.string "The SAFARI ZONE is now the BIG\n"
+	.string "GAME RANCH. New management.\p"
 	.string "And it has tons of new POKéMON!$"
 
 FuchsiaCity_Text_Sign:
@@ -125,9 +125,9 @@ FuchsiaCity_Text_SafariZoneOfficeSign:
 	.string "further notice.$"
 
 FuchsiaCity_Text_SafariZone:
-	.string "SAFARI ZONE\n"
-	.string "NOW OWNED BY\l"
-	.string "DEVON CORP.$"
+	.string "THE BIG GAME RANCH\n"
+	.string "(FORMERLY SAFARI ZONE)\l"
+	.string "TROPHY PACKAGES AVAILABLE.$"
 
 FuchsiaCity_Text_SafariZoneClosedSign:
 	.string "The WARDEN is traveling abroad.\p"

@@ -591,3 +591,13 @@ Status: BUILT — NEEDS PLAYTEST
 - Radio Tower 5F: Gaudy (the Archer object) plays Pidgeot cry + wing SE and walks fast north 3 tiles before the existing removal.
 Deferred: no Giratina sprite on the Axis; the party does not appear as overworld followers on Route 29 (text only).
 Playtest: use Flags & Vars to set VAR_GILDED_FINALE=1 and warp to Goldenrod TV Room (or beat Red, then Giratina); check TV text, walk-out, credits. Beat Gaudy on Radio Tower 5F and watch the fly-off.
+
+## Pass 2 follow-up: Union Cave, Chuck, Safari, P2-15
+Status: BUILT — NEEDS PLAYTEST
+- Union Cave 1F: two MEGA toll grunts (trainers 690–691), sight 3, at (12,28) and (16,28).
+- Chuck gym: YOSHI, LAO, NOB, LUNG reclassed to Sigma Bro (teams unchanged).
+- Safari: Fuchsia sign/teacher/entrance re-texted to BIG GAME RANCH.
+- Janine/Sabrina/Brock lines delivered as NPC lines in P2-10/11; Heritage/Wellness reclasses already existed.
+- P2-15: MAPSEC_ROCKET_HIDEOUT_HNS now "MEGA HIDEOUT" (region_map.c, sections json); player-facing ROCKET grep clean in _hns content (remaining hits are FRLG-only). Arceus Returns 1–3 wired (Route 30, Route 32, Azalea).
+Deferred: Chuck team rework.
+Playtest: debug warp to Union Cave 1F, walk south corridor; check Fuchsia sign; open region map.

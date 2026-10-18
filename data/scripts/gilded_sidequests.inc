@@ -494,3 +494,37 @@ Gilded_TariffMart:
 	.2byte ITEM_NONE
 	release
 	end
+
+Gilded_UnionToll_1::
+	trainerbattle_single TRAINER_UNION_TOLL_GRUNT_1_HNS, Gilded_UnionToll_Seen1, Gilded_UnionToll_Beaten1
+	msgbox Gilded_UnionToll_After1, MSGBOX_AUTOCLOSE
+	end
+
+Gilded_UnionToll_2::
+	trainerbattle_single TRAINER_UNION_TOLL_GRUNT_2_HNS, Gilded_UnionToll_Seen2, Gilded_UnionToll_Beaten2
+	msgbox Gilded_UnionToll_After2, MSGBOX_AUTOCLOSE
+	end
+
+Gilded_UnionToll_Seen1:
+	.string "FREEDOM TOLL! The cave is free.\n"
+	.string "The walking costs extra.$"
+
+Gilded_UnionToll_Beaten1:
+	.string "I'll waive the fee. Just\n"
+	.string "this once.$"
+
+Gilded_UnionToll_After1:
+	.string "Toll's paid in battles now.\n"
+	.string "It's a freedom thing.$"
+
+Gilded_UnionToll_Seen2:
+	.string "You didn't read the sign? It\n"
+	.string "says 'FREEDOM TOLL.' In ants.$"
+
+Gilded_UnionToll_Beaten2:
+	.string "My boss said no refunds.\n"
+	.string "I'm refunding you.$"
+
+Gilded_UnionToll_After2:
+	.string "Go on. The cave is open.\n"
+	.string "The tolls are for tomorrow.$"

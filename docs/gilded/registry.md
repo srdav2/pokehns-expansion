@@ -389,3 +389,5 @@ No new constants. Trainer placements: `TRAINER_COLONEL_BUCKSHOT_RADIO_TOWER_HNS`
 ## P2-09 finish
 - Var: VAR_GILDED_FINALE 0x40E0 (1 TV room, 2 Route 29 walk-out)
 - Map: GoldenrodCity_TVRoom_hns (MAP_GOLDENROD_CITY_TV_ROOM_HNS)
+
+- Trainers 690–691: TRAINER_UNION_TOLL_GRUNT_1/2_HNS (Union Cave 1F). Scripts Gilded_UnionToll_1/2.

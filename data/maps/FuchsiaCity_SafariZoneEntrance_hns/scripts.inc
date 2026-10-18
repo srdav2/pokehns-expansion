@@ -218,7 +218,7 @@ FuchsiaCity_SafariZoneEntrance_Movement_ReturnToTable:
 
 FuchsiaCity_SafariZoneEntrance_Text_StevenWelcome:
 	.string "Hello again, {PLAYER}!\p"
-	.string "Welcome to the DEVON SAFARI ZONE!\p"
+	.string "Welcome to the BIG GAME RANCH!\p"
 	.string "This specially designed safari\n"
 	.string "has 4 different habitats that\l"
 	.string "attract and house different invasive\l"
@@ -320,7 +320,7 @@ FuchsiaCity_SafariZoneEntrance_Text_UpgradeGuyDeclined:
 	.string "Oh, that's too bad, then...$"
 
 FuchsiaCity_SafariZoneEntrance_Text_UpgradeGuyAccepted:
-	.string "Enjoy the premium SAFARI ZONE\n"
+	.string "Enjoy the premium RANCH\n"
 	.string "experience!$"
 
 FuchsiaCity_SafariZoneEntrance_EventScript_Steven_Trade::

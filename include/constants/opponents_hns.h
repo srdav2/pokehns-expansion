@@ -716,7 +716,10 @@
 #define TRAINER_DEBATE_BRO_2_HNS 688
 #define TRAINER_DEBATE_BRO_3_HNS 689
 
-#define TRAINERS_COUNT_HNS                       690
+#define TRAINER_UNION_TOLL_GRUNT_1_HNS 690
+#define TRAINER_UNION_TOLL_GRUNT_2_HNS 691
+
+#define TRAINERS_COUNT_HNS                       692
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H
