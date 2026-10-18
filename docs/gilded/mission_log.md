@@ -539,3 +539,11 @@ Status: BUILT_PARTIAL — NEEDS PLAYTEST
 - Cinnabar: MEGA Official NPC (38,22). Pewter Museum 1F: Pell exhibit NPC (20,5).
 Deferred: Safari chart "Big Game Ranch" re-text (shared scripts), Janine/Sabrina extra lines, Brock museum line.
 Playtest: warp to SaffronCity_SilphCo_hns, walk into auditor sight lines, use terminal at (8,6); talk to Fisherman in Safari entrance; talk to NPCs at Cinnabar and Pewter Museum.
+
+## P2-08: Comeback Rally
+Status: BUILT — NEEDS PLAYTEST
+- `ViridianCity_hns`: coord triggers at (42..44,15), the approach to the gym door. Active once `FLAG_HIDE_CINNABAR_BLUE` is set (Blue back in his gym) and Gaudy 2 is not defeated.
+- Crowd (3 NPCs), Silver and Gaudy appear via `FLAG_TEMP_5` (cleared on map load only while the rally is active). Silver confrontation, Gaudy 2 (trainer 678, Mega Tyranitar), exit line, and MEGA disbands text; objects removed after.
+- Blue's team and badge flow untouched. After a win, the trainer-defeated check blocks repeats; after a loss, the rally retriggers.
+Deferred: Silver is a talk NPC (no movement/entrance choreography); no MEGA disband changes elsewhere.
+Playtest: set FLAG_HIDE_CINNABAR_BLUE via debug menu, warp to Viridian, step on (43,15); win and confirm gym is enterable and the rally doesn't return; lose and confirm retry.

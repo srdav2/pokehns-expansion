@@ -366,3 +366,5 @@ No new constants. Trainer placements: `TRAINER_COLONEL_BUCKSHOT_RADIO_TOWER_HNS`
 - Map `MAP_CERULEAN_CITY_CRYPTO_MINE_HNS` (group Dungeons). Local IDs `LOCALID_GILDED_MINE_EXIT/THORNE/BRO_1/BRO_2/GRINDWELLS`, `LOCALID_GILDED_MINE_FOREMAN` (Power Plant Entrance). No new flags or vars.
 
 - P2-07: FLAG_GILDED_PRESSURE_PROMPT_SAFFRON (was FLAG_UNUSED_EXTENDED_98). LOCALID_GILDED_CINNABAR_OFFICIAL, LOCALID_GILDED_MUSEUM_PELL (unused ids, local_id strings only).
+
+- P2-08: Viridian objects 24-28 use FLAG_TEMP_5 (no new persistent flags); coord triggers use VAR_TEMP_1.

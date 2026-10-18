@@ -5,6 +5,13 @@ ViridianCity_hns_MapScripts::
 
 ViridianCity_EventScript_CityEnter::
 	setflag FLAG_VISITED_VIRIDIAN_CITY
+	goto_if_unset FLAG_HIDE_CINNABAR_BLUE, ViridianCity_EventScript_RallyHide
+	goto_if_defeated TRAINER_PRESIDENT_REX_GAUDY_COMEBACK_RALLY_HNS, ViridianCity_EventScript_RallyHide
+	clearflag FLAG_TEMP_5
+	end
+
+ViridianCity_EventScript_RallyHide::
+	setflag FLAG_TEMP_5
 	end
 
 ViridianCity_OnFrame::
@@ -157,3 +164,82 @@ ViridianCity_Text_WelcomeSign:
 ViridianCity_Text_TrainerHouseSign:
 	.string "TRAINER HOUSE\p"
 	.string "The Club for Top Trainer Battles$"
+
+ViridianCity_EventScript_Rally::
+	lockall
+	goto_if_unset FLAG_HIDE_CINNABAR_BLUE, ViridianCity_EventScript_RallyOff
+	goto_if_defeated TRAINER_PRESIDENT_REX_GAUDY_COMEBACK_RALLY_HNS, ViridianCity_EventScript_RallyOff
+	msgbox ViridianCity_Text_RallyCrowd, MSGBOX_DEFAULT
+	applymovement 25, Common_Movement_FaceOriginalDirection
+	msgbox ViridianCity_Text_RallySilver, MSGBOX_DEFAULT
+	msgbox ViridianCity_Text_RallyGaudyIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_PRESIDENT_REX_GAUDY_COMEBACK_RALLY_HNS, ViridianCity_Text_RallyGaudyDefeat
+	msgbox ViridianCity_Text_RallyGaudyExit, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject 24
+	removeobject 26
+	removeobject 27
+	removeobject 28
+	setflag FLAG_TEMP_5
+	fadescreen FADE_FROM_BLACK
+	msgbox ViridianCity_Text_RallyDisband, MSGBOX_DEFAULT
+	releaseall
+	end
+
+ViridianCity_EventScript_RallyOff::
+	releaseall
+	end
+
+ViridianCity_EventScript_RallyGaudy::
+	msgbox ViridianCity_Text_RallyGaudyTalk, MSGBOX_NPC
+	end
+
+ViridianCity_EventScript_RallySilver::
+	msgbox ViridianCity_Text_RallySilverTalk, MSGBOX_NPC
+	end
+
+ViridianCity_EventScript_RallyCrowd::
+	msgbox ViridianCity_Text_RallyCrowdTalk, MSGBOX_NPC
+	end
+
+ViridianCity_Text_RallyCrowd:
+	.string "CROWD: COME-BACK! COME-BACK!\n"
+	.string "Make VIRIDIAN great again!$"
+
+ViridianCity_Text_RallySilver:
+	.string "SILVER: Everyone's cheering for a\n"
+	.string "man who sold the whole region.\p"
+	.string "Quiet. Let me handle this.\n"
+	.string "{PLAYER}, you're up.$"
+
+ViridianCity_Text_RallyGaudyIntro:
+	.string "REX GAUDY: A comeback! Bigger,\n"
+	.string "bolder, and fully tax-deductible!\p"
+	.string "The crowd came for a winner.\n"
+	.string "Let's give them one!$"
+
+ViridianCity_Text_RallyGaudyDefeat:
+	.string "Unbelievable. A loss. On camera.$"
+
+ViridianCity_Text_RallyGaudyExit:
+	.string "REX GAUDY: Fine. I'm retiring to\n"
+	.string "a very big, very beautiful island.\p"
+	.string "The rest of you can keep the\n"
+	.string "region. It's in great shape!$"
+
+ViridianCity_Text_RallyDisband:
+	.string "TEAM MEGA has disbanded.\n"
+	.string "The crowd went home to nap.$"
+
+ViridianCity_Text_RallyGaudyTalk:
+	.string "REX GAUDY: Tonight, VIRIDIAN!\n"
+	.string "Tomorrow, everything else!$"
+
+ViridianCity_Text_RallySilverTalk:
+	.string "SILVER: Don't look at me.\n"
+	.string "I only came for the fight.$"
+
+ViridianCity_Text_RallyCrowdTalk:
+	.string "I don't know what he's selling,\n"
+	.string "but I'm already in!$"
