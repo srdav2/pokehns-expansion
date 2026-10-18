@@ -16115,3 +16115,21 @@ Level: 21
 
 Clauncher
 Level: 22
+
+=== TRAINER_WARDEN_PELL_ECRUTEAK_GATE_HNS ===
+Name: PELL
+Class: Heritage Officer Hns
+Pic: Officer Hns
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+
+Dunsparce
+Level: 24
+
+Stantler
+Level: 25
+
+Sudowoodo
+Level: 26

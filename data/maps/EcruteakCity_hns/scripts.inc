@@ -242,6 +242,26 @@ EcruteakCity_EventScript_BurnedSign::
 	release
 	end	
 
+EcruteakCity_EventScript_WardenPell::
+	lock
+	faceplayer
+	trainerbattle_single TRAINER_WARDEN_PELL_ECRUTEAK_GATE_HNS, EcruteakCity_Text_WardenPellSeen, EcruteakCity_Text_WardenPellBeaten, EcruteakCity_EventScript_WardenPellAfter
+	release
+	end
+
+EcruteakCity_EventScript_WardenPellAfter::
+	setflag FLAG_GILDED_WARDEN_PELL_DEFEATED
+	removeobject LOCALID_GILDED_WARDEN_PELL
+	end
+
+EcruteakCity_Text_WardenPellSeen:
+	.string "Pure JOHTONIANS only. Pedigree\n"
+	.string "certificate?$"
+
+EcruteakCity_Text_WardenPellBeaten:
+	.string "No certificate? You won the\n"
+	.string "battle. That counts, I suppose.$"
+
 EcruteakCity_EventScript_CitySign::
 	lock
 	msgbox EcruteakCity_Text_Sign, MSGBOX_SIGN

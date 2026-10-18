@@ -67,6 +67,18 @@ EcruteakCity_PokemonCenter_EventScript_Nerd::
 	release
 	end
 
+EcruteakCity_PokemonCenter_EventScript_EusineBoard::
+	lock
+	msgbox EcruteakCity_PokemonCenter_Text_EusineBoard, MSGBOX_SIGN
+	closemessage
+	release
+	end
+
+EcruteakCity_PokemonCenter_Text_EusineBoard:
+	.string "EUSINE'S SUICUNE BOARD\p"
+	.string "Everyone laughs. But I've SEEN it!\n"
+	.string "Blue. Majestic. It runs.$"
+
 EcruteakCity_PokemonCenter_Movement_BillTop:
 	walk_down
 	walk_down
@@ -139,4 +151,3 @@ EcruteakCity_PokemonCenter1F_Text_GymGuide:
 	.string "The appearance of a GYARADOS\n"
 	.string "swarm…\p"
 	.string "I smell a conspiracy. I know it!$"
-

@@ -154,3 +154,29 @@ No vars were allocated. Both prompts use `VAR_PRESSURE_POINTS = 0x40E5`.
 
 - Modified HnS maps: `GoldenrodCity_hns`, `GoldenrodCity_RadioTower_1F_hns`, and `GoldenrodCity_DepartmentStore_7F_hns`.
 - No new maps or specials were allocated.
+
+## GF7 — Johto Act 4
+
+### Flags
+
+`HNS_EXTENDED_CONTENT_START = 0x36A`; both values were unused before this mission.
+
+| Flag | Value | Purpose |
+| --- | ---: | --- |
+| `FLAG_GILDED_WARDEN_PELL_DEFEATED` | `0x3C2` | Hide Warden Pell after his Burned Tower gate battle. |
+| `FLAG_GILDED_PRESSURE_PROMPT_ECRUTEAK` | `0x3C3` | Hide the Dance Theatre ancestry-kit promoter after either choice. |
+
+No vars were allocated. The prompt uses `VAR_PRESSURE_POINTS = 0x40E5`.
+
+### Trainers
+
+| Trainer ID | Value | Class / party |
+| --- | ---: | --- |
+| `TRAINER_WARDEN_PELL_ECRUTEAK_GATE_HNS` | 660 | Heritage Officer; Dunsparce Lv. 24, Stantler Lv. 25, Sudowoodo Lv. 26 |
+
+`TRAINERS_COUNT_HNS` is now 661. The levels use the `A_MORT` 24–26 anchor band. The party reuses the existing `TRAINER_CLASS_HERITAGE_OFFICER_HNS` class.
+
+### Maps and specials
+
+- Modified HnS maps: `EcruteakCity_hns`, `EcruteakCity_Theater_hns`, `EcruteakCity_PokemonCenter_hns`, and `EcruteakCity_Gym_hns`.
+- No new maps or specials were allocated.

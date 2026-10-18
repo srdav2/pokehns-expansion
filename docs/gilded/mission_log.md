@@ -170,3 +170,27 @@ Added the GAUDY TOWER sign text, a Radio Tower RED CAP offer that gives `ITEM_RE
 - [ ] Read the Radio Tower sign in Goldenrod City and confirm it displays GAUDY TOWER while the underlying HnS map/warp flow remains unchanged.
 
 The Act 3 additions still need playtesting.
+
+## GF7 — Johto Act 4
+
+**Status: BUILT_PARTIAL — NEEDS PLAYTEST**
+
+Added Warden Pell's Heritage Officer battle at the Burned Tower entrance with a three-Pokémon Team 1 at levels 24–26; defeating him clears the doorway and records the gate flag. Added the opt-in Unown Ancestry Kit prompt at the Dance Theatre, which increments `VAR_PRESSURE_POINTS` only on yes. Added Eusine's Suicune corkboard text in the Ecruteak Pokémon Center and updated Morty's Gym introduction while preserving his battle and badge flow. The HnS ROM build passed with the required Arm GNU toolchain and is **33,554,432 bytes (32 MiB)**.
+
+**Deferred:**
+
+- Add the three Heritage Officer battles on Routes 37/38 and a dedicated Pedigree Certificate booth NPC.
+- Gate both Burned and Tin Towers through one shared Heritage Order check; this partial build places Pell at the Burned Tower entrance only.
+- Add Pell's wall-plan poster in the Pokémon Center and the full Act 4 tower scene and Silver dialogue revisions.
+- `make check BUILD=hns -j8` remains blocked before tests by the existing `include/fake_rtc.h` / `struct SaveBlock3` compile error noted under GF1.
+- GF8–GF17 have not started. GF-IMP remains skipped as directed by the plan.
+
+**Playtest checklist:**
+
+- [ ] Open **R + Start → Utilities… → Warp to map warp…** and visit Ecruteak City. Approach the Burned Tower entrance; confirm Pell's pedigree challenge starts and blocks entry. Defeat him, then confirm the tower entrance is reachable and Pell stays gone after leaving and returning.
+- [ ] Open **R + Start → Trainers… → Choose trainer from map → Try Battle** in Ecruteak City; select Pell and confirm the Heritage Officer class and Dunsparce Lv. 24, Stantler Lv. 25, and Sudowoodo Lv. 26.
+- [ ] Visit **Ecruteak City Pokémon Center** and interact with the board on the upper wall; confirm Eusine's blue, majestic, running Suicune claim appears.
+- [ ] Visit **Ecruteak City Dance Theatre** and speak with the ancestry-kit promoter. Set `VAR_PRESSURE_POINTS` to `0` through **R + Start → Flags & Vars… → Set Var XYZ…**, choose yes, and confirm it increments to `1`; for a separate no test, clear `FLAG_GILDED_PRESSURE_PROMPT_ECRUTEAK` through **R + Start → Flags & Vars… → Set Flag XYZ…**, reset the var to `0`, and confirm declining adds no point.
+- [ ] Challenge Morty through the existing Ecruteak Gym flow; confirm the revised introduction appears and the original battle, Fog Badge, TM, and post-battle state still occur.
+
+The Act 4 additions still need playtesting.

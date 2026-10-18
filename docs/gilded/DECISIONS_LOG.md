@@ -2,6 +2,7 @@
 
 | Date | Mission | Decision | Why |
 | --- | --- | --- | --- |
+| 2026-10-18 | GF7 | Put Pell's single Team 1 gate battle at the Burned Tower entrance, use an existing officer sprite, and make the Unown Ancestry Kit a yes/no pressure prompt with no reward or penalty. | This adds the required core battle and pressure choice while keeping the existing tower entrance flow and avoiding new art or a forced side quest; the Tin Tower gate, route battles, and poster remain deferred. |
 | 2026-10-18 | GF6 | Make the RED CAP and Ball Show prompts opt-in, and keep Colonel Buckshot as a separate optional battle on the Dept. Store roof. | The Act 3 satire should not punish refusal, while the optional trainer battle can preserve the HnS route and gym progression. |
 | 2026-10-18 | GF5 | Preserve the HnS Slowpoke Well progression and replace only the Proton-slot battle with a new Chad Grindwell trainer; gate Return 3 on Kurt's post-Well state. | This keeps the canonical Kurt recovery and map transitions intact while ensuring the third anchor cannot be collected before the Well story beat. |
 | 2026-10-18 | GF4 | Keep HnS's opening and main quest event flow intact; add Act 1 pressure, battle, and Arceus-return content as map-local events, and defer the arrival cutscene and optional Route 29 dressing. | A partial Act 1 keeps the new return rewards and required battles reachable without risking broad changes to HnS's stable intro flow. |

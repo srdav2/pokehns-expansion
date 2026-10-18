@@ -377,6 +377,44 @@ EcruteakCity_Theater_EventScript_FancyPanel::
 	release
 	end
 
+EcruteakCity_Theater_EventScript_AncestryVendor::
+	lock
+	faceplayer
+	msgbox EcruteakCity_Theater_Text_TradwifePitch, MSGBOX_DEFAULT
+	msgbox EcruteakCity_Theater_Text_AncestryKitPrompt, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq VAR_RESULT, YES, EcruteakCity_Theater_EventScript_AncestryKitAccepted
+	setflag FLAG_GILDED_PRESSURE_PROMPT_ECRUTEAK
+	msgbox EcruteakCity_Theater_Text_AncestryKitDeclined, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+EcruteakCity_Theater_EventScript_AncestryKitAccepted::
+	addvar VAR_PRESSURE_POINTS, 1
+	setflag FLAG_GILDED_PRESSURE_PROMPT_ECRUTEAK
+	msgbox EcruteakCity_Theater_Text_AncestryKitAccepted, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+EcruteakCity_Theater_Text_TradwifePitch:
+	.string "We are dancers.\p"
+	.string "Yes, but have you tried dancing\n"
+	.string "traditionally?\p"
+	.string "That's what we do.$"
+
+EcruteakCity_Theater_Text_AncestryKitPrompt:
+	.string "Try an UNOWN ANCESTRY KIT?\n"
+	.string "Your team deserves a pedigree!$"
+
+EcruteakCity_Theater_Text_AncestryKitAccepted:
+	.string "Excellent! Your team's history\n"
+	.string "will be premium content!$"
+
+EcruteakCity_Theater_Text_AncestryKitDeclined:
+	.string "No? Fine. Dance your own way.$"
+
 EcruteakCity_Theater_Movement_SurfGuy1:
 	walk_down
 	walk_down

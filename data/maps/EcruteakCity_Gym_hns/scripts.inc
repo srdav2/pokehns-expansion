@@ -85,22 +85,9 @@ EcruteakCity_Gym_Text_GymStatueCertified:
 	.string "{PLAYER}$"
 
 MortyIntroText:
-	.string "Good of you to have come.\p"
-	.string "Here in ECRUTEAK, POKéMON have\n"
-	.string "always been revered.\p"
-	.string "It's said that a rainbow-colored\n"
-	.string "POKéMON will come down to\l"
-	.string "appear before a true Trainer.\p"
-	.string "I believed that tale, so I've\n"
-	.string "trained here in secret.\p"
-	.string "As a result, I can now see what\n"
-	.string "others cannot.\p"
-	.string "Just a bit more...\p"
-	.string "With a little more, I could see\n"
-	.string "a future where I meet the\l"
-	.string "rainbow-colored POKéMON.\p"
-	.string "You're going to help me reach\n"
-	.string "that level!$"
+	.string "They say my gym is the deep\n"
+	.string "state. Honestly, I'm flattered.\p"
+	.string "Now let's battle.$"
 
 MortyWinLossText:
 	.string "I'm not good enough yet...\p"
