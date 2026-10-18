@@ -2,24 +2,29 @@
 
 ## Mission status
 
-- **Built:** GF0 — Setup and audit. The HnS/Gilded target builds with the requested Arm GNU toolchain PATH; the HnS target is `make hns -j8`.
-- **Partial:** none.
+- **Built:** GF0 — Setup and audit; GF1 — Rift foundation; GF2 — Quality of life; GF11 — Johto Act 8.
+- **Partial:** GF3–GF10, GF12–GF17. See `docs/gilded/mission_log.md` for each mission's implemented scope and deferred work.
 - **Blocked:** none.
-- **Not started:** GF1–GF17.
 - **Skipped:** GF-IMP, as directed.
 
-## ROM size
+Every mission commit was pushed to `srdav2-gilded-overnight-missions`. The final mission commit is `78e9dce5ce` (`Gilded GF17: Side quests`).
 
-The baseline `pokehns.gba` is **33,554,432 bytes (32 MiB)**. The source declares expansion version **1.15.2** in `include/constants/expansion.h`.
+## Build and ROM
 
-## Playtest queue
+The HnS target builds with the required Arm GNU toolchain:
 
-Use the existing overworld debug menu (hold **R** and press **Start**) for these five checks:
+`PATH="/Users/stuartdavis/.gemini/antigravity/brain/f8571f88-b293-4162-b3ea-cfb03abd1a26/scratch/arm-gnu-toolchain/Payload/bin:/usr/bin:/bin:/usr/sbin:/sbin" make hns -j8`
 
-1. **Title and New Game:** boot the HnS target ROM, inspect the new GILDED title banner and ROM header, start a fresh save, then follow starter selection. In the overworld, open **ROM Info… → Expansion Version / ROM space**.
-2. **Rift trio returns (GF1):** use each new GF1 return action; confirm levels 5, 10, and 15, exactly-once returns, and PC fallback when the party is full. Reach return locations with **Utilities… → Warp to map warp…**.
-3. **Team MEGA event chain:** warp to Slowpoke Well, Mahogany hideout, Radio Tower, and Goldenrod Underground; check that each battle and story transition proceeds. Use **Trainers… → Choose trainer from map → Try Battle** for event-map trainers.
-4. **Pressure Prompt branches:** on separate save copies, choose YES and NO for each prompt and confirm both continue. Reach each prompt with **Utilities… → Warp to map warp…**; inspect state with **Flags & Vars… → Set Flag XYZ… / Set Var XYZ…**.
-5. **Save/reload and event persistence:** save before and after a mission event, reload, then confirm event state and returned Pokémon are preserved without duplication. Use **Utilities… → Warp to map warp…** and **ROM Info… → Save Block space**.
+Latest `pokehns.gba`: **33,554,432 bytes (32 MiB)**. Expansion version: **1.15.2**. The build completed with zero errors; existing warnings remain in `UlaUla_Forest_hns` (`setvar`/`copyvar`) and the linker RWX segment. `make check BUILD=hns -j8` remains blocked before tests by the existing `include/fake_rtc.h` / `struct SaveBlock3` compile issue recorded under GF1.
 
-These are queued checks only; no in-game checks have been run.
+## Top five playtests
+
+Use the overworld debug menu (**R + Start**) for the setup and isolated checks. These are queued checks only; no in-game checks have been run.
+
+1. **New Game and Rift anchors (GF0–GF2):** Boot the HnS ROM and inspect **ROM Info… → Expansion Version / ROM space**. Start a fresh save; confirm Running Shoes work before speaking to Mom and Elm awards the enabled Exp. Share. Use **Utilities… → Lost Rift anchors… → Return anchor 1/2/3**; confirm the levels, one-time behavior, and PC fallback when the party is full.
+2. **Johto event choices and battles (GF4–GF10):** Use **Utilities… → Warp to map warp…** for New Bark Lab, Cherrygrove, Azalea, Ecruteak, Olivine Lighthouse, Goldenrod, Mahogany, and Radio Tower. For each prompt, set `VAR_PRESSURE_POINTS` to `0` with **Flags & Vars… → Set Var XYZ…**, test YES and NO on separate saves, and confirm only YES increments the var. Use **Trainers… → Choose trainer from map → Try Battle** on the added battles.
+3. **Blackthorn and League progression (GF11–GF12):** Warp to Blackthorn Gym and Dragon's Den Shrine; use **Flags & Vars… → Set Var XYZ…** for `VAR_BLACKTHORN_CITY_STATE` and `VAR_DRAGONS_DEN_QUIZ` to test both quiz answers. Then exercise the Indigo prompt, new Rally Goers, unchanged Elite Four/Lance teams, first Hall of Fame Giratina dialogue, and Bill's one-time post-League message.
+4. **Kanto dialogue and preserved routes (GF13–GF15):** Warp to Vermilion Port and Gym, Saffron Gym, and Celadon City. Check Mar-a-Magikarp ticket travel, Surge's refusal, Sabrina's auditor line, Erika's banned-scent dialogue/Dojo move, and the GAUDY CASINO sign. Warp to Viridian City for the Comeback Rally banner and confirm existing Gym progression remains intact.
+5. **Red finale and Raw Moomoo overlay (GF16–GF17):** After meeting the existing Red battle requirements, warp to Mt. Silver Summit, defeat Red, and confirm the Giratina/Arceus exchange precedes GameClear and does not replay after a Red rematch. Warp to Route 39 Farmhouse before Miltank is healed, read the raw-milk dialogue, then complete the existing five-Oran-Berry barn flow and claim the unchanged reward.
+
+See each GF entry in the mission log for additional exact map, flag, and trainer checks. All listed changes still need playtesting.
