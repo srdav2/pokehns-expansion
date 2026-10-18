@@ -346,7 +346,10 @@ GoldenrodCity_RadioTower_5F_Text_RocketBossAfter:
 	.string "I'm disbanding TEAM MEGA to start\n"
 	.string "a new, better party!\p"
 	.string "This is the greatest exit in\n"
-	.string "Radio Tower history!$"
+	.string "Radio Tower history!\p"
+	.string "GAUDY hops on a gold PIDGEOT and\n"
+	.string "flaps out of the window. It is\l"
+	.string "heavily branded.$"
 
 GoldenrodCity_RadioTower_5F_Text_DirectorThanks:
 	.string "DIRECTOR: {PLAYER}, thank you!\p"

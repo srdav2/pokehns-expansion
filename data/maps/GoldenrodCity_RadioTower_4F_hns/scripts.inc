@@ -53,7 +53,7 @@ GoldenrodCity_RadioTower_4F4_EventScript_Fisher::
 	end
 
 GoldenrodCity_RadioTower_4F4_EventScript_Scientist::
-	trainerbattle_single TRAINER_RICH_HNS, GoldenrodCity_RadioTower_4F4_Text_ScientistRichSeen, GoldenrodCity_RadioTower_4F4_Text_ScientistRichBeaten
+	trainerbattle_single TRAINER_WARDEN_PELL_RADIO_TOWER_HNS, GoldenrodCity_RadioTower_4F4_Text_ScientistRichSeen, GoldenrodCity_RadioTower_4F4_Text_ScientistRichBeaten
 	msgbox GoldenrodCity_RadioTower_4F4_Text_ScientistRichAfter, MSGBOX_AUTOCLOSE
 	end
 
@@ -194,17 +194,16 @@ GoldenrodCity_RadioTower_4F4_Text_PresidentLoyaltyNo:
 	.string "The test is the same either way.$"
 
 GoldenrodCity_RadioTower_4F4_Text_ScientistRichSeen:
-	.string "Most excellent.\p"
-	.string "This RADIO TOWER will fulfill our\n"
-	.string "grand design.$"
+	.string "WARDEN PELL. Radio needs a wall\n"
+	.string "too. Pure signal only!$"
 
 GoldenrodCity_RadioTower_4F4_Text_ScientistRichBeaten:
-	.string "Hmmm…\p"
-	.string "All grand plans come with snags.$"
+	.string "A crack in the wall.\n"
+	.string "It will be fixed. Later.$"
 
 GoldenrodCity_RadioTower_4F4_Text_ScientistRichAfter:
-	.string "Do you honestly believe you can stop\n"
-	.string "TEAM MEGA?$"
+	.string "I will be on Route 27.\n"
+	.string "Building something. Big.$"
 
 GoldenrodCity_RadioTower_4F4_Text_ProductionSign:
 	.string "4F PRODUCTION$"

@@ -31,7 +31,7 @@ GoldenrodCity_RadioTower_3F_HideGate::
 
 
 GoldenrodRaidoTower3_EventScript_Grunt6::
-	trainerbattle_single TRAINER_GRUNT_6_HNS, GoldenrodCity_RadioTower_3F_Text_GruntM7Seen, GoldenrodCity_RadioTower_3F_Text_GruntM7Beaten
+	trainerbattle_single TRAINER_CHAD_GRINDWELL_RADIO_TOWER_HNS, GoldenrodCity_RadioTower_3F_Text_GruntM7Seen, GoldenrodCity_RadioTower_3F_Text_GruntM7Beaten
 	msgbox GoldenrodCity_RadioTower_3F_Text_GruntM7After, MSGBOX_AUTOCLOSE
 	end
 
@@ -186,16 +186,16 @@ GoldenrodCity_RadioTower_3F_Text_CooltrainerFMarvelous:
 	.string "You were simply marvelous!$"
 
 GoldenrodCity_RadioTower_3F_Text_GruntM7Seen:
-	.string "I've been given strict orders.\p"
-	.string "I'm to crush anyone who challenges\n"
-	.string "TEAM MEGA!$"
+	.string "CHAD GRINDWELL. Up at 4 AM.\n"
+	.string "Cold plunge. Your turn to lose.$"
 
 GoldenrodCity_RadioTower_3F_Text_GruntM7Beaten:
-	.string "What?!$"
+	.string "That was a rest day.\n"
+	.string "Totally intentional.$"
 
 GoldenrodCity_RadioTower_3F_Text_GruntM7After:
-	.string "I failed in my duties…\p"
-	.string "ARCHER will be so upset...$"
+	.string "My brother BRAD says hi.\n"
+	.string "Don't tell him I lost.$"
 
 GoldenrodCity_RadioTower_3F_Text_GruntM8Seen:
 	.string "It feels great ordering POKéMON\n"

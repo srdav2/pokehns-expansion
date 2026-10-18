@@ -10,7 +10,7 @@ GoldenrodRaidoTower2_EventScript_Grunt4::
 	msgbox GoldenrodCity_RadioTower_2F_Text_GruntM5After, MSGBOX_AUTOCLOSE
 	end
 GoldenrodRaidoTower2_EventScript_Grunt5::
-	trainerbattle_single TRAINER_GRUNT_5_HNS, GoldenrodCity_RadioTower_2F_Text_GruntM6Seen, GoldenrodCity_RadioTower_2F_Text_GruntM6Beaten
+	trainerbattle_single TRAINER_COLONEL_BUCKSHOT_RADIO_TOWER_HNS, GoldenrodCity_RadioTower_2F_Text_GruntM6Seen, GoldenrodCity_RadioTower_2F_Text_GruntM6Beaten
 	msgbox GoldenrodCity_RadioTower_2F_Text_GruntM6After, MSGBOX_AUTOCLOSE
 	end
 GoldenrodRaidoTower2_EventScript_GruntF2::
@@ -203,16 +203,16 @@ GoldenrodCity_RadioTower_2F_Text_GruntM5After:
 	.string "whatever we like.$"
 
 GoldenrodCity_RadioTower_2F_Text_GruntM6Seen:
-	.string "Hey, hey! Keep out of our way!$"
+	.string "COLONEL BUCKSHOT! Every POKéMON I\n"
+	.string "own is a cannon. Freedom ring!$"
 
 GoldenrodCity_RadioTower_2F_Text_GruntM6Beaten:
-	.string "Arggh. I give up.$"
+	.string "Misfire! Someone put that\n"
+	.string "on the news.$"
 
 GoldenrodCity_RadioTower_2F_Text_GruntM6After:
-	.string "Our EXECUTIVES are trying to take\n"
-	.string "this place over.\p"
-	.string "They have some big plan. I wonder\n"
-	.string "what that is?$"
+	.string "The PRESIDENT is on 5F. He\n"
+	.string "said there would be snacks.$"
 
 GoldenrodCity_RadioTower_2F_Text_GruntF2Seen:
 	.string "Hahaha!\p"

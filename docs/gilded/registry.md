@@ -350,3 +350,6 @@ Pressure Prompt 11 uses `VAR_PRESSURE_POINTS = 0x40E5`. No new vars or specials 
 
 No new flags, vars or trainers (uses the P2-01 IDs). New object events: `LOCALID_GILDED_WARDEN_PELL_TIN` on `EcruteakCity_hns` (hidden by `FLAG_GILDED_WARDEN_PELL_DEFEATED`), Bleak on `GoldenrodCity_UndergroundTunnel_hns` (hidden by `FLAG_HIDE_GOLDENROD_NPCS`). Reclassed: `TRAINER_GREG_HNS`, `TRAINER_TOBY_HNS`, `TRAINER_HARRY_HNS` → Heritage Officer; `TRAINER_CONNIE_HNS`, `TRAINER_ALFRED_HNS` → Wellness Guru.
 **Flag pool warning:** only `FLAG_UNUSED_EXTENDED_97–99` remain free; use trainer-defeated checks and var bitfields instead of new flags.
+
+## P2-03 — Radio Tower
+No new constants. Trainer placements: `TRAINER_COLONEL_BUCKSHOT_RADIO_TOWER_HNS` (2F), `TRAINER_CHAD_GRINDWELL_RADIO_TOWER_HNS` (3F), `TRAINER_WARDEN_PELL_RADIO_TOWER_HNS` (4F), `TRAINER_BARRY_BLASTER_RADIO_TOWER_HNS` (5F). Displaced HnS trainers: `TRAINER_GRUNT_5_HNS`, `TRAINER_GRUNT_6_HNS`, `TRAINER_RICH_HNS` no longer battled in the tower (their scripts now call the bosses).

@@ -472,3 +472,22 @@ Boss check (script equivalent of the §8 grep): every mon in the entries above h
 - [ ] Warp to Goldenrod Underground tunnel; find the girl at (3,14), battle Bleak. Check she is reachable and not blocking the corridor.
 - [ ] Ecruteak City: approach both the Burned Tower and Tin Tower doors; Pell fights from either; both guards vanish after.
 - [ ] Routes 37/38: three Heritage Officer fights and text.
+
+## P2-03 — Radio Tower takeover
+
+**Status: BUILT_PARTIAL — NEEDS PLAYTEST**
+
+Placed the Radio Tower bosses by converting one existing grunt/scientist trainer object per floor (same tiles, same re-entry behaviour, no new flags):
+- 2F `GoldenrodRaidoTower2_EventScript_Grunt5` → Buckshot 2 (Fisherman sprite)
+- 3F `GoldenrodRaidoTower3_EventScript_Grunt6` → Chad 2 (Black Belt sprite)
+- 4F `GoldenrodCity_RadioTower_4F4_EventScript_Scientist` → Pell 2 (Officer sprite)
+- 5F: Barry 2 (new ID, P2-02) and Gaudy 1 (full G1 team). Gaudy's exit now includes the gold PIDGEOT text.
+
+**Deferred:**
+- Pidgeot fly-off movement (text only; no sprite).
+- Silver's reaction and the act-end Giratina line on 5F (not re-verified in pass 2).
+- Per-floor grunt re-text beyond the three converted objects.
+
+**Playtest checklist:**
+- [ ] Warp to Goldenrod Radio Tower 2F/3F/4F (after the takeover state, `VAR_GOLDENROD_CITY_STATE` ≥ the Rocket takeover value; set `FLAG_HIDE_GOLDENROD_ROCKETS` clear). Fight Buckshot 2, Chad 2, Pell 2 once each; they don't reappear after.
+- [ ] 5F: Barry 2 then Gaudy 1; Kingambit is Gaudy's last Pokémon. Confirm the Pidgeot text and Director scene.
