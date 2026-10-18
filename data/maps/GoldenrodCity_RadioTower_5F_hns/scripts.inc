@@ -144,6 +144,12 @@ GoldenrodCity_RadioTower_5F_EventScript_Archer::
 	msgbox GoldenrodCity_RadioTower_5F_Text_RocketBossSeen, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_PRESIDENT_REX_GAUDY_RADIO_TOWER_HNS, GoldenrodCity_RadioTower_5F_Text_RocketBossBeaten
 	msgbox GoldenrodCity_RadioTower_5F_Text_RocketBossAfter, MSGBOX_DEFAULT
+	closemessage
+	playmoncry SPECIES_PIDGEOT, CRY_MODE_NORMAL
+	playse SE_M_WING_ATTACK
+	applymovement LOCALID_GOLDENROD_ARCHER, Gilded_Movement_PidgeotFlyOff
+	waitmovement 0
+	waitmoncry
 	delay 55
 	closemessage
 	fadescreen FADE_TO_BLACK
@@ -423,3 +429,10 @@ GoldenrodCity_RadioTower_5F_Text_DirectorOfficeSign:
 
 GoldenrodCity_RadioTower_5F_Text_Studio1Sign:
 	.string "5F STUDIO 1$"
+
+Gilded_Movement_PidgeotFlyOff:
+	face_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end

@@ -584,3 +584,10 @@ Status: BUILT — NEEDS PLAYTEST
 - Three Unown talk objects; the third says TOUCH GRASS and gives TM Grass Knot once (VAR_GILDED_SIDEQUESTS bit 4).
 Deferred: none for this quest. Debate Club / Tariff / Yard Signs already built.
 Playtest: set FLAG_COMPLETED_KABUTO_PUZZLE via Flags & Vars, warp to Ruins of Alph Outside, talk to the scientist at (26,24); talk to each Unown; confirm TM once; walk down to leave.
+
+## P2-09 (finish): Epilogue TV room, Route 29 walk-out, Pidgeot fly-off
+Status: BUILT — NEEDS PLAYTEST
+- Finale now: Axis -> `GoldenrodCity_TVRoom_hns` (CROSSFIRE + pressure-tier epilogue; ON_FRAME on `VAR_GILDED_FINALE`=1) -> `Route29_hns` (30,16) (ON_FRAME on var=2: player walks east 6 tiles, party-run text, post-credits Giratina line, then sets FLAG_DEFEATED_RED / FLAG_END_NUZLOCKE and runs GameClear; var reset to 0).
+- Radio Tower 5F: Gaudy (the Archer object) plays Pidgeot cry + wing SE and walks fast north 3 tiles before the existing removal.
+Deferred: no Giratina sprite on the Axis; the party does not appear as overworld followers on Route 29 (text only).
+Playtest: use Flags & Vars to set VAR_GILDED_FINALE=1 and warp to Goldenrod TV Room (or beat Red, then Giratina); check TV text, walk-out, credits. Beat Gaudy on Radio Tower 5F and watch the fly-off.

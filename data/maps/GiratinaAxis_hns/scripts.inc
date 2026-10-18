@@ -28,26 +28,8 @@ GiratinaAxis_EventScript_Scene::
 	msgbox GiratinaAxis_Text_ArceusQuiet, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_TO_BLACK
-	msgbox GiratinaAxis_Text_Crossfire, MSGBOX_DEFAULT
-	goto_if_eq VAR_PRESSURE_POINTS, 0, GiratinaAxis_EventScript_EpilogueNone
-	goto_if_le VAR_PRESSURE_POINTS, 5, GiratinaAxis_EventScript_EpilogueSome
-	msgbox GiratinaAxis_Text_EpilogueMany, MSGBOX_DEFAULT
-	goto GiratinaAxis_EventScript_Finish
-
-GiratinaAxis_EventScript_EpilogueNone::
-	msgbox GiratinaAxis_Text_EpilogueNone, MSGBOX_DEFAULT
-	goto GiratinaAxis_EventScript_Finish
-
-GiratinaAxis_EventScript_EpilogueSome::
-	msgbox GiratinaAxis_Text_EpilogueSome, MSGBOX_DEFAULT
-	goto GiratinaAxis_EventScript_Finish
-
-GiratinaAxis_EventScript_Finish::
-	msgbox GiratinaAxis_Text_PostCredits, MSGBOX_DEFAULT
-	closemessage
-	setflag FLAG_DEFEATED_RED
-	setflag FLAG_END_NUZLOCKE
-	special GameClear
+	setvar VAR_GILDED_FINALE, 1
+	warp MAP_GOLDENROD_CITY_TV_ROOM_HNS, 3, 5
 	waitstate
 	releaseall
 	end

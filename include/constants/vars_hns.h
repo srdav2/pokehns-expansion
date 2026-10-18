@@ -130,7 +130,8 @@
 //#define VAR_UNUSED_HNS_0x40DE                           0x40DE // Emerald VAR_GIFT_UNUSED_1
 #define VAR_GILDED_SIDEQUESTS                           0x40DF // Gilded P2-14 reward bits (was Emerald VAR_GIFT_UNUSED_2)
 //#define VAR_UNUSED_HNS_0x40DF                           0x40DF // Emerald VAR_GIFT_UNUSED_2
-#define VAR_UNUSED_HNS_0x40E0                           0x40E0 // Emerald VAR_GIFT_UNUSED_3
+#define VAR_GILDED_FINALE                               0x40E0 // Gilded P2-09 finale step: 1 = TV room, 2 = Route 29 walk-out
+//#define VAR_UNUSED_HNS_0x40E0                           0x40E0 // Emerald VAR_GIFT_UNUSED_3
 #define VAR_UNUSED_HNS_0x40E1                           0x40E1 // Emerald VAR_GIFT_UNUSED_4
 #define VAR_UNUSED_HNS_0x40E2                           0x40E2 // Emerald VAR_GIFT_UNUSED_5
 

@@ -1,7 +1,44 @@
 Route29_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route29_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route29_FinaleOnFrame
 	.byte 0
+
+Route29_FinaleOnFrame::
+	map_script_2 VAR_GILDED_FINALE, 2, Route29_EventScript_FinaleWalk
+	.2byte 0
+
+Route29_EventScript_FinaleWalk::
+	lockall
+	setvar VAR_GILDED_FINALE, 3
+	delay 20
+	applymovement OBJ_EVENT_ID_PLAYER, Route29_Movement_FinaleWalk
+	waitmovement 0
+	msgbox Route29_Text_FinaleRun, MSGBOX_DEFAULT
+	msgbox GiratinaAxis_Text_PostCredits, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_GILDED_FINALE, 0
+	setflag FLAG_DEFEATED_RED
+	setflag FLAG_END_NUZLOCKE
+	special GameClear
+	waitstate
+	releaseall
+	end
+
+Route29_Movement_FinaleWalk:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Route29_Text_FinaleRun:
+	.string "Your party tears through the\n"
+	.string "tall grass, laughing.\p"
+	.string "Nobody is shouting. The grass\n"
+	.string "is quite nice.$"
 
 Route29_OnTransition: 
 	special GildedYardSignHide

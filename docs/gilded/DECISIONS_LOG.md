@@ -33,3 +33,4 @@
 2025 | P2-14 | Skipped Unown chamber; Debate reaction via YES/NO | out of time budget; free flags scarce
 2026-10-18 | P2-10/11 | Delivered deferred dialogue as appended talk NPCs, not scene rewrites | no free flags; keeps HnS scripts untouched
 2026-10-18 | P2-14 | Gate = FLAG_COMPLETED_KABUTO_PUZZLE | spec says any HnS ruins puzzle flag
+2026-10-18 | P2-09 | Finale sequenced with VAR_GILDED_FINALE across maps | free flags exhausted; var 0x40E0 was unused

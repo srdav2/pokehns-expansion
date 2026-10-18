@@ -385,3 +385,7 @@ No new constants. Trainer placements: `TRAINER_COLONEL_BUCKSHOT_RADIO_TOWER_HNS`
 ## P2-14 finish
 - Map: RuinsOfAlph_FactCheck_hns; VAR_GILDED_SIDEQUESTS bit 4 = Grass Knot TM given
 - Scripts: Gilded_FactCheck_*
+
+## P2-09 finish
+- Var: VAR_GILDED_FINALE 0x40E0 (1 TV room, 2 Route 29 walk-out)
+- Map: GoldenrodCity_TVRoom_hns (MAP_GOLDENROD_CITY_TV_ROOM_HNS)
