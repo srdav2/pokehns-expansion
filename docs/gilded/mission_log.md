@@ -2,27 +2,24 @@
 
 ## GF0 — Setup and audit
 
-**Status: BLOCKED**
+**Status: BUILT — NEEDS PLAYTEST**
 
-The required `make -j8` build did not complete. After building the host-side tools, `arm-none-eabi-gcc` failed compiling the ROM because its installed sysroot lacks standard C headers (`stdint.h` and `string.h`). No ROM was produced, so ROM size is unavailable. The blocker is in the local toolchain setup; no source code or title assets were changed.
+Built the HnS target with the requested Arm GNU toolchain PATH. The bare default `make -j8` selects the Emerald target in this checkout; the HnS ROM is built with `make hns -j8`. The resulting baseline ROM is **33,554,432 bytes (32 MiB)**. The title/header now use the Gilded working title.
 
 Expansion version found in `include/constants/expansion.h`: **1.15.2**.
 
 **Deferred:**
 
-- Complete a clean `make -j8` build and measure the ROM.
-- Add the documented Gilded working title to the ROM header and title screen.
-- Put the GF0 anchor table into §2 of `docs/GILDED_STORY_BIBLE.md`.
-- Finish reviewing the Rocket-event inventory and apply the Team MEGA mapping.
-- GF1–GF17 are not started because they depend on GF0.
+- Apply the Team MEGA mapping to HnS event scripts (scheduled for GF3 and act missions).
+- GF1–GF17 are not started in this GF0 commit.
 - GF-IMP remains skipped as directed by the plan.
 
-**Playtest checklist (after the build blocker is resolved):**
+**Playtest checklist:**
 
-- [ ] Boot to the title screen and start a fresh game; confirm the title/header branding and HnS starter flow.
+- [ ] Boot the HnS ROM to the title screen; confirm the GILDED banner and game header name, then start a fresh game and follow HnS starter flow.
 - [ ] Open the overworld debug menu with **R + Start**; use **ROM Info… → Expansion Version** and **ROM space**.
 - [ ] Use **Utilities… → Warp to map warp…** to inspect the audited Johto event maps.
 - [ ] Use **Trainers… → Choose trainer from map → Try Battle** on a selected event-map trainer.
 - [ ] Use **Flags & Vars… → Set Flag XYZ… / Set Var XYZ…** only with documented test values; confirm save/reload preserves the event state.
 
-No Gilded feature was available to playtest during this mission.
+This baseline and title/header change still need playtesting.

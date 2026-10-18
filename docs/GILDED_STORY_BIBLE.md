@@ -40,12 +40,26 @@ All rules in the handover doc apply. In addition:
 
 HnS has its own balance. **Do not invent absolute levels.** Before writing any team, read HnS's trainer data and record these values in the registry (the "Gilded level anchors" table):
 
-| Token | Meaning |
-| --- | --- |
-| `A_FALK`, `A_BUG`, `A_WHIT`, `A_MORT`, `A_CHUCK`, `A_JAS`, `A_PRYCE`, `A_CLAIR` | Highest level on each Johto gym leader's team in HnS |
-| `A_LANCE` | Lance's ace |
-| `A_BROCK`, `A_MISTY`, `A_SURGE`, `A_ERIKA`, `A_JANINE`, `A_SABRINA`, `A_BLAINE`, `A_BLUE` | Kanto gym aces |
-| `A_RED` | Red's ace |
+| Token | Meaning | HnS level |
+| --- | --- | ---: |
+| `A_FALK` | Falkner's highest level in `TRAINER_FALKNER_1_HNS` | 11 |
+| `A_BUG` | Bugsy's highest level in `TRAINER_BUGSY_1_HNS` | 16 |
+| `A_WHIT` | Whitney's highest level in `TRAINER_WHITNEY_1_HNS` | 21 |
+| `A_MORT` | Morty's highest level in `TRAINER_MORTY_1_HNS` | 25 |
+| `A_CHUCK` | Chuck's highest level in `TRAINER_CHUCK_1_HNS` | 31 |
+| `A_JAS` | Jasmine's highest level in `TRAINER_JASMINE_1_HNS` | 36 |
+| `A_PRYCE` | Pryce's highest level in `TRAINER_PRYCE_1_HNS` | 33 |
+| `A_CLAIR` | Clair's highest level in `TRAINER_CLAIR_1_HNS` | 45 |
+| `A_LANCE` | Lance's highest level in `TRAINER_LANCE_1_HNS` | 56 |
+| `A_BROCK` | Brock's highest level in `TRAINER_BROCK_HNS` | 66 |
+| `A_MISTY` | Misty's highest level in `TRAINER_MISTY_HNS` | 63 |
+| `A_SURGE` | Lt. Surge's highest level in `TRAINER_LTSURGE_HNS` | 60 |
+| `A_ERIKA` | Erika's highest level in `TRAINER_ERIKA_HNS` | 62 |
+| `A_JANINE` | Janine's highest level in `TRAINER_JANINE_HNS` | 64 |
+| `A_SABRINA` | Sabrina's highest level in `TRAINER_SABRINA_HNS` | 66 |
+| `A_BLAINE` | Blaine's highest level in `TRAINER_BLAINE_HNS` | 67 |
+| `A_BLUE` | Blue's highest level in `TRAINER_BLUE_HNS` | 69 |
+| `A_RED` | Red's highest level in `TRAINER_RED_HNS` | 93 |
 
 **Bands:**
 - Grunts: anchor of the *next* gym −6 to −3, with 1–3 Pokémon.
