@@ -1,7 +1,7 @@
 # Brief: Perfect IVs and EVs for the player's Pokémon
 
-**Repo:** `srdav2/pokehns-expansion` (Gilded / **Pokémon Left**), branch `left-rift`.
-**Who:** GitHub Copilot. One task, one commit (`Left P0: perfect IVs/EVs for the player's Pokémon`). Same feature as Pokémon Right, so both games behave the same.
+**Repo:** `srdav2/pokehns-expansion` (Gilded / **Pokémon Left**), branch `left-rift`. See `docs/rift/COPILOT_RUN.md` for the branch set-up.
+**Who:** GitHub Copilot. One task, one commit (`Left: perfect IVs/EVs for the player's Pokémon`). Pokémon Right has the same feature, so both games behave the same.
 
 ## What the owner wants
 
@@ -52,45 +52,39 @@
 | `src/pokemon.c` `GiveScriptedMonToPlayer()` | `MaxPlayerMonStats(mon);` as the first line. Covers the starter, gifts, fossils, `givemon` and the debug-menu give. |
 | `src/egg_hatch.c` `AddHatchedMonToParty()` | After the hatched Pokémon's data is set, before the function returns: `MaxPlayerMonStats(mon);` |
 | `src/trade.c` `TradeMons()` | After the swap, on the player's new party slot: `MaxPlayerMonStats(&gPlayerParty[playerPartyIdx]);` |
-| `src/load_save.c` `CopyPartyAndObjectsToSave()` | `MaxAllPlayerMonStats();` as the first line, before `SavePlayerParty()`. Every save writes perfect Pokémon. |
+| `src/load_save.c` `CopyPartyAndObjectsToSave()` | `MaxAllPlayerMonStats();` as the first line, before `SavePlayerParty()`. Every save writes perfect Pokémon. If LX1 later adds `Rift_StampForSave()` here, keep the sweep first. |
 | `src/overworld.c` `CB2_ContinueSavedGame()` | `MaxAllPlayerMonStats();` after the save data is loaded, before the player can move. **This upgrades Pokémon in existing saves the moment they're loaded.** |
 
 Do **not** touch `CreateMon`, `CreateBoxMon`, the wild-encounter code or the trainer-party code. Those make wild and enemy Pokémon, which must stay random.
 
-## 3. Let the player see it, and Heart & Soul's own options
+## 3. Let the player see it
 
-- HnS already shows IV and EV values in the summary screen (`P_SUMMARY_SCREEN_IV_EV_VALUES TRUE` in `include/config/summary_screen.h`). No config change is needed. If the values aren't reachable from the summary, log it; don't rebuild the summary screen.
-- HnS's **challenge menu** has a **PLAYER IVs** option (`tx_Challenges_MaxPartyIVs`, used in `SetBoxMonIVs` in `src/pokemon.c`) and a **NO EVs** option (`tx_Challenges_NoEVs`). While `P_PLAYER_MONS_PERFECT` is TRUE, the perfect values win:
-  - don't change how either option is stored
-  - don't remove them from the menu
-  - make the NO EVs check in `src/pokemon.c` (~line 7916) and `src/party_menu.c` (~4941) leave our values alone; it only blocks *gaining* EVs, which already can't happen above 510.
-  - Log in `docs/gilded/DECISIONS_LOG.md` that both options have no effect while the feature is on.
+`P_SUMMARY_SCREEN_IV_EV_VALUES` is already `TRUE` in this repo. Check whether HnS's summary screen already lets the player view IVs and EVs:
+- If it does, change nothing.
+- If it doesn't, and a config switch in `include/config/summary_screen.h` turns it on, set that switch.
+- Otherwise skip this step and note it.
 
 ## 4. Save compatibility (must hold)
 
 - **Don't change** any struct in `include/global.h`, `include/pokemon.h`, `include/pokemon_storage_system.h` or `include/save.h`.
 - **Don't add** flags, vars or save fields.
-- **Don't change** `SAVE_FORMAT_VERSION` or any `SAVE_CONTRACT_*` value.
+- Leave every save-version constant as it is.
 
 IVs and EVs are existing fields inside each stored Pokémon. The only effect on a save is that those numbers get raised.
 
-Existing Pokémon Left saves keep loading, and their Pokémon are upgraded on load.
+**What this means for the owner's saves:** saves from earlier Gilded/Left builds keep loading, and their Pokémon are upgraded on load. (LX1 later converts old saves for the Rift; that's separate and also keeps them loading.)
 
 ## 5. Build and check
 
-1. Build:
-   ```
-   PATH="/Users/stuartdavis/.gemini/antigravity/brain/f8571f88-b293-4162-b3ea-cfb03abd1a26/scratch/arm-gnu-toolchain/Payload/bin:/usr/bin:/bin:/usr/sbin:/sbin" make hns -j8
-   ```
-   It must finish with zero errors.
+1. Build with the command in `docs/rift/COPILOT_RUN.md` (`make hns -j8` with the long PATH). It must finish with zero errors.
 2. **`git diff --stat`** should show only:
-   - the two new files and `include/config/pokemon.h`
-   - one or two lines each in `pokemon.c`, `egg_hatch.c`, `trade.c`, `load_save.c` and `overworld.c`
-   - the NO EVs guards, if they needed changing.
-3. **Commit** on `left-rift` and push. **Not `master`.**
-4. **Mission log entry** in `docs/gilded/mission_log.md`, with these playtest steps:
-   - Load an existing save; party and PC Pokémon show 31 IVs / 252 EVs.
-   - New game: the starter shows 31/252.
-   - Catch a wild Pokémon, including with a full party: normal stats in battle, 31/252 after the catch.
-   - Trainers' Pokémon are unchanged.
-   - Hatch an egg and do an in-game trade, then check both.
+   - the two new files
+   - `include/config/pokemon.h` (and the summary config if step 3 needed it)
+   - one or two lines each in `pokemon.c`, `egg_hatch.c`, `trade.c`, `load_save.c` and `overworld.c`.
+3. **Commit on `left-rift` and push.** Never push to `master`.
+4. **Playtest checklist.** Add it to `docs/gilded/mission_log.md`; nobody has played it yet.
+   - Load an existing save. Open the summary of a party Pokémon and of a PC Pokémon. Their IVs show 31 and EVs show 252.
+   - Start a new game. The starter from Elm shows 31/252.
+   - Catch a wild Pokémon. During the battle its stats are normal; after the catch its summary shows 31/252, including when the party is full and it goes to the PC.
+   - Battle a trainer. Their Pokémon are unchanged.
+   - Hatch an egg and do an in-game trade (if one is reachable), then check both.
