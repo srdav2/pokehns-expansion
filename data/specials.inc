@@ -17,6 +17,11 @@
 gSpecials::
 	def_special HealPlayerParty
 	def_special ReturnAnchoredMon
+	def_special GildedYardSignHide
+	def_special GildedYardSignRemove
+	def_special GildedYardSignCount
+	def_special GildedQuestBitTest
+	def_special GildedQuestBitSet
 	def_special SetCableClubWarp
 	def_special DoCableClubWarp
 	def_special ReturnFromLinkRoom

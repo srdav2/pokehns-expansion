@@ -126,8 +126,10 @@
 // --- include/config/save.h currently has FREE_MYSTERY_GIFT TRUE, so nothing
 // --- writes these. Turning Mystery Gift back on zeroes all 8 on gift clear.
 #define VAR_UNUSED_HNS_0x40DD                           0x40DD // Emerald VAR_GIFT_PICHU_SLOT - also used by data/scripts/gift_pichu.inc (wonder card script, not reachable)
-#define VAR_UNUSED_HNS_0x40DE                           0x40DE // Emerald VAR_GIFT_UNUSED_1
-#define VAR_UNUSED_HNS_0x40DF                           0x40DF // Emerald VAR_GIFT_UNUSED_2
+#define VAR_GILDED_YARD_SIGNS                           0x40DE // Gilded P2-14 bits 0-14 = yard sign removed (was Emerald VAR_GIFT_UNUSED_1)
+//#define VAR_UNUSED_HNS_0x40DE                           0x40DE // Emerald VAR_GIFT_UNUSED_1
+#define VAR_GILDED_SIDEQUESTS                           0x40DF // Gilded P2-14 reward bits (was Emerald VAR_GIFT_UNUSED_2)
+//#define VAR_UNUSED_HNS_0x40DF                           0x40DF // Emerald VAR_GIFT_UNUSED_2
 #define VAR_UNUSED_HNS_0x40E0                           0x40E0 // Emerald VAR_GIFT_UNUSED_3
 #define VAR_UNUSED_HNS_0x40E1                           0x40E1 // Emerald VAR_GIFT_UNUSED_4
 #define VAR_UNUSED_HNS_0x40E2                           0x40E2 // Emerald VAR_GIFT_UNUSED_5

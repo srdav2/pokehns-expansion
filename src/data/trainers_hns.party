@@ -17477,3 +17477,93 @@ Level: 55
 
 Houndoom
 Level: 56
+
+=== TRAINER_DEBATE_BRO_1_HNS ===
+Name: DEBATER
+Class: Talk Radio Host Hns
+Pic: Youngster Hns
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+Items: Super Potion
+
+Kadabra @ Twisted Spoon
+Ability: Synchronize
+Level: 22
+Timid Nature
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Psybeam
+- Disarming Voice
+- Recover
+- Shadow Ball
+
+Machoke @ Focus Band
+Ability: No Guard
+Level: 22
+Adamant Nature
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Karate Chop
+- Rock Tomb
+- Bulk Up
+- Knock Off
+
+=== TRAINER_DEBATE_BRO_2_HNS ===
+Name: DEBATER
+Class: Talk Radio Host Hns
+Pic: Youngster Hns
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+Items: Super Potion
+
+Golbat @ Sharp Beak
+Ability: Inner Focus
+Level: 23
+Jolly Nature
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Air Cutter
+- Poison Fang
+- Confuse Ray
+- Leech Life
+
+Hypno @ Leftovers
+Ability: Insomnia
+Level: 23
+Calm Nature
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Psychic
+- Hypnosis
+- Calm Mind
+- Dream Eater
+
+=== TRAINER_DEBATE_BRO_3_HNS ===
+Name: DEBATER
+Class: Talk Radio Host Hns
+Pic: Youngster Hns
+Gender: Male
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+Items: Super Potion
+
+Haunter @ Black Glasses
+Ability: Levitate
+Level: 24
+Timid Nature
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Shadow Ball
+- Sludge Bomb
+- Hypnosis
+- Will-O-Wisp
+
+Ampharos @ Magnet
+Ability: Static
+Level: 25
+Modest Nature
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Thunderbolt
+- Dragon Pulse
+- Light Screen
+- Thunder Wave

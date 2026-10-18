@@ -1525,6 +1525,69 @@ void ReturnAnchoredMon(void)
 #endif
 }
 
+#if IS_HNS
+static const u16 sGildedYardSignMaps[] = {
+    MAP_ROUTE29_HNS, MAP_ROUTE30_HNS, MAP_ROUTE31_HNS, MAP_ROUTE32_HNS, MAP_ROUTE34_HNS,
+    MAP_ROUTE35_HNS, MAP_ROUTE36_HNS, MAP_ROUTE37_HNS, MAP_ROUTE38_HNS, MAP_ROUTE39_HNS,
+    MAP_ROUTE42_HNS, MAP_ROUTE43_HNS, MAP_ROUTE44_HNS, MAP_ROUTE45_HNS, MAP_ROUTE46_HNS,
+};
+#endif
+
+// Hides this map's yard sign (FLAG_TEMP_6) if its bit is set. Runs from each route's OnTransition.
+void GildedYardSignHide(void)
+{
+#if IS_HNS
+    u8 i;
+    u16 map = (gSaveBlock1Ptr->location.mapGroup << 8) | gSaveBlock1Ptr->location.mapNum;
+
+    for (i = 0; i < ARRAY_COUNT(sGildedYardSignMaps); i++)
+    {
+        if (sGildedYardSignMaps[i] == map && (VarGet(VAR_GILDED_YARD_SIGNS) & (1 << i)))
+            FlagSet(FLAG_TEMP_6);
+    }
+#endif
+}
+
+// VAR_0x8004 = sign index (0-14)
+void GildedYardSignRemove(void)
+{
+#if IS_HNS
+    VarSet(VAR_GILDED_YARD_SIGNS, VarGet(VAR_GILDED_YARD_SIGNS) | (1 << gSpecialVar_0x8004));
+#endif
+}
+
+// gSpecialVar_Result = number of signs removed, counted from the bits each time
+void GildedYardSignCount(void)
+{
+#if IS_HNS
+    u16 bits = VarGet(VAR_GILDED_YARD_SIGNS);
+    u8 i, count = 0;
+
+    for (i = 0; i < 15; i++)
+        count += (bits >> i) & 1;
+    gSpecialVar_Result = count;
+#else
+    gSpecialVar_Result = 0;
+#endif
+}
+
+// VAR_0x8004 = bit. Result = TRUE if that side quest bit is set.
+void GildedQuestBitTest(void)
+{
+#if IS_HNS
+    gSpecialVar_Result = (VarGet(VAR_GILDED_SIDEQUESTS) >> gSpecialVar_0x8004) & 1;
+#else
+    gSpecialVar_Result = FALSE;
+#endif
+}
+
+void GildedQuestBitSet(void)
+{
+#if IS_HNS
+    VarSet(VAR_GILDED_SIDEQUESTS, VarGet(VAR_GILDED_SIDEQUESTS) | (1 << gSpecialVar_0x8004));
+#endif
+}
+
 void GiveLeadMonEffortRibbon(void)
 {
     bool8 ribbonSet;

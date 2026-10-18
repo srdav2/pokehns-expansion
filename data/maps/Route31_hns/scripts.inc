@@ -4,6 +4,7 @@ Route31_hns_MapScripts::
 	.byte 0
 
 Route31_OnTransition: 
+	special GildedYardSignHide
 	callnative SetTimeBasedEncounters
 	end
 

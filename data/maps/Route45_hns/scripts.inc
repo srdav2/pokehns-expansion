@@ -1,4 +1,5 @@
 Route45_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Gilded_YardSignHideOnly
 	.byte 0
 
 Route45_EventScript_Erik::

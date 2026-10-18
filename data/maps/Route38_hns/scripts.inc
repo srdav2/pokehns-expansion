@@ -4,6 +4,7 @@ Route38_hns_MapScripts::
 	.byte 0
 
 Route38_OnTransition: 
+	special GildedYardSignHide
 	callnative SetTimeBasedEncounters
 	end
 

@@ -4,6 +4,7 @@ Route43_hns_MapScripts::
 	.byte 0
 
 Route43_MapScript_OnTransition::
+	special GildedYardSignHide
 	call_if_set FLAG_HIDE_ROUTE42_SUICUNE, Route42_MapScript_HideTrigger
 	callnative SetTimeBasedEncounters
 	end

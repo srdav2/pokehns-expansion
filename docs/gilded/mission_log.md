@@ -562,3 +562,11 @@ Status: BUILT — NEEDS PLAYTEST
 - 20 towns × 3 new NPC lines (59 total; Olivine has 2 new, because auto-placement found only two safe tiles). In `data/scripts/gilded_town_npcs.inc`, objects appended to each town `map.json`, placed by a collision-based script.
 Deferred: the per-map "≤3 species" palette check was not audited (HnS's own placement); Olivine's third line (its Café tariff menu text is pass 1); NPC tiles were auto-picked from collision data and not seen in-game.
 Playtest: walk each town; confirm new NPCs don't block doors/paths; talk to several overworld mons on Routes 29/30/1.
+
+## P2-14: Side quests
+Status: BUILT_PARTIAL — NEEDS PLAYTEST
+- Yard Sign Cleanup: 15 signs on Routes 29–32, 34–39, 42–46 (VAR_GILDED_YARD_SIGNS 0x40DE); Lawn Ranger on Route 29 gives Leftovers (5), Lucky Egg (10), Ability Capsule (15) once each (VAR_GILDED_SIDEQUESTS 0x40DF bits 0–2).
+- Debate Club: 3 Debate Bros (trainers 687–689) in Goldenrod Underground Tunnel; Choice Specs after all three (bit 3).
+- Tariff Trouble: Olivine Mart clerk text + dealer in Olivine Port (separate pokemart, no price code changed).
+Deferred: Fact-Check the Unown (chamber map, Grass Knot TM) — not built.
+Playtest: debug-warp to Route 29, talk to signs, then Lawn Ranger; fight Debate Bros in order in Goldenrod tunnel; talk to dealer in Olivine Port.

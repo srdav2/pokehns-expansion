@@ -4,6 +4,7 @@ Route44_hns_MapScripts::
 	.byte 0
 
 Route44_OnTransition: 
+	special GildedYardSignHide
 	callnative SetTimeBasedEncounters
 	end
 

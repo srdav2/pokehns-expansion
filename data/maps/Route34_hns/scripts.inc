@@ -4,6 +4,7 @@ Route34_hns_MapScripts::
 	.byte 0
 
 Route34_OnTransition: 
+	special GildedYardSignHide
 	specialvar VAR_RESULT, GetDaycareState
 	call_if_eq VAR_RESULT, DAYCARE_EGG_WAITING, Route34_MapScript_EggReady
 	callnative SetTimeBasedEncounters

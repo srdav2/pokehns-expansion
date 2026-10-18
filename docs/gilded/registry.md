@@ -372,3 +372,9 @@ No new constants. Trainer placements: `TRAINER_COLONEL_BUCKSHOT_RADIO_TOWER_HNS`
 - P2-09: map MAP_GIRATINA_AXIS_HNS (end of Dungeons_Hns group). No new flags; uses VAR_TEMP_0.
 
 - P2-12/13: scripts Gilded_Ow_<Species> (177) and Gilded_Npc_<Town>_<n> (59). No flags/vars.
+
+## P2-14
+- Vars: VAR_GILDED_YARD_SIGNS 0x40DE, VAR_GILDED_SIDEQUESTS 0x40DF (bits 0–2 yard rewards, 3 Choice Specs)
+- Specials: GildedYardSignHide/Remove/Count, GildedQuestBitTest/Set
+- Trainers: DEBATE_BRO_1..3_HNS 687–689 (TRAINERS_COUNT_HNS 690)
+- Scripts: data/scripts/gilded_sidequests.inc
