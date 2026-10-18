@@ -194,3 +194,28 @@ Added Warden Pell's Heritage Officer battle at the Burned Tower entrance with a 
 - [ ] Challenge Morty through the existing Ecruteak Gym flow; confirm the revised introduction appears and the original battle, Fog Badge, TM, and post-battle state still occur.
 
 The Act 4 additions still need playtesting.
+
+## GF8 — Johto Act 5
+
+**Status: BUILT_PARTIAL — NEEDS PLAYTEST**
+
+Added Sage Purely at the top of Olivine Lighthouse with the Rapidash Paste pressure prompt and Team 1 battle. The prompt increases `VAR_PRESSURE_POINTS` only when accepted; both choices continue into the story battle, and defeating Purely removes her from the map. Her four-Pokémon team uses the `A_JAS` 34–36 anchor band. The existing Jasmine-to-Cianwood medicine quest remains unchanged. The HnS ROM build passed with the required Arm GNU toolchain and is **33,554,432 bytes (32 MiB)**.
+
+**Deferred:**
+
+- Add the Tariff Trouble side quest and the normal-price port shop.
+- Reclass two Lighthouse trainers as Wellness Gurus and add the Cianwood Alpha Dojo with Brad Grindwell and its temporary trainer-class changes.
+- Add the Cianwood pharmacy dialogue, cold-plunge beach NPC, and Olivine Café tariff menu.
+- Add the remaining Jasmine/Amphy re-skin and the requested Lighthouse dialogue dressing.
+- `make check BUILD=hns -j8` remains blocked before tests by the existing `include/fake_rtc.h` / `struct SaveBlock3` compile error noted under GF1.
+- GF9–GF17 have not started. GF-IMP remains skipped as directed by the plan.
+
+**Playtest checklist:**
+
+- [ ] Open **R + Start → Utilities… → Warp to map warp…** and visit Olivine City Lighthouse. Approach Jasmine's floor; choose yes on Sage Purely's Rapidash Paste prompt and confirm `VAR_PRESSURE_POINTS` increases by one before the battle. Confirm Jasmine's objection says real medicine is still needed.
+- [ ] For a separate no test, use **R + Start → Flags & Vars… → Set Flag XYZ…** to clear `FLAG_GILDED_PRESSURE_PROMPT_OLIVINE` and `FLAG_GILDED_SAGE_PURELY_DEFEATED`, set `VAR_PRESSURE_POINTS` to `0`, and decline the paste. Confirm no pressure point is added and Sage still challenges the player.
+- [ ] Use **R + Start → Trainers… → Choose trainer from map → Try Battle** on Sage Purely; confirm the Wellness Guru class and Gloom Lv. 34, Weepinbell Lv. 35, Foongus Lv. 35, and Comfey Lv. 36.
+- [ ] Defeat Sage, leave and re-enter the Lighthouse, and confirm she stays gone while Jasmine remains available.
+- [ ] Continue through Jasmine's existing medicine request; confirm `VAR_OLIVINE_CITY_STATE` advances to `3` and the Cianwood pharmacy quest remains reachable.
+
+The Act 5 additions still need playtesting.

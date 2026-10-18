@@ -252,6 +252,53 @@ OlivineLighthouse_Text_BirdKeeperDenisAfter:
 
 @6th floor==============================================================================================================================
 
+OlivineLighthouse_EventScript_SagePurely::
+	lock
+	faceplayer
+	goto_if_set FLAG_GILDED_PRESSURE_PROMPT_OLIVINE, OlivineLighthouse_EventScript_SagePurelyBattle
+	msgbox OlivineLighthouse_Text_SagePurelyPrompt, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq VAR_RESULT, YES, OlivineLighthouse_EventScript_SagePurelyAccept
+	setflag FLAG_GILDED_PRESSURE_PROMPT_OLIVINE
+	msgbox OlivineLighthouse_Text_SagePurelyDecline, MSGBOX_DEFAULT
+	goto OlivineLighthouse_EventScript_SagePurelyBattle
+
+OlivineLighthouse_EventScript_SagePurelyAccept::
+	addvar VAR_PRESSURE_POINTS, 1
+	setflag FLAG_GILDED_PRESSURE_PROMPT_OLIVINE
+	msgbox OlivineLighthouse_Text_SagePurelyAccept, MSGBOX_DEFAULT
+
+OlivineLighthouse_EventScript_SagePurelyBattle::
+	trainerbattle_single TRAINER_SAGE_PURELY_OLIVINE_LIGHTHOUSE_HNS, OlivineLighthouse_Text_SagePurelySeen, OlivineLighthouse_Text_SagePurelyBeaten, OlivineLighthouse_EventScript_SagePurelyAfter
+	release
+	end
+
+OlivineLighthouse_EventScript_SagePurelyAfter::
+	setflag FLAG_GILDED_SAGE_PURELY_DEFEATED
+	removeobject LOCALID_GILDED_SAGE_PURELY
+	release
+	end
+
+OlivineLighthouse_Text_SagePurelyPrompt:
+	.string "Try RAPIDASH PASTE on AMPHY?\n"
+	.string "It's natural, so it's science!$"
+
+OlivineLighthouse_Text_SagePurelyAccept:
+	.string "JASMINE: Paste? Absolutely not!\p"
+	.string "We still need real medicine!$"
+
+OlivineLighthouse_Text_SagePurelyDecline:
+	.string "Do your own research! I did.\n"
+	.string "It was a video.$"
+
+OlivineLighthouse_Text_SagePurelySeen:
+	.string "Doctors don't want you to know\n"
+	.string "about RAPIDASH PASTE!$"
+
+OlivineLighthouse_Text_SagePurelyBeaten:
+	.string "Okay, but have you considered...\n"
+	.string "vibes?$"
+
 OlivineLighthouse_EventScript_Jasmine::
 	lock
 	faceplayer
@@ -419,5 +466,3 @@ OlivineLighthouse_Text_AmphyBreathingLabored:
 
 OlivineLighthouse_Text_AmphyPaluPalulu:
 	.string "AMPHY: Palu! Palulu!$"
-
-

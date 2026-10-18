@@ -16133,3 +16133,24 @@ Level: 25
 
 Sudowoodo
 Level: 26
+
+=== TRAINER_SAGE_PURELY_OLIVINE_LIGHTHOUSE_HNS ===
+Name: PURELY
+Class: Wellness Guru Hns
+Pic: Lass
+Gender: Female
+Music: Hg Suspicious 1
+Double Battle: No
+AI: Basic Trainer
+
+Gloom
+Level: 34
+
+Weepinbell
+Level: 35
+
+Foongus
+Level: 35
+
+Comfey
+Level: 36

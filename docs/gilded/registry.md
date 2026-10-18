@@ -180,3 +180,29 @@ No vars were allocated. The prompt uses `VAR_PRESSURE_POINTS = 0x40E5`.
 
 - Modified HnS maps: `EcruteakCity_hns`, `EcruteakCity_Theater_hns`, `EcruteakCity_PokemonCenter_hns`, and `EcruteakCity_Gym_hns`.
 - No new maps or specials were allocated.
+
+## GF8 — Johto Act 5
+
+### Flags
+
+`HNS_EXTENDED_CONTENT_START = 0x36A`; both values were unused before this mission.
+
+| Flag | Value | Purpose |
+| --- | ---: | --- |
+| `FLAG_GILDED_PRESSURE_PROMPT_OLIVINE` | `0x3C4` | Record Sage Purely's Rapidash Paste choice and prevent repeated pressure points. |
+| `FLAG_GILDED_SAGE_PURELY_DEFEATED` | `0x3C5` | Hide Sage Purely after the Lighthouse battle. |
+
+No vars were allocated. The prompt uses `VAR_PRESSURE_POINTS = 0x40E5`.
+
+### Trainers
+
+| Trainer ID | Value | Class / party |
+| --- | ---: | --- |
+| `TRAINER_SAGE_PURELY_OLIVINE_LIGHTHOUSE_HNS` | 661 | Wellness Guru; Gloom Lv. 34, Weepinbell Lv. 35, Foongus Lv. 35, Comfey Lv. 36 |
+
+`TRAINERS_COUNT_HNS` is now 662. The team uses the `A_JAS` 34–36 anchor band and the existing `TRAINER_CLASS_WELLNESS_GURU_HNS` class.
+
+### Maps and specials
+
+- Modified HnS map: `OlivineCity_Lighthouse_hns`.
+- No new maps or specials were allocated.
