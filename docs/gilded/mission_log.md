@@ -555,3 +555,10 @@ Status: BUILT_PARTIAL — NEEDS PLAYTEST
 - Axis: Giratina/Arceus dialogue, `setwildbattle SPECIES_GIRATINA_ORIGIN, 90, ITEM_GRISEOUS_CORE` (catchable), run → back to the summit; Arceus white flash; CROSSFIRE + Route 29 text; three-tier epilogue on VAR_PRESSURE_POINTS (0 / 1–5 / 6+); post-credits Giratina line before `GameClear`.
 Deferred: epilogue is text-only (no Goldenrod TV room or Route 29 walk-out); no Giratina sprite on the Axis; the line is shown before credits.
 Playtest: debug-warp to MtSilver summit, beat Red; check Axis scene, lose/run and re-talk to Red; set VAR_PRESSURE_POINTS to 0/3/8 and compare epilogues; confirm Hall of Fame/credits afterwards.
+
+## P2-12 / P2-13: Overworld Pokémon + town NPCs (Johto and Kanto)
+Status: BUILT — NEEDS PLAYTEST
+- HnS already places 2–25 wandering Pokémon in every Johto/Kanto town and route (653 objects). 570 of them had no script. All 570 now have one (177 per-species scripts in `data/scripts/gilded_ow_mons.inc`: cry plus a cute line; about a third carry an act joke; 12 long names fall back to "cries out!").
+- 20 towns × 3 new NPC lines (59 total; Olivine has 2 new, because auto-placement found only two safe tiles). In `data/scripts/gilded_town_npcs.inc`, objects appended to each town `map.json`, placed by a collision-based script.
+Deferred: the per-map "≤3 species" palette check was not audited (HnS's own placement); Olivine's third line (its Café tariff menu text is pass 1); NPC tiles were auto-picked from collision data and not seen in-game.
+Playtest: walk each town; confirm new NPCs don't block doors/paths; talk to several overworld mons on Routes 29/30/1.

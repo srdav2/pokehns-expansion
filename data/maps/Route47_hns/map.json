@@ -173,7 +173,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Seel",
       "flag": "0"
     },
     {
@@ -186,7 +186,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Seel",
       "flag": "0"
     },
     {
@@ -199,7 +199,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Seel",
       "flag": "0"
     },
     {
@@ -212,7 +212,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Seel",
       "flag": "0"
     },
     {
@@ -225,7 +225,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Seel",
       "flag": "0"
     },
     {
@@ -277,7 +277,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Lanturn",
       "flag": "0"
     },
     {
@@ -290,7 +290,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Fearow",
       "flag": "0"
     },
     {
@@ -303,7 +303,7 @@
       "movement_range_y": 8,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Fearow",
       "flag": "0"
     },
     {
@@ -316,7 +316,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Miltank",
       "flag": "0"
     },
     {
@@ -329,7 +329,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Miltank",
       "flag": "0"
     },
     {
@@ -342,7 +342,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Chansey",
       "flag": "0"
     },
     {
@@ -355,7 +355,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Chansey",
       "flag": "0"
     },
     {
@@ -368,7 +368,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Gloom",
       "flag": "0"
     },
     {
@@ -381,7 +381,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Farfetchd",
       "flag": "0"
     },
     {
@@ -394,7 +394,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Raticate",
       "flag": "0"
     },
     {
@@ -407,7 +407,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Ditto",
       "flag": "0"
     },
     {
@@ -420,7 +420,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Farfetchd",
       "flag": "0"
     },
     {

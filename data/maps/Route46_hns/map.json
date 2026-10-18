@@ -35,7 +35,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Spearow",
       "flag": "FLAG_DAY_POKEMON"
     },
     {
@@ -48,7 +48,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Geodude",
       "flag": "0"
     },
     {
@@ -61,7 +61,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Phanpy",
       "flag": "FLAG_DAY_POKEMON"
     },
     {
@@ -126,7 +126,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Phanpy",
       "flag": "FLAG_DAY_POKEMON"
     },
     {
@@ -139,7 +139,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Rattata",
       "flag": "0"
     },
     {
@@ -152,7 +152,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Geodude",
       "flag": "0"
     },
     {
@@ -165,7 +165,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Geodude",
       "flag": "0"
     },
     {
@@ -178,7 +178,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Phanpy",
       "flag": "FLAG_DAY_POKEMON"
     },
     {

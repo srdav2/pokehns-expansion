@@ -29,3 +29,4 @@
 | 2026 | P2-07 | Buckshot 3 optional via goto_if_defeated | no free flags |
 | 2026 | P2-08 | Rally gate = FLAG_HIDE_CINNABAR_BLUE + trainer-defeated; FLAG_TEMP_5 for visibility | no free flags; temp flags free |
 | 2026 | P2-09 | Epilogue inline on Axis map, text only | TV room/Route29 walk is optional scene |
+| 2026 | P2-12/13 | Generated per-species OW scripts and auto-placed NPCs | volume; no free flags needed |

@@ -110,7 +110,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Celebi",
       "flag": "FLAG_HIDE_CELEBI"
     },
     {
@@ -175,7 +175,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Paras",
       "flag": "0"
     },
     {
@@ -188,7 +188,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Paras",
       "flag": "0"
     },
     {
@@ -201,7 +201,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Oddish",
       "flag": "0"
     },
     {
@@ -214,7 +214,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Oddish",
       "flag": "0"
     },
     {
@@ -227,7 +227,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Kakuna",
       "flag": "0"
     },
     {
@@ -240,7 +240,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Metapod",
       "flag": "0"
     },
     {
@@ -253,7 +253,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Weedle",
       "flag": "0"
     },
     {
@@ -266,7 +266,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Caterpie",
       "flag": "0"
     },
     {
@@ -279,7 +279,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Psyduck",
       "flag": "0"
     },
     {
@@ -292,7 +292,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Golduck",
       "flag": "0"
     },
     {
@@ -305,7 +305,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Psyduck",
       "flag": "0"
     },
     {
@@ -318,7 +318,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Venonat",
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
@@ -331,7 +331,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Venonat",
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
@@ -344,7 +344,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Hoothoot",
       "flag": "0"
     },
     {
@@ -357,7 +357,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Hoothoot",
       "flag": "0"
     },
     {
@@ -370,7 +370,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Pineco",
       "flag": "0"
     },
     {
@@ -383,7 +383,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Exeggcute",
       "flag": "0"
     },
     {
@@ -396,7 +396,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Beedrill",
       "flag": "0"
     },
     {
@@ -465,7 +465,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Butterfree",
       "flag": "0"
     },
     {

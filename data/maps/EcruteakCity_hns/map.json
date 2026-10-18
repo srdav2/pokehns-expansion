@@ -177,7 +177,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Pidgeotto",
       "flag": "FLAG_DAY_POKEMON"
     },
     {
@@ -190,7 +190,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Noctowl",
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
@@ -203,7 +203,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Noctowl",
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
@@ -216,7 +216,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Rattata",
       "flag": "0"
     },
     {
@@ -229,7 +229,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Rattata",
       "flag": "0"
     },
     {
@@ -242,7 +242,7 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Gastly",
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
@@ -255,7 +255,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Misdreavus",
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
@@ -268,7 +268,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Haunter",
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
@@ -281,7 +281,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Gastly",
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
@@ -294,7 +294,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Gastly",
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
@@ -307,7 +307,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Gengar",
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
@@ -320,7 +320,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Poliwag",
       "flag": "0"
     },
     {
@@ -333,7 +333,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Poliwhirl",
       "flag": "0"
     },
     {
@@ -359,7 +359,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Misdreavus",
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
@@ -372,7 +372,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Misdreavus",
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
@@ -385,7 +385,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Mismagius",
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
@@ -398,7 +398,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Pidgeotto",
       "flag": "FLAG_DAY_POKEMON"
     },
     {
@@ -411,7 +411,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Pidgeotto",
       "flag": "FLAG_DAY_POKEMON"
     },
     {
@@ -424,7 +424,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Misdreavus",
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
@@ -437,7 +437,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Gastly",
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
@@ -450,7 +450,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Gilded_Ow_Misdreavus",
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
@@ -701,6 +701,45 @@
       "trainer_sight_or_berry_tree_id": "3",
       "script": "EcruteakCity_EventScript_WardenPell",
       "flag": "FLAG_GILDED_WARDEN_PELL_DEFEATED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BOY_2_HNS",
+      "x": 33,
+      "y": 37,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Gilded_Npc_EcruteakCity_1",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_HNS",
+      "x": 31,
+      "y": 34,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Gilded_Npc_EcruteakCity_2",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
+      "x": 31,
+      "y": 40,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Gilded_Npc_EcruteakCity_3",
+      "flag": "0"
     }
   ],
   "warp_events": [

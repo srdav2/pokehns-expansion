@@ -1858,6 +1858,8 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/dexnav.inc"
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
+	.include "data/scripts/gilded_ow_mons.inc"
+	.include "data/scripts/gilded_town_npcs.inc"
 	
 
 .if IS_HNS

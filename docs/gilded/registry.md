@@ -370,3 +370,5 @@ No new constants. Trainer placements: `TRAINER_COLONEL_BUCKSHOT_RADIO_TOWER_HNS`
 - P2-08: Viridian objects 24-28 use FLAG_TEMP_5 (no new persistent flags); coord triggers use VAR_TEMP_1.
 
 - P2-09: map MAP_GIRATINA_AXIS_HNS (end of Dungeons_Hns group). No new flags; uses VAR_TEMP_0.
+
+- P2-12/13: scripts Gilded_Ow_<Species> (177) and Gilded_Npc_<Town>_<n> (59). No flags/vars.
