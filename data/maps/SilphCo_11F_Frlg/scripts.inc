@@ -191,9 +191,17 @@ SilphCo_11F_Text_GiovanniDefeat::
 SilphCo_11F_Text_GiovanniPostBattle::
 	.string "Blast it all!\n"
 	.string "You ruined our plans for SILPH!\p"
+#if IS_HNS
+	.string "But, TEAM MEGA will never fall!\p"
+#else
 	.string "But, TEAM ROCKET will never fall!\p"
+#endif
 	.string "{PLAYER}! Never forget that all\n"
+#if IS_HNS
+	.string "POKéMON exist for TEAM MEGA!\p"
+#else
 	.string "POKéMON exist for TEAM ROCKET!\p"
+#endif
 	.string "I must go, but I shall return!$"
 
 SilphCo_11F_Text_Grunt2Intro::

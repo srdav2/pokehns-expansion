@@ -19,7 +19,7 @@ MahoganyTown_PokemonCenter_EventScript_Girl::
 	end
 
 MahoganyTown_PokemonCenter_Text_PokefanM:
-    .string "What's this? TEAM ROCKET has come\n"
+    .string "What's this? TEAM MEGA has come\n"
     .string "back?\p"
     .string "I saw some men in black at LAKE OF\n"
     .string "RAGE…$"

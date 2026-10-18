@@ -182,13 +182,21 @@ FiveIsland_RocketWarehouse_Text_PenUnlockedMonsFled::
 
 FiveIsland_RocketWarehouse_Text_Grunt2Intro::
 	.string "Did you come here knowing it's\n"
+#if IS_HNS
+	.string "TEAM MEGA's WAREHOUSE?$"
+#else
 	.string "TEAM ROCKET's WAREHOUSE?$"
+#endif
 
 FiveIsland_RocketWarehouse_Text_Grunt2Defeat::
 	.string "What do you think you're doing?!$"
 
 FiveIsland_RocketWarehouse_Text_Grunt2PostBattle::
+#if IS_HNS
+	.string "TEAM MEGA broke up?\n"
+#else
 	.string "TEAM ROCKET broke up?\n"
+#endif
 	.string "What planet are you from?$"
 
 FiveIsland_RocketWarehouse_Text_Grunt1Intro::
@@ -247,7 +255,11 @@ FiveIsland_RocketWarehouse_Text_Admin2Intro::
 	.string "That's quite enough of you \n"
 	.string "playing the hero, kid.\p"
 	.string "Spreading lies about how TEAM\n"
+#if IS_HNS
+	.string "MEGA has disbanded…\p"
+#else
 	.string "ROCKET has disbanded…\p"
+#endif
 	.string "It's such an obvious attempt to\n"
 	.string "cause confusion in our ranks.\p"
 	.string "Fortunately, we're not so ignorant\n"
@@ -261,14 +273,22 @@ FiveIsland_RocketWarehouse_Text_Admin2Defeat::
 	.string "…\n"
 	.string "Th-that's GIOVANNI's BADGE!\p"
 	.string "So it's true?\n"
+#if IS_HNS
+	.string "TEAM MEGA really has disbanded?$"
+#else
 	.string "TEAM ROCKET really has disbanded?$"
+#endif
 
 FiveIsland_RocketWarehouse_Text_Admin2PostBattle::
 	.string "We will abandon this WAREHOUSE…\p"
 	.string "But don't think this is over.\n"
 	.string "I won't let this be the end.\p"
 	.string "I will find GIOVANNI.\n"
+#if IS_HNS
+	.string "And I will resurrect TEAM MEGA!\l"
+#else
 	.string "And I will resurrect TEAM ROCKET!\l"
+#endif
 	.string "I will…\p"
 	.string "Until then, farewell!$"
 

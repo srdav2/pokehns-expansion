@@ -16474,6 +16474,21 @@ const struct ItemInfo gItemsInfo[] =
         .iconPic = gItemIcon_AzureFlute,
         .iconPalette = gItemIconPalette_AzureFlute,
     },
+
+    [ITEM_RED_CAP] =
+    {
+        .name = ITEM_NAME("RED CAP"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A bright red cap\n"
+            "with a bold logo."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_Scarf,
+        .iconPalette = gItemIconPalette_RedScarf,
+    },
 };
 
 #undef ITEM_NAME

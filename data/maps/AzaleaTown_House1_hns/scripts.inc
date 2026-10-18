@@ -93,7 +93,7 @@ CharcoalKiln_Text_Boss3:
 	.string "Where in the world is that lazy guy?$"
 
 CharcoalKiln_Text_Boss4:
-	.string "You chased off TEAM ROCKET and\n"
+	.string "You chased off TEAM MEGA and\n"
 	.string "went to ILEX FOREST alone?\p"
 	.string "That takes guts! I like that.\n"
 	.string "Come train with us.$"

@@ -8,6 +8,10 @@ SSAnne_1F_Room1_EventScript_Gentleman::
 SSAnne_1F_Room1_Text_ImAGlobalPoliceAgent::
 	.string "Ssh…!\n"
 	.string "I'm a GLOBAL POLICE agent.\p"
+#if IS_HNS
+	.string "I'm on the trail of TEAM MEGA.\n"
+#else
 	.string "I'm on the trail of TEAM ROCKET.\n"
+#endif
 	.string "They're up to nothing good!$"
 

@@ -67,7 +67,11 @@ LavenderTown_Text_TownKnownAsMonGraveSite::
 LavenderTown_Text_GhostsAppearedInTower::
 	.string "Ghosts appeared in POKéMON TOWER.\p"
 	.string "I think they're the spirits of\n"
+#if IS_HNS
+	.string "POKéMON killed by MEGA GRUNTS.$"
+#else
 	.string "POKéMON that the ROCKETS killed.$"
+#endif
 
 LavenderTown_Text_TownSign::
 	.string "LAVENDER TOWN\n"
@@ -85,4 +89,3 @@ LavenderTown_Text_VolunteerPokemonHouse::
 LavenderTown_Text_PokemonTowerSign::
 	.string "POKéMON TOWER\n"
 	.string "Becalm the Spirits of POKéMON$"
-

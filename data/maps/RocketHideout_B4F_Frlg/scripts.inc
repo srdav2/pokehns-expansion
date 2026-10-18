@@ -123,7 +123,11 @@ RocketHideout_B4F_EventScript_RemoveBarrier::
 RocketHideout_B4F_Text_GiovanniIntro::
 	.string "So! I must say, I am impressed you\n"
 	.string "got here.\p"
+#if IS_HNS
+	.string "TEAM MEGA captures POKéMON from\n"
+#else
 	.string "TEAM ROCKET captures POKéMON from\n"
+#endif
 	.string "around the world.\p"
 	.string "They're important tools for keeping\n"
 	.string "our criminal enterprise going.\p"
@@ -152,7 +156,11 @@ RocketHideout_B4F_Text_Grunt2Defeat::
 
 RocketHideout_B4F_Text_Grunt2PostBattle::
 	.string "Do you have something against TEAM\n"
+#if IS_HNS
+	.string "MEGA?$"
+#else
 	.string "ROCKET?$"
+#endif
 
 RocketHideout_B4F_Text_Grunt3Intro::
 	.string "How can you not see the beauty of\n"

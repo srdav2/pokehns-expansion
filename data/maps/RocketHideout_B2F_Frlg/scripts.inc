@@ -14,7 +14,11 @@ RocketHideout_B2F_Text_GruntDefeat::
 	.string "I surrender!$"
 
 RocketHideout_B2F_Text_GruntPostBattle::
+#if IS_HNS
+	.string "The TEAM MEGA HQ has four\n"
+#else
 	.string "The TEAM ROCKET HQ has four\n"
+#endif
 	.string "underground floors.\p"
 	.string "Think you can reach the BOSS?$"
 

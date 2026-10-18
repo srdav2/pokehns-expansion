@@ -179,7 +179,7 @@ GoldenrodCity_RadioTower_2F_Text_BlackBelt2:
 	.string "as he was before.$"
 
 GoldenrodCity_RadioTower_2F_Text_GruntM4Seen:
-	.string "Three years ago, TEAM ROCKET was\n"
+	.string "Three years ago, TEAM MEGA was\n"
 	.string "forced to disband.\p"
 	.string "But we're making a comeback here!$"
 
@@ -191,7 +191,7 @@ GoldenrodCity_RadioTower_2F_Text_GruntM4After:
 	.string "for our comeback!$"
 
 GoldenrodCity_RadioTower_2F_Text_GruntM5Seen:
-	.string "We're TEAM ROCKET, the exploiters\n"
+	.string "We're TEAM MEGA, the exploiters\n"
 	.string "of POKéMON!\p"
 	.string "We love being evil! Scared?$"
 

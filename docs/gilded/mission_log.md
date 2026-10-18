@@ -68,3 +68,29 @@ Moved the party-wide Gen 6 Exp. Share from New Game initialization to Elm's star
 - [ ] Open the overworld debug menu with **R + Start → Flags & Vars… → Toggle Running Shoes**; confirm the debug toggle still switches the run flag both ways.
 
 GF2's startup flow and experience behavior still need playtesting.
+
+## GF3 — Team MEGA foundation
+
+**Status: BUILT_PARTIAL — NEEDS PLAYTEST**
+
+Rebranded Team Rocket dialogue in HnS-specific maps and radio text as Team MEGA. Kanto map scripts shared with FRLG now select the Team MEGA text only in the HnS build. Updated HnS Rocket Grunt battle labels and red-tinted the existing male and female grunt palettes. Added the pressure-points var, RED CAP key item, and the 11 additional Team MEGA trainer-class identifiers.
+
+The HnS ROM build passed with the required Arm GNU toolchain and remains 33,554,432 bytes (32 MiB).
+
+**Deferred:**
+
+- Add the 16 named boss trainer IDs and story-bible teams at their level-anchor bands; introduce each battle in its relevant act mission.
+- Add palette-swapped trainer portraits for the 11 non-grunt classes; no new art was added.
+- Add pressure-prompt choices and the Goldenrod RED CAP gift in their relevant act missions.
+- Re-skin the named Giovanni scenes as President Rex Gaudy during their act missions.
+- GF4–GF17 are not started. GF-IMP remains skipped as directed by the plan.
+
+**Playtest checklist:**
+
+- [ ] Open **R + Start → Utilities… → Warp to map warp…**, visit Slowpoke Well B1F and a Goldenrod Radio Tower floor, and read the dialogue for Team MEGA wording.
+- [ ] In **R + Start → Trainers… → Choose trainer from map → Try Battle**, select a grunt in a Rocket Hideout or Radio Tower map; confirm the battle class reads **MEGA GRUNT** and the existing grunt portrait uses the updated red palette.
+- [ ] Open **R + Start → Give X… → Give item XYZ…**, enter item ID **901** and quantity **1**, then check the Key Items pocket for the RED CAP and its icon.
+- [ ] Open **R + Start → Flags & Vars… → Set Var XYZ…**, select `VAR_PRESSURE_POINTS`, set it to `0`, and confirm the value remains available after saving and reloading.
+- [ ] In the HnS build, visit Viridian City Gym and read the Giovanni-slot dialogue for the Team MEGA text; in an FRLG build, confirm the original Team Rocket wording remains.
+
+The Team MEGA foundation still needs the deferred boss teams, class-specific portraits, pressure prompts, and playtesting.

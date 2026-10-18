@@ -129,14 +129,22 @@ SaffronCity_Text_WhatDoYouWantGetLost::
 
 SaffronCity_Text_BossTakeTownForTeamRocket::
 	.string "BOSS said he'll take this town\n"
+#if IS_HNS
+	.string "in the name of TEAM MEGA!$"
+#else
 	.string "in the name of TEAM ROCKET!$"
+#endif
 
 SaffronCity_Text_DontGetDefiantOrIllHurtYou::
 	.string "Don't get defiant!\n"
 	.string "Or I'll have to hurt you!$"
 
 SaffronCity_Text_SaffronBelongsToTeamRocket::
+#if IS_HNS
+	.string "SAFFRON belongs to TEAM MEGA!$"
+#else
 	.string "SAFFRON belongs to TEAM ROCKET!$"
+#endif
 
 SaffronCity_Text_CriminalLifeMakesMeFeelAlive::
 	.string "My life as a criminal makes me feel\n"
@@ -152,16 +160,28 @@ SaffronCity_Text_WeCanExploitMonsAroundWorld::
 	.string "We'll get stinking rich, yeahah!$"
 
 SaffronCity_Text_YouBeatTeamRocket::
+#if IS_HNS
+	.string "You beat TEAM MEGA all alone?\n"
+#else
 	.string "You beat TEAM ROCKET all alone?\n"
+#endif
 	.string "That's amazing!$"
 
 SaffronCity_Text_SafeToGoOutAgain::
+#if IS_HNS
+	.string "Yeah! TEAM MEGA is gone!\n"
+#else
 	.string "Yeah! TEAM ROCKET is gone!\n"
+#endif
 	.string "It's safe to go out again!$"
 
 SaffronCity_Text_PeopleComingBackToSaffron::
 	.string "People fled from here in droves\n"
+#if IS_HNS
+	.string "when those MEGA GRUNTS came.\p"
+#else
 	.string "when those ROCKETS came.\p"
+#endif
 	.string "They should be flocking back to\n"
 	.string "SAFFRON now.$"
 
@@ -175,7 +195,11 @@ SaffronCity_Text_Pidgeot::
 	.string "PIDGEOT: Bi bibii!$"
 
 SaffronCity_Text_SawRocketBossEscaping::
+#if IS_HNS
+	.string "I saw the MEGA BOSS escaping\n"
+#else
 	.string "I saw the ROCKET BOSS escaping\n"
+#endif
 	.string "SILPH's building.$"
 
 SaffronCity_Text_ImASecurityGuard::

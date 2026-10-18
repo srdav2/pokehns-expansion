@@ -233,7 +233,11 @@ SilphCo_7F_EventScript_Grunt3::
 	end
 
 SilphCo_7F_Text_HaveMonForSavingUs::
+#if IS_HNS
+	.string "Oh! Hi! You're not a MEGA grunt!\n"
+#else
 	.string "Oh! Hi! You're not a ROCKET!\n"
+#endif
 	.string "You came to save us?\l"
 	.string "Why, thank you!\p"
 	.string "I want you to have this POKéMON\n"
@@ -254,26 +258,46 @@ SilphCo_7F_Text_ExplainLapras::
 	.string "It'll give you a lift across water!$"
 
 SilphCo_7F_Text_RocketBossWentToBoardroom::
+#if IS_HNS
+	.string "TEAM MEGA's BOSS went to the\n"
+#else
 	.string "TEAM ROCKET's BOSS went to the\n"
+#endif
 	.string "boardroom!\p"
 	.string "Is our PRESIDENT okay?\n"
 	.string "I'm worried.$"
 
 SilphCo_7F_Text_RocketsAfterMasterBall::
+#if IS_HNS
+	.string "TEAM MEGA was after the MASTER\n"
+#else
 	.string "TEAM ROCKET was after the MASTER\n"
+#endif
 	.string "BALL, which catches any POKéMON.$"
 
 SilphCo_7F_Text_CanceledMasterBallProject::
 	.string "We canceled the MASTER BALL\n"
+#if IS_HNS
+	.string "project because of TEAM MEGA.$"
+#else
 	.string "project because of TEAM ROCKET.$"
+#endif
 
 SilphCo_7F_Text_BadIfTeamRocketTookOver::
+#if IS_HNS
+	.string "It would be bad if TEAM MEGA\n"
+#else
 	.string "It would be bad if TEAM ROCKET\n"
+#endif
 	.string "took over SILPH or our POKéMON.$"
 
 SilphCo_7F_Text_WowYouChasedOffTeamRocket::
 	.string "Wow!\p"
+#if IS_HNS
+	.string "You chased off TEAM MEGA all by\n"
+#else
 	.string "You chased off TEAM ROCKET all by\n"
+#endif
 	.string "yourself?$"
 
 SilphCo_7F_Text_ReallyDangerousHere::
@@ -308,7 +332,11 @@ SilphCo_7F_Text_JoshuaPostBattle::
 	.string "skilled TRAINER!$"
 
 SilphCo_7F_Text_Grunt1Intro::
+#if IS_HNS
+	.string "I am one of the four MEGA\n"
+#else
 	.string "I am one of the four ROCKET\n"
+#endif
 	.string "BROTHERS!$"
 
 SilphCo_7F_Text_Grunt1Defeat::
@@ -337,7 +365,11 @@ SilphCo_7F_Text_RivalWhatKeptYou::
 SilphCo_7F_Text_RivalIntro::
 	.string "{RIVAL}: Hahaha! I thought you'd\n"
 	.string "turn up if I waited here!\p"
+#if IS_HNS
+	.string "I guess TEAM MEGA slowed you\n"
+#else
 	.string "I guess TEAM ROCKET slowed you\n"
+#endif
 	.string "down! Not that I care!\p"
 	.string "I saw you in SAFFRON, so I decided\n"
 	.string "to see if you got better!$"
@@ -345,7 +377,11 @@ SilphCo_7F_Text_RivalIntro::
 SilphCo_7F_Text_RivalDefeat::
 	.string "Oh, man!\n"
 	.string "So, you are ready for BOSS\l"
+#if IS_HNS
+	.string "MEGA!$"
+#else
 	.string "ROCKET!$"
+#endif
 
 SilphCo_7F_Text_RivalPostBattle::
 	.string "Well, {PLAYER}!\n"

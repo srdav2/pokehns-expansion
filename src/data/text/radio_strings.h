@@ -207,9 +207,17 @@ static const u8 *const sRadioText_PnP_PeopleAdj[] =
 // Rocket Radio
 // ==========================================================
 
+#if IS_HNS
+static const u8 sRadioStationName_Rocket[] = _("TEAM MEGA");
+#else
 static const u8 sRadioStationName_Rocket[] = _("TEAM ROCKET");
+#endif
 static const u8 sRadioText_Rocket1[]  = _("… …Ahem, we are");
+#if IS_HNS
+static const u8 sRadioText_Rocket2[]  = _("TEAM MEGA!");
+#else
 static const u8 sRadioText_Rocket2[]  = _("TEAM ROCKET!");
+#endif
 static const u8 sRadioText_Rocket3[]  = _("After three years");
 static const u8 sRadioText_Rocket4[]  = _("of preparation, we");
 static const u8 sRadioText_Rocket5[]  = _("have risen again");
@@ -331,7 +339,11 @@ static const u8 sOPT_Report_Slowpoke_0[]  = _("MARY: Big news from AZALEA");
 static const u8 sOPT_Report_Slowpoke_1[]  = _("TOWN this week!");
 static const u8 sOPT_Report_Slowpoke_2[]  = _("OAK: SLOWPOKE have returned");
 static const u8 sOPT_Report_Slowpoke_3[]  = _("to their well after a crisis!");
+#if IS_HNS
+static const u8 sOPT_Report_Slowpoke_4[]  = _("TEAM MEGA had been cutting");
+#else
 static const u8 sOPT_Report_Slowpoke_4[]  = _("TEAM ROCKET had been cutting");
+#endif
 static const u8 sOPT_Report_Slowpoke_5[]  = _("off their tails! Horrible!");
 static const u8 sOPT_Report_Slowpoke_6[]  = _("MARY: But a brave young");
 static const u8 sOPT_Report_Slowpoke_7[]  = _("trainer shut them down!");

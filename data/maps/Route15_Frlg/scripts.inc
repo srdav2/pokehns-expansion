@@ -90,7 +90,11 @@ Route15_Text_ErnestDefeat::
 Route15_Text_ErnestPostBattle::
 	.string "Life's too short.\n"
 	.string "It's cool to live as an outlaw.\l"
+#if IS_HNS
+	.string "TEAM MEGA RULES!$"
+#else
 	.string "TEAM ROCKET RULES!$"
+#endif
 
 Route15_Text_AlexIntro::
 	.string "Fork over all your cash when you\n"

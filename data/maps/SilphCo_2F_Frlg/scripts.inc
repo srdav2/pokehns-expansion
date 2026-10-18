@@ -41,11 +41,19 @@ SilphCo_2F_Text_ConnorIntro::
 
 SilphCo_2F_Text_ConnorDefeat::
 	.string "How did you know\n"
+#if IS_HNS
+	.string "I was a MEGA grunt?$"
+#else
 	.string "I was a ROCKET?$"
+#endif
 
 SilphCo_2F_Text_ConnorPostBattle::
 	.string "I work for both SILPH and TEAM\n"
+#if IS_HNS
+	.string "MEGA GRUNT.$"
+#else
 	.string "ROCKET.$"
+#endif
 
 SilphCo_2F_Text_JerryIntro::
 	.string "It's off-limits here!\n"
@@ -79,12 +87,20 @@ SilphCo_2F_Text_Grunt2Defeat::
 
 SilphCo_2F_Text_Grunt2PostBattle::
 	.string "SILPH CO. will be associated with\n"
+#if IS_HNS
+	.string "TEAM MEGA!$"
+#else
 	.string "TEAM ROCKET!$"
+#endif
 
 Text_ThunderWaveTeach::
 	.string "Eeek!\n"
 	.string "No! Stop! Help!\p"
+#if IS_HNS
+	.string "Oh, you're not with TEAM MEGA.\n"
+#else
 	.string "Oh, you're not with TEAM ROCKET.\n"
+#endif
 	.string "I'm sorry, I thought…\p"
 	.string "Will you forgive me if I teach\n"
 	.string "you the THUNDER WAVE technique?$"

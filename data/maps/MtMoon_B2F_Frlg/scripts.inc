@@ -157,7 +157,11 @@ MtMoon_B2F_Text_LabOnCinnabarRegeneratesFossils::
 	.string "fossils.$"
 
 MtMoon_B2F_Text_Grunt1Intro::
+#if IS_HNS
+	.string "We, TEAM MEGA, shall find the\n"
+#else
 	.string "We, TEAM ROCKET, shall find the\n"
+#endif
 	.string "fossils!\p"
 	.string "Reviving POKéMON from them will\n"
 	.string "earn us huge riches!$"
@@ -168,10 +172,18 @@ MtMoon_B2F_Text_Grunt1Defeat::
 
 MtMoon_B2F_Text_Grunt1PostBattle::
 	.string "You made me mad!\n"
+#if IS_HNS
+	.string "TEAM MEGA will blacklist you!$"
+#else
 	.string "TEAM ROCKET will blacklist you!$"
+#endif
 
 MtMoon_B2F_Text_Grunt2Intro::
+#if IS_HNS
+	.string "We, TEAM MEGA, are POKéMON\n"
+#else
 	.string "We, TEAM ROCKET, are POKéMON\n"
+#endif
 	.string "gangsters!\l"
 	.string "We strike fear with our strength!$"
 

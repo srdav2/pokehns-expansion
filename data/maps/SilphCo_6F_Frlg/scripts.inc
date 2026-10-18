@@ -91,7 +91,11 @@ SilphCo_6F_EventScript_Grunt2::
 	end
 
 SilphCo_6F_Text_RocketsTookOverBuilding::
+#if IS_HNS
+	.string "The MEGA GRUNTS came and took over\n"
+#else
 	.string "The ROCKETS came and took over\n"
+#endif
 	.string "the building!$"
 
 SilphCo_6F_Text_BetterGetBackToWork::
@@ -114,11 +118,19 @@ SilphCo_6F_Text_NeedsMeToLookAfterHim::
 	.string "someone like me to look after him.$"
 
 SilphCo_6F_Text_RocketsTryingToConquerWorld::
+#if IS_HNS
+	.string "TEAM MEGA is trying to conquer\n"
+#else
 	.string "TEAM ROCKET is trying to conquer\n"
+#endif
 	.string "the world with POKéMON.$"
 
 SilphCo_6F_Text_RocketsRanAwayBecauseOfYou::
+#if IS_HNS
+	.string "TEAM MEGA ran away, and it's all\n"
+#else
 	.string "TEAM ROCKET ran away, and it's all\n"
+#endif
 	.string "because of you!$"
 
 SilphCo_6F_Text_TargetedSilphForOurMonProducts::
@@ -130,7 +142,11 @@ SilphCo_6F_Text_ComeWorkForSilphWhenYoureOlder::
 	.string "get older.$"
 
 SilphCo_6F_Text_Grunt1Intro::
+#if IS_HNS
+	.string "I am one of the four MEGA\n"
+#else
 	.string "I am one of the four ROCKET\n"
+#endif
 	.string "BROTHERS!$"
 
 SilphCo_6F_Text_Grunt1Defeat::
@@ -144,7 +160,11 @@ SilphCo_6F_Text_TaylorIntro::
 	.string "That rotten PRESIDENT!\p"
 	.string "Serves him right for shipping me\n"
 	.string "off to the TIKSI BRANCH!\p"
+#if IS_HNS
+	.string "That's why TEAM MEGA came after\n"
+#else
 	.string "That's why TEAM ROCKET came after\n"
+#endif
 	.string "us, I'm sure of it!$"
 
 SilphCo_6F_Text_TaylorDefeat::
@@ -155,7 +175,11 @@ SilphCo_6F_Text_TaylorPostBattle::
 	.string "It's in Russian no-man's-land!$"
 
 SilphCo_6F_Text_Grunt2Intro::
+#if IS_HNS
+	.string "You dare betray TEAM MEGA?$"
+#else
 	.string "You dare betray TEAM ROCKET?$"
+#endif
 
 SilphCo_6F_Text_Grunt2Defeat::
 	.string "You traitor!$"

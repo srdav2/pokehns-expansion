@@ -114,7 +114,11 @@ MtMoon_1F_Text_KentDefeat::
 
 MtMoon_1F_Text_KentPostBattle::
 	.string "I saw them!\n"
+#if IS_HNS
+	.string "I'm sure they're from TEAM MEGA!$"
+#else
 	.string "I'm sure they're from TEAM ROCKET!$"
+#endif
 
 MtMoon_1F_Text_RobbyIntro::
 	.string "You need to go through this cave\n"

@@ -85,8 +85,8 @@ RocketHideout_B3F_Text_LanceGetPassword:
     .string "LANCE: It takes two passwords\n"
     .string "to get into the boss' quarters.\p"
     .string "Those passwords are known only\n"
-    .string "to a few ROCKETS.\p"
-    .string "That ROCKET there very graciously\n"
+    .string "to a few MEGA GRUNTS.\p"
+    .string "That MEGA grunt there very graciously\n"
     .string "told me so.\p"
     .string "{PLAYER}, let's go get the\n"
     .string "passwords.$"
@@ -280,7 +280,7 @@ RocketHideout_B3F_Text_B3FLockedDoorOpenSesame:
 RocketHideout_B3F_Text_Rival:
     .string "…\p"
     .string "Didn't I tell you that I was\n"
-    .string "going to destroy TEAM ROCKET?\p"
+    .string "going to destroy TEAM MEGA?\p"
     .string "…Tell me, who was the guy in the\n"
     .string "cape who used dragon POKéMON?\p"
     .string "My POKéMON were no match at all.\p"
@@ -577,7 +577,7 @@ RocketHideout_B3F_Text_PetrelDisbelief:
     .string "to mimic him!$"
 
 RocketHideout_B3F_Text_PetrelReveal:
-    .string "PETREL: I am a Team Rocket\n"
+    .string "PETREL: I am a Team MEGA\n"
     .string "Executive!\p"
     .string "You must be trying to sneak into\n"
     .string "the radio-transmitter room.\p"
@@ -598,7 +598,7 @@ RocketHideout_B3F_Text_PetrelBeaten:
 
 RocketHideout_B3F_Text_PetrelAfterBattle:
     .string "PETREL: Since disbanding Team\n"
-    .string "Rocket three years ago, our\l"
+    .string "MEGA three years ago, our\l"
     .string "GIOVANNI has been missing.\p"
     .string "But we're certain he's been\n"
     .string "waiting for the right time for\l"
@@ -666,7 +666,7 @@ RocketHideout_B3F_Text_GruntM28After:
 
 RocketHideout_B3F_Text_ScientistRossSeen:
     .string "I used to work for SILPH, but now\n"
-    .string "I run research for TEAM ROCKET.\p"
+    .string "I run research for TEAM MEGA.\p"
     .string "A meddlesome child like you needs\n"
     .string "to be punished.$"
 

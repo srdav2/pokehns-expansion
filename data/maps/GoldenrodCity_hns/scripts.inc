@@ -335,12 +335,12 @@ GoldenrodCity_Text_Youngster1:
 
 GoldenrodCity_Text_CooltrainerF1:
 	.string "Is that man in black dressed up\n"
-	.string "like a TEAM ROCKET member?\p"
+	.string "like a TEAM MEGA member?\p"
 	.string "How silly!$"
 
 GoldenrodCity_Text_CooltrainerF1_Cleared:
 	.string "Was that man in black really part\n"
-	.string "of TEAM ROCKET? I can't believe it!$"
+	.string "of TEAM MEGA? I can't believe it!$"
 
 GoldenrodCity_Text_CooltrainerF2:
 	.string "The RADIO TOWER in GOLDENROD CITY\n"
@@ -396,7 +396,7 @@ GoldenrodCity_Text_Rocket5:
 
 GoldenrodCity_Text_Rocket6:
 	.string "Come and taste the terror of\n"
-	.string "TEAM ROCKET!$"
+	.string "TEAM MEGA!$"
 
 GoldenrodCity_Text_StationSign:
 	.string "GOLDENROD CITY STATION$"

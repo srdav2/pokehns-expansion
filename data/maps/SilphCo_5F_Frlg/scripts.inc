@@ -58,12 +58,20 @@ SilphCo_5F_EventScript_Dalton::
 	end
 
 SilphCo_5F_Text_RocketsInUproarAboutIntruder::
+#if IS_HNS
+	.string "TEAM MEGA is in an uproar over\n"
+#else
 	.string "TEAM ROCKET is in an uproar over\n"
+#endif
 	.string "some intruder.\p"
 	.string "That's you, right?$"
 
 SilphCo_5F_Text_YoureOurHeroThankYou::
+#if IS_HNS
+	.string "TEAM MEGA took off!\n"
+#else
 	.string "TEAM ROCKET took off!\n"
+#endif
 	.string "You're our hero! Thank you!$"
 
 SilphCo_5F_Text_Grunt1Intro::
@@ -75,7 +83,11 @@ SilphCo_5F_Text_Grunt1Defeat::
 
 SilphCo_5F_Text_Grunt1PostBattle::
 	.string "It's not smart to pick a fight with\n"
+#if IS_HNS
+	.string "TEAM MEGA!$"
+#else
 	.string "TEAM ROCKET!$"
+#endif
 
 SilphCo_5F_Text_BeauIntro::
 	.string "We study POKé BALL technology on\n"
@@ -102,7 +114,11 @@ SilphCo_5F_Text_DaltonPostBattle::
 	.string "It's a long way to my BOSS!$"
 
 SilphCo_5F_Text_Grunt2Intro::
+#if IS_HNS
+	.string "Show TEAM MEGA a little respect!$"
+#else
 	.string "Show TEAM ROCKET a little respect!$"
+#endif
 
 SilphCo_5F_Text_Grunt2Defeat::
 	.string "Cough…\n"

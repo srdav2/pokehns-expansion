@@ -45,10 +45,18 @@ SilphCo_4F_Text_CantYouSeeImHiding::
 
 SilphCo_4F_Text_TeamRocketIsGone::
 	.string "Huh?\n"
+#if IS_HNS
+	.string "TEAM MEGA is gone?$"
+#else
 	.string "TEAM ROCKET is gone?$"
+#endif
 
 SilphCo_4F_Text_Grunt1Intro::
+#if IS_HNS
+	.string "TEAM MEGA has taken control\n"
+#else
 	.string "TEAM ROCKET has taken control\n"
+#endif
 	.string "of SILPH CO.!$"
 
 SilphCo_4F_Text_Grunt1Defeat::

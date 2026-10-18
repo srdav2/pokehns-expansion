@@ -136,7 +136,7 @@ EcruteakCity_Text_Silver3:
 	.string "You must have come here for the\n"
 	.string "same reason, right?\p"
 	.string "Don't get cocky just because you\n"
-	.string "defeated TEAM ROCKET!\p"
+	.string "defeated TEAM MEGA!\p"
 	.string "These KIMONO GIRLS are insanely\n"
 	.string "strong.\p"
 	.string "See if you can defeat them.\p"

@@ -249,13 +249,21 @@ SixIsland_DottedHole_SapphireRoom_Text_IWasRightInTailingYou::
 SixIsland_DottedHole_SapphireRoom_Text_SellToTeamRocketTellPassword::
 	.string "I knew that there was a SAPPHIRE\n"
 	.string "here, so it belongs to me!\p"
+#if IS_HNS
+	.string "I'll sell it to TEAM MEGA for\n"
+#else
 	.string "I'll sell it to TEAM ROCKET for\n"
+#endif
 	.string "serious money.\p"
 	.string "…D-don't glare at me like that!\p"
 	.string "If you want it back, why don't you\n"
 	.string "go get it after I sell it?\p"
 	.string "I'll even tell you one of the\n"
+#if IS_HNS
+	.string "passwords to TEAM MEGA's\l"
+#else
 	.string "passwords to TEAM ROCKET's\l"
+#endif
 	.string "WAREHOUSE.\p"
 	.string "The WAREHOUSE password I know is\n"
 	.string "“Yes, nah, CHANSEY.”\p"

@@ -247,12 +247,20 @@ FourIsland_IcefallCave_Back_Text_LoreleiWellDeepFreezeYou::
 FourIsland_IcefallCave_Back_Text_OkayRocketWareHouseFiveIsland::
 	.string "Wawaah! Okay!\n"
 	.string "I'll talk!\p"
+#if IS_HNS
+	.string "The POKéMON are in the MEGA\n"
+#else
 	.string "The POKéMON are in the ROCKET\n"
+#endif
 	.string "WAREHOUSE on FIVE ISLAND.\p"
 	.string "There! I said it!\n"
 	.string "We'll be going now!\p"
 	.string "…But I doubt you'll ever make it\n"
+#if IS_HNS
+	.string "into the MEGA WAREHOUSE!\p"
+#else
 	.string "into the ROCKET WAREHOUSE!\p"
+#endif
 	.string "Heheheheh!$"
 
 FourIsland_IcefallCave_Back_Text_ThankYouThisIsAwful::

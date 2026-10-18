@@ -190,7 +190,7 @@ TohjoFalls_Movement_GiovanniLeave:
 
 TohjoFalls_GiovanniRoom_Text_Radio:
 	.string "RADIO: ... ...\n"
-	.string "Ahem, we are TEAM ROCKET!\l"
+	.string "Ahem, we are TEAM MEGA!\l"
 	.string "After three years of preparation,\l"
 	.string "we have risen again from the ashes!\l"
 	.string "GIOVANNI! Can you hear us?\l"
@@ -228,6 +228,6 @@ TohjoFalls_GiovanniRoom_Text_GiovanniAfter:
 	.string "waste...?\p"
 	.string "How can a kid like you manage to\n"
 	.string "destroy my dream once again?\p"
-	.string "The precious dream of TEAM ROCKET\n"
+	.string "The precious dream of TEAM MEGA\n"
 	.string "has become little more than an\l"
 	.string "illusion...$"

@@ -525,7 +525,7 @@ GoldenrodUnderground_Text_SilverBefore:
     .string "Hold it!\p"
     .string "I saw you, so I tailed you.\p"
     .string "I don't need you underfoot while I\n"
-    .string "take care of TEAM ROCKET.\p"
+    .string "take care of TEAM MEGA.\p"
     .string "…Wait a second. You beat me before,\n"
     .string "didn't you?\p"
     .string "That was just a fluke.\p"
@@ -554,7 +554,7 @@ GoldenrodUnderground_Text_SilverAfter:
 
 GoldenrodUnderground_Text_SilverLoss:
     .string "Humph. This is my real power, wimp.\p"
-    .string "I'll make TEAM ROCKET history.\p"
+    .string "I'll make TEAM MEGA history.\p"
     .string "And I'm going to grind that LANCE\n"
     .string "under my heels.$"
 
@@ -617,7 +617,7 @@ GoldenrodUnderground_Text_GruntM13Beaten:
 
 GoldenrodUnderground_Text_GruntM13After:
     .string "You must have ice in your veins to\n"
-    .string "diss TEAM ROCKET.$"
+    .string "diss TEAM MEGA.$"
 
 GoldenrodUnderground_Text_GruntF3Seen:
     .string "Are you lost? No, you can't be.\p"

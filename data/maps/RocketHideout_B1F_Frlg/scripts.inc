@@ -72,10 +72,18 @@ RocketHideout_B1F_Text_Grunt1Defeat::
 
 RocketHideout_B1F_Text_Grunt1PostBattle::
 	.string "Blast it… You're dissing TEAM\n"
+#if IS_HNS
+	.string "MEGA, aren't you?$"
+#else
 	.string "ROCKET, aren't you?$"
+#endif
 
 RocketHideout_B1F_Text_Grunt2Intro::
+#if IS_HNS
+	.string "You broke into TEAM MEGA's\n"
+#else
 	.string "You broke into TEAM ROCKET's\n"
+#endif
 	.string "operation? What nerve!$"
 
 RocketHideout_B1F_Text_Grunt2Defeat::

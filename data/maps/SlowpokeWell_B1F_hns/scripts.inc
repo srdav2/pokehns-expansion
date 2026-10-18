@@ -96,7 +96,7 @@ SlowpokeWell_B1F_Text_KurtIntro:
 
 SlowpokeWell_B1F_Text_KurtAfter:
 	.string "KURT: Way to go, {PLAYER}!\p"
-	.string "TEAM ROCKET has taken off.\p"
+	.string "TEAM MEGA has taken off.\p"
 	.string "My back's better too.\n"
 	.string "Let's get out of here.$"
 
@@ -117,7 +117,7 @@ SlowpokeWell_B1F_Text_GruntM29After:
 	.string "tails off SLOWPOKE and selling\l"
 	.string "them.\p"
 	.string "Everything we do is for profit.\p"
-	.string "That's right! We're TEAM ROCKET,\n"
+	.string "That's right! We're TEAM MEGA,\n"
 	.string "and we'll do anything for money!$"
 
 SlowpokeWell_B1F_Text_ProtonSeen:
@@ -130,7 +130,7 @@ SlowpokeWell_B1F_Text_ProtonBeaten:
 	.string "but wait till next time!$"
 
 SlowpokeWell_B1F_Text_ProtonAfter:
-	.string "Yeah, TEAM ROCKET was broken up\n"
+	.string "Yeah, TEAM MEGA was broken up\n"
 	.string "three years ago.\p"
 	.string "The boss went into hiding.\p"
 	.string "But we continued our activities\n"
@@ -144,7 +144,7 @@ SlowpokeWell_B1F_Text_GruntM2Seen:
 	.string "Hyuck-hyuck-hyuck!\n"
 	.string "Quit taking SLOWPOKETAILS?\p"
 	.string "You're nuts!\n"
-	.string "If we obeyed you, TEAM ROCKET's\l"
+	.string "If we obeyed you, TEAM MEGA's\l"
 	.string "rep would be ruined!$"
 
 SlowpokeWell_B1F_Text_GruntM2Beaten:
@@ -154,7 +154,7 @@ SlowpokeWell_B1F_Text_GruntM2Beaten:
 SlowpokeWell_B1F_Text_GruntM2After:
 	.string "We need the money,\n"
 	.string "but selling SLOWPOKETAILS?\p"
-	.string "It's tough being a ROCKET GRUNT!$"
+	.string "It's tough being a MEGA GRUNT!$"
 
 SlowpokeWell_B1F_Text_GruntF1Seen:
 	.string "Stop taking TAILS?\p"

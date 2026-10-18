@@ -128,7 +128,7 @@ SaffronCity_Text_CooltrainerM:
 SaffronCity_Text_CooltrainerF:
 	.string "This is SILPH CO., famous for\n"
 	.string "POKéMON merchandise.\p"
-	.string "In the past, TEAM ROCKET wanted\n"
+	.string "In the past, TEAM MEGA wanted\n"
 	.string "the company because of that.$"
 
 SaffronCity_Text_Fisher:

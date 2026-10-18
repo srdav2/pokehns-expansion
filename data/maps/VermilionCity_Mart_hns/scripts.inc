@@ -10,7 +10,7 @@ VermilionCity_Mart_EventScript_Woman::
 	end
 
 VermilionMart_Text_SuperNerd:
-	.string "TEAM ROCKET is no longer in\n"
+	.string "TEAM MEGA is no longer in\n"
 	.string "KANTO.\p"
 	.string "That alone makes me happy.$"
 

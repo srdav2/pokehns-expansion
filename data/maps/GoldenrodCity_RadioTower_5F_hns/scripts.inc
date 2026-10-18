@@ -336,7 +336,7 @@ GoldenrodCity_RadioTower_5F_Text_ExecutiveF1Beaten:
 GoldenrodCity_RadioTower_5F_Text_ExecutiveF1After:
 	.string "{PLAYER}, isn't it?\p"
 	.string "A brat like you won't appreciate\n"
-	.string "the magnificence of TEAM ROCKET.\p"
+	.string "the magnificence of TEAM MEGA.\p"
 	.string "That's too bad. I really admire\n"
 	.string "your power.$"
 
@@ -360,7 +360,7 @@ GoldenrodCity_RadioTower_5F_Text_RocketBossAfter:
 	.string "Our dreams have come to naught.\p"
 	.string "I wasn't up to the task after all.\p"
 	.string "Like GIOVANNI did before me, I will\n"
-	.string "disband TEAM ROCKET here today.\p"
+	.string "disband TEAM MEGA here today.\p"
 	.string "Farewell.$"
 
 GoldenrodCity_RadioTower_5F_Text_DirectorThanks:

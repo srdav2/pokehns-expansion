@@ -253,7 +253,7 @@ RocketHideout_B2F_Text_ArianaHoldIt:
 RocketHideout_B2F_Text_ArianaChallenge:
     .string "ARIANA: We can't let a brat like you\n"
     .string "do as you please forever.\p"
-    .string "It'll hurt Team Rocket's pride over\n"
+    .string "It'll hurt Team MEGA's pride over\n"
     .string "and over again. Making it lessen,\l"
     .string "you see.\p"
     .string "...So, it's time to finish you.\n"
@@ -268,7 +268,7 @@ RocketHideout_B2F_Text_LanceInterrupt:
     .string "LANCE: Hold it!\n"
     .string "A two-on-one battle?\p"
     .string "That is so unfair!\n"
-    .string "Typical of Team Rocket to be so\l"
+    .string "Typical of Team MEGA to be so\l"
     .string "sneaky.\p"
     .string "Allow me to join the battle!$"
 
@@ -277,7 +277,7 @@ RocketHideout_B2F_Text_ArianaOutraged:
     .string "Where is your sense of dignity?\p"
     .string "As interim boss in place of GIOVANNI,\n"
     .string "I'll show you how wrong it is to meddle\l"
-    .string "with Team Rocket!$"
+    .string "with Team MEGA!$"
 
 RocketHideout_B2F_Text_LanceChooseMons:
     .string "LANCE: Quickly {PLAYER}, choose\n"
@@ -591,7 +591,7 @@ RocketHideout_B2F_Text_GruntLoss:
 RocketHideout_B2F_Text_ArianaLoss:
     .string "Tch, you really are strong.\n"
     .string "It's too bad.\p"
-    .string "If you were to join Team Rocket,\n"
+    .string "If you were to join Team MEGA,\n"
     .string "you could become an Executive.$"
 
 RocketHideout_Text_ArianaRetreat:
@@ -602,7 +602,7 @@ RocketHideout_Text_ArianaRetreat:
     .string "this hideout now.\p"
     .string "We have much bigger plans.\n"
     .string "You'll come to appreciate Team\l"
-    .string "Rocket's true power soon enough.\p"
+    .string "MEGA's true power soon enough.\p"
     .string "Enjoy yourself while you can...\n"
     .string "Hee hee hee...$"
 
@@ -767,7 +767,7 @@ RocketHideout_B2F_Text_LanceHeals2:
 RocketHideout_B2F_Text_GruntM17Seen:
     .string "The door won't open?\p"
     .string "Well, duh. It has to have a\n"
-    .string "password that only TEAM ROCKET\l"
+    .string "password that only TEAM MEGA\l"
     .string "knows.$"
 
 RocketHideout_B2F_Text_GruntM17Beaten:

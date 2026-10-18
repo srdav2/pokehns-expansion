@@ -63,3 +63,13 @@ Special: `ReturnAnchoredMon`, reading the zero-based anchor index from `VAR_8004
 - `ITEM_EXP_SHARE` is awarded in `NewBarkTown_Lab_hns` after the starter and uses the existing `FLAG_EXP_SHARE_ENABLED` toggle with `I_EXP_SHARE_ITEM == GEN_6`.
 - New Game sets existing `FLAG_RECEIVED_RUNNING_SHOES` and `FLAG_SYS_B_DASH`; Mom's existing shoe handoff is skipped when the received flag is already set.
 - No new flags, vars, trainers, maps, or specials were allocated.
+
+## GF3 — Team MEGA foundation
+
+- `VAR_PRESSURE_POINTS = 0x40E5`, replacing unused HnS slot `VAR_UNUSED_HNS_0x40E5`. It is reserved for the pressure-prompt system; prompt scripts are deferred to act missions.
+- `ITEM_RED_CAP = 901`, a key item using the existing scarf icon and red palette. The mission adds the item definition; the Goldenrod gift event is deferred to its act mission.
+- Existing `TRAINER_CLASS_TEAM_ROCKET_HNS` and `TRAINER_CLASS_ROCKET_ADMIN_HNS` identifiers remain unchanged for trainer-data and code compatibility; their visible labels are now `MEGA GRUNT` and `MEGA ADMIN`.
+- New HnS trainer-class constants: `TRAINER_CLASS_SIGMA_BRO_HNS`, `TRAINER_CLASS_CRYPTO_BRO_HNS`, `TRAINER_CLASS_BALL_CARRIER_HNS`, `TRAINER_CLASS_HERITAGE_OFFICER_HNS`, `TRAINER_CLASS_TALK_RADIO_HOST_HNS`, `TRAINER_CLASS_WELLNESS_GURU_HNS`, `TRAINER_CLASS_TRADWIFE_INFLUENCER_HNS`, `TRAINER_CLASS_PREPPER_HNS`, `TRAINER_CLASS_RALLY_GOER_HNS`, `TRAINER_CLASS_BORDER_AGENT_HNS`, and `TRAINER_CLASS_DOGE_AUDITOR_HNS`. Visible labels are shortened to fit the 13-byte trainer-class name field.
+- The existing male and female HnS Rocket Grunt trainer palettes are tinted red for Team MEGA. No new trainer pictures or trainer IDs were added.
+- Dialogue in HnS-only map scripts and radio strings uses Team MEGA. Shared FRLG Kanto map scripts choose the Team MEGA variant under `IS_HNS` and retain their original strings in FRLG.
+- No new flags, maps, or specials were allocated. Boss trainer IDs and anchor-band teams are deferred to the act missions.

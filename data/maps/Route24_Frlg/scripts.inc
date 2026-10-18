@@ -110,7 +110,11 @@ Route24_Text_YouDontHaveAnyRoom::
 
 Route24_Text_JoinTeamRocket::
 	.string "By the way, how would you like to\n"
+#if IS_HNS
+	.string "join TEAM MEGA?\p"
+#else
 	.string "join TEAM ROCKET?\p"
+#endif
 	.string "We're a group of professional\n"
 	.string "criminals specializing in POKéMON!\p"
 	.string "Want to join?\p"
@@ -127,7 +131,11 @@ Route24_Text_RocketDefeat::
 
 Route24_Text_YoudBecomeTopRocketLeader::
 	.string "With your ability, you'd become\n"
+#if IS_HNS
+	.string "a top leader in TEAM MEGA.\p"
+#else
 	.string "a top leader in TEAM ROCKET.\p"
+#endif
 	.string "Come on, think of the opportunity!\n"
 	.string "Don't let this chance go to waste.$"
 

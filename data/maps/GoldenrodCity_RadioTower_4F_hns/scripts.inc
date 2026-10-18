@@ -96,7 +96,7 @@ GoldenrodCity_RadioTower_4F4_Text_Proton_Seen:
 	.string "Be careful!\p"
 	.string "But since you seem to wish it, I'll\n"
 	.string "show you the full extent of a TEAM\l"
-	.string "ROCKET EXECUTIVE's wrath!$"
+	.string "MEGA EXECUTIVE's wrath!$"
 
 GoldenrodCity_RadioTower_4F4_Text_Proton_Beaten:
 	.string "Phew...$"
@@ -104,7 +104,7 @@ GoldenrodCity_RadioTower_4F4_Text_Proton_Beaten:
 GoldenrodCity_RadioTower_4F4_Text_Proton_After:
 	.string "PROTON: You may have won this\n"
 	.string "time... But all you did was make\p"
-	.string "TEAM ROCKET's wrath grow.$"
+	.string "TEAM MEGA's wrath grow.$"
 
 GoldenrodCity_RadioTower_4F4_Text_Fisher:
 	.string "I listened to the radio while I was\n"
@@ -143,7 +143,7 @@ GoldenrodCity_RadioTower_4F4_Text_GruntM10After:
 	.string "I don't believe it! I was beaten!$"
 
 GoldenrodCity_RadioTower_4F4_Text_ExecutiveM2Seen:
-	.string "Stop! I'm known as the TEAM ROCKET\n"
+	.string "Stop! I'm known as the TEAM MEGA\n"
 	.string "fortress!\p"
 	.string "You're not taking another step!$"
 
@@ -179,7 +179,7 @@ GoldenrodCity_RadioTower_4F4_Text_ScientistRichBeaten:
 
 GoldenrodCity_RadioTower_4F4_Text_ScientistRichAfter:
 	.string "Do you honestly believe you can stop\n"
-	.string "TEAM ROCKET?$"
+	.string "TEAM MEGA?$"
 
 GoldenrodCity_RadioTower_4F4_Text_ProductionSign:
 	.string "4F PRODUCTION$"

@@ -25,7 +25,7 @@ CeladonCity_PokemonCenter1F_Text_CooltrainerF:
 	.string "watch yourself.$"
 
 CeladonCity_PokemonCenter1F_Text_Pharmacist:
-	.string "TEAM ROCKET's hideout is in the\n"
+	.string "TEAM MEGA's hideout is in the\n"
 	.string "basement of the GAME CORNER.\p"
 	.string "Oh, wait. That was three years\n"
 	.string "ago.$"

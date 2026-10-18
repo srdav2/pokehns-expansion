@@ -118,7 +118,7 @@ Route24_Movement_GruntLeave:
 	step_end
 
 Route24_Text_RocketSeen:
-	.string "Hey, kid! Me am a TEAM ROCKET\n"
+	.string "Hey, kid! Me am a TEAM MEGA\n"
 	.string "member kind of guy!\p"
 	.string "Come from another country, a\n"
 	.string "trainer number one, me!\p"
@@ -145,14 +145,14 @@ Route24_Text_RocketAfter:
 	.string "for in water center of GYM at.\p"
 	.string "But you forget me not!\p"
 	.string "Beat you for sure will TEAM\n"
-	.string "ROCKET.\p"
+	.string "MEGA GRUNT.\p"
 	.string "Come from JOHTO will they, mine\n"
 	.string "friends, yes. Will revenge they\l"
 	.string "are.$"
 
 Route24_Text_RocketDisappears:
 	.string "…\p"
-	.string "You say what? TEAM ROCKET bye-\n"
+	.string "You say what? TEAM MEGA bye-\n"
 	.string "bye a go-go? Broken it is says\l"
 	.string "you?\p"
 	.string "Oh, no! Should I do what now on\n"
@@ -173,4 +173,4 @@ Route24_Text_ManRocket:
 Route24_Text_WomanAfterRocket:
 	.string "What was that all about?$"
 Route24_Text_ManAfterRocket:
-	.string "Was that a ROCKET?$"
+	.string "Was that a MEGA grunt?$"

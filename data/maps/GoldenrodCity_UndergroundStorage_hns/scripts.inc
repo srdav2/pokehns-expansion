@@ -56,7 +56,7 @@ RadioTowerBasement_Text_GruntM24Beaten:
     .string "I got disposed of…$"
 
 RadioTowerBasement_Text_GruntM24After:
-    .string "TEAM ROCKET will keep going, waiting\n"
+    .string "TEAM MEGA will keep going, waiting\n"
     .string "for the return of GIOVANNI.\p"
     .string "We'll do whatever it takes.$"
 
@@ -78,7 +78,7 @@ RadioTowerBasement_Text_GruntM15Seen:
 
 RadioTowerBasement_Text_GruntM15Beaten:
     .string "Hyuck-hyuck-hyuck! You're so good!\p"
-    .string "This TEAM ROCKET thing is just\n"
+    .string "This TEAM MEGA thing is just\n"
     .string "a job, but I can see it hurts others.\p"
     .string "That's it, I'm leaving.\p"
     .string "Thank you so much. Sorry GIOVANNI!$"
@@ -93,7 +93,7 @@ RadioTowerBasement_Text_DirectorIntro:
     .string "Thank you!\p"
     .string "The RADIO TOWER!\p"
     .string "What's happening there?\p"
-    .string "Taken over by TEAM ROCKET?\p"
+    .string "Taken over by TEAM MEGA?\p"
     .string "Here. Take this CARD KEY.$"
 
 RadioTowerBasement_Text_DirectorCardKey:

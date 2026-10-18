@@ -154,7 +154,7 @@ GoldenrodCity_RadioTower_3F_Text_SuperNerd:
 GoldenrodCity_RadioTower_3F_Text_GymGuideRockets:
 	.string "To trainers, POKéMON are their\n"
 	.string "beloved partners.\p"
-	.string "It's terrible how TEAM ROCKET is\n"
+	.string "It's terrible how TEAM MEGA is\n"
 	.string "trying to control POKéMON.$"
 
 GoldenrodCity_RadioTower_3F_Text_GymGuide:
@@ -164,7 +164,7 @@ GoldenrodCity_RadioTower_3F_Text_GymGuide:
 	.string "clock too!$"
 
 GoldenrodCity_RadioTower_3F_Text_CooltrainerFPleaseSave:
-	.string "The TEAM ROCKET boss has locked\n"
+	.string "The TEAM MEGA boss has locked\n"
 	.string "himself in.\p"
 	.string "But the DIRECTOR can open it.\p"
 	.string "He's up on the fifth floor.\p"
@@ -188,7 +188,7 @@ GoldenrodCity_RadioTower_3F_Text_CooltrainerFMarvelous:
 GoldenrodCity_RadioTower_3F_Text_GruntM7Seen:
 	.string "I've been given strict orders.\p"
 	.string "I'm to crush anyone who challenges\n"
-	.string "TEAM ROCKET!$"
+	.string "TEAM MEGA!$"
 
 GoldenrodCity_RadioTower_3F_Text_GruntM7Beaten:
 	.string "What?!$"

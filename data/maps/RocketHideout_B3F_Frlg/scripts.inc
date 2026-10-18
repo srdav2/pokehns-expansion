@@ -12,7 +12,11 @@ RocketHideout_B3F_EventScript_Grunt2::
 	end
 
 RocketHideout_B3F_Text_Grunt1Intro::
+#if IS_HNS
+	.string "Stop meddling in TEAM MEGA's\n"
+#else
 	.string "Stop meddling in TEAM ROCKET's\n"
+#endif
 	.string "affairs or else!$"
 
 RocketHideout_B3F_Text_Grunt1Defeat::

@@ -23,7 +23,11 @@ CeruleanCity_House2_EventScript_WallHole::
 	end
 
 CeruleanCity_House2_Text_RocketsStoleTMForDig::
+#if IS_HNS
+	.string "Those miserable MEGA GRUNTS!\p"
+#else
 	.string "Those miserable ROCKETS!\p"
+#endif
 	.string "Look what they've done to my\n"
 	.string "house!\p"
 	.string "They stole a TM for teaching\n"
@@ -38,9 +42,17 @@ CeruleanCity_House2_Text_TeachDiglettDigWithoutTM::
 	.string "DIG without a TM.$"
 
 CeruleanCity_House2_Text_TeamRocketTryingToDigIntoNoGood::
+#if IS_HNS
+	.string "TEAM MEGA must be trying to DIG\n"
+#else
 	.string "TEAM ROCKET must be trying to DIG\n"
+#endif
 	.string "their way into no good!$"
 
 CeruleanCity_House2_Text_TeamRocketLeftWayOut::
+#if IS_HNS
+	.string "TEAM MEGA left a way out!$"
+#else
 	.string "TEAM ROCKET left a way out!$"
+#endif
 

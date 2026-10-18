@@ -343,7 +343,7 @@ AzaleaTown_Movement_KurtLeave:
 
 AzaleaTown_Text_RivalBefore:
 	.string "…Tell me something.\p"
-	.string "Is it true that TEAM ROCKET\n"
+	.string "Is it true that TEAM MEGA\n"
 	.string "has returned?\p"
 	.string "What? You beat them? Hah! Quit\n"
 	.string "lying.\p"
@@ -361,7 +361,7 @@ AzaleaTown_Text_RivalAfter:
 	.string "matter who or what.\p"
 	.string "I'm going to be strong and wipe\n"
 	.string "out the weak.\p"
-	.string "That goes for TEAM ROCKET too.\p"
+	.string "That goes for TEAM MEGA too.\p"
 	.string "They act big and tough in a group.\p"
 	.string "But get them alone, and they're weak.\n"
 	.string "I hate them all.\p"

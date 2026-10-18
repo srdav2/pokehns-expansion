@@ -136,7 +136,11 @@ CeladonCity_Text_GetLostOrIllPunchYou::
 	.string "Get lost, or I'll punch you.$"
 
 CeladonCity_Text_KeepOutOfTeamRocketsWay::
+#if IS_HNS
+	.string "Keep out of TEAM MEGA's way!$"
+#else
 	.string "Keep out of TEAM ROCKET's way!$"
+#endif
 
 CeladonCity_Text_ExplainXAccuracyDireHit::
 	.string "TRAINER TIPS\p"
@@ -176,7 +180,11 @@ CeladonCity_Text_PrizeExchangeSign::
 	.string "PRIZE EXCHANGE$"
 
 CeladonCity_Text_GameCornerSign::
+#if IS_HNS
+	.string "MEGA GAME CORNER\n"
+#else
 	.string "ROCKET GAME CORNER\n"
+#endif
 	.string "The playground for grown-ups!$"
 
 CeladonCity_Text_ScaldedTongueOnTea::

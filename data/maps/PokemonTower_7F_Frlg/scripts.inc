@@ -244,7 +244,11 @@ PokemonTower_7F_Text_Grunt2Intro::
 	.string "This old guy marched right up to\n"
 	.string "our HIDEOUT.\p"
 	.string "Then, he starts ranting about how\n"
+#if IS_HNS
+	.string "TEAM MEGA's abusing POKéMON.\p"
+#else
 	.string "TEAM ROCKET's abusing POKéMON.\p"
+#endif
 	.string "So, we're just talking it over as\n"
 	.string "adults.$"
 
@@ -261,7 +265,11 @@ PokemonTower_7F_Text_Grunt3Intro::
 	.string "You're not saving anyone, kid!$"
 
 PokemonTower_7F_Text_Grunt3Defeat::
+#if IS_HNS
+	.string "Don't fight us MEGA GRUNTS!$"
+#else
 	.string "Don't fight us ROCKETS!$"
+#endif
 
 PokemonTower_7F_Text_Grunt3PostBattle::
 	.string "You're not getting away with this!$"

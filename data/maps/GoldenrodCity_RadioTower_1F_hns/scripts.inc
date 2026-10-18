@@ -242,7 +242,7 @@ RadioTower1F_Text_GruntM3Seen:
     .string "We've finally taken over the\n"
     .string "RADIO TOWER!\p"
     .string "Now everyone will get to experience\n"
-    .string "the true terror of TEAM ROCKET!\p"
+    .string "the true terror of TEAM MEGA!\p"
     .string "We'll show you how scary we are!$"
 
 RadioTower1F_Text_GruntM3Beaten:

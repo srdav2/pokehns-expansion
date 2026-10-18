@@ -162,7 +162,11 @@ MtEmber_Exterior_Text_WhatsPasswordAgain::
 	.string "Any treasure we find, we haul back\n"
 	.string "to the WAREHOUSE, understood?\p"
 	.string "…Oh, and what're the passwords?\n"
+#if IS_HNS
+	.string "At the MEGA WAREHOUSE, I mean.$"
+#else
 	.string "At the ROCKET WAREHOUSE, I mean.$"
+#endif
 
 MtEmber_Exterior_Text_FirstPasswordGoldeen::
 	.string "What, you forgot the password?\n"

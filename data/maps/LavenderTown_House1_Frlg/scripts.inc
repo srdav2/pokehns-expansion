@@ -28,11 +28,19 @@ LavenderTown_House1_Text_Cubone::
 	.string "CUBONE: Kyarugoo!$"
 
 LavenderTown_House1_Text_RocketsKilledCubonesMother::
+#if IS_HNS
+	.string "Those horrible MEGA GRUNTS!\n"
+#else
 	.string "Those horrible ROCKETS!\n"
+#endif
 	.string "They deserve no mercy!\p"
 	.string "That poor CUBONE's mother…\p"
 	.string "It was killed trying to escape from\n"
+#if IS_HNS
+	.string "TEAM MEGA.$"
+#else
 	.string "TEAM ROCKET.$"
+#endif
 
 LavenderTown_House1_Text_GhostOfPokemonTowerIsGone::
 	.string "The ghost of POKéMON TOWER is\n"

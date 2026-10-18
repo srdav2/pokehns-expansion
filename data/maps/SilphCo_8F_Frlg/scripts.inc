@@ -66,7 +66,11 @@ SilphCo_8F_Text_ParkerPostBattle::
 	.string "BUILDING's maze?$"
 
 SilphCo_8F_Text_Grunt2Intro::
+#if IS_HNS
+	.string "I am one of the four MEGA\n"
+#else
 	.string "I am one of the four ROCKET\n"
+#endif
 	.string "BROTHERS!$"
 
 SilphCo_8F_Text_Grunt2Defeat::
@@ -81,7 +85,11 @@ SilphCo_8F_Text_FloorSign::
 	.string "8F$"
 
 SilphCo_8F_Text_ToRocketBossMonsAreTools::
+#if IS_HNS
+	.string "TEAM MEGA's BOSS is terribly\n"
+#else
 	.string "TEAM ROCKET's BOSS is terribly\n"
+#endif
 	.string "cruel!\p"
 	.string "To him, POKéMON are just tools to\n"
 	.string "be used.\p"

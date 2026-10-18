@@ -419,7 +419,11 @@ CeruleanCity_Text_OkayIllReturnStolenTM::
 
 CeruleanCity_Text_RecoveredTM28FromGrunt::
 	.string "{PLAYER} recovered TM28 from\n"
+#if IS_HNS
+	.string "the TEAM MEGA GRUNT.$"
+#else
 	.string "the TEAM ROCKET GRUNT.$"
+#endif
 
 CeruleanCity_Text_BetterGetMovingBye::
 	.string "I better get moving!\n"
@@ -456,10 +460,18 @@ CeruleanCity_Text_PokemonEncyclopediaAmusing::
 
 CeruleanCity_Text_PeopleHereWereRobbed::
 	.string "The people here were robbed.\p"
+#if IS_HNS
+	.string "It's obvious that TEAM MEGA is\n"
+#else
 	.string "It's obvious that TEAM ROCKET is\n"
+#endif
 	.string "behind this most heinous crime!\p"
 	.string "Even our POLICE FORCE has\n"
+#if IS_HNS
+	.string "trouble with the MEGA GRUNTS!$"
+#else
 	.string "trouble with the ROCKETS!$"
+#endif
 
 CeruleanCity_Text_SlowbroUseSonicboom::
 	.string "Okay! SLOWBRO!\n"
@@ -533,4 +545,3 @@ CeruleanCity_Text_GymSign::
 	.string "CERULEAN CITY POKéMON GYM\n"
 	.string "LEADER: MISTY\l"
 	.string "The Tomboyish Mermaid!$"
-

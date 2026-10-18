@@ -155,10 +155,18 @@ Route4_PokemonCenter_1F_Text_CanHaveSixMonsWithYou::
 	.string "can have six POKéMON with you.$"
 
 Route4_PokemonCenter_1F_Text_TeamRocketAttacksCerulean::
+#if IS_HNS
+	.string "TEAM MEGA attacks CERULEAN\n"
+#else
 	.string "TEAM ROCKET attacks CERULEAN\n"
+#endif
 	.string "citizens…\p"
 	.string "Not a day goes by without TEAM\n"
+#if IS_HNS
+	.string "MEGA being in the news.$"
+#else
 	.string "ROCKET being in the news.$"
+#endif
 
 Route4_PokemonCenter_1F_Text_LaddieBuyMagikarpForJust500::
 	.string "MAN: Hello there, laddie!\n"

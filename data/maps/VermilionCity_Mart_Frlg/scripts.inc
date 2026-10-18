@@ -35,12 +35,20 @@ VermilionCity_Mart_Items::
 VermilionCity_Mart_Text_TeamRocketAreWickedPeople::
 	.string "There are wicked people who will\n"
 	.string "use POKéMON for criminal acts.\p"
+#if IS_HNS
+	.string "TEAM MEGA traffics in rare\n"
+#else
 	.string "TEAM ROCKET traffics in rare\n"
+#endif
 	.string "POKéMON, for example.\p"
 	.string "They also abandon POKéMON that\n"
 	.string "they consider unpopular or useless.\p"
 	.string "That's the sort of horrid people\n"
+#if IS_HNS
+	.string "they are, TEAM MEGA.$"
+#else
 	.string "they are, TEAM ROCKET.$"
+#endif
 
 VermilionCity_Mart_Text_MonsGoodOrBadDependingOnTrainer::
 	.string "I think POKéMON can be good or\n"

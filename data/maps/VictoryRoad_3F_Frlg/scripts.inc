@@ -90,7 +90,11 @@ VictoryRoad_3F_Text_GeorgeDefeat::
 
 VictoryRoad_3F_Text_GeorgePostBattle::
 	.string "So, it was you who beat GIOVANNI\n"
+#if IS_HNS
+	.string "of TEAM MEGA?$"
+#else
 	.string "of TEAM ROCKET?$"
+#endif
 
 VictoryRoad_3F_Text_AlexaIntro::
 	.string "TRAINERS live to seek stronger\n"

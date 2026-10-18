@@ -27,14 +27,22 @@ LavenderTown_PokemonCenter_1F_EventScript_Youngster::
 	end
 
 LavenderTown_PokemonCenter_1F_Text_RocketsDoAnythingForMoney::
+#if IS_HNS
+	.string "TEAM MEGA will do anything for\n"
+#else
 	.string "TEAM ROCKET will do anything for\n"
+#endif
 	.string "the sake of money!\p"
 	.string "There is no job too dirty, no deed\n"
 	.string "too heinous, no crime too wicked!$"
 
 LavenderTown_PokemonCenter_1F_Text_CubonesMotherKilledByRockets::
 	.string "I saw CUBONE's mother trying to\n"
+#if IS_HNS
+	.string "escape from TEAM MEGA.\p"
+#else
 	.string "escape from TEAM ROCKET.\p"
+#endif
 	.string "She was killed trying to get away…$"
 
 LavenderTown_PokemonCenter_1F_Text_PeoplePayForCuboneSkulls::

@@ -106,7 +106,7 @@ EcruteakCity_Theater_Movement_KimonoGirlMoveBack:
 	step_end
 
 EcruteakCity_Theater_Text_Rocket1:
-	.string "ROCKET: Stop dancing such a serious\n"
+	.string "MEGA: Stop dancing such a serious\n"
 	.string "dance! Show me something like\l"
 	.string "a hula dance!$"
 
@@ -115,7 +115,7 @@ EcruteakCity_Theater_Text_KimonoRocket1:
 	.string "such a request on me.$"
 
 EcruteakCity_Theater_Text_Rocket2:
-	.string "ROCKET: Huh?\p"
+	.string "MEGA: Huh?\p"
 	.string "Are you telling me you don't\n"
 	.string "respect what the customer\l"
 	.string "wants?$"
@@ -190,7 +190,7 @@ EcruteakCity_Theater_Text_RocketAfter:
 	.string "Oops! I have an important mission!\n"
 	.string "If they find out I was wasting\l"
 	.string "time here, they'll make me start\l"
-	.string "over as the lowest ROCKET GRUNT!\p"
+	.string "over as the lowest MEGA GRUNT!\p"
 	.string "I better leave now!$"
 
 EcruteakCity_Theater_Text_KimonoRocket3:
@@ -401,7 +401,7 @@ EcruteakCity_Theater_Movement_SurfGuy2:
 
 EcruteakCity_Theater_Text_SurfGuyRocket:
 	.string "What's the deal with that\n"
-	.string "Team Rocket Grunt, messing\l"
+	.string "Team MEGA Grunt, messing\l"
 	.string "with that KIMONO GIRL?\p"
 	.string "You are a Trainer, right?\n"
 	.string "Please help her!$"
@@ -998,7 +998,7 @@ EcruteakCity_Theater_Text_NaokoSeen:
 	.string "me in the ILEX FOREST.\p"
 	.string "I'm NAOKO--not so good with\n"
 	.string "directions.\p"
-	.string "I saw you defeat Team Rocket\n"
+	.string "I saw you defeat Team MEGA\n"
 	.string "when KURT was in trouble at\l"
 	.string "the SLOWPOKE WELL.\p"
 	.string "Let me challenge you and your\n"
@@ -1007,7 +1007,7 @@ EcruteakCity_Theater_Text_NaokoSeen:
 EcruteakCity_Theater_Text_MikiSeen:
 	.string "You're quite the Trainer. I\n"
 	.string "remember you chased off that\l"
-	.string "Rocket Grunt from right here.\p"
+	.string "MEGA Grunt from right here.\p"
 	.string "Thank you for that.\p"
 	.string "Though, I'm a Trainer too.\n"
 	.string "She who knows the most speaks\l"
@@ -1032,7 +1032,7 @@ EcruteakCity_Theater_Text_KuniSeen:
 	.string "GOLDENROD TUNNEL.\p"
 	.string "I'm the one who twirls even\n"
 	.string "underground--KUNI!\p"
-	.string "I saw you thwart Rocket's\n"
+	.string "I saw you thwart MEGA's\n"
 	.string "plan to take the Radio Tower.\p"
 	.string "Now show me your strength!\n"
 	.string "Let me challenge you and your\l"
@@ -1082,4 +1082,3 @@ EcruteakCity_Theater_Text_ZukiAfterAll:
 EcruteakCity_Theater_Text_KimonoGirlsBeforeBattle:
 	.string "Talk to ZUKI in the middle\n"
 	.string "when you are ready.$"
-

@@ -108,7 +108,11 @@ ViridianCity_Gym_Text_GiovanniIntro::
 	.string "Fwahahaha!\n"
 	.string "Welcome to my hideout!\p"
 	.string "It shall be so until I can restore\n"
+#if IS_HNS
+	.string "TEAM MEGA to its former glory.\p"
+#else
 	.string "TEAM ROCKET to its former glory.\p"
+#endif
 	.string "But, you have found me again.\n"
 	.string "So be it.\l"
 	.string "This time, I'm not holding back!\p"
@@ -126,7 +130,11 @@ ViridianCity_Gym_Text_GiovanniPostBattle::
 	.string "Having lost in this fashion, \n"
 	.string "I can't face my followers.\l"
 	.string "I have betrayed their trust.\p"
+#if IS_HNS
+	.string "As of today, TEAM MEGA is\n"
+#else
 	.string "As of today, TEAM ROCKET is\n"
+#endif
 	.string "finished forever!\p"
 	.string "As for myself, I shall dedicate\n"
 	.string "my life to training again.\p"
@@ -274,4 +282,3 @@ ViridianCity_Gym_Text_GymStatuePlayerWon::
 	.string "LEADER: GIOVANNI\p"
 	.string "WINNING TRAINERS:\n"
 	.string "{RIVAL}, {PLAYER}$"
-

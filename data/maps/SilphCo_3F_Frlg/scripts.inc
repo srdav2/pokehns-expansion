@@ -53,7 +53,11 @@ SilphCo_3F_Text_GruntPostBattle::
 	.string "a CARD KEY!$"
 
 SilphCo_3F_Text_JoseIntro::
+#if IS_HNS
+	.string "I support TEAM MEGA more than\n"
+#else
 	.string "I support TEAM ROCKET more than\n"
+#endif
 	.string "I support SILPH CO.!$"
 
 SilphCo_3F_Text_JoseDefeat::
@@ -61,7 +65,11 @@ SilphCo_3F_Text_JoseDefeat::
 
 SilphCo_3F_Text_JosePostBattle::
 	.string "Humph…\p"
+#if IS_HNS
+	.string "TEAM MEGA said that if I helped\n"
+#else
 	.string "TEAM ROCKET said that if I helped\n"
+#endif
 	.string "them, they'd let me study POKéMON.$"
 
 SilphCo_3F_Text_FloorSign::

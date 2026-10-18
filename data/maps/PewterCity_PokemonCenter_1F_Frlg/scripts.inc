@@ -46,7 +46,11 @@ PewterCity_PokemonCenter_1F_EventScript_GBAKid2::
 
 PewterCity_PokemonCenter_1F_Text_TeamRocketMtMoonImOnPhone::
 	.string "What!?\p"
+#if IS_HNS
+	.string "TEAM MEGA is at MT. MOON?\n"
+#else
 	.string "TEAM ROCKET is at MT. MOON?\n"
+#endif
 	.string "Huh?\p"
 	.string "I'm on the phone!\n"
 	.string "Scram!$"

@@ -470,7 +470,11 @@ CeladonCity_GameCorner_Text_CanExchangeCoinsNextDoor::
 	.string "fabulous prizes next door.$"
 
 CeladonCity_GameCorner_Text_WelcomeBuySomeCoins::
+#if IS_HNS
+	.string "Welcome to MEGA GAME CORNER!\p"
+#else
 	.string "Welcome to ROCKET GAME CORNER!\p"
+#endif
 	.string "Do you need some game COINS?\n"
 	.string "Would you like to buy some?$"
 
@@ -496,7 +500,11 @@ CeladonCity_GameCorner_Text_HereAreYourCoins::
 CeladonCity_GameCorner_Text_RumoredTeamRocketRunsThisPlace::
 	.string "Keep this quiet.\p"
 	.string "It's rumored that this place is run\n"
+#if IS_HNS
+	.string "by TEAM MEGA.$"
+#else
 	.string "by TEAM ROCKET.$"
+#endif
 
 CeladonCity_GameCorner_Text_ThinkMachinesHaveDifferentOdds::
 	.string "I think these machines have\n"
@@ -580,7 +588,11 @@ CeladonCity_GameCorner_Text_GruntDefeat::
 	.string "Dang!$"
 
 CeladonCity_GameCorner_Text_GruntPostBattle::
+#if IS_HNS
+	.string "The TEAM MEGA HIDEOUT might\n"
+#else
 	.string "The TEAM ROCKET HIDEOUT might\n"
+#endif
 	.string "be discovered!\p"
 	.string "I better tell BOSS!$"
 

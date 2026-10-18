@@ -313,7 +313,7 @@ Route22_Text_Giovanni2:
 	.string "I failed... to make the best use of\n"
 	.string "my subordinates' potential...!\p"
 	.string "But you shall witness one day the\n"
-	.string "revival of me and my TEAM ROCKET!$"
+	.string "revival of me and my TEAM MEGA!$"
 
 Route22_Text_Silver3:
 	.string "{RIVAL}: I don't understand you!\p"
