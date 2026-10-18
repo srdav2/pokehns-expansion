@@ -27,8 +27,14 @@ Final ROM: 31,748,276 B (94.62% of 32 MB). Build passes.
 ## Playtest steps (new)
 Union Cave 1F south corridor; Chuck gym trainer class names; Fuchsia sign/Safari entrance; region map label; Underground Tunnel Debate Bros; Ecruteak Pell trigger near Burned Tower; finish game via Red -> Axis -> TV room -> Route 29.
 
+## Fix round 2
+- Border Agents 1/2 now have full T3 sets (4 moves, item, ability, nature, IVs 26, EVs 252/252/4, Smart Trainer, Hyper Potions).
+- Seven pass-1 trainers (Rally Goers 1/2, Route 30 MEGA grunt, Sprout Pastors 1/2, Indigo Rally Goers 1/2) have 4 moves per mon. IVs 0, matching the HnS trainers on Route 30 / Sprout Tower / Route 27 (all 0). Route 29 and Indigo Center have no HnS trainers, so I used the same 0.
+- Tin Tower gate: the Ecruteak warp (37,16) sits on a solid wall in the HnS layout and cannot be reached. The only real entrance is the door at Bellchime Trail (35,41), approached only from (35,42) (neighbours are walls). A coord trigger at (35,42) plus a Pell object at (36,42) now run the Pell battle until `FLAG_GILDED_WARDEN_PELL_DEFEATED` is set. The decoy Pell I put at Ecruteak (38,23) is removed. The Burned Tower Pell still shares the flag. Not played; trace is from map.json collision.
+- Final ROM 31,748,420 B.
+
 ## Unverified assumptions
-Ledge/water metatile behaviour was not checked by the audit (collision only). Ecruteak Tin Tower warps (36-37,16) sit inside a solid building (pre-existing HnS geometry); Pell Tin moved to the road (38,23) and may not match the intended gate. Border Wall geometry; Silph sight lines; Axis/TV room/Route 29 warp coords; Pidgeot fly-off may bump a wall.
+Ledge/water metatile behaviour was not checked by the audit (collision only). Ecruteak Tin Tower warps (36-37,16) sit inside a solid building (pre-existing HnS geometry); Tin Tower is now gated at Bellchime Trail (35,42); the metatile at (35,41) is assumed to be a door-behaviour tile. Border Wall geometry; Silph sight lines; Axis/TV room/Route 29 warp coords; Pidgeot fly-off may bump a wall.
 
 ## Deferred
-Chuck gym team rework; sprite swaps; Border Wall is 2 tiles; Grindwell double reward; no Giratina sprite on Axis; party text-only on Route 29; Crypto Bros are new trainers; overworld palette audit; Silver act-end reaction; full Rage Radio rebrand; Heritage shared gate/Pell poster.
+Chuck gym team rework; sprite swaps; Border Wall is 2 tiles; Grindwell double reward; no Giratina sprite on Axis; party text-only on Route 29; Crypto Bros are new trainers; overworld palette audit; Silver act-end reaction; full Rage Radio rebrand; Pell poster.

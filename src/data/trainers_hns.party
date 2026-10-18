@@ -16013,9 +16013,19 @@ AI: Basic Trainer
 
 Sentret
 Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Scratch
+- Defense Curl
+- Quick Attack
+- Foresight
 
 Hoothoot
 Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Growl
+- Foresight
+- Peck
 
 === TRAINER_RALLY_GOER_2_GILDED_HNS ===
 Name: CANVASSER
@@ -16028,9 +16038,19 @@ AI: Basic Trainer
 
 Pidgey
 Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Sand Attack
+- Gust
+- Quick Attack
 
 Rattata
 Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Tail Whip
+- Quick Attack
+- Focus Energy
 
 === TRAINER_MEGA_GRUNT_ROUTE30_HNS ===
 Name: MEGA
@@ -16043,9 +16063,19 @@ AI: Basic Trainer
 
 Rattata
 Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
+- Tail Whip
+- Quick Attack
+- Focus Energy
 
 Zubat
 Level: 7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Leech Life
+- Supersonic
+- Astonish
+- Bite
 
 === TRAINER_PASTOR_GROWTH_1_HNS ===
 Name: GROWTH
@@ -16058,9 +16088,19 @@ AI: Basic Trainer
 
 Bellsprout
 Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Vine Whip
+- Growth
+- Wrap
+- Poison Powder
 
 Bellsprout
 Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Vine Whip
+- Growth
+- Wrap
+- Poison Powder
 
 === TRAINER_PASTOR_GROWTH_2_HNS ===
 Name: GROWTH
@@ -16073,9 +16113,19 @@ AI: Basic Trainer
 
 Bellsprout
 Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Vine Whip
+- Growth
+- Wrap
+- Poison Powder
 
 Bellsprout
 Level: 7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Vine Whip
+- Growth
+- Wrap
+- Poison Powder
 
 === TRAINER_CHAD_GRINDWELL_SLOWPOKE_WELL_HNS ===
 Name: CHAD
@@ -16806,16 +16856,41 @@ Pic: Officer Hns
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
+Items: Hyper Potion / Hyper Potion
 
-Growlithe
+Houndour @ Life Orb
+Ability: Flash Fire
 Level: 50
+Timid Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 SpA / 252 Spe / 4 SpD
+- Heat Wave
+- Dark Pulse
+- Sucker Punch
+- Nasty Plot
 
-Houndour
+Stantler @ Choice Scarf
+Ability: Intimidate
 Level: 50
+Jolly Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Double-Edge
+- Zen Headbutt
+- Earthquake
+- Megahorn
 
-Stantler
+Growlithe @ Eviolite
+Ability: Intimidate
 Level: 51
+Adamant Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Flare Blitz
+- Wild Charge
+- Crunch
+- Morning Sun
 
 === TRAINER_BORDER_AGENT_2_HNS ===
 Name: AGENT
@@ -16824,16 +16899,41 @@ Pic: Officer Hns
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
+Items: Hyper Potion / Hyper Potion
 
-Houndour
+Growlithe @ Life Orb
+Ability: Flash Fire
 Level: 51
+Adamant Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Flare Blitz
+- Close Combat
+- Crunch
+- Morning Sun
 
-Growlithe
+Houndour @ Eviolite
+Ability: Early Bird
 Level: 51
+Timid Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 SpA / 252 Spe / 4 SpD
+- Flamethrower
+- Dark Pulse
+- Will-O-Wisp
+- Sucker Punch
 
-Stantler
+Stantler @ Assault Vest
+Ability: Sap Sipper
 Level: 52
+Adamant Nature
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+EVs: 252 Atk / 252 HP / 4 Def
+- Double-Edge
+- Zen Headbutt
+- Earthquake
+- Thunder Wave
 
 === TRAINER_BRAD_GRINDWELL_CERULEAN_CAPE_HNS ===
 Name: BRAD
@@ -17459,9 +17559,19 @@ AI: Basic Trainer
 
 Machoke
 Level: 54
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Close Combat
+- Cross Chop
+- Knock Off
+- Bulk Up
 
 Primeape
 Level: 55
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Close Combat
+- Gunk Shot
+- U-turn
+- Ice Punch
 
 === TRAINER_GILDED_RALLY_GOER_INDIGO_2_HNS ===
 Name: CANVASSER
@@ -17474,9 +17584,19 @@ AI: Basic Trainer
 
 Torkoal
 Level: 55
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Lava Plume
+- Earth Power
+- Yawn
+- Rapid Spin
 
 Houndoom
 Level: 56
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Flamethrower
+- Dark Pulse
+- Sucker Punch
+- Nasty Plot
 
 === TRAINER_DEBATE_BRO_1_HNS ===
 Name: DEBATER

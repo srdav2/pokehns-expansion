@@ -36,3 +36,5 @@
 2026-10-18 | P2-09 | Finale sequenced with VAR_GILDED_FINALE across maps | free flags exhausted; var 0x40E0 was unused
 | 2025 | P2 follow-up | Union Cave toll grunts are battle-only | no payment system needed |
 | 2026 | P2 audit | Pell Tin moved to (38,23) | original spot unreachable inside building |
+| 2026 | P2 fix | Tin Tower gate moved to Bellchime Trail (35,42); decoy Ecruteak Pell removed | Ecruteak warp is on an unreachable wall; Bellchime is the only entrance |
+| 2026 | P2 fix | Pass-1 movesetless trainers use IVs 0 | matches HnS trainers on same routes |

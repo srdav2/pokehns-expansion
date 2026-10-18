@@ -2,6 +2,24 @@ BellchimeTrail_hns_MapScripts::
 	.byte 0
 
 
+BellchimeTrail_EventScript_PellGate::
+	lock
+	goto_if_set FLAG_GILDED_WARDEN_PELL_DEFEATED, BellchimeTrail_EventScript_PellGatePass
+	faceplayer
+	trainerbattle_single TRAINER_WARDEN_PELL_ECRUTEAK_GATE_HNS, EcruteakCity_Text_WardenPellSeen, EcruteakCity_Text_WardenPellBeaten, BellchimeTrail_EventScript_PellGateAfter
+	release
+	end
+
+BellchimeTrail_EventScript_PellGatePass::
+	release
+	end
+
+BellchimeTrail_EventScript_PellGateAfter::
+	setflag FLAG_GILDED_WARDEN_PELL_DEFEATED
+	removeobject LOCALID_GILDED_WARDEN_PELL_BELLCHIME
+	release
+	end
+
 BellchimeTrail_EventScript_Morty::
 	lock
 	faceplayer

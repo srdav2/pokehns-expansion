@@ -605,3 +605,8 @@ Playtest: debug warp to Union Cave 1F, walk south corridor; check Fuchsia sign; 
 ## Pass 2 placement audit
 Status: BUILT — NEEDS PLAYTEST
 - Moved Debate Bros (were out of bounds) and both Warden Pell objects in Ecruteak (were on wall tiles). Audit checks collision, event tiles, warp adjacency, reachability. Ledge behaviour not checked.
+
+## Pass 2 fix round 2
+Status: BUILT — NEEDS PLAYTEST
+- Border Agents T3 sets; 7 pass-1 trainers got 4 moves/mon; Tin Tower gated by Pell at Bellchime Trail (35,42).
+Playtest: debug-warp to Bellchime Trail, walk to (35,42) without FLAG_GILDED_WARDEN_PELL_DEFEATED: Pell fights; after winning, press up to enter. Route 27 Border Agents.

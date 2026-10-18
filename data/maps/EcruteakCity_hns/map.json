@@ -689,20 +689,6 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_GILDED_WARDEN_PELL_TIN",
-      "graphics_id": "OBJ_EVENT_GFX_OFFICER_HNS",
-      "x": 38,
-      "y": 23,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
-      "script": "EcruteakCity_EventScript_WardenPell",
-      "flag": "FLAG_GILDED_WARDEN_PELL_DEFEATED"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_BOY_2_HNS",
       "x": 33,
       "y": 37,

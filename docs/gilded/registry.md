@@ -391,3 +391,5 @@ No new constants. Trainer placements: `TRAINER_COLONEL_BUCKSHOT_RADIO_TOWER_HNS`
 - Map: GoldenrodCity_TVRoom_hns (MAP_GOLDENROD_CITY_TV_ROOM_HNS)
 
 - Trainers 690–691: TRAINER_UNION_TOLL_GRUNT_1/2_HNS (Union Cave 1F). Scripts Gilded_UnionToll_1/2.
+
+- `LOCALID_GILDED_WARDEN_PELL_BELLCHIME` (90) on BellchimeTrail_hns; coord trigger (35,42) VAR_TEMP_1. `LOCALID_GILDED_WARDEN_PELL_TIN` is no longer used by any object.
