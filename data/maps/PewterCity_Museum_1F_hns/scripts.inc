@@ -70,3 +70,14 @@ PewterCity_Museum_1F_Text_Oldman:
 PewterCity_Museum_1F_Text_Bones:
 	.string "Bones of an ancient dragon\n"
 	.string "POKéMON.$"
+
+PewterCity_Museum_1F_EventScript_Pell::
+	msgbox PewterCity_Museum_1F_Text_Pell, MSGBOX_NPC
+	end
+
+PewterCity_Museum_1F_Text_Pell:
+	.string "PELL: I'm here to correct the\n"
+	.string "fossils.\p"
+	.string "EXHIBIT REMOVED: KABUTOPS.\n"
+	.string "Too divisive. BROCK is putting\l"
+	.string "them back. Quietly.$"

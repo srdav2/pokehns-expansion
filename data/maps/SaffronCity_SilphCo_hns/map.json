@@ -53,6 +53,62 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SaffronCity_SilphCo_EventScript_Receptionist",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_GILDED_DOGE_AUDITOR_1",
+      "graphics_id": "OBJ_EVENT_GFX_ENGINEER_HNS",
+      "x": 12,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "SaffronCity_SilphCo_EventScript_Auditor1",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_GILDED_DOGE_AUDITOR_2",
+      "graphics_id": "OBJ_EVENT_GFX_ENGINEER_HNS",
+      "x": 22,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "SaffronCity_SilphCo_EventScript_Auditor2",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_GILDED_DOGE_AUDITOR_3",
+      "graphics_id": "OBJ_EVENT_GFX_ENGINEER_HNS",
+      "x": 28,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "SaffronCity_SilphCo_EventScript_Auditor3",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_GILDED_DOGE_EMAIL",
+      "graphics_id": "OBJ_EVENT_GFX_BEAUTY_HNS",
+      "x": 8,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SaffronCity_SilphCo_EventScript_EmailPrompt",
+      "flag": "0"
     }
   ],
   "warp_events": [

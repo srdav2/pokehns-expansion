@@ -531,3 +531,11 @@ Added trainers 675–686 (see registry). Boss grep: `python3 /tmp/check.py` flag
 - [ ] Debug: set `VAR_KANTO_ROCKET_STORY_STATE` = 1, go to Power Plant Entrance, talk to the engineer at (9,20), say Yes. Land at (4,18) in the mine. Fight Bro 1, Bro 2, then Grindwell Bros (should be a double battle with 6 mons, Electivire/Gallade lead). Talk to the engineer at (3,18) to leave.
 - [ ] Route 25 east end: with `VAR_CERULEAN_CITY_STATE` at the pre-date value and `FLAG_HIDE_ROUTE25_MISTY` cleared, trigger the date: Brad 2 battle, then Misty lines.
 Boss grep: `/tmp/check.py` passes for 675–678 (P2-05 run); no new boss entries in P2-06.
+
+## P2-07: D.O.G.E. HQ, Big Game Ranch, Cinnabar, Pewter
+Status: BUILT_PARTIAL — NEEDS PLAYTEST
+- Silph Co: 3 Auditor trainers (679-681), Pressure Prompt 12 terminal, D.O.G.E. signs.
+- Safari entrance: optional Buckshot 3 fight (talk to Fisherman at (6,8)); Scope Lens once.
+- Cinnabar: MEGA Official NPC (38,22). Pewter Museum 1F: Pell exhibit NPC (20,5).
+Deferred: Safari chart "Big Game Ranch" re-text (shared scripts), Janine/Sabrina extra lines, Brock museum line.
+Playtest: warp to SaffronCity_SilphCo_hns, walk into auditor sight lines, use terminal at (8,6); talk to Fisherman in Safari entrance; talk to NPCs at Cinnabar and Pewter Museum.

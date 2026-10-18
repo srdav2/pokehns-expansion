@@ -121,3 +121,12 @@ CinnabarIsland_Text_Sign:
 	.string "CINNABAR ISLAND\p"
 	.string "The Fiery Town of Burning Desire$"
 
+
+CinnabarIsland_EventScript_MegaOfficial::
+	msgbox CinnabarIsland_Text_MegaOfficial, MSGBOX_NPC
+	end
+
+CinnabarIsland_Text_MegaOfficial:
+	.string "MEGA OFFICIAL: It's just weather.\n"
+	.string "Islands explode sometimes.\p"
+	.string "Please ignore the volcano.$"

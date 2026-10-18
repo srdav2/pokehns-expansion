@@ -379,3 +379,48 @@ FuchsiaCity_SafariZoneEntrance_Text_MaxLevel:
 	.string "Hello {PLAYER}, thank you for\n"
 	.string "continuing to be a premium member\l"
 	.string "at the FUCHSIA SAFARI ZONE.$"
+
+FuchsiaCity_SafariZoneEntrance_EventScript_Buckshot::
+	lock
+	faceplayer
+	goto_if_defeated TRAINER_COLONEL_BUCKSHOT_BIG_GAME_RANCH_HNS, FuchsiaCity_SafariZoneEntrance_EventScript_BuckshotAfter
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_BuckshotIntro, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FuchsiaCity_SafariZoneEntrance_EventScript_BuckshotNo
+	trainerbattle_no_intro TRAINER_COLONEL_BUCKSHOT_BIG_GAME_RANCH_HNS, FuchsiaCity_SafariZoneEntrance_Text_BuckshotBeaten
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_BuckshotReward, MSGBOX_DEFAULT
+	giveitem ITEM_SCOPE_LENS
+	release
+	end
+
+FuchsiaCity_SafariZoneEntrance_EventScript_BuckshotNo::
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_BuckshotNo, MSGBOX_DEFAULT
+	release
+	end
+
+FuchsiaCity_SafariZoneEntrance_EventScript_BuckshotAfter::
+	msgbox FuchsiaCity_SafariZoneEntrance_Text_BuckshotAfter, MSGBOX_DEFAULT
+	release
+	end
+
+FuchsiaCity_SafariZoneEntrance_Text_BuckshotIntro:
+	.string "BUCKSHOT: Welcome to the BIG GAME\n"
+	.string "RANCH. Catch-and-release!\p"
+	.string "...I mean catch. And keep.\n"
+	.string "Ready for a hunt, kid?$"
+
+FuchsiaCity_SafariZoneEntrance_Text_BuckshotBeaten:
+	.string "BUCKSHOT: Outgunned!$"
+
+FuchsiaCity_SafariZoneEntrance_Text_BuckshotReward:
+	.string "BUCKSHOT: It's catch-and-release,\n"
+	.string "Colonel. We've been over this.\p"
+	.string "...Take this. Tell no one.$"
+
+FuchsiaCity_SafariZoneEntrance_Text_BuckshotNo:
+	.string "BUCKSHOT: Come back when you're\n"
+	.string "armed. JANINE says don't brag\l"
+	.string "about gear. JANINE is wrong.$"
+
+FuchsiaCity_SafariZoneEntrance_Text_BuckshotAfter:
+	.string "BUCKSHOT: The ranch is closed.\n"
+	.string "To me, personally.$"

@@ -137,12 +137,12 @@ SaffronCity_SilphCo_EventScript_Sign2::
 	end
 
 SilphCo_Text_Sign1:
-	.string "SILPH CO.\n"
-	.string "1F RECEPTION.$"
+	.string "D.O.G.E. HEADQUARTERS\n"
+	.string "Dept. Of Gym Efficiency$"
 
 SilphCo_Text_Sign2:
-	.string "SILPH CO.\n"
-	.string "ELEVATOR OUT OF SERVICE$"
+	.string "D.O.G.E.: ELEVATOR REMOVED\n"
+	.string "(Saved 4 jobs. Cost 40 jobs.)$"
 
 SilphCo_Text_Receptionist:
 	.string "Welcome. This is SILPH CO.'s HEAD\n"
@@ -158,3 +158,88 @@ SilphCo_Text_Officer:
 SilphCo_Text_Officer_GotUpGrade:
 	.string "It's SILPH CO.'s latest product.\p"
 	.string "It's not for sale anywhere yet.$"
+
+SaffronCity_SilphCo_EventScript_Auditor1::
+	trainerbattle_single TRAINER_DOGE_AUDITOR_1_HNS, SaffronCity_SilphCo_Text_AuditSeen1, SaffronCity_SilphCo_Text_AuditBeaten1
+	msgbox SaffronCity_SilphCo_Text_AuditAfter1, MSGBOX_AUTOCLOSE
+	end
+
+SaffronCity_SilphCo_EventScript_Auditor2::
+	trainerbattle_single TRAINER_DOGE_AUDITOR_2_HNS, SaffronCity_SilphCo_Text_AuditSeen2, SaffronCity_SilphCo_Text_AuditBeaten2
+	msgbox SaffronCity_SilphCo_Text_AuditAfter2, MSGBOX_AUTOCLOSE
+	end
+
+SaffronCity_SilphCo_EventScript_Auditor3::
+	trainerbattle_single TRAINER_DOGE_AUDITOR_3_HNS, SaffronCity_SilphCo_Text_AuditSeen3, SaffronCity_SilphCo_Text_AuditBeaten3
+	msgbox SaffronCity_SilphCo_Text_AuditAfter3, MSGBOX_AUTOCLOSE
+	end
+
+SaffronCity_SilphCo_EventScript_EmailPrompt::
+	lock
+	faceplayer
+	goto_if_set FLAG_GILDED_PRESSURE_PROMPT_SAFFRON, SaffronCity_SilphCo_EventScript_EmailDone
+	msgbox SaffronCity_SilphCo_Text_Email, MSGBOX_YESNO
+	setflag FLAG_GILDED_PRESSURE_PROMPT_SAFFRON
+	goto_if_eq VAR_RESULT, YES, SaffronCity_SilphCo_EventScript_EmailYes
+	msgbox SaffronCity_SilphCo_Text_EmailNo, MSGBOX_DEFAULT
+	release
+	end
+
+SaffronCity_SilphCo_EventScript_EmailYes::
+	addvar VAR_PRESSURE_POINTS, 1
+	msgbox SaffronCity_SilphCo_Text_EmailYes, MSGBOX_DEFAULT
+	release
+	end
+
+SaffronCity_SilphCo_EventScript_EmailDone::
+	msgbox SaffronCity_SilphCo_Text_EmailDone, MSGBOX_DEFAULT
+	release
+	end
+
+SaffronCity_SilphCo_Text_AuditSeen1:
+	.string "Audit time. Justify your\n"
+	.string "existence in five POKéMON.$"
+
+SaffronCity_SilphCo_Text_AuditBeaten1:
+	.string "Efficiency: 0%.$"
+
+SaffronCity_SilphCo_Text_AuditAfter1:
+	.string "We made the gym trainers\n"
+	.string "efficient. They're gone.$"
+
+SaffronCity_SilphCo_Text_AuditSeen2:
+	.string "This floor is under review.\n"
+	.string "So are you.$"
+
+SaffronCity_SilphCo_Text_AuditBeaten2:
+	.string "Review complete. Painful.$"
+
+SaffronCity_SilphCo_Text_AuditAfter2:
+	.string "We cut costs by cutting\n"
+	.string "everything. Even the lights.$"
+
+SaffronCity_SilphCo_Text_AuditSeen3:
+	.string "Reply with five things you did\n"
+	.string "this week. Or battle.$"
+
+SaffronCity_SilphCo_Text_AuditBeaten3:
+	.string "That was my five things.$"
+
+SaffronCity_SilphCo_Text_AuditAfter3:
+	.string "SABRINA replied with her mind.\n"
+	.string "We're still confused.$"
+
+SaffronCity_SilphCo_Text_Email:
+	.string "D.O.G.E. EMAIL: Reply with 5\n"
+	.string "things you did this week.$"
+
+SaffronCity_SilphCo_Text_EmailYes:
+	.string "Thank you. You're fired from a\n"
+	.string "job you never had.$"
+
+SaffronCity_SilphCo_Text_EmailNo:
+	.string "No reply. Noted. Efficient.$"
+
+SaffronCity_SilphCo_Text_EmailDone:
+	.string "Your reply has been\n"
+	.string "forwarded to nobody.$"
