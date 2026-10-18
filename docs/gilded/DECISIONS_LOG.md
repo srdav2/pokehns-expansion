@@ -2,6 +2,7 @@
 
 | Date | Mission | Decision | Why |
 | --- | --- | --- | --- |
+| 2026-10-18 | GF14 | Keep the existing Sabrina and Erika event flows; deliver the current Act 12 slice through their existing dialogue and the Celadon Game Corner sign only. | This partial mission preserves both Gym progression paths without allocating flags/trainers or introducing untested map-state changes; larger D.O.G.E. and Act 13 content remains deferred. |
 | 2026-10-18 | GF13 | Rebrand the ship through existing port/onboard text and put Lt. Surge's N.R.A. refusal in his Gym introduction; defer the new booth and Act 11 events. | This preserves the ship's ticket/travel state and Surge's battle while avoiding a broad ship-wide trainer rewrite and new mine-map progression in this partial mission. |
 | 2026-10-18 | GF12 | Implement the Indigo pressure prompt, two Rally Goer battles, Elite Four reaction lines, Hall of Fame Giratina scene, and Bill's one-time storage dialogue; defer the new Route 27 gate and importer-backed storage behavior. | These map-local additions preserve the existing League state machine and trainer parties, while the route geometry and Hoenn-storage unlock need broader integration and GF-IMP. |
 | 2026-10-18 | GF11 | Use the existing yes/no prompt for Clair's two recount replies; make the Elder's recount answer repeat question six until the player chooses “Train harder.” | This preserves the HnS gym/Dragon's Den state transitions and prevents the joke answer from awarding progression or leaving the player stuck. |

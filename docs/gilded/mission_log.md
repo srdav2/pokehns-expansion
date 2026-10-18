@@ -337,3 +337,27 @@ Rebranded the S.S. Aqua boarding desk, onboard route/arrival announcements, and 
 - [ ] Confirm Lt. Surge's team and levels remain unchanged; continue to Diglett's Cave and confirm Snorlax is unaffected.
 
 The Kanto Acts 10–11 changes still need playtesting.
+
+## GF14 — Kanto Acts 12–13
+
+**Status: BUILT_PARTIAL — NEEDS PLAYTEST**
+
+Updated Sabrina's Gym introduction with the D.O.G.E. auditor exchange and “I replied with my mind,” while preserving her existing battle and badge flow. Updated Erika's fountain dialogue with the banned-scent joke and her sleepy reaction. Replaced Celadon Game Corner sign text with the GAUDY CASINO and its fourth-bankruptcy notice. No gym leader teams or levels were changed.
+
+**Deferred:**
+
+- Rebrand Silph Co. as D.O.G.E. headquarters, add Pressure Prompt 12, and add the three auditor battles.
+- Add Erika's physical perfume-shop notice and remaining Celadon/Gaudy Casino content.
+- Re-skin Fuchsia's Safari Zone entrance as the Big Game Ranch; add Colonel Buckshot and Janine's dialogue.
+- Add Cinnabar MEGA officials and the Pewter Museum Kabutops exhibit/Brock/Pell content.
+- `make check BUILD=hns -j8` remains blocked before tests by the existing `include/fake_rtc.h` / `struct SaveBlock3` compile error noted under GF1.
+
+**Playtest checklist:**
+
+- [ ] Open **R + Start → Utilities… → Warp to map warp…** and visit Saffron City Gym. Speak with Sabrina; confirm the auditor exchange and “I replied with my mind” fit the boxes, then confirm the existing battle, Marsh Badge, TM, and post-battle state work.
+- [ ] Confirm Sabrina's HnS team and levels remain unchanged.
+- [ ] Warp to Celadon City and speak with Erika at the fountain. Confirm the banned-scent and sleepy lines appear, then confirm the existing transition moves her to the Fighting Dojo.
+- [ ] Interact with the Game Corner sign in Celadon City; confirm it reads GAUDY CASINO, BANKRUPT (4th time), and UNDER NEW GAUDY MANAGEMENT.
+- [ ] Re-enter Celadon City after Erika's fountain event; confirm she remains at the Dojo and the existing Erika battle/state flow is unchanged.
+
+The Act 12–13 additions still need playtesting.

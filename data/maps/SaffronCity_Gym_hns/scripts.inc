@@ -60,16 +60,12 @@ SaffronCity_Gym_EventScript_Sabrina_Defeated::
 	end
 
 SaffronCity_Gym_Text_SabrinaIntro:
-	.string "SABRINA: I knew you were coming…\p"
-	.string "Three years ago I had a vision\n"
-	.string "of your arrival.\p"
-	.string "You're after my BADGE.\p"
-	.string "I don't enjoy battling, but it's\n"
-	.string "my duty as a LEADER to confer\l"
-	.string "BADGES on anyone who has proven\l"
-	.string "him- or herself worthy.\p"
-	.string "Since you wish it, I will show\n"
-	.string "you my psychic powers!$"
+	.string "SABRINA: The auditors asked what\n"
+	.string "I did this week.\p"
+	.string "I replied with my mind.\p"
+	.string "Three years ago, I foresaw you.\n"
+	.string "You're here for my BADGE.\p"
+	.string "I'll show you my psychic powers!$"
 
 SaffronCity_Gym_Text_SabrinaWinLoss:
 	.string "SABRINA: Your power…\p"

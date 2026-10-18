@@ -298,3 +298,11 @@ Pressure Prompt 11 uses `VAR_PRESSURE_POINTS = 0x40E5`. No new vars or specials 
 - Modified HnS maps: `VermilionCity_PortInside_hns`, `SSAqua_1F_hns`, `SSAqua_CaptainsRoom_hns`, and `VermilionCity_Gym_hns`.
 - No new flags, vars, trainers, maps, or specials were allocated. Lt. Surge's HnS team and level are unchanged.
 - The Act 11 Power Plant, Cerulean mine, and Misty date events remain deferred.
+
+## GF14 — Kanto Acts 12–13
+
+### Maps and specials
+
+- Modified HnS maps: `SaffronCity_Gym_hns` and `CeladonCity_hns`.
+- No new flags, vars, trainers, maps, or specials were allocated. Sabrina's and Erika's HnS teams and levels are unchanged.
+- The D.O.G.E. headquarters, Pressure Prompt 12, auditor battles, and Fuchsia/Cinnabar/Pewter content remain deferred.

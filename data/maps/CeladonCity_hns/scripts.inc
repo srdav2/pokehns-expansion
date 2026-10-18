@@ -20,10 +20,12 @@ CeladonCity_EventScript_Erika::
     end
 
 CeladonCity_Text_Erika:
-    .string "Oh, {PLAYER}.\n"
-	.string "Isn't the fountain lovely today?\p"
-	.string "If you wish for another battle,\n"
-	.string "I'll be at the FIGHTING DOJO.$"
+    .string "Oh, {PLAYER}. The fountain's\n"
+	.string "lovely today.\p"
+	.string "Banned: woke scents.\n"
+	.string "Zzz… they can ban whatever.\p"
+	.string "Zzz. Meet me at the DOJO for\n"
+	.string "another battle.$"
 
 CeladonCity_EventScript_Fatman::
 	msgbox CeladonCity_Text_Fisher, MSGBOX_NPC
@@ -157,8 +159,10 @@ CeladonCity_Text_MansionSign:
 	.string "CELADON MANSION$"
 
 CeladonCity_Text_GameCornerSign:
-	.string "The Playground for Everybody--\n"
-	.string "CELADON GAME CORNER$"
+	.string "GAUDY CASINO\p"
+	.string "BANKRUPT (4th time)\p"
+	.string "UNDER NEW GAUDY\n"
+	.string "MANAGEMENT$"
 
 CeladonCity_Text_TrainerTips:
 	.string "TRAINER TIPS\p"
