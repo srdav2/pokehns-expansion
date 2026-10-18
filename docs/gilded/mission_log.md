@@ -18,6 +18,20 @@ Added configurable perfect IVs (31) and EVs (252 per stat) for owned Pokémon. T
 - [ ] Battle a trainer and confirm the trainer's Pokémon retain their normal IVs/EVs.
 - [ ] Hatch an egg and complete an in-game trade, if reachable; confirm each received Pokémon has the configured values.
 
+## LX0 — Test setup
+
+**Status: BUILT_PARTIAL — NEEDS PLAYTEST**
+
+`python3 tools/rift/rift_savetool.py --selftest` passed. Rebuilt the HnS ROM successfully with the documented command.
+
+**Deferred:**
+
+- `make check BUILD=hns` and C test setup were skipped as instructed.
+
+**Playtest checklist:**
+
+- [ ] No in-game debug-menu steps apply to this tooling-only mission; rerun `python3 tools/rift/rift_savetool.py --selftest` and confirm it prints `selftest OK`.
+
 ## GF0 — Setup and audit
 
 **Status: BUILT — NEEDS PLAYTEST**
