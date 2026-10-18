@@ -514,3 +514,20 @@ Added trainers 675–686 (see registry). Boss grep: `python3 /tmp/check.py` flag
 **Deferred:** Crypto Bros are new trainers rather than a reclass of S.S. Aqua sailors.
 
 **Playtest:** trainers can be battled once placed. Until then use the debug menu's trainer battle if available.
+
+## P2-06 — Kanto Act 11: crypto mine, Brad 2
+
+**Status: BUILT — NEEDS PLAYTEST**
+
+- New map `CeruleanCity_CryptoMine_hns` (`MAP_CERULEAN_CITY_CRYPTO_MINE_HNS`, group Dungeons, layout copied from `CeruleanCave_B2F_hns`; hidden items/mons/warps removed). Appended to the end of `gMapGroup_Dungeons_Hns`.
+- Entry: Foreman NPC at (9,20) in `Route10_PowerPlantEntrance_hns`, shown once `VAR_KANTO_ROCKET_STORY_STATE` ≥ 1 (script `warp` to (4,18)). Exit: engineer at (3,18) in the mine, `warp` back to (9,21).
+- Mine contents: Thorne cameo (3,19), Crypto Bros 1/2 (sight trainers), Grindwell Bros double battle (single trainer object, sight 2), 2 rig signs.
+- Misty date (Route 25 Cape): the date NPC is now Brad (Archer sprite); `Route25_EventScript_Misty` runs Brad 2 (`trainerbattle_no_intro`), then "Thanks. He kept explaining water to me."
+- Machine Part flow (Cerulean Gym / Manager) untouched: the mine is optional and sets no story var.
+
+**Deferred:** no reward for the Grindwell double (text only); the mine's battle objects have no re-entry flag (trainer-defeated check hides repeat). Misty text order slightly rearranged.
+
+**Playtest:**
+- [ ] Debug: set `VAR_KANTO_ROCKET_STORY_STATE` = 1, go to Power Plant Entrance, talk to the engineer at (9,20), say Yes. Land at (4,18) in the mine. Fight Bro 1, Bro 2, then Grindwell Bros (should be a double battle with 6 mons, Electivire/Gallade lead). Talk to the engineer at (3,18) to leave.
+- [ ] Route 25 east end: with `VAR_CERULEAN_CITY_STATE` at the pre-date value and `FLAG_HIDE_ROUTE25_MISTY` cleared, trigger the date: Brad 2 battle, then Misty lines.
+Boss grep: `/tmp/check.py` passes for 675–678 (P2-05 run); no new boss entries in P2-06.

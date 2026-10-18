@@ -216,3 +216,33 @@ Route10_PowerPlantEntrance_Text_TradeCompleted:
 Route10_PowerPlantEntrance_Text_Engineer4WeCanGetMagnetTrainRunning:
 	.string "All right! We can finally get the\n"
 	.string "MAGNET TRAIN running again.$"
+
+Route10_PowerPlantEntrance_EventScript_MineForeman::
+	lock
+	faceplayer
+	goto_if_eq VAR_KANTO_ROCKET_STORY_STATE, 0, Route10_PowerPlantEntrance_EventScript_MineClosed
+	msgbox Route10_PowerPlantEntrance_Text_MineOpen, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route10_PowerPlantEntrance_EventScript_MineNo
+	closemessage
+	warp MAP_CERULEAN_CITY_CRYPTO_MINE_HNS, 4, 18
+	waitstate
+	end
+
+Route10_PowerPlantEntrance_EventScript_MineClosed::
+	msgbox Route10_PowerPlantEntrance_Text_MineClosed, MSGBOX_DEFAULT
+	release
+	end
+
+Route10_PowerPlantEntrance_EventScript_MineNo::
+	closemessage
+	release
+	end
+
+Route10_PowerPlantEntrance_Text_MineClosed:
+	.string "Nothing to see here. Just a\n"
+	.string "normal power plant.$"
+
+Route10_PowerPlantEntrance_Text_MineOpen:
+	.string "The grid is running hot. The\n"
+	.string "GRINDWELLS' mine is down the hatch.\p"
+	.string "Go down?$"

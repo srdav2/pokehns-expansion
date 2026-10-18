@@ -121,6 +121,9 @@ Route25_Trigger_MistyLeft::
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	goto Route25_EventScript_Misty
 Route25_EventScript_Misty::
+	msgbox Route25_Text_BradDate, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_BRAD_GRINDWELL_CERULEAN_CAPE_HNS, Route25_Text_BradBeaten
+	msgbox Route25_Text_MistyThanks, MSGBOX_DEFAULT
 	msgbox Route25_Text_MistyDate, MSGBOX_DEFAULT
 	closemessage
 	applymovement2 LOCALID_ROUTE25_MISTY, Route25_Movement_MistyLeave
@@ -508,3 +511,16 @@ Route25_Text_BillsHouseSign:
 	.string "SEA COTTAGE\n"
 	.string "BILL'S HOUSE$"
 
+
+Route25_Text_BradDate:
+	.string "BRAD: This is a private date.\n"
+	.string "Let me explain water to her.\p"
+	.string "...You're the one who beat my\n"
+	.string "brother. Fine. Battle.$"
+
+Route25_Text_BradBeaten:
+	.string "BRAD: That was not in the script.$"
+
+Route25_Text_MistyThanks:
+	.string "MISTY: Thanks. He kept explaining\n"
+	.string "water to me.$"

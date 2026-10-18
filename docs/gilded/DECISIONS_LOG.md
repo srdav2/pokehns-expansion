@@ -25,3 +25,4 @@
 | 2026-10-19 | P2-03 | Reuse existing trainer objects on 2F/3F/4F for the three bosses. | Same tiles and flags, so no new object placement risk or flags. |
 | 2026-10-19 | P2-04 | Used FLAG_UNUSED_EXTENDED_97 for the wall; 2-tile wall of boulder objects. | Corridor is 2 tiles wide; flags nearly exhausted. |
 | 2026-10-19 | P2-05 | Trainer name GRINDWELLS (10 chars); Crypto Bros as new trainers. | Names over 10 chars break the array; avoids touching Aqua sailors. |
+| 2026-10-19 | P2-06 | Mine is optional (no story var); Brad 2 hooked into the Misty date script. | Keeps Machine Part flow identical. |
