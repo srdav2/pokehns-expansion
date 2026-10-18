@@ -577,3 +577,10 @@ Status: BUILT_PARTIAL — NEEDS PLAYTEST
 - Positions auto-placed (see mission 6 audit below).
 Deferred: Heritage Officer battles (Routes 37/38) and shared Heritage Order gate; Pell poster; Alpha Dojo; Lighthouse Wellness reclass; Slowpoke Well reclass (items 4/later commits); full Rage Radio rebrand of hideout text.
 Playtest: warp to each map listed and talk to the new NPC; confirm text fits the box and the NPC does not block a path.
+
+## P2-14 (finish): Fact-Check the Unown
+Status: BUILT — NEEDS PLAYTEST
+- New map `RuinsOfAlph_FactCheck_hns` (`MAP_RUINS_OF_ALPH_FACT_CHECK_HNS`, appended to Dungeons group, reuses the Words Room 1 layout). Entered via the Fact-Checker NPC in Ruins of Alph Outside (26,24), gated on `FLAG_COMPLETED_KABUTO_PUZZLE`, by script `warp` to (10,13). Exit: coord triggers on row y=15 (x 8–12) warp back to Outside (22,22).
+- Three Unown talk objects; the third says TOUCH GRASS and gives TM Grass Knot once (VAR_GILDED_SIDEQUESTS bit 4).
+Deferred: none for this quest. Debate Club / Tariff / Yard Signs already built.
+Playtest: set FLAG_COMPLETED_KABUTO_PUZZLE via Flags & Vars, warp to Ruins of Alph Outside, talk to the scientist at (26,24); talk to each Unown; confirm TM once; walk down to leave.

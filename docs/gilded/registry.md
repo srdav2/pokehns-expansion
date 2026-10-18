@@ -381,3 +381,7 @@ No new constants. Trainer placements: `TRAINER_COLONEL_BUCKSHOT_RADIO_TOWER_HNS`
 
 ## P2-10/11
 - Scripts: Gilded_D1_0..43 (data/scripts/gilded_dialogue1.inc); no new flags/vars.
+
+## P2-14 finish
+- Map: RuinsOfAlph_FactCheck_hns; VAR_GILDED_SIDEQUESTS bit 4 = Grass Knot TM given
+- Scripts: Gilded_FactCheck_*
