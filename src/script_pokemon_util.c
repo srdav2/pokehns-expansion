@@ -25,6 +25,7 @@
 #include "pokedex.h"
 #include "pokemon.h"
 #include "pokemon_storage_system.h"
+#include "rift_shared.h"
 #include "random.h"
 #include "randomizer.h"
 #include "nuzlocke.h"
@@ -70,6 +71,8 @@ static void HealPlayerBoxes(void)
 
     for (boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)
     {
+        if (!Rift_IsBoxDepositable(boxId))
+            continue;
         for (boxPosition = 0; boxPosition < IN_BOX_COUNT; boxPosition++)
         {
             boxMon = &gPokemonStoragePtr->boxes[boxId][boxPosition];

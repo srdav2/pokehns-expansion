@@ -3694,25 +3694,26 @@ bool8 ShouldShowBoxWasFullMessage(void)
 bool8 IsDestinationBoxFull(void)
 {
     int box;
-    int i;
+    u8 boxCount;
+
     SetPCBoxToSendMon(VarGet(VAR_PC_BOX_TO_SEND_MON));
     box = StorageGetCurrentBox();
-    do
+    if (!Rift_IsBoxDepositable(box))
+        box = Rift_FirstDepositableBox();
+
+    for (boxCount = 0; boxCount < TOTAL_BOXES_COUNT; boxCount++)
     {
-        for (i = 0; i < IN_BOX_COUNT; i++)
+        if (Rift_IsBoxDepositable(box) && GetFirstFreeBoxSpot(box) != -1)
         {
-            if (GetBoxMonData(GetBoxedMonPtr(box, i), MON_DATA_SPECIES, 0) == SPECIES_NONE)
-            {
-                if (GetPCBoxToSendMon() != box)
-                    FlagClear(FLAG_SHOWN_BOX_WAS_FULL_MESSAGE);
-                VarSet(VAR_PC_BOX_TO_SEND_MON, box);
-                return ShouldShowBoxWasFullMessage();
-            }
+            if (GetPCBoxToSendMon() != box)
+                FlagClear(FLAG_SHOWN_BOX_WAS_FULL_MESSAGE);
+            VarSet(VAR_PC_BOX_TO_SEND_MON, box);
+            return ShouldShowBoxWasFullMessage();
         }
 
         if (++box == TOTAL_BOXES_COUNT)
             box = 0;
-    } while (box != StorageGetCurrentBox());
+    }
     return FALSE;
 }
 

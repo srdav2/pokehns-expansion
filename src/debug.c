@@ -3895,6 +3895,8 @@ static void DebugAction_PCBag_Fill_PCBoxes_Fast(u8 taskId) //Credit: Sierraffini
 
     for (boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)
     {
+        if (!Rift_IsBoxDepositable(boxId))
+            continue;
         for (boxPosition = 0; boxPosition < IN_BOX_COUNT; boxPosition++, species++)
         {
             if (!GetBoxMonData(&gPokemonStoragePtr->boxes[boxId][boxPosition], MON_DATA_SANITY_HAS_SPECIES))
@@ -3923,6 +3925,8 @@ static void DebugAction_PCBag_Fill_PCBoxes_Slow(u8 taskId)
 
     for (boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)
     {
+        if (!Rift_IsBoxDepositable(boxId))
+            continue;
         for (boxPosition = 0; boxPosition < IN_BOX_COUNT; boxPosition++)
         {
             if (!GetBoxMonData(&gPokemonStoragePtr->boxes[boxId][boxPosition], MON_DATA_SANITY_HAS_SPECIES))

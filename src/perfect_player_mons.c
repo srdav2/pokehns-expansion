@@ -3,11 +3,11 @@
 #include "perfect_player_mons.h"
 #include "pokemon.h"
 #include "pokemon_storage_system.h"
+#include "rift_shared.h"
 
 static bool32 ShouldSweepBox(u8 boxId)
 {
-    // Rift contract (docs/rift/RIFT_CONTRACT.md §2): LX2 changes this to return Rift_IsBoxDepositable(boxId) so we never write the other game's boxes.
-    return TRUE;
+    return Rift_IsBoxDepositable(boxId);
 }
 
 void MaxPlayerBoxMonStats(struct BoxPokemon *boxMon)

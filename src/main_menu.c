@@ -26,6 +26,7 @@
 #include "pokeball.h"
 #include "pokedex.h"
 #include "pokemon.h"
+#include "pokemon_storage_system.h"
 #include "rift_shared.h"
 #include "random.h"
 #include "rtc.h"
@@ -696,6 +697,8 @@ static void Task_MainMenuCheckSaveFile(u8 taskId)
                 Rift_MigrateLegacyStorage();
             if (sRiftSaveKind == RIFT_SAVE_OWN || sRiftSaveKind == RIFT_SAVE_OWN_LEGACY)
             {
+                if (!Rift_IsBoxViewable(StorageGetCurrentBox()))
+                    SetCurrentBox(Rift_FirstDepositableBox());
                 tMenuType = HAS_SAVED_GAME;
                 if (IsMysteryGiftEnabled())
                     tMenuType++;

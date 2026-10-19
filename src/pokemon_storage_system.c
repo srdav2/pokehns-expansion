@@ -28,6 +28,7 @@
 #include "pokemon_icon.h"
 #include "pokemon_summary_screen.h"
 #include "pokemon_storage_system.h"
+#include "rift_shared.h"
 #include "script.h"
 #include "sound.h"
 #include "string_util.h"
@@ -113,6 +114,7 @@ enum {
     MSG_CANT_STORE_MAIL,
     MSG_NUZLOCKE_FAINTED,
     MSG_ONE_TYPE_BLOCKED,
+    MSG_RIFT_SEALED_BOXES,
 };
 
 // IDs for how to resolve variables in the above messages
@@ -390,6 +392,7 @@ struct ChooseBoxMenu
     u16 tileTag;
     u16 paletteTag;
     u8 curBox;
+    bool8 depositOnly;
     u8 subpriority;
 };
 
@@ -606,12 +609,13 @@ static bool8 SetMenuTexts_Mon(void);
 static bool8 SetMenuTexts_Item(void);
 
 // Choose box menu
-static void ChooseBoxMenu_CreateSprites(u8);
+static void ChooseBoxMenu_CreateSprites(u8, bool32);
 static void ChooseBoxMenu_DestroySprites(void);
 static void ChooseBoxMenu_MoveLeft(void);
 static void ChooseBoxMenu_MoveRight(void);
 static void ChooseBoxMenu_PrintInfo(void);
 static void SpriteCB_ChooseBoxArrow(struct Sprite *);
+static u8 GetNextAllowedBox(u8, s8, bool32);
 
 // Options menus
 static void InitMenu(void);
@@ -802,7 +806,7 @@ static void Task_InitBox(u8);
 static void SetUpScrollToBox(u8);
 static bool8 ScrollToBox(void);
 static s8 DetermineBoxScrollDirection(u8);
-static void SetCurrentBox(u8);
+void SetCurrentBox(u8);
 static struct BoxPokemon *GetCursorBoxMon(void);
 
 // Misc
@@ -1085,6 +1089,7 @@ static const struct StorageMessage sMessages[] =
     [MSG_CANT_STORE_MAIL]      = {COMPOUND_STRING("MAIL can't be stored!"),      MSG_VAR_NONE},
     [MSG_NUZLOCKE_FAINTED]     = {COMPOUND_STRING("fainted in Nuzlocke!"),       MSG_VAR_NONE},
     [MSG_ONE_TYPE_BLOCKED]     = {COMPOUND_STRING("Wrong type!"), MSG_VAR_NONE},
+    [MSG_RIFT_SEALED_BOXES]    = {COMPOUND_STRING("Boxes 1-7 are sealed by\nthe Rift."), MSG_VAR_NONE},
 };
 
 static bool8 IsBoxMonNuzlockeDead(u8 boxId, u8 position)
@@ -1433,6 +1438,9 @@ u8 CountMonsInBox(u8 boxId)
 s16 GetFirstFreeBoxSpot(u8 boxId)
 {
     u16 i;
+
+    if (!Rift_IsBoxDepositable(boxId))
+        return -1;
 
     for (i = 0; i < IN_BOX_COUNT; i++)
     {
@@ -1814,9 +1822,12 @@ static void FreeChooseBoxMenu(void)
     FreeSpriteTilesByTag(sChooseBoxMenu->tileTag + 1);
 }
 
-static void CreateChooseBoxMenuSprites(u8 curBox)
+static void CreateChooseBoxMenuSprites(u8 curBox, bool32 depositOnly)
 {
-    ChooseBoxMenu_CreateSprites(curBox);
+    sChooseBoxMenu->depositOnly = depositOnly;
+    if (depositOnly ? !Rift_IsBoxDepositable(curBox) : !Rift_IsBoxViewable(curBox))
+        curBox = GetNextAllowedBox(curBox, 1, depositOnly);
+    ChooseBoxMenu_CreateSprites(curBox, depositOnly);
 }
 
 static void DestroyChooseBoxMenuSprites(void)
@@ -1850,7 +1861,7 @@ static u8 HandleChooseBoxMenuInput(void)
     return BOXID_NONE_CHOSEN;
 }
 
-static void ChooseBoxMenu_CreateSprites(u8 curBox)
+static void ChooseBoxMenu_CreateSprites(u8 curBox, bool32 depositOnly)
 {
     u16 i;
     u8 spriteId;
@@ -1862,6 +1873,7 @@ static void ChooseBoxMenu_CreateSprites(u8 curBox)
         0, 0, &oamData, gDummySpriteAnimTable, NULL, gDummySpriteAffineAnimTable, SpriteCallbackDummy
     };
 
+    sChooseBoxMenu->depositOnly = depositOnly;
     sChooseBoxMenu->curBox = curBox;
     template.tileTag = sChooseBoxMenu->tileTag;
     template.paletteTag = sChooseBoxMenu->paletteTag;
@@ -1927,16 +1939,38 @@ static void ChooseBoxMenu_DestroySprites(void)
     }
 }
 
+static u8 GetNextAllowedBox(u8 boxId, s8 direction, bool32 depositOnly)
+{
+    u8 i;
+
+    for (i = 0; i < TOTAL_BOXES_COUNT; i++)
+    {
+        if (direction > 0)
+        {
+            if (++boxId >= TOTAL_BOXES_COUNT)
+                boxId = 0;
+        }
+        else
+        {
+            boxId = (boxId == 0) ? TOTAL_BOXES_COUNT - 1 : boxId - 1;
+        }
+
+        if (depositOnly ? Rift_IsBoxDepositable(boxId) : Rift_IsBoxViewable(boxId))
+            return boxId;
+    }
+
+    return boxId;
+}
+
 static void ChooseBoxMenu_MoveRight(void)
 {
-    if (++sChooseBoxMenu->curBox >= TOTAL_BOXES_COUNT)
-        sChooseBoxMenu->curBox = 0;
+    sChooseBoxMenu->curBox = GetNextAllowedBox(sChooseBoxMenu->curBox, 1, sChooseBoxMenu->depositOnly);
     ChooseBoxMenu_PrintInfo();
 }
 
 static void ChooseBoxMenu_MoveLeft(void)
 {
-    sChooseBoxMenu->curBox = (sChooseBoxMenu->curBox == 0 ? TOTAL_BOXES_COUNT - 1 : sChooseBoxMenu->curBox - 1);
+    sChooseBoxMenu->curBox = GetNextAllowedBox(sChooseBoxMenu->curBox, -1, sChooseBoxMenu->depositOnly);
     ChooseBoxMenu_PrintInfo();
 }
 
@@ -2023,6 +2057,10 @@ static void EnterPokeStorage(u8 boxOption)
 {
     ResetTasks();
     sCurrentBoxOption = boxOption;
+    if (!Rift_IsBoxViewable(StorageGetCurrentBox())
+     || ((boxOption == OPTION_MOVE_ITEMS || boxOption == OPTION_SELECT_MON)
+      && !Rift_IsBoxDepositable(StorageGetCurrentBox())))
+        gPokemonStoragePtr->currentBox = Rift_FirstDepositableBox();
     sStorage = Alloc(sizeof(*sStorage));
     if (sStorage == NULL)
     {
@@ -2057,6 +2095,10 @@ static void CB2_ReturnToPokeStorage(void)
     else
     {
         sStorage->boxOption = sCurrentBoxOption;
+        if (!Rift_IsBoxViewable(StorageGetCurrentBox())
+         || ((sCurrentBoxOption == OPTION_MOVE_ITEMS || sCurrentBoxOption == OPTION_SELECT_MON)
+          && !Rift_IsBoxDepositable(StorageGetCurrentBox())))
+            gPokemonStoragePtr->currentBox = Rift_FirstDepositableBox();
         sStorage->isReopening = TRUE;
         sStorage->state = 0;
         sStorage->taskId = CreateTask(Task_InitPokeStorage, 3);
@@ -2096,7 +2138,7 @@ static void InitStartingPosData(void)
 {
     ClearSavedCursorPos();
     sInPartyMenu = (sStorage->boxOption == OPTION_DEPOSIT);
-    sDepositBoxId = 0;
+    sDepositBoxId = Rift_FirstDepositableBox();
 }
 
 static void SetMonIconTransparency(void)
@@ -2239,7 +2281,24 @@ static void Task_ShowPokeStorage(u8 taskId)
         break;
     case 1:
         if (!IsComputerScreenOpenEffectActive())
+        {
+            if (!Rift_IsBoxDepositable(RIFT_RIGHT_FIRST_BOX))
+            {
+                PrintMessage(MSG_RIFT_SEALED_BOXES);
+                sStorage->state++;
+            }
+            else
+            {
+                SetPokeStorageTask(Task_PokeStorageMain);
+            }
+        }
+        break;
+    case 2:
+        if (JOY_NEW(A_BUTTON | B_BUTTON | DPAD_ANY))
+        {
+            ClearBottomWindow();
             SetPokeStorageTask(Task_PokeStorageMain);
+        }
         break;
     }
 }
@@ -2347,9 +2406,8 @@ static void Task_PokeStorageMain(u8 taskId)
             break;
         case INPUT_SCROLL_RIGHT:
             PlaySE(SE_SELECT);
-            sStorage->newCurrBoxId = StorageGetCurrentBox() + 1;
-            if (sStorage->newCurrBoxId >= TOTAL_BOXES_COUNT)
-                sStorage->newCurrBoxId = 0;
+            sStorage->newCurrBoxId = GetNextAllowedBox(StorageGetCurrentBox(), 1,
+                sStorage->boxOption == OPTION_MOVE_ITEMS || sStorage->boxOption == OPTION_SELECT_MON);
             if (sStorage->boxOption != OPTION_MOVE_ITEMS)
             {
                 SetUpScrollToBox(sStorage->newCurrBoxId);
@@ -2363,9 +2421,8 @@ static void Task_PokeStorageMain(u8 taskId)
             break;
         case INPUT_SCROLL_LEFT:
             PlaySE(SE_SELECT);
-            sStorage->newCurrBoxId = StorageGetCurrentBox() - 1;
-            if (sStorage->newCurrBoxId < 0)
-                sStorage->newCurrBoxId = TOTAL_BOXES_COUNT - 1;
+            sStorage->newCurrBoxId = GetNextAllowedBox(StorageGetCurrentBox(), -1,
+                sStorage->boxOption == OPTION_MOVE_ITEMS || sStorage->boxOption == OPTION_SELECT_MON);
             if (sStorage->boxOption != OPTION_MOVE_ITEMS)
             {
                 SetUpScrollToBox(sStorage->newCurrBoxId);
@@ -2438,6 +2495,11 @@ static void Task_PokeStorageMain(u8 taskId)
             SetPokeStorageTask(Task_SwitchSelectedItem);
             break;
         case INPUT_MULTIMOVE_START:
+            if (!Rift_IsBoxDepositable(StorageGetCurrentBox()))
+            {
+                PlaySE(SE_FAILURE);
+                break;
+            }
             PlaySE(SE_SELECT);
             MultiMove_SetFunction(MULTIMOVE_START);
             sStorage->state = MSTATE_MULTIMOVE_RUN;
@@ -2942,7 +3004,7 @@ static void Task_DepositMenu(u8 taskId)
     case 0:
         PrintMessage(MSG_DEPOSIT_IN_WHICH_BOX);
         LoadChooseBoxMenuGfx(&sStorage->chooseBoxMenu, GFXTAG_CHOOSE_BOX_MENU, PALTAG_MISC_1, 3, FALSE);
-        CreateChooseBoxMenuSprites(sDepositBoxId);
+        CreateChooseBoxMenuSprites(sDepositBoxId, TRUE);
         sStorage->state++;
         break;
     case 1:
@@ -3598,7 +3660,8 @@ static void Task_JumpBox(u8 taskId)
     case 0:
         PrintMessage(MSG_JUMP_TO_WHICH_BOX);
         LoadChooseBoxMenuGfx(&sStorage->chooseBoxMenu, GFXTAG_CHOOSE_BOX_MENU, PALTAG_MISC_1, 3, FALSE);
-        CreateChooseBoxMenuSprites(StorageGetCurrentBox());
+        CreateChooseBoxMenuSprites(StorageGetCurrentBox(),
+            sStorage->boxOption == OPTION_MOVE_ITEMS || sStorage->boxOption == OPTION_SELECT_MON);
         sStorage->state++;
         break;
     case 1:
@@ -6586,6 +6649,9 @@ static void SetMovingMonData(u8 boxId, u8 position)
 
 static void SetPlacedMonData(u8 boxId, u8 position)
 {
+    if (boxId != TOTAL_BOXES_COUNT && !Rift_IsBoxDepositable(boxId))
+        return;
+
     if (OW_PC_HEAL <= GEN_7)
         HealPokemon(&sStorage->movingMon);
 
@@ -6956,6 +7022,7 @@ static void InitSummaryScreenData(void)
     }
     else
     {
+        gSpecialVar_MonBoxId = StorageGetCurrentBox();
         sStorage->summaryMon.box = GetBoxedMonPtr(StorageGetCurrentBox(), 0);
         sStorage->summaryStartPos = sCursorPosition;
         sStorage->summaryMaxPos = IN_BOX_COUNT - 1;
@@ -7026,7 +7093,9 @@ static bool8 CanPlaceMon(void)
     {
         if (sCursorArea == CURSOR_AREA_IN_PARTY && GetMonData(&gPlayerParty[sCursorPosition], MON_DATA_SPECIES) == SPECIES_NONE)
             return TRUE;
-        else if (sCursorArea == CURSOR_AREA_IN_BOX && GetBoxMonDataAt(StorageGetCurrentBox(), sCursorPosition, MON_DATA_SPECIES_OR_EGG) == SPECIES_NONE)
+        else if (sCursorArea == CURSOR_AREA_IN_BOX
+              && Rift_IsBoxDepositable(StorageGetCurrentBox())
+              && GetBoxMonDataAt(StorageGetCurrentBox(), sCursorPosition, MON_DATA_SPECIES_OR_EGG) == SPECIES_NONE)
             return TRUE;
         else
             return FALSE;
@@ -7038,6 +7107,9 @@ static bool8 CanShiftMon(void)
 {
     if (sIsMonBeingMoved)
     {
+        if (sCursorArea == CURSOR_AREA_IN_BOX && !Rift_IsBoxDepositable(StorageGetCurrentBox()))
+            return FALSE;
+
         if (sCursorArea == CURSOR_AREA_IN_PARTY && CountPartyAliveNonEggMonsExcept(sCursorPosition) == 0)
         {
             if (sStorage->displayMonIsEgg || GetMonData(&sStorage->movingMon, MON_DATA_HP) == 0)
@@ -7878,8 +7950,11 @@ static void AddBoxOptionsMenu(void)
 {
     InitMenu();
     SetMenuText(MENU_JUMP);
-    SetMenuText(MENU_WALLPAPER);
-    SetMenuText(MENU_NAME);
+    if (Rift_IsBoxDepositable(StorageGetCurrentBox()))
+    {
+        SetMenuText(MENU_WALLPAPER);
+        SetMenuText(MENU_NAME);
+    }
     SetMenuText(MENU_CANCEL);
 }
 
@@ -7895,6 +7970,8 @@ static u8 SetSelectionMenuTexts(void)
 static bool8 SetMenuTexts_Mon(void)
 {
     u16 species = GetSpeciesAtCursorPosition();
+    bool32 canModifyBox = sCursorArea != CURSOR_AREA_IN_BOX
+                       || Rift_IsBoxDepositable(StorageGetCurrentBox());
 
     switch (sStorage->boxOption)
     {
@@ -7946,15 +8023,21 @@ static bool8 SetMenuTexts_Mon(void)
             SetMenuText(MENU_STORE);
     }
 
-    SetMenuText(MENU_MARK);
-    if (sStorage->boxOption != OPTION_SELECT_MON)
-        SetMenuText(MENU_RELEASE);
+    if (canModifyBox)
+    {
+        SetMenuText(MENU_MARK);
+        if (sStorage->boxOption != OPTION_SELECT_MON)
+            SetMenuText(MENU_RELEASE);
+    }
     SetMenuText(MENU_CANCEL);
     return TRUE;
 }
 
 static bool8 SetMenuTexts_Item(void)
 {
+    if (sCursorArea == CURSOR_AREA_IN_BOX && !Rift_IsBoxDepositable(StorageGetCurrentBox()))
+        return FALSE;
+
     if (sStorage->displayMonSpecies == SPECIES_EGG)
         return FALSE;
 
@@ -9684,9 +9767,9 @@ u8 StorageGetCurrentBox(void)
     return gPokemonStoragePtr->currentBox;
 }
 
-static void SetCurrentBox(u8 boxId)
+void SetCurrentBox(u8 boxId)
 {
-    if (boxId < TOTAL_BOXES_COUNT)
+    if (Rift_IsBoxViewable(boxId))
         gPokemonStoragePtr->currentBox = boxId;
 }
 
@@ -9710,7 +9793,7 @@ u32 GetBoxMonDataAt(u8 boxId, u8 boxPosition, s32 request)
 
 void SetBoxMonDataAt(u8 boxId, u8 boxPosition, s32 request, const void *value)
 {
-    if (boxId < TOTAL_BOXES_COUNT && boxPosition < IN_BOX_COUNT)
+    if (boxId < TOTAL_BOXES_COUNT && boxPosition < IN_BOX_COUNT && Rift_IsBoxDepositable(boxId))
         SetBoxMonData(&gPokemonStoragePtr->boxes[boxId][boxPosition], request, value);
 }
 
@@ -9734,7 +9817,7 @@ u32 GetAndCopyBoxMonDataAt(u8 boxId, u8 boxPosition, s32 request, void *dst)
 
 void SetBoxMonAt(u8 boxId, u8 boxPosition, struct BoxPokemon *src)
 {
-    if (boxId < TOTAL_BOXES_COUNT && boxPosition < IN_BOX_COUNT)
+    if (boxId < TOTAL_BOXES_COUNT && boxPosition < IN_BOX_COUNT && Rift_IsBoxDepositable(boxId))
         gPokemonStoragePtr->boxes[boxId][boxPosition] = *src;
 }
 
@@ -9775,15 +9858,21 @@ u8 *GetBoxNamePtr(u8 boxId)
 static u8 GetBoxWallpaper(u8 boxId)
 {
     if (boxId < TOTAL_BOXES_COUNT)
-        return gPokemonStoragePtr->boxWallpapers[boxId];
+    {
+        u8 wallpaperId = gPokemonStoragePtr->boxWallpapers[boxId];
+        return wallpaperId < WALLPAPER_COUNT ? wallpaperId : 0;
+    }
     else
         return 0;
 }
 
 static void SetBoxWallpaper(u8 boxId, u8 wallpaperId)
 {
-    if (boxId < TOTAL_BOXES_COUNT && wallpaperId < WALLPAPER_COUNT)
-        gPokemonStoragePtr->boxWallpapers[boxId] = wallpaperId;
+    if (!Rift_IsBoxDepositable(boxId))
+        return;
+    if (wallpaperId >= WALLPAPER_COUNT)
+        wallpaperId = 0;
+    gPokemonStoragePtr->boxWallpapers[boxId] = wallpaperId;
 }
 
 // For moving to the next Pokémon while viewing the summary screen
@@ -9822,6 +9911,8 @@ bool8 CheckFreePokemonStorageSpace(void)
 
     for (i = 0; i < TOTAL_BOXES_COUNT; i++)
     {
+        if (!Rift_IsBoxDepositable(i))
+            continue;
         for (j = 0; j < IN_BOX_COUNT; j++)
         {
             if (!GetBoxMonData(&gPokemonStoragePtr->boxes[i][j], MON_DATA_SANITY_HAS_SPECIES))
@@ -10273,24 +10364,32 @@ void RemoveSelectedPcMon(struct Pokemon *mon)
 s32 StorePokemonInBox(struct BoxPokemon *src, u8 *boxId, u8 *position)
 {
     u8 boxIdTemp = StorageGetCurrentBox();
+    u8 boxesChecked;
 
-    while (boxIdTemp < TOTAL_BOXES_COUNT)
+    if (!Rift_IsBoxDepositable(boxIdTemp))
+        boxIdTemp = Rift_FirstDepositableBox();
+
+    for (boxesChecked = 0; boxesChecked < TOTAL_BOXES_COUNT; boxesChecked++)
     {
-        for (u32 boxPosition = 0; boxPosition < IN_BOX_COUNT; boxPosition++)
+        if (Rift_IsBoxDepositable(boxIdTemp))
         {
-            if (GetBoxMonDataAt(boxIdTemp, boxPosition, MON_DATA_SPECIES) == SPECIES_NONE)
+            for (u32 boxPosition = 0; boxPosition < IN_BOX_COUNT; boxPosition++)
             {
-                gPokemonStoragePtr->boxes[boxIdTemp][boxPosition] = *src;
+                if (GetBoxMonDataAt(boxIdTemp, boxPosition, MON_DATA_SPECIES) == SPECIES_NONE)
+                {
+                    gPokemonStoragePtr->boxes[boxIdTemp][boxPosition] = *src;
 
-                if (boxId != NULL)
-                    *boxId = boxIdTemp;
-                if (position != NULL)
-                    *position = boxPosition;
+                    if (boxId != NULL)
+                        *boxId = boxIdTemp;
+                    if (position != NULL)
+                        *position = boxPosition;
 
-                return 0;
+                    return 0;
+                }
             }
         }
-        boxIdTemp++;
+        if (++boxIdTemp == TOTAL_BOXES_COUNT)
+            boxIdTemp = 0;
     }
 
     return -1;
@@ -10302,6 +10401,8 @@ u16 GetFirstAliveBoxPokemon(void)
 
     for (i = 0; i < TOTAL_BOXES_COUNT; i++)
     {
+        if (!Rift_IsBoxViewable(i))
+            continue;
         for (j = 0; j < IN_BOX_COUNT; j++)
         {
             if (GetBoxMonData(&gPokemonStoragePtr->boxes[i][j], MON_DATA_SPECIES) != SPECIES_NONE

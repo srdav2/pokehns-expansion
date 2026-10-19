@@ -32,6 +32,7 @@
 #include "pokemon.h"
 #include "pokemon_sprite_visualizer.h"
 #include "pokemon_storage_system.h"
+#include "rift_shared.h"
 #include "pokemon_summary_screen.h"
 #include "pokedex_plus_hgss.h"
 #include "pokerus.h"
@@ -2520,6 +2521,14 @@ static void TryDrawExperienceProgressBar(void)
 static void SwitchToMoveSelection(u8 taskId)
 {
     enum Move move;
+
+    if (sMonSummaryScreen->isBoxMon
+     && sMonSummaryScreen->mode != SUMMARY_MODE_BOX_CURSOR
+     && !Rift_IsBoxDepositable(gSpecialVar_MonBoxId))
+    {
+        PlaySE(SE_FAILURE);
+        return;
+    }
 
     sMonSummaryScreen->firstMoveIndex = 0;
     move = sMonSummaryScreen->summary.moves[sMonSummaryScreen->firstMoveIndex];

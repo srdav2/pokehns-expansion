@@ -53,6 +53,34 @@ Copied the shared Rift contract/header/source without edits and added the Left-s
 - [ ] Load a pre-contract Left save with Pokémon in boxes 1–7; confirm migration packs them into boxes 8–14 and the next save stamps Left.
 - [ ] In a Right first-finish fixture, call each **Return anchor 1/2/3** debug action; confirm the returned Pokémon has levels 5/10/15 and cannot be returned twice. Fill party and depositable boxes to check the no-room path leaves the anchor returnable.
 
+## LX2 — PC box ownership
+
+**Status: BUILT — NEEDS PLAYTEST**
+
+Every PC insertion and free-space path now uses Left's depositable boxes, including catches, gifts, eggs, Day Care, scripted storage, bug-contest storage, PC fullness checks, and anchor returns. The storage UI skips boxes that cannot be viewed, and scripted box-mon selection, Move Items, placement, release/marking, wallpaper changes, and box renaming cannot modify sealed boxes. Legacy overflow remains viewable and withdraw-only; summary viewing is retained, but move reordering and PokéNav markings are blocked there. Box healing and the perfect-stats sweep write only to depositable boxes. General debug PC-fill actions also skip sealed boxes; the LX1 fake-Right fixture intentionally populates Right-owned boxes for testing. Current-box normalization and wallpaper index clamping are in place. `make hns -j8` completed with zero errors; ROM size is **33,554,432 bytes (32 MiB)**.
+
+**PC loop/access inventory** (`R` = reads box data; `W` = writes box data; policy-only loops are marked):
+
+- `src/rift_shared.c`: `Rift_FirstDepositableBox` (policy read); `Rift_CountMonsInBoxes` (R); `Rift_MigrateLegacyStorage` (R/W, packs into owned boxes and clears migrated sources); `Rift_FinishArrival` (R/W, defensive contract sanitation); `Rift_PrepareCrossing` (R/W, own boxes only).
+- `src/field_specials.c`: `ReturnAnchoredMon` (R/W, depositable fallback); `IsDestinationBoxFull` (R, searches only depositable boxes).
+- `src/pokenav.c`: ribbon-presence scan (R, all boxes); `src/lottery_corner.c`: lottery scan (R, all boxes).
+- `src/pokenav_ribbons_list.c`: `BuildBoxMonRibbonList` and `PlayerHasRibbonsMon` (R, all boxes); `src/pokenav_conditions_search_results.c`: `BuildBoxMonSearchResults` (R, all boxes).
+- `src/debug.c`: the LX1 fake-Right fixture clears boxes 1–7 and writes ten fixture Pokémon there (W, intentional test setup); Pokédex-completion scan (R); fast/slow PC-fill scans (R/W, depositable boxes only).
+- `src/pokemon.c`: `CopyMonToPC` (R/W, depositable boxes only); `IsPokemonStorageFull` (R, depositable boxes only).
+- `src/perfect_player_mons.c`: stats sweep (R/W, depositable boxes only); `src/script_pokemon_util.c`: `HealPlayerBoxes` (R/W, depositable boxes only).
+- `src/pokemon_storage_system.c`: `CountMonsInBox` (R, specified box); `GetFirstFreeBoxSpot` (R, depositable box only); `ResetPokemonStorageSystem` clears all box contents and initializes box names/wallpapers for a new game (W); `GetNextAllowedBox` reads ownership/viewability policy; `AtLeastThreeUsableMons`, `RunCanReleaseMon`, `CountStorageNonEggMons`, `CountAllStorageMons`, and `AnyStorageMonWithMove` (R, whole-PC scans); `CheckFreePokemonStorageSpace` (R, depositable boxes only); `MultiMove_SaveMons` and `MultiMove_CreatePlacedMonIcons` (R, current box); `MultiMove_RemoveMonsFromBox` (W, current box; Move Items is restricted to depositable boxes); `MultiMove_SetPlacedMonData` (R/W, current depositable box); `StorePokemonInBox` (R/W, depositable boxes only); `GetFirstAliveBoxPokemon` (R, viewable boxes).
+
+**Deferred:**
+
+- `make check BUILD=hns` was skipped as instructed for LX0; no new C test harness was added.
+- No on-device PC/full-box playtest has been performed.
+
+**Playtest checklist:**
+
+- [ ] Start a test save and fill all six party slots. With **R + Start → Give X… → Pokémon (Basic)**, give 210 Pokémon so they fill boxes 8–14; give one more and confirm the normal PC-full message appears rather than writing into boxes 1–7.
+- [ ] Open **R + Start → Utilities… → Lost Rift anchors… → Rift: fake a Right first-finish save**, then open the PC. Confirm boxes 1–7 cannot be opened or chosen as a deposit target, while Left boxes can.
+- [ ] In a fixture with legacy overflow, confirm an overflow box can be viewed and Pokémon withdrawn, but wallpaper/name changes, Move Items, release, marking, summary move reordering, and scripted selection cannot write to it.
+
 ## GF0 — Setup and audit
 
 **Status: BUILT — NEEDS PLAYTEST**

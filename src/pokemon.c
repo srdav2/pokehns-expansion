@@ -42,6 +42,7 @@
 #include "pokemon_icon.h"
 #include "pokemon_summary_screen.h"
 #include "pokemon_storage_system.h"
+#include "rift_shared.h"
 #include "pokerus.h"
 #include "random.h"
 #include "randomizer.h"
@@ -5445,19 +5446,22 @@ u8 GiveCapturedMonToPlayer(struct Pokemon *mon)
 
 u8 CopyMonToPC(struct Pokemon *mon)
 {
-    s32 boxNo, boxPos;
+    s32 boxNo, boxPos, boxCount;
 
     SetPCBoxToSendMon(VarGet(VAR_PC_BOX_TO_SEND_MON));
 
     boxNo = StorageGetCurrentBox();
+    if (!Rift_IsBoxDepositable(boxNo))
+        boxNo = Rift_FirstDepositableBox();
 
-    do
+    for (boxCount = 0; boxCount < TOTAL_BOXES_COUNT; boxCount++)
     {
-        for (boxPos = 0; boxPos < IN_BOX_COUNT; boxPos++)
+        if (Rift_IsBoxDepositable(boxNo))
         {
-            struct BoxPokemon *checkingMon = GetBoxedMonPtr(boxNo, boxPos);
-            if (GetBoxMonData(checkingMon, MON_DATA_SPECIES) == SPECIES_NONE)
+            boxPos = GetFirstFreeBoxSpot(boxNo);
+            if (boxPos != -1)
             {
+                struct BoxPokemon *checkingMon = GetBoxedMonPtr(boxNo, boxPos);
                 MonRestorePP(mon);
                 CopyMon(checkingMon, &mon->box, sizeof(mon->box));
                 gSpecialVar_MonBoxId = boxNo;
@@ -5469,10 +5473,9 @@ u8 CopyMonToPC(struct Pokemon *mon)
             }
         }
 
-        boxNo++;
-        if (boxNo == TOTAL_BOXES_COUNT)
+        if (++boxNo == TOTAL_BOXES_COUNT)
             boxNo = 0;
-    } while (boxNo != StorageGetCurrentBox());
+    }
 
     return MON_CANT_GIVE;
 }
@@ -5702,9 +5705,13 @@ bool8 IsPokemonStorageFull(void)
     s32 i, j;
 
     for (i = 0; i < TOTAL_BOXES_COUNT; i++)
+    {
+        if (!Rift_IsBoxDepositable(i))
+            continue;
         for (j = 0; j < IN_BOX_COUNT; j++)
             if (GetBoxMonDataAt(i, j, MON_DATA_SPECIES) == SPECIES_NONE)
                 return FALSE;
+    }
 
     return TRUE;
 }

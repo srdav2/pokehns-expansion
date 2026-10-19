@@ -5,6 +5,7 @@
 #include "menu_specialized.h"
 #include "mon_markings.h"
 #include "pokenav.h"
+#include "rift_shared.h"
 #include "pokemon.h"
 #include "pokemon_storage_system.h"
 #include "sound.h"
@@ -111,9 +112,17 @@ static u32 HandleConditionMenuInput(struct Pokenav_ConditionMenu *menu)
             else
             {
                 // In Search mode pressing A brings up the markings menu
-                PlaySE(SE_SELECT);
-                ret = CONDITION_FUNC_ADD_MARKINGS;
-                menu->callback = OpenMarkingsMenu;
+                u8 boxId = monListPtr->monData[monListPtr->currIndex].boxId;
+                if (boxId == TOTAL_BOXES_COUNT || Rift_IsBoxDepositable(boxId))
+                {
+                    PlaySE(SE_SELECT);
+                    ret = CONDITION_FUNC_ADD_MARKINGS;
+                    menu->callback = OpenMarkingsMenu;
+                }
+                else
+                {
+                    PlaySE(SE_FAILURE);
+                }
             }
         }
     }

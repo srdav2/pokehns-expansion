@@ -309,6 +309,7 @@ void NewGameInitData(void)
     StringCopy(gSaveBlock2Ptr->rivalName, gText_ExpandedPlaceholder_Silver);
     InitMomSavings();
     Rift_InitForNewGame();
+    gPokemonStoragePtr->currentBox = Rift_FirstDepositableBox();
 #endif
 }
 
