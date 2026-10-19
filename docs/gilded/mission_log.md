@@ -143,6 +143,23 @@ The second-game Axis now presents catchable level-90 Giratina-Origin (holding th
 - [ ] Win or catch Arceus; confirm boxes 1–7 unseal, the game saves, all non-egg species in those boxes are seen/caught in the Pokédex, and the CROSSFIRE and Route 29 ending plays.
 - [ ] Re-enter the Axis after completion; confirm the finale does not replay.
 
+## LX8 — Final checks and report
+
+**Status: BUILT — NEEDS PLAYTEST**
+
+Regenerated the Left compatibility fingerprint, compared it with Right, ran the save-tool selftest, and wrote `docs/rift/LEFT_REPORT.md` with mission status, the contract request, PC-write gates, and the top ten playtest steps.
+
+**Deferred:**
+
+- No `.sav`/`.srm` files were available for save-tool inspection; no emulator playtesting was performed.
+- LX6 and LX7 remain deferred under the credit-limited task order.
+
+**Playtest checklist:**
+
+- [ ] Use **R + Start → Utilities… → Lost Rift anchors… → Rift: fake a Right first-finish save**, save, reset, and test the title-screen arrival flow.
+- [ ] Use **R + Start → Utilities… → Warp to map warp…** to warp to Giratina Axis and exercise both second-finale battle retries and completion.
+- [ ] For the first-finish finale, use **R + Start → Flags & Vars… → Set Flag XYZ…** to set `FLAG_DEFEATED_RED` (`0x23B`), then **R + Start → Utilities… → Warp to map warp…** to Giratina Axis.
+
 ## GF0 — Setup and audit
 
 **Status: BUILT — NEEDS PLAYTEST**
