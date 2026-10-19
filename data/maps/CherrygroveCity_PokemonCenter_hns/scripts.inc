@@ -17,7 +17,15 @@ CherryGrove_Pokecenter_EventScript_Fisher::
 CherryGrove_Pokecenter_EventScript_Gentleman::
 	lock
 	faceplayer
+	specialvar VAR_RESULT, Rift_AreOtherBoxesSealed
+	goto_if_eq VAR_RESULT, TRUE, CherryGrove_Pokecenter_EventScript_Gentleman_SealedBoxes
 	msgbox CherryGrove_Pokecenter_Text_Gentleman, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+CherryGrove_Pokecenter_EventScript_Gentleman_SealedBoxes::
+	msgbox CherryGrove_Pokecenter_Text_SealedBoxes, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
@@ -47,6 +55,10 @@ CherryGrove_Pokecenter_Text_Fisher:
 CherryGrove_Pokecenter_Text_Gentleman:
 	.string "That PC is free for any\n"
 	.string "trainer to use.$"
+
+CherryGrove_Pokecenter_Text_SealedBoxes:
+	.string "Boxes from the other world stay\n"
+	.string "sealed until its finale.$"
 
 CherryGrove_Pokecenter_Text_Lass:
 	.string "They say a watched pot never\n"

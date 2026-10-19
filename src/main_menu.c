@@ -27,6 +27,7 @@
 #include "pokedex.h"
 #include "pokemon.h"
 #include "pokemon_storage_system.h"
+#include "rift_left.h"
 #include "rift_shared.h"
 #include "random.h"
 #include "rtc.h"
@@ -195,6 +196,7 @@ static void Task_HandleMainMenuInput(u8);
 static void Task_HandleMainMenuAPressed(u8);
 static void Task_HandleMainMenuBPressed(u8);
 static void Task_RiftConfirmNewGame(u8);
+static void Task_RiftStartNewGame(u8);
 static void Task_NewGameBirchSpeech_Init(u8);
 static void Task_DisplayMainMenuInvalidActionError(u8);
 static void AddBirchSpeechObjects(u8);
@@ -269,7 +271,6 @@ static const u8 gText_RiftSaveUnfinished[] = _("This save belongs to the other\n
 static const u8 gText_RiftSaveDone[] = _("Both worlds are complete in\nthis save.\pStarting a new game here will\nERASE it.");
 static const u8 gText_RiftSaveUnreadable[] = _("This save can't be read by\nthis version of the game.\pStarting a new game here will\nERASE it.");
 static const u8 gText_RiftSaveReadyOverwrite[] = _("This save will be erased.\pStart a new game?");
-static const u8 gText_RiftArriveComingSoon[] = _("Rift arrival is coming soon.");
 
 static const u8 gText_MainMenuNewGame[] = _("NEW GAME");
 static const u8 gText_MainMenuContinue[] = _("CONTINUE");
@@ -697,6 +698,7 @@ static void Task_MainMenuCheckSaveFile(u8 taskId)
                 Rift_MigrateLegacyStorage();
             if (sRiftSaveKind == RIFT_SAVE_OWN || sRiftSaveKind == RIFT_SAVE_OWN_LEGACY)
             {
+                Rift_UpdateReturnFlags();
                 if (!Rift_IsBoxViewable(StorageGetCurrentBox()))
                     SetCurrentBox(Rift_FirstDepositableBox());
                 tMenuType = HAS_SAVED_GAME;
@@ -1229,8 +1231,14 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
             DestroyTask(taskId);
             break;
         case ACTION_RIFT_ARRIVE:
-            CreateMainMenuErrorWindow(gText_RiftArriveComingSoon);
-            gTasks[taskId].func = Task_WaitForSaveFileErrorWindow;
+            if (!IS_HNS || !Rift_BeginArrival())
+            {
+                CreateMainMenuErrorWindow(gText_RiftSaveUnreadable);
+                gTasks[taskId].func = Task_WaitForSaveFileErrorWindow;
+                return;
+            }
+            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+            gTasks[taskId].func = Task_RiftStartNewGame;
             return;
         case ACTION_INVALID:
             gTasks[taskId].tCurrItem = 0;
@@ -1279,6 +1287,7 @@ static void Task_RiftConfirmNewGame(u8 taskId)
             DestroyTask(taskId);
             FreeAllWindowBuffers();
             sCurrItemAndOptionMenuCheck = 0;
+            Rift_MarkForeignSaveOverwrite();
             StartNewGameSceneHns();
         }
         break;
@@ -1288,6 +1297,17 @@ static void Task_RiftConfirmNewGame(u8 taskId)
         SetMainCallback2(CB2_ReinitMainMenu);
         DestroyTask(taskId);
         break;
+    }
+}
+
+static void Task_RiftStartNewGame(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        DestroyTask(taskId);
+        FreeAllWindowBuffers();
+        sCurrItemAndOptionMenuCheck = 0;
+        SetMainCallback2(CB2_NewGame);
     }
 }
 

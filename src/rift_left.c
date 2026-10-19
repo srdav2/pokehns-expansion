@@ -4,16 +4,95 @@
 #include "item.h"
 #include "pokemon.h"
 #include "pokemon_storage_system.h"
+#include "rift_left.h"
 #include "rift_shared.h"
 #include "string_util.h"
+#include "constants/flags.h"
 #include "constants/party_menu.h"
 
+static void *sRiftArrivalBackup;
+static bool8 sSkipSavedChallengeSettings;
 static u16 sAnchorItemsToBag;
 static u16 sAnchorItemsLost;
+
+#if IS_HNS
+static const u16 sReturnFlags[] =
+{
+    FLAG_GILDED_RETURN_1_SEEN,
+    FLAG_GILDED_RETURN_2_SEEN,
+    FLAG_GILDED_RETURN_3_SEEN,
+};
+#endif
 
 bool32 IsRiftSecondGame(void)
 {
     return Rift_IsSecondGame();
+}
+
+bool32 Rift_BeginArrival(void)
+{
+    if (sRiftArrivalBackup != NULL)
+        return FALSE;
+
+    sRiftArrivalBackup = Rift_BackupStorage();
+    if (sRiftArrivalBackup == NULL)
+        return FALSE;
+
+    sSkipSavedChallengeSettings = TRUE;
+    return TRUE;
+}
+
+void Rift_MarkForeignSaveOverwrite(void)
+{
+    sSkipSavedChallengeSettings = TRUE;
+}
+
+bool32 Rift_ShouldPreserveChallengeSettings(void)
+{
+    return !sSkipSavedChallengeSettings;
+}
+
+void Rift_FinishPendingArrival(void)
+{
+#if IS_HNS
+    if (sRiftArrivalBackup != NULL)
+    {
+        void *backup = sRiftArrivalBackup;
+
+        sRiftArrivalBackup = NULL;
+        Rift_FinishArrival(backup);
+    }
+#endif
+    sSkipSavedChallengeSettings = FALSE;
+    Rift_UpdateReturnFlags();
+}
+
+void Rift_UpdateReturnFlags(void)
+{
+#if IS_HNS
+    const struct RiftRecord *record = Rift_GetRecord();
+    bool32 secondGame = Rift_IsRecordValid(record) && Rift_IsSecondGame();
+    u8 i;
+
+    for (i = 0; i < ARRAY_COUNT(sReturnFlags); i++)
+    {
+        bool32 anchorAvailable = secondGame
+            && i < record->anchoredCount
+            && !(record->anchoredReturned & (1 << i));
+
+        if (anchorAvailable)
+            FlagClear(sReturnFlags[i]);
+        else
+            FlagSet(sReturnFlags[i]);
+    }
+#endif
+}
+
+bool32 Rift_AreOtherBoxesSealed(void)
+{
+    const struct RiftRecord *record = Rift_GetRecord();
+
+    return Rift_IsRecordValid(record) && Rift_IsSecondGame() && !record->boxesUnsealed;
 }
 
 bool32 Rift_IsCurrentGameFinished(void)

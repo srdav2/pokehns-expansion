@@ -118,6 +118,8 @@ AzaleaTown_EventScript_GildedPressurePromptYes::
 AzaleaTown_EventScript_GildedReturn3::
 	lock
 	faceplayer
+	specialvar VAR_RESULT, IsRiftSecondGame
+	goto_if_eq VAR_RESULT, FALSE, AzaleaTown_EventScript_GildedReturn3Unavailable
 	goto_if_lt VAR_AZALEA_TOWN_STATE, 4, AzaleaTown_EventScript_GildedReturn3Early
 	msgbox AzaleaTown_Text_GildedReturn3, MSGBOX_DEFAULT
 	playmoncry SPECIES_ARCEUS, CRY_MODE_NORMAL
@@ -127,6 +129,10 @@ AzaleaTown_EventScript_GildedReturn3::
 	setflag FLAG_GILDED_RETURN_3_SEEN
 	msgbox AzaleaTown_Text_GildedReturn3After, MSGBOX_DEFAULT
 	closemessage
+	release
+	end
+
+AzaleaTown_EventScript_GildedReturn3Unavailable::
 	release
 	end
 

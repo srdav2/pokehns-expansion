@@ -39,6 +39,7 @@
 #include "contest.h"
 #include "item_menu.h"
 #include "pokemon_storage_system.h"
+#include "rift_left.h"
 #include "rift_shared.h"
 #include "pokemon_jump.h"
 #include "decoration_inventory.h"
@@ -219,7 +220,13 @@ void NewGameInitData(void)
 #if IS_FRLG
     u8 rivalName[PLAYER_NAME_LENGTH + 1];
 #endif
-    struct ChallengeSettings savedChallenge = gSaveBlock3Ptr->challengeSettings;
+    struct ChallengeSettings savedChallenge;
+    bool32 preserveChallengeSettings = TRUE;
+#if IS_HNS
+    preserveChallengeSettings = Rift_ShouldPreserveChallengeSettings();
+#endif
+    if (preserveChallengeSettings)
+        savedChallenge = gSaveBlock3Ptr->challengeSettings;
     if (gSaveFileStatus == SAVE_STATUS_EMPTY || gSaveFileStatus == SAVE_STATUS_CORRUPT)
         RtcReset();
 
@@ -237,7 +244,8 @@ void NewGameInitData(void)
     gSaveBlock1Ptr->saveVersionMagic = SAVE_VERSION_MAGIC;
     gSaveBlock1Ptr->saveVersion = SAVE_VERSION;
     SetDefaultChallengeSettings();
-    gSaveBlock3Ptr->challengeSettings = savedChallenge;
+    if (preserveChallengeSettings)
+        gSaveBlock3Ptr->challengeSettings = savedChallenge;
     ClearAllMail();
     gSaveBlock2Ptr->specialSaveWarpFlags = 0;
     gSaveBlock2Ptr->gcnLinkFlags = 0;
@@ -310,6 +318,7 @@ void NewGameInitData(void)
     InitMomSavings();
     Rift_InitForNewGame();
     gPokemonStoragePtr->currentBox = Rift_FirstDepositableBox();
+    Rift_FinishPendingArrival();
 #endif
 }
 

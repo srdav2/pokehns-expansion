@@ -103,6 +103,26 @@ The Axis now separates the first-game crossing from the existing second-game end
 - [ ] Inspect the save with `python3 tools/rift/rift_savetool.py <save>`; confirm Left is first-finished, the anchor count/levels are correct, and boxes 8–14 contain no held items.
 - [ ] Re-enter the Axis after first finish; confirm the scene does not replay.
 
+## LX4 — Arrival
+
+**Status: BUILT — NEEDS PLAYTEST**
+
+ARRIVE THROUGH THE RIFT now backs up the shared storage, skips the HnS name/gender intro, runs the normal new-game initialization, then restores the Rift storage and identity. The arrival opening plays once at the player's house, and the return scenes are hidden outside the second game and limited to available anchors. The Cherrygrove Pokémon Center PC explainer now describes the sealed boxes only while they remain sealed. Foreign-save overwrites and arrivals do not carry over the previous SaveBlock3 challenge settings. The existing return-seen flags are initialized as visibility gates; see the LX4 decision in `DECISIONS_LOG.md`.
+
+**Deferred:**
+
+- `make check BUILD=hns` remains skipped per the LX0 instruction; arrival and return scenes have not been played on-device.
+- LX5 second-finale battles and unsealing remain deferred to their mission.
+
+**Playtest checklist:**
+
+- [ ] Use **R + Start → Utilities… → Lost Rift anchors… → Rift: fake a Right first-finish save**, save in-game, and reset.
+- [ ] On the title screen, confirm T1 appears and **ARRIVE THROUGH THE RIFT** is the first menu option. Choose it and confirm no gender or name prompt appears.
+- [ ] Confirm the original player name, gender, and trainer ID are retained; the Arceus arrival introduction plays once before the normal New Bark opening.
+- [ ] Confirm boxes 1–7 remain sealed, the Cherrygrove Pokémon Center gentleman explains the seal, and boxes unseal only after LX5.
+- [ ] Confirm only the available anchors appear in the return scenes, levels are 5/10/15, returned Pokémon have no held items, and each return disappears after success.
+- [ ] Start a normal new game from the foreign-ready menu and confirm the second YES/NO warning is required; decline it once to confirm the foreign save remains available.
+
 ## GF0 — Setup and audit
 
 **Status: BUILT — NEEDS PLAYTEST**

@@ -6,6 +6,17 @@ NewBarkTown_PlayersHouse_2F_hns_MapScripts::
 NewBarkTown_PlayersHouse_2F_OnTransition::
 	call SecretBase_EventScript_SetDecorationFlags
 	setvar VAR_SECRET_BASE_INITIALIZED, 0
+	specialvar VAR_RESULT, IsRiftSecondGame
+	goto_if_eq VAR_RESULT, FALSE, NewBarkTown_PlayersHouse_2F_OnTransition_Done
+	goto_if_set FLAG_GILDED_RIFT_ARRIVAL_INTRO_SEEN, NewBarkTown_PlayersHouse_2F_OnTransition_Done
+	lockall
+	msgbox NewBarkTown_PlayersHouse_2F_Text_RiftArrival1, MSGBOX_DEFAULT
+	msgbox NewBarkTown_PlayersHouse_2F_Text_RiftArrival2, MSGBOX_DEFAULT
+	msgbox NewBarkTown_PlayersHouse_2F_Text_RiftArrival3, MSGBOX_DEFAULT
+	setflag FLAG_GILDED_RIFT_ARRIVAL_INTRO_SEEN
+	closemessage
+	releaseall
+NewBarkTown_PlayersHouse_2F_OnTransition_Done::
 	end
 
 NewBarkTown_PlayersHouse_2F_OnWarp::
@@ -86,3 +97,15 @@ NewBarkTown_PlayersHouse_2F_Text_NES:
     .string "{PLAYER} played with the NES.\p"
     .string "…Okay!\n"
     .string "It's time to go!$"
+
+NewBarkTown_PlayersHouse_2F_Text_RiftArrival1:
+	.string "ARCEUS: You arrived intact.\n"
+	.string "More or less.$"
+
+NewBarkTown_PlayersHouse_2F_Text_RiftArrival2:
+	.string "Your name and history came with\n"
+	.string "you. So did your choices.$"
+
+NewBarkTown_PlayersHouse_2F_Text_RiftArrival3:
+	.string "Your companions will return when\n"
+	.string "the path is ready.$"

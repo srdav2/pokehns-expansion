@@ -92,6 +92,8 @@ Route30_EventScript_GildedMegaGrunt::
 Route30_EventScript_GildedReturn1::
 	lock
 	faceplayer
+	specialvar VAR_RESULT, IsRiftSecondGame
+	goto_if_eq VAR_RESULT, FALSE, Route30_EventScript_GildedReturn1Unavailable
 	goto_if_lt VAR_CHERRYGROVE_CITY_STATE, 3, Route30_EventScript_GildedReturn1Early
 	msgbox Route30_Text_GildedReturn1, MSGBOX_DEFAULT
 	playmoncry SPECIES_ARCEUS, CRY_MODE_NORMAL
@@ -101,6 +103,10 @@ Route30_EventScript_GildedReturn1::
 	setflag FLAG_GILDED_RETURN_1_SEEN
 	msgbox Route30_Text_GildedReturn1After, MSGBOX_DEFAULT
 	closemessage
+	release
+	end
+
+Route30_EventScript_GildedReturn1Unavailable::
 	release
 	end
 

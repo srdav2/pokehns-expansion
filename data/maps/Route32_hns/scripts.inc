@@ -81,6 +81,8 @@ Route32_EventScript_BirdkeeperPeter::
 Route32_EventScript_GildedReturn2::
 	lock
 	faceplayer
+	specialvar VAR_RESULT, IsRiftSecondGame
+	goto_if_eq VAR_RESULT, FALSE, Route32_EventScript_GildedReturn2Unavailable
 	goto_if_lt VAR_CHERRYGROVE_CITY_STATE, 3, Route32_EventScript_GildedReturn2Early
 	goto_if_unset FLAG_GILDED_RETURN_1_SEEN, Route32_EventScript_GildedReturn2Early
 	msgbox Route32_Text_GildedReturn2, MSGBOX_DEFAULT
@@ -91,6 +93,10 @@ Route32_EventScript_GildedReturn2::
 	setflag FLAG_GILDED_RETURN_2_SEEN
 	msgbox Route32_Text_GildedReturn2After, MSGBOX_DEFAULT
 	closemessage
+	release
+	end
+
+Route32_EventScript_GildedReturn2Unavailable::
 	release
 	end
 

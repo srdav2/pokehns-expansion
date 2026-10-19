@@ -72,6 +72,20 @@ vars, trainers, maps, or specials were allocated by GF1.
   `Rift_MarkFirstFinish`.
 - No flags, script vars, trainers, or maps were allocated.
 
+## LX4 — Arrival
+
+### Flags
+
+| Flag | Value | Purpose |
+| --- | ---: | --- |
+| `FLAG_GILDED_RIFT_ARRIVAL_INTRO_SEEN` | `HNS_EXTENDED_CONTENT_START + 99` (`0x3CC`) | Prevents the Arceus arrival introduction from replaying after the first arrival. |
+
+### Specials
+
+- `Rift_AreOtherBoxesSealed` reports whether the other game's boxes are still sealed for the Cherrygrove PC explainer.
+
+No vars, trainers, or maps were allocated. Existing `FLAG_GILDED_RETURN_1_SEEN` through `FLAG_GILDED_RETURN_3_SEEN` continue to hide each return NPC after its anchor is claimed.
+
 ## GF2 — Quality of life
 
 - `ITEM_EXP_SHARE` is awarded in `NewBarkTown_Lab_hns` after the starter and uses the existing `FLAG_EXP_SHARE_ENABLED` toggle with `I_EXP_SHARE_ITEM == GEN_6`.
