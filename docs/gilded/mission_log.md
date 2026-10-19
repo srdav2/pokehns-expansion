@@ -81,6 +81,28 @@ Every PC insertion and free-space path now uses Left's depositable boxes, includ
 - [ ] Open **R + Start → Utilities… → Lost Rift anchors… → Rift: fake a Right first-finish save**, then open the PC. Confirm boxes 1–7 cannot be opened or chosen as a deposit target, while Left boxes can.
 - [ ] In a fixture with legacy overflow, confirm an overflow box can be viewed and Pokémon withdrawn, but wallpaper/name changes, Move Items, release, marking, summary move reordering, and scripted selection cannot write to it.
 
+## LX3 — First finale
+
+**Status: BUILT — NEEDS PLAYTEST**
+
+The Axis now separates the first-game crossing from the existing second-game ending. The first-game scene is cutscene-only for Giratina, checks both contract blockers, shows T5–T7, allows up to three ranked party selections while retaining at least one Pokémon, sanitizes the owned PC boxes, saves the first-finish record, shows T8/T9, and starts credits. Selected Pokémon are rejected if eggs; selected held items are included in the T8 item totals, including when the Bag is full. Returning after a completed first finish no longer replays the scene. `make hns -j8` completed with zero errors; ROM size is **33,554,432 bytes (32 MiB)**. No shared Rift file was modified.
+
+**Deferred:**
+
+- `make check BUILD=hns` remains skipped per the LX0 instruction; no on-device crossing playtest has been performed.
+- LX4 arrival and LX5 second-finale flow remain deferred to their missions.
+- The contract's `Rift_StoreAnchor` API does not return anchor-held-item counts; Left works around this locally. See the LX3 contract request in `DECISIONS_LOG.md`.
+
+**Playtest checklist:**
+
+- [ ] Start a fresh Left save. Open **R + Start → Flags & Vars… → Set Flag XYZ…**, set `FLAG_DEFEATED_RED` (`0x23B`), then use **R + Start → Utilities… → Warp to map warp…** to choose Giratina Axis.
+- [ ] With a fused Pokémon in fusion storage, trigger the Axis scene; confirm T5 appears and crossing does not begin. Remove the fusion, leave overflow in boxes 1–7, and confirm T6 also appears.
+- [ ] Clear both blockers, then refuse T7; confirm no party Pokémon or PC data changes.
+- [ ] Accept T7 with at least four party Pokémon, including an egg and three eligible Pokémon with held items. Select the egg first, then select three valid Pokémon in a known order; confirm the egg is rejected, the party retains one Pokémon, and ranks follow selection order.
+- [ ] Check the Bag and T8 counts with room for all three items, then repeat with a full Bag to confirm anchor-held items that do not fit are included in the lost-item count.
+- [ ] Inspect the save with `python3 tools/rift/rift_savetool.py <save>`; confirm Left is first-finished, the anchor count/levels are correct, and boxes 8–14 contain no held items.
+- [ ] Re-enter the Axis after first finish; confirm the scene does not replay.
+
 ## GF0 — Setup and audit
 
 **Status: BUILT — NEEDS PLAYTEST**

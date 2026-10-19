@@ -63,6 +63,15 @@ vars, trainers, maps, or specials were allocated by GF1.
 - The only new global debug state is `gRiftDebugFakeRightSavePending`; it makes the next save identify the debug fixture as Right-written, then clears itself.
 - No flags, script vars, trainers, maps, or specials were allocated.
 
+## LX3 — First finale
+
+- New specials: `IsRiftSecondGame`, `Rift_IsCurrentGameFinished`,
+  `Rift_HasFusionBlocker`, `Rift_HasOverflowBlocker`,
+  `Rift_ResetCrossingState`, `Rift_CanPickAnotherAnchor`,
+  `Rift_StoreSelectedAnchor`, `Rift_PrepareCrossingForScript`, and
+  `Rift_MarkFirstFinish`.
+- No flags, script vars, trainers, or maps were allocated.
+
 ## GF2 — Quality of life
 
 - `ITEM_EXP_SHARE` is awarded in `NewBarkTown_Lab_hns` after the starter and uses the existing `FLAG_EXP_SHARE_ENABLED` toggle with `I_EXP_SHARE_ITEM == GEN_6`.

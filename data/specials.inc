@@ -17,6 +17,15 @@
 gSpecials::
 	def_special HealPlayerParty
 	def_special ReturnAnchoredMon
+	def_special IsRiftSecondGame
+	def_special Rift_IsCurrentGameFinished
+	def_special Rift_HasFusionBlocker
+	def_special Rift_HasOverflowBlocker
+	def_special Rift_ResetCrossingState
+	def_special Rift_CanPickAnotherAnchor
+	def_special Rift_StoreSelectedAnchor
+	def_special Rift_PrepareCrossingForScript
+	def_special Rift_MarkFirstFinish
 	def_special GildedYardSignHide
 	def_special GildedYardSignRemove
 	def_special GildedYardSignCount
