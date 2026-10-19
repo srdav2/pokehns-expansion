@@ -27,6 +27,7 @@ gSpecials::
 	def_special Rift_PrepareCrossingForScript
 	def_special Rift_MarkFirstFinish
 	def_special Rift_AreOtherBoxesSealed
+	def_special Rift_MarkSecondFinishForScript
 	def_special GildedYardSignHide
 	def_special GildedYardSignRemove
 	def_special GildedYardSignCount

@@ -123,6 +123,26 @@ ARRIVE THROUGH THE RIFT now backs up the shared storage, skips the HnS name/gend
 - [ ] Confirm only the available anchors appear in the return scenes, levels are 5/10/15, returned Pokémon have no held items, and each return disappears after success.
 - [ ] Start a normal new game from the foreign-ready menu and confirm the second YES/NO warning is required; decline it once to confirm the foreign save remains available.
 
+## LX5 — Second finale
+
+**Status: BUILT — NEEDS PLAYTEST**
+
+The second-game Axis now presents catchable level-90 Giratina-Origin (holding the Griseous Core), followed by catchable level-90 Arceus. A battle is marked done only after a win or catch, and Giratina's outcome is saved before the Arceus encounter. If Arceus is run from or the player loses, returning to the Axis retries Arceus without repeating a successful Giratina battle. After both battles, Left marks the shared second-finish record, registers seen/caught for enabled non-egg Pokémon in boxes 1–7, saves, then continues into the existing CROSSFIRE/Route 29 ending.
+
+**Deferred:**
+
+- `make check BUILD=hns` remains skipped per the LX0 instruction; wild-battle outcomes and the ending have not been played on-device.
+- LX6/LX7 remain deferred by the credit-limited task order; LX8 report remains.
+
+**Playtest checklist:**
+
+- [ ] Start Left, open **R + Start → Utilities… → Lost Rift anchors… → Rift: fake a Right first-finish save**, save, reset, and choose **ARRIVE THROUGH THE RIFT**.
+- [ ] Use **R + Start → Utilities… → Warp to map warp…** to warp to Giratina Axis; confirm the second-game scene starts without needing the Red flag.
+- [ ] Run from or lose to Giratina; return to the Axis and confirm Giratina is offered again.
+- [ ] Win or catch Giratina, then run from or lose to Arceus; return to the Axis and confirm only Arceus is offered again.
+- [ ] Win or catch Arceus; confirm boxes 1–7 unseal, the game saves, all non-egg species in those boxes are seen/caught in the Pokédex, and the CROSSFIRE and Route 29 ending plays.
+- [ ] Re-enter the Axis after completion; confirm the finale does not replay.
+
 ## GF0 — Setup and audit
 
 **Status: BUILT — NEEDS PLAYTEST**

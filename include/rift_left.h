@@ -7,5 +7,6 @@ bool32 Rift_ShouldPreserveChallengeSettings(void);
 void Rift_FinishPendingArrival(void);
 void Rift_UpdateReturnFlags(void);
 bool32 Rift_AreOtherBoxesSealed(void);
+void Rift_MarkSecondFinishForScript(void);
 
 #endif // GUARD_RIFT_LEFT_H

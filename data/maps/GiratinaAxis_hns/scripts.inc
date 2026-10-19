@@ -104,13 +104,40 @@ GiratinaAxis_EventScript_SecondGame::
 	playmoncry SPECIES_GIRATINA_ORIGIN, CRY_MODE_ENCOUNTER
 	waitmoncry
 	msgbox GiratinaAxis_Text_Giratina, MSGBOX_DEFAULT
-	msgbox GiratinaAxis_Text_Arceus, MSGBOX_DEFAULT
+	goto_if_set FLAG_GILDED_RIFT_ARCEUS_BATTLE_DONE, GiratinaAxis_EventScript_SecondFinish
+	goto_if_set FLAG_GILDED_RIFT_GIRATINA_BATTLE_DONE, GiratinaAxis_EventScript_SecondGameArceus
 	closemessage
 	setwildbattle SPECIES_GIRATINA_ORIGIN, 90, ITEM_GRISEOUS_CORE
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, GiratinaAxis_EventScript_Retry
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, GiratinaAxis_EventScript_Retry
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, GiratinaAxis_EventScript_GiratinaBattleDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, GiratinaAxis_EventScript_GiratinaBattleDone
+	goto GiratinaAxis_EventScript_Retry
+	end
+
+GiratinaAxis_EventScript_GiratinaBattleDone::
+	setflag FLAG_GILDED_RIFT_GIRATINA_BATTLE_DONE
+	special SaveGame
+	waitstate
+GiratinaAxis_EventScript_SecondGameArceus::
+	playmoncry SPECIES_ARCEUS, CRY_MODE_ENCOUNTER
+	waitmoncry
+	msgbox GiratinaAxis_Text_Arceus, MSGBOX_DEFAULT
+	closemessage
+	setwildbattle SPECIES_ARCEUS, 90
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, GiratinaAxis_EventScript_ArceusBattleDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, GiratinaAxis_EventScript_ArceusBattleDone
+	goto GiratinaAxis_EventScript_Retry
+	end
+
+GiratinaAxis_EventScript_ArceusBattleDone::
+	setflag FLAG_GILDED_RIFT_ARCEUS_BATTLE_DONE
+GiratinaAxis_EventScript_SecondFinish::
+	special Rift_MarkSecondFinishForScript
+	special SaveGame
+	waitstate
 	msgbox GiratinaAxis_Text_ArceusCentre, MSGBOX_DEFAULT
 	closemessage
 	fadescreenspeed FADE_TO_WHITE, 4

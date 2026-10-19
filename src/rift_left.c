@@ -4,6 +4,7 @@
 #include "item.h"
 #include "pokemon.h"
 #include "pokemon_storage_system.h"
+#include "pokedex.h"
 #include "rift_left.h"
 #include "rift_shared.h"
 #include "string_util.h"
@@ -93,6 +94,32 @@ bool32 Rift_AreOtherBoxesSealed(void)
     const struct RiftRecord *record = Rift_GetRecord();
 
     return Rift_IsRecordValid(record) && Rift_IsSecondGame() && !record->boxesUnsealed;
+}
+
+void Rift_MarkSecondFinishForScript(void)
+{
+    u8 boxId, pos;
+
+    Rift_MarkSecondFinish();
+    for (boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)
+    {
+        if (!Rift_IsBoxOwnedBy(boxId, RIFT_OTHER_GAME))
+            continue;
+
+        for (pos = 0; pos < IN_BOX_COUNT; pos++)
+        {
+            struct BoxPokemon *boxMon = &gPokemonStoragePtr->boxes[boxId][pos];
+            u16 species = GetBoxMonData(boxMon, MON_DATA_SPECIES);
+
+            if (species == SPECIES_NONE
+             || GetBoxMonData(boxMon, MON_DATA_IS_EGG)
+             || !IsSpeciesEnabled(species))
+                continue;
+
+            GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_SET_SEEN);
+            GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_SET_CAUGHT);
+        }
+    }
 }
 
 bool32 Rift_IsCurrentGameFinished(void)

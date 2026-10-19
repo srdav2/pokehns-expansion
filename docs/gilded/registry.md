@@ -86,6 +86,19 @@ vars, trainers, maps, or specials were allocated by GF1.
 
 No vars, trainers, or maps were allocated. Existing `FLAG_GILDED_RETURN_1_SEEN` through `FLAG_GILDED_RETURN_3_SEEN` continue to hide each return NPC after its anchor is claimed.
 
+## LX5 — Second finale
+
+### Flags
+
+| Flag | Value | Purpose |
+| --- | ---: | --- |
+| `FLAG_GILDED_RIFT_GIRATINA_BATTLE_DONE` | `HNS_EXTENDED_CONTENT_START + 33` (`0x38B`) | Saves Giratina's successful win/catch so retrying Arceus does not repeat that battle. |
+| `FLAG_GILDED_RIFT_ARCEUS_BATTLE_DONE` | `HNS_EXTENDED_CONTENT_START + 39` (`0x391`) | Saves Arceus's successful win/catch until second-finish finalization and save. |
+
+### Specials
+
+- `Rift_MarkSecondFinishForScript` marks the shared second-finish record and registers seen/caught Pokédex entries for enabled, non-egg Pokémon in the other game's boxes.
+
 ## GF2 — Quality of life
 
 - `ITEM_EXP_SHARE` is awarded in `NewBarkTown_Lab_hns` after the starter and uses the existing `FLAG_EXP_SHARE_ENABLED` toggle with `I_EXP_SHARE_ITEM == GEN_6`.
