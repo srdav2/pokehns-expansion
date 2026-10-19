@@ -1,5 +1,7 @@
 #include "global.h"
 #include "config/rift_game.h"
+#include "credits.h"
+#include "main.h"
 #include "event_data.h"
 #include "item.h"
 #include "pokemon.h"
@@ -200,4 +202,11 @@ bool32 Rift_PrepareCrossingForScript(void)
     ConvertIntToDecimalStringN(gStringVar2, report.itemsToBag, STR_CONV_MODE_LEFT_ALIGN, 3);
     ConvertIntToDecimalStringN(gStringVar3, report.itemsLost, STR_CONV_MODE_LEFT_ALIGN, 3);
     return report.itemsLost != 0;
+}
+
+// First finish: hand over to the credits from a clean callback (they end in a soft reset).
+// Calling CB2_StartCreditsSequence directly from a script resets tasks and the heap while the overworld is still running.
+void Rift_StartFirstFinishCredits(void)
+{
+    SetMainCallback2(CB2_StartCreditsSequence);
 }

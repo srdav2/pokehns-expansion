@@ -9,4 +9,6 @@ void Rift_UpdateReturnFlags(void);
 bool32 Rift_AreOtherBoxesSealed(void);
 void Rift_MarkSecondFinishForScript(void);
 
+void Rift_StartFirstFinishCredits(void);
+
 #endif // GUARD_RIFT_LEFT_H

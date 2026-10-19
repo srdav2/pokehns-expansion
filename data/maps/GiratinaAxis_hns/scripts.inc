@@ -89,7 +89,8 @@ GiratinaAxis_EventScript_SaveFirstFinish::
 	waitstate
 	msgbox GiratinaAxis_Text_T9, MSGBOX_DEFAULT
 	msgbox GiratinaAxis_Text_FirstFinish, MSGBOX_DEFAULT
-	special CB2_StartCreditsSequence
+	fadescreen FADE_TO_BLACK
+	special Rift_StartFirstFinishCredits
 	waitstate
 	releaseall
 	end
